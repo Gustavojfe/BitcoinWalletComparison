@@ -46,7 +46,7 @@ const WalletComparisonResult = () => {
         <div className="bg-white p-6 shadow rounded-lg">
           <h1 className="text-xl font-bold mb-4">Wallet Comparison</h1>
           <p className="text-gray-500 mb-4">Unable to find the selected wallets or features.</p>
-          <Button onClick={() => navigate('/')} className="swapido-button">Return to Comparison Page</Button>
+          <Button onClick={() => navigate('/')} className="app-button">Return to Comparison Page</Button>
         </div>
       </div>
     );
@@ -115,7 +115,7 @@ const WalletComparisonResult = () => {
       <div className="bg-white p-6 shadow rounded-lg">
         <div className="flex flex-col sm:flex-row justify-between items-center mb-6">
           <h1 className="text-xl font-bold mb-2 sm:mb-0">Wallet Comparison</h1>
-          <Button onClick={() => navigate('/')} className="swapido-button">Return to Comparison Page</Button>
+          <Button onClick={() => navigate('/')} className="app-button">Return to Comparison Page</Button>
         </div>
 
         <div className="grid grid-cols-3 gap-4 mb-6">
