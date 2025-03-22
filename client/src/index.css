@@ -4,10 +4,10 @@
 
 @layer base {
   :root {
-    --swapido-green: 159 50% 35%;
-    --swapido-dark: 0 0% 9%;
-    --swapido-light-green: 153 50% 85%;
-    --swapido-success: 142 69% 58%;
+    --app-primary: 159 50% 35%;
+    --app-dark: 0 0% 9%;
+    --app-light: 153 50% 85%;
+    --app-success: 142 69% 58%;
   }
 
   * {
@@ -20,23 +20,23 @@
 }
 
 @layer components {
-  .swapido-button {
+  .app-button {
     @apply bg-primary hover:bg-primary/90 text-white rounded-md transition-colors;
   }
   
-  .swapido-outline-button {
+  .app-outline-button {
     @apply border-primary text-primary hover:bg-primary/10 transition-colors;
   }
   
-  .swapido-card {
+  .app-card {
     @apply bg-white rounded-lg shadow-md p-4;
   }
   
-  .swapido-section {
+  .app-section {
     @apply bg-white rounded-lg shadow-md p-6 mb-6;
   }
   
-  .swapido-tooltip {
+  .app-tooltip {
     @apply border border-primary/30 bg-gray-900;
   }
 }

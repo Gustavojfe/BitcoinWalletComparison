@@ -4,7 +4,7 @@ const AboutPage = () => {
       <h2 className="text-2xl font-bold text-gray-900 mb-6">About Wallet Compare</h2>
       <div className="prose prose-blue max-w-none">
         <p>
-          Wallet Compare is a project created by Swapido to help Bitcoin users make informed choices about the wallets they use.
+          Wallet Compare is a project created to help Bitcoin users make informed choices about the wallets they use.
           Our goal is to provide accurate, up-to-date information about the features and capabilities of various Bitcoin wallets,
           with a focus on Lightning Network compatibility.
         </p>
@@ -41,18 +41,15 @@ const AboutPage = () => {
           <li>Create automated testing for feature verification</li>
           <li>Allow community contributions and verification</li>
         </ul>
-        <h3 className="text-xl font-semibold mt-6 mb-4">About Swapido</h3>
+        <h3 className="text-xl font-semibold mt-6 mb-4">About Us</h3>
         <p>
-          Swapido is dedicated to improving the Bitcoin ecosystem through education, research, and development of tools
+          We are dedicated to improving the Bitcoin ecosystem through education, research, and development of tools
           that make Bitcoin more accessible and user-friendly. Wallet Compare is one of our initiatives to help 
           both newcomers and experienced users navigate the growing landscape of Bitcoin wallets.
         </p>
         <p>
-          For more information about Swapido and our other projects, visit our website or follow us on Twitter.
-        </p>
-        <p>
           <strong>Contact:</strong> If you have any questions, feedback, or would like to contribute to this project,
-          please contact us at info@swapido.com.
+          please contact us.
         </p>
       </div>
     </div>
