@@ -46,7 +46,7 @@ const WalletComparisonResult = () => {
         <div className="bg-white p-6 shadow rounded-lg">
           <h1 className="text-xl font-bold mb-4">Wallet Comparison</h1>
           <p className="text-gray-500 mb-4">Unable to find the selected wallets or features.</p>
-          <Button onClick={() => navigate('/')}>Return to Comparison Page</Button>
+          <Button onClick={() => navigate('/')} className="swapido-button">Return to Comparison Page</Button>
         </div>
       </div>
     );
@@ -115,7 +115,7 @@ const WalletComparisonResult = () => {
       <div className="bg-white p-6 shadow rounded-lg">
         <div className="flex flex-col sm:flex-row justify-between items-center mb-6">
           <h1 className="text-xl font-bold mb-2 sm:mb-0">Wallet Comparison</h1>
-          <Button onClick={() => navigate('/')}>Return to Comparison Page</Button>
+          <Button onClick={() => navigate('/')} className="swapido-button">Return to Comparison Page</Button>
         </div>
 
         <div className="grid grid-cols-3 gap-4 mb-6">
@@ -124,14 +124,14 @@ const WalletComparisonResult = () => {
           </div>
           <div className="col-span-1">
             <h2 className="font-medium text-gray-800 text-center">
-              <a href={wallet1.website} target="_blank" rel="noopener noreferrer" className="hover:text-blue-500">
+              <a href={wallet1.website} target="_blank" rel="noopener noreferrer" className="hover:text-primary">
                 {wallet1.name}
               </a>
             </h2>
           </div>
           <div className="col-span-1">
             <h2 className="font-medium text-gray-800 text-center">
-              <a href={wallet2.website} target="_blank" rel="noopener noreferrer" className="hover:text-blue-500">
+              <a href={wallet2.website} target="_blank" rel="noopener noreferrer" className="hover:text-primary">
                 {wallet2.name}
               </a>
             </h2>
