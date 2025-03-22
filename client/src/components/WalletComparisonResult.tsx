@@ -62,7 +62,7 @@ const WalletComparisonResult = () => {
         return (
           <div className="flex items-center">
             <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-green-100 mr-2">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
               </svg>
             </span>
@@ -84,7 +84,7 @@ const WalletComparisonResult = () => {
         return (
           <div className="flex items-center">
             <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-amber-100 mr-2">
-              <span className="text-xs font-medium text-amber-700">P</span>
+              <span className="text-xs font-medium text-amber-600">P</span>
             </span>
             <span>Partial</span>
           </div>
@@ -93,7 +93,7 @@ const WalletComparisonResult = () => {
         return (
           <div className="flex items-center">
             <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-amber-100 mr-2">
-              <span className="text-xs font-medium text-amber-700">C</span>
+              <span className="text-xs font-medium text-amber-600">C</span>
             </span>
             <span>{customText || 'Custom'}</span>
           </div>
