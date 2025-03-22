@@ -9,15 +9,20 @@ const Header = () => {
         <div className="flex justify-between h-16">
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
-              <Link href="/" className="font-bold text-xl text-blue-500">
-                Wallet<span className="text-amber-500">Compare</span>
+              <Link href="/" className="flex items-center">
+                <svg className="h-8 w-8 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="12" fill="#2C8463"/>
+                  <path d="M16.4 10.3c.2-1.3-.8-2-2.2-2.5l.5-1.9-1.1-.3-.5 1.8c-.3-.1-.6-.1-.9-.2l.5-1.8-1.1-.3L11 7l-.7-.2v.1c-1-.2-1.9-.1-2.3.8-.3.7 0 1.1.6 1.7-.4.1-.7.3-.9.7-.3.7 0 1.4.9 1.7 1.2.5 2.2.1 2.5-.9.3-1.1-.7-1.6-1.5-1.9.1 0 .2-.1.2-.1.2.1.3.1.5.2.2.1.3.1.5.2l-.5 1.9 1.1.3.5-1.9c.3.1.6.2.9.3l-.5 1.9 1.1.3.5-1.9c1.4.5 2.4.3 2.6-1.1zm-6.5.8c-.5-1.5 1.9-1.5 2.1-.3.1.5-.3 1.2-2.1.3zm1.7-2.7c-.4-1.4 1.6-1.4 1.8-.2 0 .4-.2 1-1.8.2z" fill="white"/>
+                </svg>
+                <span className="font-bold text-xl text-primary">Swapido</span>
+                <span className="ml-2 font-medium text-gray-600">Wallet Compare</span>
               </Link>
             </div>
             <nav className="ml-6 flex space-x-8" aria-label="Main Navigation">
-              <Link href="/" className={`${location === '/' ? 'border-blue-500 text-gray-900' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'} border-b-2 inline-flex items-center px-1 pt-1 font-medium`}>
+              <Link href="/" className={`${location === '/' ? 'border-primary text-gray-900' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'} border-b-2 inline-flex items-center px-1 pt-1 font-medium`}>
                 Compare
               </Link>
-              <Link href="/about" className={`${location === '/about' ? 'border-blue-500 text-gray-900' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'} border-b-2 inline-flex items-center px-1 pt-1 font-medium`}>
+              <Link href="/about" className={`${location === '/about' ? 'border-primary text-gray-900' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'} border-b-2 inline-flex items-center px-1 pt-1 font-medium`}>
                 About
               </Link>
             </nav>
@@ -25,7 +30,7 @@ const Header = () => {
           <div className="flex items-center">
             <button 
               type="button" 
-              className="inline-flex items-center px-3 py-2 border border-gray-300 shadow-sm text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              className="swapido-button px-3 py-2 text-sm font-medium inline-flex items-center"
               onClick={() => {
                 document.getElementById('help-section')?.scrollIntoView({ behavior: 'smooth' });
               }}

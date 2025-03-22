@@ -135,7 +135,7 @@ const AddWalletModal = ({ isOpen, onClose, walletType }: AddWalletModalProps) =>
             <Button type="button" variant="outline" onClick={onClose} disabled={isSubmitting}>
               Cancel
             </Button>
-            <Button type="submit" disabled={isSubmitting}>
+            <Button type="submit" disabled={isSubmitting} className="swapido-button">
               {isSubmitting ? 'Adding...' : 'Add Wallet'}
             </Button>
           </DialogFooter>
