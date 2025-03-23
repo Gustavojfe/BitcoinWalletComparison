@@ -7,8 +7,6 @@ import {
   DialogHeader,
   DialogTitle,
   DialogFooter,
-  DialogTabs,
-  DialogTab,
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -121,7 +119,7 @@ const AddWalletModal = ({ isOpen, onClose, walletType }: AddWalletModalProps) =>
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[525px]">
         <DialogHeader>
-          <DialogTitle>{activeTab === "add-new" ? "Add New Wallet" : "Hidden Wallets"}</DialogTitle>
+          <DialogTitle>{activeTab === "add-new" ? "Add New Wallet" : "Manage Hidden Wallets"}</DialogTitle>
           <DialogDescription>
             {activeTab === "add-new" 
               ? `Enter the details for the new ${walletType} wallet.`
