@@ -6,20 +6,18 @@
   "logo": "alby",
   "order": 19,
   "features": {
-    "onChain": "partial",
-    "receiveOnChain": "yes",
-    "sendOnChain": "partial",
-    "invoice": "yes",
-    "lnurl": "yes",
-    "lightningAddress": "yes",
-    "bolt11": "yes",
-    "dnsSeeds": "yes",
-    "paymentRouting": "yes",
-    "mpp": "yes",
-    "manageOwnChannels": "partial",
-    "lowIncomingLiquidity": {
-      "value": "custom",
-      "customText": "Account-based"
-    }
+    "platform": ["web"],
+    "openSource": "yes",
+    "kyc": "no",
+    "walletType": "remote_node",
+    "onChainSupport": "partial",
+    "implementation": "lnd",
+    "bolt11Support": "yes",
+    "lnurlSupport": "yes",
+    "lightningAddressSupport": "yes",
+    "bolt12Support": "no",
+    "hrnBlip32Support": "yes",
+    "mppSupport": "yes",
+    "channelManagement": "partial"
   }
 }
