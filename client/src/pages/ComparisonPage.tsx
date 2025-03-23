@@ -37,33 +37,34 @@ const ComparisonPage = () => {
           </>
         ) : (
           <div className="bg-white shadow rounded-lg p-12 text-center my-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Coming Soon</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('comingSoon.title')}</h2>
             <p className="text-lg text-gray-600 mb-6">
-              {activeTab === 'onchain' ? 'On-Chain' : 'Hardware'} wallet comparisons are currently in development.
+              {t('comingSoon.inDevelopment').replace('{type}', t(`common.${activeTab}`))}
             </p>
             <p className="text-md text-gray-500">
-              We're working hard to bring you detailed comparisons of {activeTab === 'onchain' ? 'On-Chain' : 'Hardware'} Bitcoin wallets.
-              Check back soon for updates or explore our Lightning wallet comparisons in the meantime.
+              {t('comingSoon.workingHard').replace('{type}', t(`common.${activeTab}`))}
+              {' '}
+              {t('comingSoon.checkBack')}
             </p>
           </div>
         )}
         
         {/* Help Section */}
         <div id="help-section" className="mt-8 bg-white shadow rounded-lg p-6">
-          <h2 className="text-lg font-medium text-gray-900 mb-4">Help</h2>
+          <h2 className="text-lg font-medium text-gray-900 mb-4">{t('common.help')}</h2>
           <div className="prose prose-sm text-gray-500">
             <p>
-              This comparison page allows you to compare the features of different {activeTab} Bitcoin wallets.
+              {t('help.description').replace('{type}', t(`common.${activeTab}`))}
             </p>
             <ul>
-              <li>Hover over wallet names or feature titles to see detailed descriptions.</li>
-              <li>Click on wallet names to visit their official websites.</li>
-              <li>Use the search box to filter wallets by name or description.</li>
-              <li>Select two wallets in the comparison wizard to see a side-by-side comparison.</li>
-              <li>Use the "Add Wallet" or "Add Feature" buttons to contribute to this comparison.</li>
+              <li>{t('help.hoverTip')}</li>
+              <li>{t('help.clickTip')}</li>
+              <li>{t('help.searchTip')}</li>
+              <li>{t('help.wizardTip')}</li>
+              <li>{t('help.contributeTip')}</li>
             </ul>
             <p>
-              <strong>Legend:</strong>
+              <strong>{t('help.legend')}:</strong>
             </p>
             <ul>
               <li>
@@ -72,7 +73,7 @@ const ComparisonPage = () => {
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                 </span>
-                <span>Feature is fully supported</span>
+                <span>{t('help.supportedFull')}</span>
               </li>
               <li>
                 <span className="inline-flex items-center justify-center h-5 w-5 rounded-full bg-red-100 mr-1">
@@ -80,19 +81,19 @@ const ComparisonPage = () => {
                     <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
                   </svg>
                 </span>
-                <span>Feature is not supported</span>
+                <span>{t('help.supportedNone')}</span>
               </li>
               <li>
                 <span className="inline-flex items-center justify-center h-5 w-5 rounded-full bg-amber-100 mr-1">
                   <span className="text-xs font-medium text-amber-700">P</span>
                 </span>
-                <span>Feature is partially supported</span>
+                <span>{t('help.supportedPartial')}</span>
               </li>
               <li>
                 <span className="inline-flex items-center justify-center h-5 w-5 rounded-full bg-amber-100 mr-1">
                   <span className="text-xs font-medium text-amber-700">...</span>
                 </span>
-                <span>Feature has special implementation or limitations (hover to see details)</span>
+                <span>{t('help.supportedCustom')}</span>
               </li>
             </ul>
           </div>

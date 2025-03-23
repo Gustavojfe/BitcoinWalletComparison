@@ -67,7 +67,28 @@
     "contribution": "Contribution",
     "contributionText": "This project is open-source and community-driven. If you'd like to contribute by adding new wallets, updating information, or translating to other languages, please check out our GitHub repository.",
     "disclaimer": "Disclaimer",
-    "disclaimerText": "The information provided is for educational purposes only. Always do your own research before choosing a wallet to store your bitcoin."
+    "disclaimerText": "The information provided is for educational purposes only. Always do your own research before choosing a wallet to store your bitcoin.",
+    "introText": "Wallet Compare is a project created to help Bitcoin users make informed choices about the wallets they use. Our goal is to provide accurate, up-to-date information about the features and capabilities of various Bitcoin wallets, with a focus on Lightning Network compatibility.",
+    "dataSources": "The data in this comparison is compiled from various sources including:",
+    "officialDocs": "Official wallet documentation",
+    "github": "GitHub repositories and release notes",
+    "userFeedback": "User feedback and testing",
+    "developerComm": "Direct communication with wallet developers",
+    "keepCurrent": "We strive to keep this information current and accurate, but features and capabilities may change as wallets are updated. If you notice any discrepancies or have suggestions for improvement, please reach out to us.",
+    "methodology": "Our Methodology",
+    "methodologyText": "Each wallet is evaluated based on a standard set of criteria, focusing on functionality, security, and usability. We test each feature directly when possible and consult with the developer community to ensure accuracy.",
+    "evaluations": "Our ratings and evaluations are based on objective criteria and do not represent endorsements of any particular wallet. Different wallets excel in different areas, and the \"best\" wallet depends on your specific needs and preferences.",
+    "futurePlans": "Future Plans",
+    "plansText": "We are continuously working to improve Wallet Compare with plans to:",
+    "expandWallets": "Expand our comparison to include more wallets",
+    "addReviews": "Add detailed reviews and user experiences",
+    "metrics": "Integrate social metrics and developer activity indicators",
+    "testing": "Create automated testing for feature verification",
+    "community": "Allow community contributions and verification",
+    "aboutUs": "About Us",
+    "aboutUsText": "We are dedicated to improving the Bitcoin ecosystem through education, research, and development of tools that make Bitcoin more accessible and user-friendly. Wallet Compare is one of our initiatives to help both newcomers and experienced users navigate the growing landscape of Bitcoin wallets.",
+    "contact": "Contact",
+    "contactText": "If you have any questions, feedback, or would like to contribute to this project, please contact us."
   },
   "wizard": {
     "title": "Wallet Comparison Wizard",
@@ -85,5 +106,24 @@
     "terms": "Terms of Service",
     "privacy": "Privacy Policy",
     "community": "Community"
+  },
+  "help": {
+    "description": "This comparison page allows you to compare the features of different {type} Bitcoin wallets.",
+    "hoverTip": "Hover over wallet names or feature titles to see detailed descriptions.",
+    "clickTip": "Click on wallet names to visit their official websites.",
+    "searchTip": "Use the search box to filter wallets by name or description.",
+    "wizardTip": "Select two wallets in the comparison wizard to see a side-by-side comparison.",
+    "contributeTip": "Use the \"Add Wallet\" or \"Add Feature\" buttons to contribute to this comparison.",
+    "legend": "Legend",
+    "supportedFull": "Feature is fully supported",
+    "supportedNone": "Feature is not supported",
+    "supportedPartial": "Feature is partially supported",
+    "supportedCustom": "Feature has special implementation or limitations (hover to see details)"
+  },
+  "comingSoon": {
+    "title": "Coming Soon",
+    "inDevelopment": "{type} wallet comparisons are currently in development.",
+    "workingHard": "We're working hard to bring you detailed comparisons of {type} Bitcoin wallets.",
+    "checkBack": "Check back soon for updates or explore our Lightning wallet comparisons in the meantime."
   }
 }

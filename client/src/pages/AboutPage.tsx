@@ -1,55 +1,50 @@
+import { useLanguage } from '@/hooks/use-language';
+
 const AboutPage = () => {
+  const { t } = useLanguage();
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 mt-8 bg-white shadow rounded-lg">
-      <h2 className="text-2xl font-bold text-gray-900 mb-6">About Wallet Compare</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mb-6">{t('about.title')}</h2>
       <div className="prose prose-blue max-w-none">
         <p>
-          Wallet Compare is a project created to help Bitcoin users make informed choices about the wallets they use.
-          Our goal is to provide accurate, up-to-date information about the features and capabilities of various Bitcoin wallets,
-          with a focus on Lightning Network compatibility.
+          {t('about.introText')}
         </p>
         <p>
-          The data in this comparison is compiled from various sources including:
+          {t('about.dataSources')}
         </p>
         <ul>
-          <li>Official wallet documentation</li>
-          <li>GitHub repositories and release notes</li>
-          <li>User feedback and testing</li>
-          <li>Direct communication with wallet developers</li>
+          <li>{t('about.officialDocs')}</li>
+          <li>{t('about.github')}</li>
+          <li>{t('about.userFeedback')}</li>
+          <li>{t('about.developerComm')}</li>
         </ul>
         <p>
-          We strive to keep this information current and accurate, but features and capabilities may change as wallets are updated.
-          If you notice any discrepancies or have suggestions for improvement, please reach out to us.
+          {t('about.keepCurrent')}
         </p>
-        <h3 className="text-xl font-semibold mt-6 mb-4">Our Methodology</h3>
+        <h3 className="text-xl font-semibold mt-6 mb-4">{t('about.methodology')}</h3>
         <p>
-          Each wallet is evaluated based on a standard set of criteria, focusing on functionality, security, and usability.
-          We test each feature directly when possible and consult with the developer community to ensure accuracy.
+          {t('about.methodologyText')}
         </p>
         <p>
-          Our ratings and evaluations are based on objective criteria and do not represent endorsements of any particular wallet.
-          Different wallets excel in different areas, and the "best" wallet depends on your specific needs and preferences.
+          {t('about.evaluations')}
         </p>
-        <h3 className="text-xl font-semibold mt-6 mb-4">Future Plans</h3>
+        <h3 className="text-xl font-semibold mt-6 mb-4">{t('about.futurePlans')}</h3>
         <p>
-          We are continuously working to improve Wallet Compare with plans to:
+          {t('about.plansText')}
         </p>
         <ul>
-          <li>Expand our comparison to include more wallets</li>
-          <li>Add detailed reviews and user experiences</li>
-          <li>Integrate social metrics and developer activity indicators</li>
-          <li>Create automated testing for feature verification</li>
-          <li>Allow community contributions and verification</li>
+          <li>{t('about.expandWallets')}</li>
+          <li>{t('about.addReviews')}</li>
+          <li>{t('about.metrics')}</li>
+          <li>{t('about.testing')}</li>
+          <li>{t('about.community')}</li>
         </ul>
-        <h3 className="text-xl font-semibold mt-6 mb-4">About Us</h3>
+        <h3 className="text-xl font-semibold mt-6 mb-4">{t('about.aboutUs')}</h3>
         <p>
-          We are dedicated to improving the Bitcoin ecosystem through education, research, and development of tools
-          that make Bitcoin more accessible and user-friendly. Wallet Compare is one of our initiatives to help 
-          both newcomers and experienced users navigate the growing landscape of Bitcoin wallets.
+          {t('about.aboutUsText')}
         </p>
         <p>
-          <strong>Contact:</strong> If you have any questions, feedback, or would like to contribute to this project,
-          please contact us.
+          <strong>{t('about.contact')}:</strong> {t('about.contactText')}
         </p>
       </div>
     </div>

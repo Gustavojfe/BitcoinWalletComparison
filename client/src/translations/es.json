@@ -67,7 +67,28 @@
     "contribution": "Contribución",
     "contributionText": "Este proyecto es de código abierto y está impulsado por la comunidad. Si deseas contribuir añadiendo nuevas carteras, actualizando información o traduciendo a otros idiomas, consulta nuestro repositorio de GitHub.",
     "disclaimer": "Aviso Legal",
-    "disclaimerText": "La información proporcionada es solo para fines educativos. Siempre haz tu propia investigación antes de elegir una cartera para almacenar tus bitcoins."
+    "disclaimerText": "La información proporcionada es solo para fines educativos. Siempre haz tu propia investigación antes de elegir una cartera para almacenar tus bitcoins.",
+    "introText": "Wallet Compare es un proyecto creado para ayudar a los usuarios de Bitcoin a tomar decisiones informadas sobre las carteras que utilizan. Nuestro objetivo es proporcionar información precisa y actualizada sobre las características y capacidades de varias carteras Bitcoin, con un enfoque en la compatibilidad con Lightning Network.",
+    "dataSources": "Los datos en esta comparación se recopilan de varias fuentes, incluyendo:",
+    "officialDocs": "Documentación oficial de carteras",
+    "github": "Repositorios de GitHub y notas de versiones",
+    "userFeedback": "Comentarios y pruebas de usuarios",
+    "developerComm": "Comunicación directa con desarrolladores de carteras",
+    "keepCurrent": "Nos esforzamos por mantener esta información actualizada y precisa, pero las características y capacidades pueden cambiar a medida que se actualizan las carteras. Si notas alguna discrepancia o tienes sugerencias para mejorar, por favor contáctanos.",
+    "methodology": "Nuestra Metodología",
+    "methodologyText": "Cada cartera se evalúa en base a un conjunto estándar de criterios, enfocándose en funcionalidad, seguridad y usabilidad. Probamos cada característica directamente cuando es posible y consultamos con la comunidad de desarrolladores para garantizar la precisión.",
+    "evaluations": "Nuestras calificaciones y evaluaciones se basan en criterios objetivos y no representan respaldos de ninguna cartera en particular. Diferentes carteras sobresalen en diferentes áreas, y la \"mejor\" cartera depende de tus necesidades y preferencias específicas.",
+    "futurePlans": "Planes Futuros",
+    "plansText": "Continuamente trabajamos para mejorar Wallet Compare con planes para:",
+    "expandWallets": "Ampliar nuestra comparación para incluir más carteras",
+    "addReviews": "Añadir reseñas detalladas y experiencias de usuarios",
+    "metrics": "Integrar métricas sociales e indicadores de actividad de desarrollo",
+    "testing": "Crear pruebas automatizadas para verificación de características",
+    "community": "Permitir contribuciones y verificación de la comunidad",
+    "aboutUs": "Sobre Nosotros",
+    "aboutUsText": "Estamos dedicados a mejorar el ecosistema Bitcoin a través de la educación, investigación y desarrollo de herramientas que hacen que Bitcoin sea más accesible y fácil de usar. Wallet Compare es una de nuestras iniciativas para ayudar tanto a los principiantes como a los usuarios experimentados a navegar por el creciente panorama de carteras Bitcoin.",
+    "contact": "Contacto",
+    "contactText": "Si tienes alguna pregunta, comentario o te gustaría contribuir a este proyecto, por favor contáctanos."
   },
   "wizard": {
     "title": "Asistente de Comparación de Carteras",
@@ -85,5 +106,24 @@
     "terms": "Términos de Servicio",
     "privacy": "Política de Privacidad",
     "community": "Comunidad"
+  },
+  "help": {
+    "description": "Esta página de comparación te permite comparar las características de diferentes carteras Bitcoin de {type}.",
+    "hoverTip": "Pasa el cursor sobre los nombres de las carteras o títulos de características para ver descripciones detalladas.",
+    "clickTip": "Haz clic en los nombres de las carteras para visitar sus sitios web oficiales.",
+    "searchTip": "Utiliza la caja de búsqueda para filtrar carteras por nombre o descripción.",
+    "wizardTip": "Selecciona dos carteras en el asistente de comparación para ver una comparación lado a lado.",
+    "contributeTip": "Utiliza los botones \"Añadir Cartera\" o \"Añadir Característica\" para contribuir a esta comparación.",
+    "legend": "Leyenda",
+    "supportedFull": "Característica completamente soportada",
+    "supportedNone": "Característica no soportada",
+    "supportedPartial": "Característica parcialmente soportada",
+    "supportedCustom": "Característica tiene implementación especial o limitaciones (pasa el cursor para ver detalles)"
+  },
+  "comingSoon": {
+    "title": "Próximamente",
+    "inDevelopment": "Las comparaciones de carteras de {type} están actualmente en desarrollo.",
+    "workingHard": "Estamos trabajando arduamente para ofrecerte comparaciones detalladas de carteras Bitcoin de {type}.",
+    "checkBack": "Vuelve pronto para ver actualizaciones o explora nuestras comparaciones de carteras Lightning mientras tanto."
   }
 }
