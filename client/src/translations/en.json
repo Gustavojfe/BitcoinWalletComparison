@@ -1,0 +1,75 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "comingSoon": "Coming Soon",
+    "yes": "Yes",
+    "no": "No",
+    "partial": "Partial",
+    "custom": "Custom",
+    "hide": "Hide",
+    "show": "Show",
+    "search": "Search",
+    "reset": "Reset",
+    "save": "Save",
+    "cancel": "Cancel",
+    "compare": "Compare",
+    "website": "Website"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "comparison": "Comparison"
+  },
+  "walletTypes": {
+    "lightning": "Lightning",
+    "onchain": "On-Chain",
+    "hardware": "Hardware"
+  },
+  "comparisonPage": {
+    "title": "Bitcoin Wallet Comparison",
+    "subtitle": "Compare features across different Bitcoin wallets",
+    "tabInfo": "Select a wallet type to compare",
+    "searchPlaceholder": "Search wallets or features...",
+    "noResults": "No results found",
+    "comingSoonMessage": "This section is coming soon. We are currently focused on Lightning wallets.",
+    "showHiddenWallets": "Show hidden wallets",
+    "showHiddenFeatures": "Show hidden features",
+    "addWallet": "Add wallet",
+    "addFeature": "Add feature",
+    "resetFilters": "Reset filters"
+  },
+  "comparisonTable": {
+    "walletColumn": "Wallet",
+    "featureHeader": "Features"
+  },
+  "hiddenItems": {
+    "walletsTitle": "Hidden Wallets",
+    "featuresTitle": "Hidden Features",
+    "noHiddenWallets": "No hidden wallets",
+    "noHiddenFeatures": "No hidden features",
+    "showAll": "Show all"
+  },
+  "wizard": {
+    "title": "Wallet Comparison Wizard",
+    "selectWallets": "Select wallets to compare",
+    "selectFeatures": "Select features to compare",
+    "compareButton": "Compare Selected Wallets",
+    "resetButton": "Reset Selection",
+    "noWalletsSelected": "Please select at least one wallet to compare",
+    "maxWalletsSelected": "Maximum 3 wallets can be compared at once"
+  },
+  "aboutPage": {
+    "title": "About Bitcoin Wallet Comparison",
+    "subtitle": "Helping you find the right Bitcoin wallet",
+    "purpose": "This tool helps you compare different Bitcoin wallets based on their features so you can find the one that best fits your needs.",
+    "contribute": "This project is open-source. You can contribute by adding new wallets or features through GitHub.",
+    "dataModel": "The data is stored in JSON files, making it easy for anyone to contribute through pull requests.",
+    "disclaimer": "Disclaimer: We strive for accuracy but recommend verifying features on the official wallet websites before making decisions.",
+    "contact": "Questions or suggestions? Open an issue on GitHub."
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "message": "The page you are looking for does not exist.",
+    "backToHome": "Back to Home"
+  }
+}
