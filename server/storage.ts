@@ -240,9 +240,16 @@ export class MemStorage implements IStorage {
           for (const featureDef of featureList) {
             const insertFeature = featureFileToInsertFeature(featureDef);
             const feature = await this.createFeature(insertFeature);
+            // Store both camelCase id (for new wallets) and lowercase id for compatibility
             featureDefinitions.set(featureDef.id, { feature, stringId: featureDef.id });
+            // Also map feature name to snake_case for backward compatibility
+            const snakeCaseId = featureDef.name.toLowerCase().replace(/\s+/g, '_');
+            if (snakeCaseId !== featureDef.id) {
+              featureDefinitions.set(snakeCaseId, { feature, stringId: featureDef.id });
+            }
           }
         }
+        console.log(`Loaded features with IDs: ${Array.from(featureDefinitions.keys()).join(', ')}`);
       } else {
         console.log("No feature files found, initializing with sample data");
         this.loadSampleData();
@@ -267,7 +274,7 @@ export class MemStorage implements IStorage {
                 const walletFeature = createWalletFeature(wallet.id, featureDef.feature.id, featureValue);
                 await this.setWalletFeature(walletFeature);
               } else {
-                console.log(`Feature ${featureId} not found for wallet ${wallet.name}`);
+                console.log(`Feature ${featureId} not found for wallet ${wallet.name}. Available features: ${Array.from(featureDefinitions.keys()).join(', ')}`);
               }
             }
           }
