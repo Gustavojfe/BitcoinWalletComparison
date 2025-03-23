@@ -22,8 +22,8 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
     toggleFeatureVisibility
   } = useVisibility(walletType);
   
-  // Get translation functions
-  const { t, translateFeature, translateWallet } = useLanguage();
+  // Get translation functions and language
+  const { t, translateFeature, translateWallet, language } = useLanguage();
 
   // Fetch wallets with features
   const { data: walletsWithFeatures, isLoading: isWalletsLoading } = useQuery({
@@ -95,9 +95,20 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
       return (
         <div className="flex flex-wrap gap-1 justify-center">
           {platforms.map((platform, index) => {
-            // Get translated platform names
-            const translatedPlatform = t(`features.${platform}`);
-            const displayPlatform = translatedPlatform !== `features.${platform}` ? translatedPlatform : platform;
+            // Handle translations directly based on language
+            let displayPlatform: string;
+            
+            if (language === 'es') {
+              displayPlatform = platform === 'ios' ? 'iOS' : 
+                              platform === 'android' ? 'Android' : 
+                              platform === 'desktop' ? 'Escritorio' : 
+                              platform === 'web' ? 'Web' : platform;
+            } else {
+              displayPlatform = platform === 'ios' ? 'iOS' : 
+                              platform === 'android' ? 'Android' : 
+                              platform === 'desktop' ? 'Desktop' : 
+                              platform === 'web' ? 'Web' : platform;
+            }
             
             // Icon mapping for platforms 
             let textColor = '';
@@ -135,14 +146,20 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
     
     // Handle special value types with consistent styling
     if (['lnd', 'ldk', 'core_lightning', 'eclair'].includes(value)) {
-      // Get translated value
-      const translatedValue = t(`features.${value}`);
-      // Use translated value if it exists, otherwise use the defaults
-      const displayValue = translatedValue !== `features.${value}` ? translatedValue : 
-        value === 'lnd' ? 'LND' :
-        value === 'ldk' ? 'LDK' :
-        value === 'core_lightning' ? 'Core Lightning' :
-        value === 'eclair' ? 'Eclair' : value;
+      // Handle translations directly based on language
+      let displayValue: string;
+      
+      if (language === 'es') {
+        displayValue = value === 'lnd' ? 'LND' :
+                     value === 'ldk' ? 'LDK' :
+                     value === 'core_lightning' ? 'Core Lightning' :
+                     value === 'eclair' ? 'Eclair' : value;
+      } else {
+        displayValue = value === 'lnd' ? 'LND' :
+                     value === 'ldk' ? 'LDK' :
+                     value === 'core_lightning' ? 'Core Lightning' :
+                     value === 'eclair' ? 'Eclair' : value;
+      }
       
       return (
         <span 
@@ -156,15 +173,22 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
     
     // Handle wallet types
     if (['custodial', 'ln_node', 'liquid_swap', 'on_chain_swap', 'remote_node'].includes(value)) {
-      // Get translated value
-      const translatedValue = t(`features.${value}`);
-      // Use translated value if it exists, otherwise use the defaults
-      const displayValue = translatedValue !== `features.${value}` ? translatedValue : 
-        value === 'custodial' ? 'Custodial' : 
-        value === 'ln_node' ? 'LN Node' : 
-        value === 'liquid_swap' ? 'Liquid Swap' : 
-        value === 'on_chain_swap' ? 'On-Chain Swap' : 
-        value === 'remote_node' ? 'Remote Node' : value;
+      // Handle translations directly based on language
+      let displayValue: string;
+      
+      if (language === 'es') {
+        displayValue = value === 'custodial' ? 'Custodial' : 
+                     value === 'ln_node' ? 'Nodo LN' : 
+                     value === 'liquid_swap' ? 'Intercambio Liquid' : 
+                     value === 'on_chain_swap' ? 'Intercambio On-Chain' : 
+                     value === 'remote_node' ? 'Nodo Remoto' : value;
+      } else {
+        displayValue = value === 'custodial' ? 'Custodial' : 
+                     value === 'ln_node' ? 'LN Node' : 
+                     value === 'liquid_swap' ? 'Liquid Swap' : 
+                     value === 'on_chain_swap' ? 'On-Chain Swap' : 
+                     value === 'remote_node' ? 'Remote Node' : value;
+      }
       
       return (
         <span 
@@ -218,46 +242,64 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
           </span>
         );
       case 'custom':
+        // Handle translations directly based on language
+        let customDisplay = language === 'es' ? 'Personalizado' : 'Custom';
+        let customTitle = language === 'es' ? 
+            (customText || 'La característica tiene implementación especial o limitaciones') : 
+            (customText || 'Feature has special implementation or limitations');
+        
         return (
           <span 
             className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-orange-100"
-            title={customText || t('help.supportedCustom')}
+            title={customTitle}
           >
             <span className="text-xs font-medium text-orange-600">
-              {customText || t('features.custom')}
+              {customText || customDisplay}
             </span>
           </span>
         );
       case 'send_only':
+        // Handle translations directly based on language
+        let sendOnlyTitle = language === 'es' ? 'Solo envío' : 'Send only';
+        let sendDisplay = language === 'es' ? 'Enviar' : 'Send';
+        
         return (
           <span 
             className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-amber-100"
-            title={t('features.send_only')}
+            title={sendOnlyTitle}
           >
             <span className="text-xs font-medium text-amber-600">
-              {t('features.send')}
+              {sendDisplay}
             </span>
           </span>
         );
       case 'receive_only':
+        // Handle translations directly based on language
+        let receiveOnlyTitle = language === 'es' ? 'Solo recepción' : 'Receive only';
+        let receiveDisplay = language === 'es' ? 'Recibir' : 'Receive';
+        
         return (
           <span 
             className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-amber-100"
-            title={t('features.receive_only')}
+            title={receiveOnlyTitle}
           >
             <span className="text-xs font-medium text-amber-600">
-              {t('features.receive')}
+              {receiveDisplay}
             </span>
           </span>
         );
       case 'mandatory':
+        // Handle translations directly based on language
+        let mandatoryTitle = language === 'es' ? 'Obligatorio' : 'Mandatory';
+        let requiredDisplay = language === 'es' ? 'Requerido' : 'Required';
+        
         return (
           <span 
             className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-orange-100"
-            title={t('features.mandatory')}
+            title={mandatoryTitle}
           >
             <span className="text-xs font-medium text-orange-600">
-              {t('features.required')}
+              {requiredDisplay}
             </span>
           </span>
         );
