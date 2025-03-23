@@ -23,7 +23,8 @@
     "selectTwoWallets": "Please select two wallets to compare.",
     "invalidSelection": "Invalid Selection",
     "selectDifferentWallets": "Please select two different wallets to compare.",
-    "return": "Return to Comparison Page"
+    "return": "Return to Comparison Page",
+    "selectWallet": "Select a wallet"
   },
   "header": {
     "title": "Bitcoin Wallet Comparison",

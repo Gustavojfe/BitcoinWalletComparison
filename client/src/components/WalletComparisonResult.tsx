@@ -116,13 +116,13 @@ const WalletComparisonResult = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
       <div className="bg-white p-6 shadow rounded-lg">
         <div className="flex flex-col sm:flex-row justify-between items-center mb-6">
-          <h1 className="text-xl font-bold mb-2 sm:mb-0">Wallet Comparison</h1>
-          <Button onClick={() => navigate('/')} className="app-button">Return to Comparison Page</Button>
+          <h1 className="text-xl font-bold mb-2 sm:mb-0">{t('wizard.comparisonResult')}</h1>
+          <Button onClick={() => navigate('/')} className="app-button">{t('common.return')}</Button>
         </div>
 
         <div className="grid grid-cols-3 gap-4 mb-6">
           <div className="col-span-1">
-            <h2 className="font-medium text-gray-800">Feature</h2>
+            <h2 className="font-medium text-gray-800">{t('wizard.feature')}</h2>
           </div>
           <div className="col-span-1">
             <h2 className="font-medium text-gray-800 text-center">
