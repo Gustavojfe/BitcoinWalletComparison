@@ -1,0 +1,25 @@
+{
+  "name": "Bitkit",
+  "website": "https://bitkit.app/",
+  "description": "A non-custodial Bitcoin and Lightning wallet designed for simplicity with advanced security features.",
+  "type": "lightning",
+  "logo": "bitkit",
+  "order": 10,
+  "features": {
+    "onChain": "yes",
+    "receiveOnChain": "yes",
+    "sendOnChain": "yes",
+    "invoice": "yes",
+    "lnurl": "yes",
+    "lightningAddress": "yes",
+    "bolt11": "yes",
+    "dnsSeeds": "yes",
+    "paymentRouting": "yes",
+    "mpp": "yes",
+    "manageOwnChannels": "no",
+    "lowIncomingLiquidity": {
+      "value": "custom",
+      "customText": "Automatic"
+    }
+  }
+}

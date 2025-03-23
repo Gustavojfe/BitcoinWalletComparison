@@ -1,0 +1,25 @@
+{
+  "name": "Blixt",
+  "website": "https://blixtwallet.github.io/",
+  "description": "An open-source, non-custodial Lightning Network wallet for Bitcoin with advanced features.",
+  "type": "lightning",
+  "logo": "blixt",
+  "order": 16,
+  "features": {
+    "onChain": "yes",
+    "receiveOnChain": "yes",
+    "sendOnChain": "yes",
+    "invoice": "yes",
+    "lnurl": "yes",
+    "lightningAddress": "yes",
+    "bolt11": "yes",
+    "dnsSeeds": "yes",
+    "paymentRouting": "yes",
+    "mpp": "yes",
+    "manageOwnChannels": "yes",
+    "lowIncomingLiquidity": {
+      "value": "custom",
+      "customText": "Manual"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Speed",
+  "website": "https://speed.money/",
+  "description": "A fast, simple Lightning Network wallet focused on providing quick Bitcoin payments.",
+  "type": "lightning",
+  "logo": "speed",
+  "order": 12,
+  "features": {
+    "onChain": "yes",
+    "receiveOnChain": "yes",
+    "sendOnChain": "yes",
+    "invoice": "yes",
+    "lnurl": "yes",
+    "lightningAddress": "yes",
+    "bolt11": "yes",
+    "dnsSeeds": "yes",
+    "paymentRouting": "yes",
+    "mpp": "yes",
+    "manageOwnChannels": "no",
+    "lowIncomingLiquidity": {
+      "value": "custom",
+      "customText": "Custodial"
+    }
+  }
+}

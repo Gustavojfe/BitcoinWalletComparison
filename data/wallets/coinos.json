@@ -1,0 +1,25 @@
+{
+  "name": "Coinos",
+  "website": "https://coinos.io/",
+  "description": "An open-source web wallet platform supporting Bitcoin, Lightning Network, and Liquid transactions.",
+  "type": "lightning",
+  "logo": "coinos",
+  "order": 11,
+  "features": {
+    "onChain": "yes",
+    "receiveOnChain": "yes",
+    "sendOnChain": "yes",
+    "invoice": "yes",
+    "lnurl": "yes",
+    "lightningAddress": "yes",
+    "bolt11": "yes",
+    "dnsSeeds": "yes",
+    "paymentRouting": "yes",
+    "mpp": "yes",
+    "manageOwnChannels": "partial",
+    "lowIncomingLiquidity": {
+      "value": "custom",
+      "customText": "Hosted"
+    }
+  }
+}

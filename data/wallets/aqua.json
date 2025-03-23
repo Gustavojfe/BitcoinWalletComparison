@@ -1,0 +1,25 @@
+{
+  "name": "Aqua",
+  "website": "https://aquawallet.io/",
+  "description": "A user-friendly Bitcoin and Lightning wallet with a focus on ease of use and secure self-custody.",
+  "type": "lightning",
+  "logo": "aqua",
+  "order": 9,
+  "features": {
+    "onChain": "yes",
+    "receiveOnChain": "yes",
+    "sendOnChain": "yes",
+    "invoice": "yes",
+    "lnurl": "yes",
+    "lightningAddress": "yes",
+    "bolt11": "yes",
+    "dnsSeeds": "yes",
+    "paymentRouting": "yes",
+    "mpp": "yes",
+    "manageOwnChannels": "no",
+    "lowIncomingLiquidity": {
+      "value": "custom",
+      "customText": "Automatic"
+    }
+  }
+}

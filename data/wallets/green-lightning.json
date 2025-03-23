@@ -1,0 +1,25 @@
+{
+  "name": "Green",
+  "website": "https://blockstream.com/green/",
+  "description": "Blockstream's Green wallet with integrated Lightning Network functionality for fast Bitcoin transactions.",
+  "type": "lightning",
+  "logo": "green",
+  "order": 15,
+  "features": {
+    "onChain": "yes",
+    "receiveOnChain": "yes",
+    "sendOnChain": "yes",
+    "invoice": "yes",
+    "lnurl": "yes",
+    "lightningAddress": "partial",
+    "bolt11": "yes",
+    "dnsSeeds": "yes",
+    "paymentRouting": "yes",
+    "mpp": "yes",
+    "manageOwnChannels": "no",
+    "lowIncomingLiquidity": {
+      "value": "custom",
+      "customText": "Greenlight"
+    }
+  }
+}
