@@ -137,32 +137,75 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
     
     // Handle special value types with consistent styling
     if (['lnd', 'ldk', 'core_lightning', 'eclair'].includes(value)) {
+      // Get the translated display values directly from the translations
+      let displayValue = '';
+      switch(value) {
+        case 'lnd': 
+          displayValue = 'LND'; 
+          break;
+        case 'ldk': 
+          displayValue = 'LDK'; 
+          break;
+        case 'core_lightning': 
+          displayValue = 'Core Lightning'; 
+          break;
+        case 'eclair': 
+          displayValue = 'Eclair'; 
+          break;
+        default: 
+          displayValue = value;
+      }
+      
+      // Try to get translation, fall back to default if not found
+      const translatedValue = t(`features.${value}`) !== `features.${value}` 
+        ? t(`features.${value}`) 
+        : displayValue;
+      
       return (
         <span 
           className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-blue-100 text-blue-600"
-          title={value}
+          title={translatedValue}
         >
-          <span className="text-xs font-medium">{value}</span>
+          <span className="text-xs font-medium">{translatedValue}</span>
         </span>
       );
     }
     
     // Handle wallet types
     if (['custodial', 'ln_node', 'liquid_swap', 'on_chain_swap', 'remote_node'].includes(value)) {
-      const displayMap: Record<string, string> = {
-        'custodial': t('features.custodial'),
-        'ln_node': t('features.ln_node'),
-        'liquid_swap': t('features.liquid_swap'),
-        'on_chain_swap': t('features.on_chain_swap'),
-        'remote_node': t('features.remote_node')
-      };
+      // Get the translated display values directly from the translations
+      let displayValue = '';
+      switch(value) {
+        case 'custodial': 
+          displayValue = 'Custodial'; 
+          break;
+        case 'ln_node': 
+          displayValue = 'LN Node'; 
+          break;
+        case 'liquid_swap': 
+          displayValue = 'Liquid Swap'; 
+          break;
+        case 'on_chain_swap': 
+          displayValue = 'On-Chain Swap'; 
+          break;
+        case 'remote_node': 
+          displayValue = 'Remote Node'; 
+          break;
+        default: 
+          displayValue = value;
+      }
+      
+      // Try to get translation, fall back to default if not found
+      const translatedValue = t(`features.${value}`) !== `features.${value}` 
+        ? t(`features.${value}`) 
+        : displayValue;
       
       return (
         <span 
           className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-purple-100 text-purple-600"
-          title={displayMap[value] || value}
+          title={translatedValue}
         >
-          <span className="text-xs font-medium">{displayMap[value] || value}</span>
+          <span className="text-xs font-medium">{translatedValue}</span>
         </span>
       );
     }
