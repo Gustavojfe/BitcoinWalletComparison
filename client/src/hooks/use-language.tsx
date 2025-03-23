@@ -76,9 +76,6 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
 
   // Wallet translation function
   const translateWallet = (wallet: Wallet) => {
-    // For debugging - log the wallet name and translation path
-    console.log(`Translating wallet: ${wallet.name}, path: wallets.${wallet.name}.name`);
-    
     // Look up translation by wallet name exactly as it appears in the data files
     const translatedName = getTranslation(language, `wallets.${wallet.name}.name`) || wallet.name;
     const translatedDescription = getTranslation(language, `wallets.${wallet.name}.description`) || wallet.description;

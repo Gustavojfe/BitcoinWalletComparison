@@ -95,6 +95,10 @@
     "Exodus": {
       "name": "Exodus",
       "description": "Una cartera multimoneda con capacidades Lightning integradas para transacciones Bitcoin."
+    },
+    "Blitz": {
+      "name": "Blitz",
+      "description": "Una cartera Lightning de código abierto con soporte para características avanzadas y auto-custodia."
     }
   }
 }

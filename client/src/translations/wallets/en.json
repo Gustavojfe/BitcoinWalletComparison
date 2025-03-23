@@ -95,6 +95,10 @@
     "Exodus": {
       "name": "Exodus",
       "description": "A multi-currency wallet with integrated Lightning capabilities for Bitcoin transactions."
+    },
+    "Blitz": {
+      "name": "Blitz",
+      "description": "An open-source Lightning Network wallet with support for advanced features and self-custody."
     }
   }
 }
