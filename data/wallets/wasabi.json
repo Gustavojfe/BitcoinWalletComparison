@@ -1,0 +1,22 @@
+{
+  "name": "Wasabi",
+  "website": "https://wasabiwallet.io/",
+  "description": "A privacy-focused desktop Bitcoin wallet with built-in CoinJoin functionality for enhanced transaction privacy.",
+  "type": "onchain",
+  "logo": "wasabi",
+  "order": 24,
+  "features": {
+    "onChain": "yes",
+    "receiveOnChain": "yes",
+    "sendOnChain": "yes",
+    "invoice": "no",
+    "lnurl": "no",
+    "lightningAddress": "no",
+    "bolt11": "no",
+    "dnsSeeds": "no",
+    "paymentRouting": "no",
+    "mpp": "no",
+    "manageOwnChannels": "no",
+    "lowIncomingLiquidity": "no"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Edge",
+  "website": "https://edge.app/",
+  "description": "A mobile cryptocurrency wallet with Bitcoin support, featuring user-friendly security and in-app exchange functionality.",
+  "type": "onchain",
+  "logo": "edge",
+  "order": 25,
+  "features": {
+    "onChain": "yes",
+    "receiveOnChain": "yes",
+    "sendOnChain": "yes",
+    "invoice": "no",
+    "lnurl": "no",
+    "lightningAddress": "no",
+    "bolt11": "no",
+    "dnsSeeds": "no",
+    "paymentRouting": "no",
+    "mpp": "no",
+    "manageOwnChannels": "no",
+    "lowIncomingLiquidity": "no"
+  }
+}

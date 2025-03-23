@@ -1,0 +1,22 @@
+{
+  "name": "Coldcard",
+  "website": "https://coldcard.com/",
+  "description": "An air-gapped hardware wallet focused on security with features like PIN protection and tamper-evident packaging.",
+  "type": "hardware",
+  "logo": "coldcard",
+  "order": 18,
+  "features": {
+    "onChain": "yes",
+    "receiveOnChain": "yes",
+    "sendOnChain": "yes",
+    "invoice": "no",
+    "lnurl": "no",
+    "lightningAddress": "no",
+    "bolt11": "no",
+    "dnsSeeds": "no",
+    "paymentRouting": "no",
+    "mpp": "no",
+    "manageOwnChannels": "no",
+    "lowIncomingLiquidity": "no"
+  }
+}

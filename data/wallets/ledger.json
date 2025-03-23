@@ -1,0 +1,22 @@
+{
+  "name": "Ledger",
+  "website": "https://www.ledger.com/",
+  "description": "A secure hardware wallet for Bitcoin and other cryptocurrencies, offering cold storage with a user-friendly interface.",
+  "type": "hardware",
+  "logo": "ledger",
+  "order": 17,
+  "features": {
+    "onChain": "yes",
+    "receiveOnChain": "yes",
+    "sendOnChain": "yes",
+    "invoice": "no",
+    "lnurl": "no",
+    "lightningAddress": "no",
+    "bolt11": "no",
+    "dnsSeeds": "no",
+    "paymentRouting": "no",
+    "mpp": "no",
+    "manageOwnChannels": "no",
+    "lowIncomingLiquidity": "no"
+  }
+}

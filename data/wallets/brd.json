@@ -1,0 +1,22 @@
+{
+  "name": "BRD",
+  "website": "https://brd.com/",
+  "description": "A simple, secure mobile Bitcoin wallet with an emphasis on user experience and accessibility.",
+  "type": "onchain",
+  "logo": "brd",
+  "order": 26,
+  "features": {
+    "onChain": "yes",
+    "receiveOnChain": "yes",
+    "sendOnChain": "yes",
+    "invoice": "no",
+    "lnurl": "no",
+    "lightningAddress": "no",
+    "bolt11": "no",
+    "dnsSeeds": "no",
+    "paymentRouting": "no",
+    "mpp": "no",
+    "manageOwnChannels": "no",
+    "lowIncomingLiquidity": "no"
+  }
+}
