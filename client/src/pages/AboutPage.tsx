@@ -3,9 +3,9 @@ import { useLanguage } from '@/hooks/use-language';
 const AboutPage = () => {
   const { t } = useLanguage();
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 mt-8 bg-white shadow rounded-lg">
-      <h2 className="text-2xl font-bold text-gray-900 mb-6">{t('about.title')}</h2>
-      <div className="prose prose-blue max-w-none">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 mt-8 bg-card shadow rounded-lg">
+      <h2 className="text-2xl font-bold text-card-foreground mb-6">{t('about.title')}</h2>
+      <div className="prose prose-blue dark:prose-invert max-w-none">
         <p>
           {t('about.introText')}
         </p>

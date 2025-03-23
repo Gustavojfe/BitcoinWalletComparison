@@ -74,7 +74,7 @@ const HiddenWalletsModal = ({ isOpen, onClose, walletType }: HiddenWalletsModalP
         {isWalletsLoading ? (
           <div className="text-center py-6">{t('table.loadingWallets')}</div>
         ) : hiddenWallets.length === 0 ? (
-          <div className="text-center py-6 text-gray-500">
+          <div className="text-center py-6 text-muted-foreground">
             {t('hidden.noHiddenWallets')}
           </div>
         ) : (
@@ -82,11 +82,11 @@ const HiddenWalletsModal = ({ isOpen, onClose, walletType }: HiddenWalletsModalP
             {hiddenWallets.map(wallet => (
               <div 
                 key={wallet.id} 
-                className="flex items-center justify-between p-3 border rounded-md hover:bg-gray-50"
+                className="flex items-center justify-between p-3 border border-border rounded-md hover:bg-accent"
               >
                 <div>
-                  <div className="font-medium">{wallet.name}</div>
-                  <div className="text-sm text-gray-500 truncate max-w-xs">
+                  <div className="font-medium text-foreground">{wallet.name}</div>
+                  <div className="text-sm text-muted-foreground truncate max-w-xs">
                     {wallet.description.length > 60 
                       ? wallet.description.substring(0, 60) + '...' 
                       : wallet.description
