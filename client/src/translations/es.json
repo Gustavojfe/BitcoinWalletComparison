@@ -24,7 +24,13 @@
     "invalidSelection": "Selección Inválida",
     "selectDifferentWallets": "Por favor selecciona dos carteras diferentes para comparar.",
     "return": "Volver a la Página de Comparación",
-    "selectWallet": "Selecciona una cartera"
+    "selectWallet": "Selecciona una cartera",
+    "toggleTheme": "Cambiar tema"
+  },
+  "theme": {
+    "light": "Claro",
+    "dark": "Oscuro",
+    "system": "Sistema"
   },
   "header": {
     "title": "Comparación de Carteras Bitcoin",

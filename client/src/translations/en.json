@@ -24,7 +24,13 @@
     "invalidSelection": "Invalid Selection",
     "selectDifferentWallets": "Please select two different wallets to compare.",
     "return": "Return to Comparison Page",
-    "selectWallet": "Select a wallet"
+    "selectWallet": "Select a wallet",
+    "toggleTheme": "Toggle theme"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
   },
   "header": {
     "title": "Bitcoin Wallet Comparison",
