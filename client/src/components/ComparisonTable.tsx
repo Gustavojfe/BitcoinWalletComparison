@@ -95,39 +95,37 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
       return (
         <div className="flex flex-wrap gap-1 justify-center">
           {platforms.map((platform, index) => {
-            // Icon mapping for platforms
-            let icon = null;
-            let title = '';
+            // Get translated platform names
+            const translatedPlatform = t(`features.${platform}`);
+            const displayPlatform = translatedPlatform !== `features.${platform}` ? translatedPlatform : platform;
+            
+            // Icon mapping for platforms 
+            let textColor = '';
             
             switch (platform) {
               case 'ios':
-                icon = <span className="text-xs font-medium text-blue-500">iOS</span>;
-                title = 'iOS';
+                textColor = 'text-blue-500';
                 break;
               case 'android':
-                icon = <span className="text-xs font-medium text-green-600">Android</span>;
-                title = 'Android';
+                textColor = 'text-green-600';
                 break;
               case 'desktop':
-                icon = <span className="text-xs font-medium text-purple-600">Desktop</span>;
-                title = 'Desktop';
+                textColor = 'text-purple-600';
                 break;
               case 'web':
-                icon = <span className="text-xs font-medium text-amber-600">Web</span>;
-                title = 'Web';
+                textColor = 'text-amber-600';
                 break;
               default:
-                icon = <span className="text-xs font-medium text-gray-600">{platform}</span>;
-                title = platform;
+                textColor = 'text-gray-600';
             }
             
             return (
               <span 
                 key={index}
                 className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-primary/10"
-                title={title}
+                title={displayPlatform}
               >
-                {icon}
+                <span className={`text-xs font-medium ${textColor}`}>{displayPlatform}</span>
               </span>
             );
           })}
@@ -137,75 +135,43 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
     
     // Handle special value types with consistent styling
     if (['lnd', 'ldk', 'core_lightning', 'eclair'].includes(value)) {
-      // Get the translated display values directly from the translations
-      let displayValue = '';
-      switch(value) {
-        case 'lnd': 
-          displayValue = 'LND'; 
-          break;
-        case 'ldk': 
-          displayValue = 'LDK'; 
-          break;
-        case 'core_lightning': 
-          displayValue = 'Core Lightning'; 
-          break;
-        case 'eclair': 
-          displayValue = 'Eclair'; 
-          break;
-        default: 
-          displayValue = value;
-      }
-      
-      // Try to get translation, fall back to default if not found
-      const translatedValue = t(`features.${value}`) !== `features.${value}` 
-        ? t(`features.${value}`) 
-        : displayValue;
+      // Get translated value
+      const translatedValue = t(`features.${value}`);
+      // Use translated value if it exists, otherwise use the defaults
+      const displayValue = translatedValue !== `features.${value}` ? translatedValue : 
+        value === 'lnd' ? 'LND' :
+        value === 'ldk' ? 'LDK' :
+        value === 'core_lightning' ? 'Core Lightning' :
+        value === 'eclair' ? 'Eclair' : value;
       
       return (
         <span 
           className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-blue-100 text-blue-600"
-          title={translatedValue}
+          title={displayValue}
         >
-          <span className="text-xs font-medium">{translatedValue}</span>
+          <span className="text-xs font-medium">{displayValue}</span>
         </span>
       );
     }
     
     // Handle wallet types
     if (['custodial', 'ln_node', 'liquid_swap', 'on_chain_swap', 'remote_node'].includes(value)) {
-      // Get the translated display values directly from the translations
-      let displayValue = '';
-      switch(value) {
-        case 'custodial': 
-          displayValue = 'Custodial'; 
-          break;
-        case 'ln_node': 
-          displayValue = 'LN Node'; 
-          break;
-        case 'liquid_swap': 
-          displayValue = 'Liquid Swap'; 
-          break;
-        case 'on_chain_swap': 
-          displayValue = 'On-Chain Swap'; 
-          break;
-        case 'remote_node': 
-          displayValue = 'Remote Node'; 
-          break;
-        default: 
-          displayValue = value;
-      }
-      
-      // Try to get translation, fall back to default if not found
-      const translatedValue = t(`features.${value}`) !== `features.${value}` 
-        ? t(`features.${value}`) 
-        : displayValue;
+      // Get translated value
+      const translatedValue = t(`features.${value}`);
+      // Use translated value if it exists, otherwise use the defaults
+      const displayValue = translatedValue !== `features.${value}` ? translatedValue : 
+        value === 'custodial' ? 'Custodial' : 
+        value === 'ln_node' ? 'LN Node' : 
+        value === 'liquid_swap' ? 'Liquid Swap' : 
+        value === 'on_chain_swap' ? 'On-Chain Swap' : 
+        value === 'remote_node' ? 'Remote Node' : value;
       
       return (
         <span 
           className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-purple-100 text-purple-600"
-          title={translatedValue}
+          title={displayValue}
         >
-          <span className="text-xs font-medium">{translatedValue}</span>
+          <span className="text-xs font-medium">{displayValue}</span>
         </span>
       );
     }
@@ -229,7 +195,7 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
         return (
           <span 
             className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-destructive/20"
-            title={t('help.supportedNone')}
+            title={notPossibleTitle}
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-destructive" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -242,9 +208,11 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
         return (
           <span 
             className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-orange-500/20"
-            title={value === 'partial' ? t('help.supportedPartial') : partialTitle}
+            title={partialTitle}
           >
-            <span className="text-xs font-medium text-orange-500">{value === 'partial' ? 'P' : 'O'}</span>
+            <span className="text-xs font-medium text-orange-500">
+              {value === 'partial' ? 'P' : 'O'}
+            </span>
           </span>
         );
       case 'custom':
@@ -253,7 +221,9 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
             className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-orange-100"
             title={customText || t('help.supportedCustom')}
           >
-            <span className="text-xs font-medium text-orange-600">{customText || t('features.custom')}</span>
+            <span className="text-xs font-medium text-orange-600">
+              {customText || t('features.custom')}
+            </span>
           </span>
         );
       case 'send_only':
@@ -262,7 +232,9 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
             className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-amber-100"
             title={t('features.send_only')}
           >
-            <span className="text-xs font-medium text-amber-600">{t('features.send')}</span>
+            <span className="text-xs font-medium text-amber-600">
+              {t('features.send')}
+            </span>
           </span>
         );
       case 'receive_only':
@@ -271,7 +243,9 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
             className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-amber-100"
             title={t('features.receive_only')}
           >
-            <span className="text-xs font-medium text-amber-600">{t('features.receive')}</span>
+            <span className="text-xs font-medium text-amber-600">
+              {t('features.receive')}
+            </span>
           </span>
         );
       case 'mandatory':
@@ -280,7 +254,9 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
             className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-orange-100"
             title={t('features.mandatory')}
           >
-            <span className="text-xs font-medium text-orange-600">{t('features.required')}</span>
+            <span className="text-xs font-medium text-orange-600">
+              {t('features.required')}
+            </span>
           </span>
         );
       default:
