@@ -1,0 +1,28 @@
+{
+  "name": "Phoenix",
+  "website": "https://phoenix.acinq.co/",
+  "description": "A self-custodial Lightning Network wallet by ACINQ with simplified channel management.",
+  "type": "lightning",
+  "logo": "phoenix",
+  "order": 1,
+  "features": {
+    "onChain": "yes",
+    "receiveOnChain": "yes",
+    "sendOnChain": "yes",
+    "invoice": "yes",
+    "lnurl": "partial",
+    "lightningAddress": "no",
+    "bolt11": "yes",
+    "dnsSeeds": "yes",
+    "paymentRouting": "yes",
+    "mpp": "yes",
+    "manageOwnChannels": {
+      "value": "custom",
+      "customText": "Built-in"
+    },
+    "lowIncomingLiquidity": {
+      "value": "custom",
+      "customText": "Auto"
+    }
+  }
+}

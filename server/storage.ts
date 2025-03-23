@@ -203,8 +203,169 @@ export class MemStorage implements IStorage {
     return this.walletFeatures.delete(id);
   }
 
-  // Initialize sample data
+  // Initialize data from JSON files
   private async initializeSampleData() {
+    // For now, we'll still include a fallback to sample data if no files are found
+    
+    // Try to load from JSON files first
+    const {
+      getWalletFiles,
+      getFeatureFiles,
+      loadWalletFromFile,
+      loadFeaturesFromFile,
+      walletFileToInsertWallet,
+      featureFileToInsertFeature,
+      createWalletFeature
+    } = await import('./data-loader');
+    
+    // Load features from files
+    const featureFiles = getFeatureFiles();
+    const featureDefinitions = new Map<string, { feature: Feature, stringId: string }>();
+    
+    if (featureFiles.length > 0) {
+      for (const filePath of featureFiles) {
+        const featureList = loadFeaturesFromFile(filePath);
+        for (const featureDef of featureList) {
+          const insertFeature = featureFileToInsertFeature(featureDef);
+          const feature = await this.createFeature(insertFeature);
+          featureDefinitions.set(featureDef.id, { feature, stringId: featureDef.id });
+        }
+      }
+    } else {
+      // Fallback to sample features if no files found
+      await this.loadSampleFeatures(featureDefinitions);
+    }
+    
+    // Load wallets from files
+    const walletFiles = getWalletFiles();
+    const walletMap = new Map<string, Wallet>();
+    
+    if (walletFiles.length > 0) {
+      for (const filePath of walletFiles) {
+        const walletData = loadWalletFromFile(filePath);
+        if (walletData) {
+          const insertWallet = walletFileToInsertWallet(walletData);
+          const wallet = await this.createWallet(insertWallet);
+          walletMap.set(wallet.name, wallet);
+          
+          // Create wallet feature relationships
+          for (const [featureId, featureValue] of Object.entries(walletData.features)) {
+            const featureDef = featureDefinitions.get(featureId);
+            if (featureDef) {
+              const walletFeature = createWalletFeature(wallet.id, featureDef.feature.id, featureValue);
+              await this.setWalletFeature(walletFeature);
+            }
+          }
+        }
+      }
+    } else {
+      // Fallback to sample wallets if no files found
+      await this.loadSampleWallets(featureDefinitions);
+    }
+  }
+  
+  // Load sample features if no JSON files are found
+  private async loadSampleFeatures(featureMap: Map<string, { feature: Feature, stringId: string }>) {
+    // Add Lightning features
+    const onChain = await this.createFeature({
+      name: "On-Chain",
+      description: "The ability to send and receive on-chain Bitcoin transactions.",
+      type: "lightning",
+      order: 1
+    });
+    featureMap.set("onChain", { feature: onChain, stringId: "onChain" });
+    
+    const receiveOnChain = await this.createFeature({
+      name: "Receive On-Chain",
+      description: "The ability to generate addresses and receive on-chain Bitcoin.",
+      type: "lightning",
+      order: 2
+    });
+    featureMap.set("receiveOnChain", { feature: receiveOnChain, stringId: "receiveOnChain" });
+    
+    const sendOnChain = await this.createFeature({
+      name: "Send On-Chain",
+      description: "The ability to send Bitcoin through on-chain transactions.",
+      type: "lightning",
+      order: 3
+    });
+    featureMap.set("sendOnChain", { feature: sendOnChain, stringId: "sendOnChain" });
+    
+    const invoice = await this.createFeature({
+      name: "Invoice",
+      description: "Create and manage Lightning Network invoices for receiving payments.",
+      type: "lightning",
+      order: 4
+    });
+    featureMap.set("invoice", { feature: invoice, stringId: "invoice" });
+    
+    const lnurl = await this.createFeature({
+      name: "LNURL(s)",
+      description: "Support for different LNURL protocols like LNURL-pay, LNURL-withdraw, etc.",
+      type: "lightning",
+      order: 5
+    });
+    featureMap.set("lnurl", { feature: lnurl, stringId: "lnurl" });
+    
+    const lightningAddress = await this.createFeature({
+      name: "Lightning Address",
+      description: "Support for Lightning Addresses in the format user@domain.com.",
+      type: "lightning",
+      order: 6
+    });
+    featureMap.set("lightningAddress", { feature: lightningAddress, stringId: "lightningAddress" });
+    
+    const bolt11 = await this.createFeature({
+      name: "BoltII",
+      description: "Implementation of the BOLT 11 specification for Lightning payments.",
+      type: "lightning",
+      order: 7
+    });
+    featureMap.set("bolt11", { feature: bolt11, stringId: "bolt11" });
+    
+    const dnsSeeds = await this.createFeature({
+      name: "DNS (Seeds)",
+      description: "Use of DNS seeds for finding Lightning Network nodes.",
+      type: "lightning",
+      order: 8
+    });
+    featureMap.set("dnsSeeds", { feature: dnsSeeds, stringId: "dnsSeeds" });
+    
+    const paymentRouting = await this.createFeature({
+      name: "Payment Routing",
+      description: "Ability to route payments through the Lightning Network.",
+      type: "lightning",
+      order: 9
+    });
+    featureMap.set("paymentRouting", { feature: paymentRouting, stringId: "paymentRouting" });
+    
+    const mpp = await this.createFeature({
+      name: "MPP",
+      description: "Multi-Path Payments: splitting payments across multiple Lightning channels.",
+      type: "lightning",
+      order: 10
+    });
+    featureMap.set("mpp", { feature: mpp, stringId: "mpp" });
+    
+    const manageOwnChannels = await this.createFeature({
+      name: "Manage Own Channels",
+      description: "Ability for users to create and manage their own Lightning channels.",
+      type: "lightning",
+      order: 11
+    });
+    featureMap.set("manageOwnChannels", { feature: manageOwnChannels, stringId: "manageOwnChannels" });
+    
+    const lowIncomingLiquidity = await this.createFeature({
+      name: "Low Incoming Liquidity",
+      description: "Ways to address incoming liquidity challenges for receiving payments.",
+      type: "lightning",
+      order: 12
+    });
+    featureMap.set("lowIncomingLiquidity", { feature: lowIncomingLiquidity, stringId: "lowIncomingLiquidity" });
+  }
+  
+  // Load sample wallets if no JSON files are found
+  private async loadSampleWallets(featureMap: Map<string, { feature: Feature, stringId: string }>) {
     // Add sample Lightning wallets
     const phoenix = await this.createWallet({
       name: "Phoenix",
@@ -213,15 +374,6 @@ export class MemStorage implements IStorage {
       type: "lightning",
       logo: "phoenix",
       order: 1
-    });
-    
-    const muun = await this.createWallet({
-      name: "Muun",
-      website: "https://muun.com/",
-      description: "A non-custodial bitcoin wallet with integrated Lightning functionality.",
-      type: "lightning",
-      logo: "muun",
-      order: 2
     });
     
     const breez = await this.createWallet({

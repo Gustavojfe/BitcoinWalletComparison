@@ -1,0 +1,86 @@
+[
+  {
+    "id": "onChain",
+    "name": "On-Chain",
+    "description": "The ability to send and receive on-chain Bitcoin transactions.",
+    "type": "lightning",
+    "order": 1
+  },
+  {
+    "id": "receiveOnChain",
+    "name": "Receive On-Chain",
+    "description": "The ability to generate addresses and receive on-chain Bitcoin.",
+    "type": "lightning",
+    "order": 2
+  },
+  {
+    "id": "sendOnChain",
+    "name": "Send On-Chain",
+    "description": "The ability to send Bitcoin through on-chain transactions.",
+    "type": "lightning",
+    "order": 3
+  },
+  {
+    "id": "invoice",
+    "name": "Invoice",
+    "description": "Create and manage Lightning Network invoices for receiving payments.",
+    "type": "lightning",
+    "order": 4
+  },
+  {
+    "id": "lnurl",
+    "name": "LNURL(s)",
+    "description": "Support for different LNURL protocols like LNURL-pay, LNURL-withdraw, etc.",
+    "type": "lightning",
+    "order": 5
+  },
+  {
+    "id": "lightningAddress",
+    "name": "Lightning Address",
+    "description": "Support for Lightning Addresses in the format user@domain.com.",
+    "type": "lightning",
+    "order": 6
+  },
+  {
+    "id": "bolt11",
+    "name": "BoltII",
+    "description": "Implementation of the BOLT 11 specification for Lightning payments.",
+    "type": "lightning",
+    "order": 7
+  },
+  {
+    "id": "dnsSeeds",
+    "name": "DNS (Seeds)",
+    "description": "Use of DNS seeds for finding Lightning Network nodes.",
+    "type": "lightning",
+    "order": 8
+  },
+  {
+    "id": "paymentRouting",
+    "name": "Payment Routing",
+    "description": "Ability to route payments through the Lightning Network.",
+    "type": "lightning",
+    "order": 9
+  },
+  {
+    "id": "mpp",
+    "name": "MPP",
+    "description": "Multi-Path Payments: splitting payments across multiple Lightning channels.",
+    "type": "lightning",
+    "order": 10
+  },
+  {
+    "id": "manageOwnChannels",
+    "name": "Manage Own Channels",
+    "description": "Ability for users to create and manage their own Lightning channels.",
+    "type": "lightning",
+    "order": 11
+  },
+  {
+    "id": "lowIncomingLiquidity",
+    "name": "Low Incoming Liquidity",
+    "description": "Ways to address incoming liquidity challenges for receiving payments.",
+    "type": "lightning",
+    "order": 12
+  }
+]

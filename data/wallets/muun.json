@@ -1,0 +1,25 @@
+{
+  "name": "Muun",
+  "website": "https://muun.com/",
+  "description": "A non-custodial bitcoin wallet with integrated Lightning functionality.",
+  "type": "lightning",
+  "logo": "muun",
+  "order": 2,
+  "features": {
+    "onChain": "yes",
+    "receiveOnChain": "yes",
+    "sendOnChain": "yes",
+    "invoice": {
+      "value": "custom",
+      "customText": "Receive Only"
+    },
+    "lnurl": "no",
+    "lightningAddress": "no",
+    "bolt11": "yes",
+    "dnsSeeds": "no",
+    "paymentRouting": "partial",
+    "mpp": "partial",
+    "manageOwnChannels": "no",
+    "lowIncomingLiquidity": "yes"
+  }
+}
