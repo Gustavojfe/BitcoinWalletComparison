@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
 import { useVisibility } from '@/hooks/use-visibility-context';
+import { useLanguage } from '@/hooks/use-language';
 
 interface ComparisonWizardProps {
   walletType: WalletType;
@@ -16,6 +17,7 @@ const ComparisonWizard = ({ walletType }: ComparisonWizardProps) => {
   const [wallet2, setWallet2] = useState<string>('');
   const [, navigate] = useLocation();
   const { toast } = useToast();
+  const { t } = useLanguage();
   
   // Get visibility manager to filter out hidden wallets
   const { isWalletHidden } = useVisibility(walletType);
@@ -34,8 +36,8 @@ const ComparisonWizard = ({ walletType }: ComparisonWizardProps) => {
   const handleCompare = () => {
     if (!wallet1 || !wallet2) {
       toast({
-        title: 'Selection Required',
-        description: 'Please select two wallets to compare.',
+        title: t('common.selectionRequired'),
+        description: t('common.selectTwoWallets'),
         variant: 'destructive',
       });
       return;
@@ -43,8 +45,8 @@ const ComparisonWizard = ({ walletType }: ComparisonWizardProps) => {
 
     if (wallet1 === wallet2) {
       toast({
-        title: 'Invalid Selection',
-        description: 'Please select two different wallets to compare.',
+        title: t('common.invalidSelection'),
+        description: t('common.selectDifferentWallets'),
         variant: 'destructive',
       });
       return;
