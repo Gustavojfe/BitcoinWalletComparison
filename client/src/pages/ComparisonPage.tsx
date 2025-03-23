@@ -23,13 +23,28 @@ const ComparisonPage = () => {
       <TabSection activeTab={activeTab} onTabChange={handleTabChange} />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
-        <ControlPanel walletType={activeTab} onSearch={handleSearch} />
-        
-        {/* Main comparison table */}
-        <ComparisonTable walletType={activeTab} searchTerm={searchTerm} />
-        
-        {/* Wallet comparison wizard */}
-        <ComparisonWizard walletType={activeTab} />
+        {activeTab === 'lightning' ? (
+          <>
+            <ControlPanel walletType={activeTab} onSearch={handleSearch} />
+            
+            {/* Main comparison table */}
+            <ComparisonTable walletType={activeTab} searchTerm={searchTerm} />
+            
+            {/* Wallet comparison wizard */}
+            <ComparisonWizard walletType={activeTab} />
+          </>
+        ) : (
+          <div className="bg-white shadow rounded-lg p-12 text-center my-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Coming Soon</h2>
+            <p className="text-lg text-gray-600 mb-6">
+              {activeTab === 'onchain' ? 'On-Chain' : 'Hardware'} wallet comparisons are currently in development.
+            </p>
+            <p className="text-md text-gray-500">
+              We're working hard to bring you detailed comparisons of {activeTab === 'onchain' ? 'On-Chain' : 'Hardware'} Bitcoin wallets.
+              Check back soon for updates or explore our Lightning wallet comparisons in the meantime.
+            </p>
+          </div>
+        )}
         
         {/* Help Section */}
         <div id="help-section" className="mt-8 bg-white shadow rounded-lg p-6">
