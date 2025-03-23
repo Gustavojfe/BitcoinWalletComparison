@@ -25,12 +25,7 @@
     "selectDifferentWallets": "Por favor selecciona dos carteras diferentes para comparar.",
     "return": "Volver a la Página de Comparación",
     "selectWallet": "Selecciona una cartera",
-    "toggleTheme": "Cambiar tema",
-    "mandatory": "Obligatorio",
-    "optional": "Opcional",
-    "not_possible": "No Posible",
-    "send_only": "Solo Envío",
-    "receive_only": "Solo Recepción"
+    "toggleTheme": "Cambiar tema"
   },
   "features": {
     "custodial": "Custodia",

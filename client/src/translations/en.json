@@ -25,12 +25,7 @@
     "selectDifferentWallets": "Please select two different wallets to compare.",
     "return": "Return to Comparison Page",
     "selectWallet": "Select a wallet",
-    "toggleTheme": "Toggle theme",
-    "mandatory": "Mandatory",
-    "optional": "Optional",
-    "not_possible": "Not Possible",
-    "send_only": "Send Only",
-    "receive_only": "Receive Only"
+    "toggleTheme": "Toggle theme"
   },
   "features": {
     "custodial": "Custodial",

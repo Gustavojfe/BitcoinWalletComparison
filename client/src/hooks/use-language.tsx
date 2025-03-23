@@ -88,47 +88,12 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     };
   };
 
-  // Feature value translation function
-  const translateFeatureValue = (value: FeatureValue): string => {
-    // First check if there's a specific translation for this feature value
-    const featureTranslation = getTranslation(language, `features.${value}`);
-    if (featureTranslation) {
-      return featureTranslation;
-    }
-    
-    // Fall back to common translations for standard values
-    switch (value) {
-      case 'yes':
-        return t('common.yes');
-      case 'no':
-        return t('common.no');
-      case 'partial':
-        return t('common.partial');
-      case 'custom':
-        return t('common.custom');
-      case 'mandatory':
-        return t('common.mandatory') || 'Mandatory';
-      case 'optional':
-        return t('common.optional') || 'Optional';
-      case 'not_possible':
-        return t('common.not_possible') || 'Not Possible';
-      case 'send_only':
-        return t('common.send_only') || 'Send Only';
-      case 'receive_only':
-        return t('common.receive_only') || 'Receive Only';
-      default:
-        // Return the value as is if no translation found
-        return String(value);
-    }
-  };
-
   const value = {
     language,
     setLanguage,
     t,
     translateFeature,
     translateWallet,
-    translateFeatureValue,
     availableLanguages: ['en', 'es'] as Language[],
     languageNames
   };
