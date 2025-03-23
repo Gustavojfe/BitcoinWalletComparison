@@ -2,27 +2,27 @@
   "wallets": {
     "Phoenix": {
       "name": "Phoenix",
-      "description": "A user-friendly Lightning wallet with a simplified balance model and automated channel management."
+      "description": "A self-custodial Lightning Network wallet by ACINQ with simplified channel management."
     },
     "Wallet of Satoshi": {
       "name": "Wallet of Satoshi",
-      "description": "A custodial Lightning wallet focused on simplicity with instant payments and no setup required."
+      "description": "A custodial Lightning wallet focused on simplicity and ease of use."
     },
     "Zeus": {
       "name": "Zeus",
-      "description": "A mobile Lightning wallet that connects to your own node for full control."
+      "description": "A mobile Lightning wallet that can connect to your own node."
     },
     "Muun": {
       "name": "Muun",
-      "description": "A non-custodial wallet supporting both on-chain and Lightning payments with multisig security."
+      "description": "A non-custodial bitcoin wallet with integrated Lightning functionality."
     },
     "Breez": {
       "name": "Breez",
-      "description": "A non-custodial Lightning wallet with built-in podcast player and point-of-sale features."
+      "description": "A non-custodial Lightning wallet with integrated podcast player and point-of-sale features."
     },
     "Blink": {
       "name": "Blink",
-      "description": "A Lightning wallet with on-chain capabilities built on a client-server architecture."
+      "description": "A Lightning wallet focused on simplicity and ease of use."
     },
     "Alby": {
       "name": "Alby",
@@ -30,23 +30,19 @@
     },
     "Cash App": {
       "name": "Cash App",
-      "description": "A popular payment app with integrated Bitcoin and Lightning functionality."
+      "description": "A popular mobile payment service with integrated Bitcoin and Lightning Network functionality."
     },
     "Bitkit": {
       "name": "Bitkit",
-      "description": "A non-custodial mobile wallet with on-chain and Lightning support focused on usability."
+      "description": "A non-custodial Bitcoin and Lightning wallet designed for simplicity with advanced security features."
     },
     "Electrum": {
       "name": "Electrum",
-      "description": "A veteran Bitcoin wallet that added Lightning Network capabilities."
+      "description": "A lightweight Bitcoin wallet with advanced features including multi-signature support and hardware wallet integration."
     },
     "Blixt": {
       "name": "Blixt",
-      "description": "A non-custodial Lightning wallet that runs a lightweight node on your phone."
-    },
-    "Blitz Wallet": {
-      "name": "Blitz Wallet",
-      "description": "A self-custodial wallet running on a Lightning node with advanced features."
+      "description": "A self-custodial Lightning wallet that runs a Lightning Network node on your phone."
     },
     "Strike": {
       "name": "Strike",
@@ -54,27 +50,27 @@
     },
     "ZBD": {
       "name": "ZBD",
-      "description": "A simple custodial Lightning wallet with global payment solutions and developer-friendly APIs."
+      "description": "A user-friendly Lightning wallet with instant Bitcoin payments, gaming integrations, and developer tools."
     },
     "River": {
       "name": "River",
-      "description": "A financial platform offering Lightning-enabled Bitcoin trading, storage, and payments."
+      "description": "A Bitcoin financial services platform offering Lightning Network payments, custody solutions, and investment tools."
     },
     "Aqua": {
       "name": "Aqua",
-      "description": "A user-friendly mobile wallet with Bitcoin and Lightning support, focusing on security and simplicity."
+      "description": "A user-friendly Bitcoin and Lightning wallet with a focus on ease of use and secure self-custody."
     },
     "Sati": {
       "name": "Sati",
-      "description": "A multi-platform Lightning wallet supporting standard Lightning payment protocols."
+      "description": "A user-friendly Lightning wallet with social features and simplified Bitcoin transactions."
     },
     "Speed": {
       "name": "Speed",
-      "description": "A mobile-friendly Lightning wallet with a clean interface for fast and easy payments."
+      "description": "A fast, simple Lightning Network wallet focused on providing quick Bitcoin payments."
     },
-    "CoinoS": {
-      "name": "CoinoS",
-      "description": "A web-based platform with Lightning Network integration for payments and wallet services."
+    "Coinos": {
+      "name": "Coinos",
+      "description": "An open-source web wallet platform supporting Bitcoin, Lightning Network, and Liquid transactions."
     },
     "RTL": {
       "name": "RTL",
@@ -84,17 +80,17 @@
       "name": "Primal",
       "description": "A Lightning-integrated social media platform with native wallet functionality."
     },
-    "LIFPAY": {
-      "name": "LIFPAY",
-      "description": "A Lightning wallet with social features and streamlined payment experience."
+    "Lifpay": {
+      "name": "Lifpay",
+      "description": "A Lightning wallet focused on everyday payments with an easy-to-use interface."
     },
-    "LAWALLET": {
-      "name": "LAWALLET",
+    "Lawallet": {
+      "name": "Lawallet",
       "description": "A Latin American-focused Lightning wallet designed for regional needs and everyday payments."
     },
-    "Green Lightning": {
-      "name": "Green Lightning",
-      "description": "A well-established Bitcoin wallet with integrated Lightning functionality for easy payments."
+    "Green": {
+      "name": "Green",
+      "description": "Blockstream's Green wallet with integrated Lightning Network functionality for fast Bitcoin transactions."
     },
     "Exodus": {
       "name": "Exodus",
