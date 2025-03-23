@@ -33,14 +33,14 @@ const WalletTooltip = ({ title, description, children }: TooltipProps) => {
     
     return createPortal(
       <div 
-        className="fixed bg-gray-900 text-white p-4 rounded-md shadow-lg z-[9999] w-80"
+        className="fixed bg-popover text-popover-foreground p-4 rounded-md shadow-lg z-[9999] w-80 border border-border"
         style={{ 
           top: `${position.top}px`, 
           left: `${position.left}px`
         }}
       >
         <h3 className="font-medium text-sm mb-2">{title}</h3>
-        <p className="text-xs text-gray-200 whitespace-normal break-words">{description}</p>
+        <p className="text-xs text-muted-foreground whitespace-normal break-words">{description}</p>
       </div>,
       document.body
     );

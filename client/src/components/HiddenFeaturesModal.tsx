@@ -74,7 +74,7 @@ const HiddenFeaturesModal = ({ isOpen, onClose, walletType }: HiddenFeaturesModa
         {isFeaturesLoading ? (
           <div className="text-center py-6">{t('table.loadingFeatures')}</div>
         ) : hiddenFeatures.length === 0 ? (
-          <div className="text-center py-6 text-gray-500">
+          <div className="text-center py-6 text-muted-foreground">
             {t('hidden.noHiddenFeatures')}
           </div>
         ) : (
@@ -82,11 +82,11 @@ const HiddenFeaturesModal = ({ isOpen, onClose, walletType }: HiddenFeaturesModa
             {hiddenFeatures.map(feature => (
               <div 
                 key={feature.id} 
-                className="flex items-center justify-between p-3 border rounded-md hover:bg-gray-50"
+                className="flex items-center justify-between p-3 border border-border rounded-md hover:bg-accent"
               >
                 <div>
-                  <div className="font-medium">{feature.name}</div>
-                  <div className="text-sm text-gray-500 truncate max-w-xs">
+                  <div className="font-medium text-foreground">{feature.name}</div>
+                  <div className="text-sm text-muted-foreground truncate max-w-xs">
                     {feature.description.length > 60 
                       ? feature.description.substring(0, 60) + '...' 
                       : feature.description

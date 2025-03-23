@@ -93,7 +93,7 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
       case 'yes':
         return (
           <span 
-            className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-green-100"
+            className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-primary/20"
             title={t('help.supportedFull')}
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
@@ -104,10 +104,10 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
       case 'no':
         return (
           <span 
-            className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-red-100"
+            className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-destructive/20"
             title={t('help.supportedNone')}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-red-600" viewBox="0 0 20 20" fill="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-destructive" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
             </svg>
           </span>
@@ -115,28 +115,28 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
       case 'partial':
         return (
           <span 
-            className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-amber-100"
+            className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-orange-500/20"
             title={t('help.supportedPartial')}
           >
-            <span className="text-xs font-medium text-amber-600">P</span>
+            <span className="text-xs font-medium text-orange-500">P</span>
           </span>
         );
       case 'custom':
         return (
           <span 
-            className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-amber-100"
+            className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-orange-500/20"
             title={customText || t('help.supportedCustom')}
           >
-            <span className="text-xs font-medium text-amber-600">C</span>
+            <span className="text-xs font-medium text-orange-500">C</span>
           </span>
         );
       default:
         return (
           <span 
-            className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-gray-100"
+            className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-muted"
             title={t('common.unknown')}
           >
-            <span className="text-xs font-medium text-gray-700">?</span>
+            <span className="text-xs font-medium text-muted-foreground">?</span>
           </span>
         );
     }
