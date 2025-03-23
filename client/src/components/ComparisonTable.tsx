@@ -23,7 +23,7 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
   } = useVisibility(walletType);
   
   // Get translation functions
-  const { t, translateFeature, translateWallet } = useLanguage();
+  const { t, translateFeature, translateWallet, translateFeatureValue } = useLanguage();
 
   // Fetch wallets with features
   const { data: walletsWithFeatures, isLoading: isWalletsLoading } = useQuery({
@@ -137,32 +137,27 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
     
     // Handle special value types with consistent styling
     if (['lnd', 'ldk', 'core_lightning', 'eclair'].includes(value)) {
+      const displayValue = translateFeatureValue(value as any);
       return (
         <span 
           className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-blue-100 text-blue-600"
-          title={value}
+          title={displayValue}
         >
-          <span className="text-xs font-medium">{value}</span>
+          <span className="text-xs font-medium">{displayValue}</span>
         </span>
       );
     }
     
     // Handle wallet types
     if (['custodial', 'ln_node', 'liquid_swap', 'on_chain_swap', 'remote_node'].includes(value)) {
-      const displayMap: Record<string, string> = {
-        'custodial': t('features.custodial'),
-        'ln_node': t('features.ln_node'),
-        'liquid_swap': t('features.liquid_swap'),
-        'on_chain_swap': t('features.on_chain_swap'),
-        'remote_node': t('features.remote_node')
-      };
+      const displayValue = translateFeatureValue(value as any);
       
       return (
         <span 
           className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-purple-100 text-purple-600"
-          title={displayMap[value] || value}
+          title={displayValue}
         >
-          <span className="text-xs font-medium">{displayMap[value] || value}</span>
+          <span className="text-xs font-medium">{displayValue}</span>
         </span>
       );
     }
