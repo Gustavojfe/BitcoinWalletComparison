@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { WalletType } from '@/lib/types';
 import HiddenWalletsModal from './HiddenWalletsModal';
 import HiddenFeaturesModal from './HiddenFeaturesModal';
-import { useVisibility } from '@/hooks/use-visibility';
+import { useVisibility } from '@/hooks/use-visibility-context';
 import { Eye, Search } from 'lucide-react';
 
 interface ControlPanelProps {

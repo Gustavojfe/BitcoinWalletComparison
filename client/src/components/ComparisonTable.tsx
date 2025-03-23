@@ -5,7 +5,7 @@ import { WalletType, WalletWithFeatures, Feature } from '@/lib/types';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Button } from '@/components/ui/button';
 import { EyeOff } from 'lucide-react';
-import { useVisibility } from '@/hooks/use-visibility';
+import { useVisibility } from '@/hooks/use-visibility-context';
 
 interface ComparisonTableProps {
   walletType: WalletType;

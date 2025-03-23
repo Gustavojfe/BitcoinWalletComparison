@@ -5,6 +5,7 @@ import { WalletType, Wallet } from '@/lib/types';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
+import { useVisibility } from '@/hooks/use-visibility-context';
 
 interface ComparisonWizardProps {
   walletType: WalletType;
@@ -15,6 +16,9 @@ const ComparisonWizard = ({ walletType }: ComparisonWizardProps) => {
   const [wallet2, setWallet2] = useState<string>('');
   const [, navigate] = useLocation();
   const { toast } = useToast();
+  
+  // Get visibility manager to filter out hidden wallets
+  const { isWalletHidden } = useVisibility(walletType);
 
   // Fetch wallets
   const { data: wallets, isLoading } = useQuery({
@@ -50,9 +54,11 @@ const ComparisonWizard = ({ walletType }: ComparisonWizardProps) => {
     navigate(`/compare/${wallet1}/${wallet2}`);
   };
 
-  // Sort wallets alphabetically
+  // Filter out hidden wallets then sort alphabetically
   const sortedWallets = wallets 
-    ? [...wallets].sort((a, b) => a.name.localeCompare(b.name))
+    ? [...wallets]
+        .filter(wallet => !isWalletHidden(wallet.id))
+        .sort((a, b) => a.name.localeCompare(b.name))
     : [];
 
   return (
