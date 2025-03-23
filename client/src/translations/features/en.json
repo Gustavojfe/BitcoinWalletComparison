@@ -1,52 +1,52 @@
 {
   "features": {
-    "onChain": {
+    "On-Chain": {
       "name": "On-Chain",
-      "description": "The ability to send and receive regular bitcoin transactions on the main blockchain."
+      "description": "The ability to send and receive on-chain Bitcoin transactions."
     },
-    "receiveOnChain": {
+    "Receive On-Chain": {
       "name": "Receive On-Chain",
-      "description": "The ability to receive regular bitcoin transactions on the main blockchain."
+      "description": "The ability to generate addresses and receive on-chain Bitcoin."
     },
-    "sendOnChain": {
+    "Send On-Chain": {
       "name": "Send On-Chain",
-      "description": "The ability to send regular bitcoin transactions on the main blockchain."
+      "description": "The ability to send Bitcoin through on-chain transactions."
     },
-    "invoice": {
-      "name": "Lightning Invoice",
-      "description": "The ability to create and use Lightning invoices for receiving payments."
+    "Invoice": {
+      "name": "Invoice",
+      "description": "Create and manage Lightning Network invoices for receiving payments."
     },
-    "lnurl": {
-      "name": "LNURL Support",
-      "description": "Support for the LNURL protocol which simplifies Lightning interactions."
+    "LNURL(s)": {
+      "name": "LNURL(s)",
+      "description": "Support for different LNURL protocols like LNURL-pay, LNURL-withdraw, etc."
     },
-    "lightningAddress": {
+    "Lightning Address": {
       "name": "Lightning Address",
-      "description": "Support for Lightning addresses (user@domain.com) for simplified payments."
+      "description": "Support for Lightning Addresses in the format user@domain.com."
     },
-    "bolt11": {
-      "name": "BOLT11 Invoices",
-      "description": "Support for the standard BOLT11 invoice format."
+    "BoltII": {
+      "name": "BoltII",
+      "description": "Implementation of the BOLT 11 specification for Lightning payments."
     },
-    "dnsSeeds": {
-      "name": "DNS Seeds",
-      "description": "Uses DNS seeds to find Lightning Network nodes."
+    "DNS (Seeds)": {
+      "name": "DNS (Seeds)",
+      "description": "Use of DNS seeds for finding Lightning Network nodes."
     },
-    "paymentRouting": {
+    "Payment Routing": {
       "name": "Payment Routing",
-      "description": "The ability to route payments through the Lightning Network."
+      "description": "Ability to route payments through the Lightning Network."
     },
-    "mpp": {
-      "name": "Multi-Path Payments",
-      "description": "Support for splitting payments across multiple Lightning channels."
+    "MPP": {
+      "name": "MPP",
+      "description": "Multi-Path Payments: splitting payments across multiple Lightning channels."
     },
-    "manageOwnChannels": {
+    "Manage Own Channels": {
       "name": "Manage Own Channels",
-      "description": "Ability for users to manually create and manage Lightning channels."
+      "description": "Ability for users to create and manage their own Lightning channels."
     },
-    "lowIncomingLiquidity": {
+    "Low Incoming Liquidity": {
       "name": "Low Incoming Liquidity",
-      "description": "Can function well with low incoming liquidity on Lightning channels."
+      "description": "Ways to address incoming liquidity challenges for receiving payments."
     }
   }
 }

@@ -1,52 +1,52 @@
 {
   "features": {
-    "onChain": {
+    "On-Chain": {
       "name": "On-Chain",
-      "description": "La capacidad de enviar y recibir transacciones regulares de bitcoin en la cadena principal."
+      "description": "La capacidad de enviar y recibir transacciones Bitcoin en la cadena principal."
     },
-    "receiveOnChain": {
+    "Receive On-Chain": {
       "name": "Recibir On-Chain",
-      "description": "La capacidad de recibir transacciones regulares de bitcoin en la cadena principal."
+      "description": "La capacidad de generar direcciones y recibir Bitcoin en la cadena principal."
     },
-    "sendOnChain": {
+    "Send On-Chain": {
       "name": "Enviar On-Chain",
-      "description": "La capacidad de enviar transacciones regulares de bitcoin en la cadena principal."
+      "description": "La capacidad de enviar Bitcoin a través de transacciones en la cadena principal."
     },
-    "invoice": {
-      "name": "Factura Lightning",
-      "description": "La capacidad de crear y usar facturas Lightning para recibir pagos."
+    "Invoice": {
+      "name": "Factura",
+      "description": "Crear y gestionar facturas de la Red Lightning para recibir pagos."
     },
-    "lnurl": {
-      "name": "Soporte LNURL",
-      "description": "Soporte para el protocolo LNURL que simplifica las interacciones Lightning."
+    "LNURL(s)": {
+      "name": "LNURL(s)",
+      "description": "Soporte para diferentes protocolos LNURL como LNURL-pay, LNURL-withdraw, etc."
     },
-    "lightningAddress": {
+    "Lightning Address": {
       "name": "Dirección Lightning",
-      "description": "Soporte para direcciones Lightning (usuario@dominio.com) para pagos simplificados."
+      "description": "Soporte para direcciones Lightning en formato usuario@dominio.com."
     },
-    "bolt11": {
-      "name": "Facturas BOLT11",
-      "description": "Soporte para el formato estándar de factura BOLT11."
+    "BoltII": {
+      "name": "BoltII",
+      "description": "Implementación de la especificación BOLT 11 para pagos Lightning."
     },
-    "dnsSeeds": {
-      "name": "Semillas DNS",
-      "description": "Utiliza semillas DNS para encontrar nodos de la Red Lightning."
+    "DNS (Seeds)": {
+      "name": "DNS (Semillas)",
+      "description": "Uso de semillas DNS para encontrar nodos de la Red Lightning."
     },
-    "paymentRouting": {
+    "Payment Routing": {
       "name": "Enrutamiento de Pagos",
-      "description": "La capacidad de enrutar pagos a través de la Red Lightning."
+      "description": "Capacidad para enrutar pagos a través de la Red Lightning."
     },
-    "mpp": {
-      "name": "Pagos Multi-Ruta",
-      "description": "Soporte para dividir pagos a través de múltiples canales Lightning."
+    "MPP": {
+      "name": "MPP",
+      "description": "Pagos Multi-Ruta: división de pagos a través de múltiples canales Lightning."
     },
-    "manageOwnChannels": {
+    "Manage Own Channels": {
       "name": "Gestionar Canales Propios",
-      "description": "Capacidad para que los usuarios creen y gestionen manualmente canales Lightning."
+      "description": "Capacidad para que los usuarios creen y gestionen sus propios canales Lightning."
     },
-    "lowIncomingLiquidity": {
+    "Low Incoming Liquidity": {
       "name": "Baja Liquidez Entrante",
-      "description": "Puede funcionar bien con baja liquidez entrante en canales Lightning."
+      "description": "Formas de abordar los desafíos de liquidez entrante para recibir pagos."
     }
   }
 }

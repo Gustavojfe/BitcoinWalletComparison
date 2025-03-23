@@ -2,19 +2,19 @@
   "wallets": {
     "Phoenix": {
       "name": "Phoenix",
-      "description": "Una cartera Lightning fácil de usar con un modelo de saldo simplificado y gestión automatizada de canales."
+      "description": "Una cartera Lightning autosoberana de ACINQ con gestión simplificada de canales."
     },
     "Wallet of Satoshi": {
       "name": "Wallet of Satoshi",
-      "description": "Una cartera Lightning custodial enfocada en la simplicidad con pagos instantáneos y sin necesidad de configuración."
+      "description": "Una cartera Lightning custodial enfocada en la simplicidad y facilidad de uso."
     },
     "Zeus": {
       "name": "Zeus",
-      "description": "Una cartera Lightning móvil que se conecta a tu propio nodo para un control total."
+      "description": "Una cartera Lightning móvil que puede conectarse a tu propio nodo."
     },
     "Muun": {
       "name": "Muun",
-      "description": "Una cartera no custodial que soporta pagos tanto on-chain como Lightning con seguridad multisig."
+      "description": "Una cartera bitcoin no custodial con funcionalidad Lightning integrada."
     },
     "Breez": {
       "name": "Breez",
@@ -22,7 +22,7 @@
     },
     "Blink": {
       "name": "Blink",
-      "description": "Una cartera Lightning con capacidades on-chain construida sobre una arquitectura cliente-servidor."
+      "description": "Una cartera Lightning enfocada en la simplicidad y facilidad de uso."
     },
     "Alby": {
       "name": "Alby",
@@ -30,51 +30,47 @@
     },
     "Cash App": {
       "name": "Cash App",
-      "description": "Una aplicación de pago popular con funcionalidad integrada de Bitcoin y Lightning."
+      "description": "Un servicio de pago móvil popular con funcionalidad de Bitcoin y Lightning Network integrada."
     },
     "Bitkit": {
       "name": "Bitkit",
-      "description": "Una cartera móvil no custodial con soporte on-chain y Lightning enfocada en usabilidad."
+      "description": "Una cartera Bitcoin y Lightning no custodial diseñada para simplicidad con características avanzadas de seguridad."
     },
     "Electrum": {
       "name": "Electrum",
-      "description": "Una cartera Bitcoin veterana que agregó capacidades de Red Lightning."
+      "description": "Una cartera Bitcoin ligera con características avanzadas incluyendo soporte multi-firma e integración con carteras hardware."
     },
     "Blixt": {
       "name": "Blixt",
-      "description": "Una cartera Lightning no custodial que ejecuta un nodo ligero en tu teléfono."
-    },
-    "Blitz Wallet": {
-      "name": "Blitz Wallet",
-      "description": "Una cartera autosoberana que funciona en un nodo Lightning con características avanzadas."
+      "description": "Una cartera Lightning autosoberana que ejecuta un nodo Lightning Network en tu teléfono."
     },
     "Strike": {
       "name": "Strike",
-      "description": "Una aplicación de pagos Bitcoin con integración Lightning centrada en transacciones rápidas y de bajo costo y remesas globales."
+      "description": "Una aplicación de pagos Bitcoin con integración Lightning Network enfocada en transacciones rápidas y de bajo costo y remesas globales."
     },
     "ZBD": {
       "name": "ZBD",
-      "description": "Una cartera Lightning custodial simple con soluciones de pago globales y APIs amigables para desarrolladores."
+      "description": "Una cartera Lightning fácil de usar con pagos Bitcoin instantáneos, integraciones para juegos y herramientas para desarrolladores."
     },
     "River": {
       "name": "River",
-      "description": "Una plataforma financiera que ofrece comercio, almacenamiento y pagos Bitcoin con Lightning habilitado."
+      "description": "Una plataforma de servicios financieros Bitcoin que ofrece pagos Lightning Network, soluciones de custodia y herramientas de inversión."
     },
     "Aqua": {
       "name": "Aqua",
-      "description": "Una cartera móvil fácil de usar con soporte para Bitcoin y Lightning, enfocada en seguridad y simplicidad."
+      "description": "Una cartera Bitcoin y Lightning fácil de usar con enfoque en la facilidad de uso y la auto-custodia segura."
     },
     "Sati": {
       "name": "Sati",
-      "description": "Una cartera Lightning multiplataforma que soporta protocolos estándar de pago Lightning."
+      "description": "Una cartera Lightning fácil de usar con características sociales y transacciones Bitcoin simplificadas."
     },
     "Speed": {
       "name": "Speed",
-      "description": "Una cartera Lightning compatible con dispositivos móviles con una interfaz limpia para pagos rápidos y fáciles."
+      "description": "Una cartera Lightning Network rápida y simple enfocada en proporcionar pagos Bitcoin rápidos."
     },
-    "CoinoS": {
-      "name": "CoinoS",
-      "description": "Una plataforma basada en web con integración Lightning Network para servicios de pagos y carteras."
+    "Coinos": {
+      "name": "Coinos",
+      "description": "Una plataforma de cartera web de código abierto que soporta transacciones Bitcoin, Lightning Network y Liquid."
     },
     "RTL": {
       "name": "RTL",
@@ -84,17 +80,17 @@
       "name": "Primal",
       "description": "Una plataforma de redes sociales integrada con Lightning con funcionalidad de cartera nativa."
     },
-    "LIFPAY": {
-      "name": "LIFPAY",
-      "description": "Una cartera Lightning con características sociales y experiencia de pago simplificada."
+    "Lifpay": {
+      "name": "Lifpay",
+      "description": "Una cartera Lightning enfocada en pagos cotidianos con una interfaz fácil de usar."
     },
-    "LAWALLET": {
-      "name": "LAWALLET",
+    "Lawallet": {
+      "name": "Lawallet",
       "description": "Una cartera Lightning enfocada en Latinoamérica diseñada para necesidades regionales y pagos cotidianos."
     },
-    "Green Lightning": {
-      "name": "Green Lightning",
-      "description": "Una cartera Bitcoin bien establecida con funcionalidad Lightning integrada para pagos fáciles."
+    "Green": {
+      "name": "Green",
+      "description": "La cartera Green de Blockstream con funcionalidad Lightning Network integrada para transacciones Bitcoin rápidas."
     },
     "Exodus": {
       "name": "Exodus",
