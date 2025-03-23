@@ -1,0 +1,22 @@
+{
+  "name": "Blink",
+  "website": "https://blink.sv/",
+  "description": "A Lightning wallet focused on simplicity and ease of use.",
+  "type": "lightning",
+  "logo": "blink",
+  "order": 6,
+  "features": {
+    "onChain": "yes",
+    "receiveOnChain": "yes",
+    "sendOnChain": "yes",
+    "invoice": "yes",
+    "lnurl": "yes",
+    "lightningAddress": "yes",
+    "bolt11": "yes",
+    "dnsSeeds": "no",
+    "paymentRouting": "no",
+    "mpp": "partial",
+    "manageOwnChannels": "no",
+    "lowIncomingLiquidity": "yes"
+  }
+}
