@@ -58,7 +58,81 @@ const WalletComparisonResult = () => {
   const sortedFeatures = [...features].sort((a, b) => a.order - b.order);
 
   // Render feature status based on value
-  const renderFeatureStatus = (value: string, customText?: string) => {
+  const renderFeatureStatus = (value: string, customText?: string, featureName?: string) => {
+    // Handle platform feature specially (displays array values)
+    if (featureName?.toLowerCase() === 'platform' && value === 'custom' && customText) {
+      const platforms = customText.split(',');
+      return (
+        <div className="flex flex-wrap gap-2 items-center">
+          <div className="flex flex-wrap gap-1">
+            {platforms.map((platform, index) => {
+              // Icon mapping for platforms
+              let displayText = '';
+              
+              switch (platform) {
+                case 'ios':
+                  displayText = 'iOS';
+                  break;
+                case 'android':
+                  displayText = 'Android';
+                  break;
+                case 'desktop':
+                  displayText = 'Desktop';
+                  break;
+                case 'web':
+                  displayText = 'Web';
+                  break;
+                default:
+                  displayText = platform;
+              }
+              
+              return (
+                <span 
+                  key={index}
+                  className="px-2 py-1 text-xs font-medium rounded-md bg-primary/10 text-primary"
+                >
+                  {displayText}
+                </span>
+              );
+            })}
+          </div>
+        </div>
+      );
+    }
+    
+    // Handle special value types with consistent styling (implementation types)
+    if (['lnd', 'ldk', 'core_lightning', 'eclair'].includes(value)) {
+      return (
+        <div className="flex items-center">
+          <span className="px-2 py-1 text-xs font-medium rounded-md bg-blue-100 text-blue-600 mr-2">
+            {value}
+          </span>
+          <span className="text-foreground">{t(`features.${value}`) || value}</span>
+        </div>
+      );
+    }
+    
+    // Handle wallet types
+    if (['custodial', 'ln_node', 'liquid_swap', 'on_chain_swap', 'remote_node'].includes(value)) {
+      const displayMap: Record<string, string> = {
+        'custodial': t('features.custodial'),
+        'ln_node': t('features.ln_node'),
+        'liquid_swap': t('features.liquid_swap'),
+        'on_chain_swap': t('features.on_chain_swap'),
+        'remote_node': t('features.remote_node')
+      };
+      
+      return (
+        <div className="flex items-center">
+          <span className="px-2 py-1 text-xs font-medium rounded-md bg-purple-100 text-purple-600 mr-2">
+            {value}
+          </span>
+          <span className="text-foreground">{displayMap[value] || value}</span>
+        </div>
+      );
+    }
+    
+    // Handle regular values with icons
     switch (value) {
       case 'yes':
         return (
@@ -72,6 +146,7 @@ const WalletComparisonResult = () => {
           </div>
         );
       case 'no':
+      case 'not_possible':
         return (
           <div className="flex items-center">
             <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-destructive/20 mr-2">
@@ -83,6 +158,7 @@ const WalletComparisonResult = () => {
           </div>
         );
       case 'partial':
+      case 'optional':
         return (
           <div className="flex items-center">
             <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-orange-500/20 mr-2">
@@ -98,6 +174,33 @@ const WalletComparisonResult = () => {
               <span className="text-xs font-medium text-orange-500">C</span>
             </span>
             <span className="text-foreground">{customText || t('common.custom')}</span>
+          </div>
+        );
+      case 'send_only':
+        return (
+          <div className="flex items-center">
+            <span className="px-2 py-1 text-xs font-medium rounded-md bg-amber-100 text-amber-600 mr-2">
+              {t('features.send')}
+            </span>
+            <span className="text-foreground">{t('features.send_only')}</span>
+          </div>
+        );
+      case 'receive_only':
+        return (
+          <div className="flex items-center">
+            <span className="px-2 py-1 text-xs font-medium rounded-md bg-amber-100 text-amber-600 mr-2">
+              {t('features.receive')}
+            </span>
+            <span className="text-foreground">{t('features.receive_only')}</span>
+          </div>
+        );
+      case 'mandatory':
+        return (
+          <div className="flex items-center">
+            <span className="px-2 py-1 text-xs font-medium rounded-md bg-orange-100 text-orange-600 mr-2">
+              {t('features.required')}
+            </span>
+            <span className="text-foreground">{t('features.mandatory')}</span>
           </div>
         );
       default:

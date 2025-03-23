@@ -88,7 +88,86 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
   const sortedWallets = [...filteredWallets].sort((a, b) => a.name.localeCompare(b.name));
 
   // Render feature status based on value
-  const renderFeatureStatus = (value: string, customText?: string) => {
+  const renderFeatureStatus = (value: string, customText?: string, featureName?: string) => {
+    // Handle platform feature specially (displays array values)
+    if (featureName?.toLowerCase() === 'platform' && value === 'custom' && customText) {
+      const platforms = customText.split(',');
+      return (
+        <div className="flex flex-wrap gap-1 justify-center">
+          {platforms.map((platform, index) => {
+            // Icon mapping for platforms
+            let icon = null;
+            let title = '';
+            
+            switch (platform) {
+              case 'ios':
+                icon = <span className="text-xs font-medium text-blue-500">iOS</span>;
+                title = 'iOS';
+                break;
+              case 'android':
+                icon = <span className="text-xs font-medium text-green-600">Android</span>;
+                title = 'Android';
+                break;
+              case 'desktop':
+                icon = <span className="text-xs font-medium text-purple-600">Desktop</span>;
+                title = 'Desktop';
+                break;
+              case 'web':
+                icon = <span className="text-xs font-medium text-amber-600">Web</span>;
+                title = 'Web';
+                break;
+              default:
+                icon = <span className="text-xs font-medium text-gray-600">{platform}</span>;
+                title = platform;
+            }
+            
+            return (
+              <span 
+                key={index}
+                className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-primary/10"
+                title={title}
+              >
+                {icon}
+              </span>
+            );
+          })}
+        </div>
+      );
+    }
+    
+    // Handle special value types with consistent styling
+    if (['lnd', 'ldk', 'core_lightning', 'eclair'].includes(value)) {
+      return (
+        <span 
+          className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-blue-100 text-blue-600"
+          title={value}
+        >
+          <span className="text-xs font-medium">{value}</span>
+        </span>
+      );
+    }
+    
+    // Handle wallet types
+    if (['custodial', 'ln_node', 'liquid_swap', 'on_chain_swap', 'remote_node'].includes(value)) {
+      const displayMap: Record<string, string> = {
+        'custodial': t('features.custodial'),
+        'ln_node': t('features.ln_node'),
+        'liquid_swap': t('features.liquid_swap'),
+        'on_chain_swap': t('features.on_chain_swap'),
+        'remote_node': t('features.remote_node')
+      };
+      
+      return (
+        <span 
+          className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-purple-100 text-purple-600"
+          title={displayMap[value] || value}
+        >
+          <span className="text-xs font-medium">{displayMap[value] || value}</span>
+        </span>
+      );
+    }
+    
+    // Handle regular values with icons
     switch (value) {
       case 'yes':
         return (
@@ -102,6 +181,7 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
           </span>
         );
       case 'no':
+      case 'not_possible':
         return (
           <span 
             className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-destructive/20"
@@ -113,6 +193,7 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
           </span>
         );
       case 'partial':
+      case 'optional':
         return (
           <span 
             className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-orange-500/20"
@@ -124,10 +205,37 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
       case 'custom':
         return (
           <span 
-            className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-orange-500/20"
+            className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-orange-100"
             title={customText || t('help.supportedCustom')}
           >
-            <span className="text-xs font-medium text-orange-500">C</span>
+            <span className="text-xs font-medium text-orange-600">{customText || t('common.custom')}</span>
+          </span>
+        );
+      case 'send_only':
+        return (
+          <span 
+            className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-amber-100"
+            title={t('features.send_only')}
+          >
+            <span className="text-xs font-medium text-amber-600">{t('features.send')}</span>
+          </span>
+        );
+      case 'receive_only':
+        return (
+          <span 
+            className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-amber-100"
+            title={t('features.receive_only')}
+          >
+            <span className="text-xs font-medium text-amber-600">{t('features.receive')}</span>
+          </span>
+        );
+      case 'mandatory':
+        return (
+          <span 
+            className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-orange-100"
+            title={t('features.mandatory')}
+          >
+            <span className="text-xs font-medium text-orange-600">{t('features.required')}</span>
           </span>
         );
       default:
@@ -238,7 +346,7 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
                       return (
                         <td key={`${wallet.id}-${feature.id}`} className="px-6 py-4 whitespace-nowrap text-sm text-center">
                           {walletFeature 
-                            ? renderFeatureStatus(walletFeature.value, walletFeature.customText) 
+                            ? renderFeatureStatus(walletFeature.value, walletFeature.customText, feature.name) 
                             : renderFeatureStatus('unknown')}
                         </td>
                       );
