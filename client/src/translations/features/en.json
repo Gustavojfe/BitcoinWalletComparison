@@ -1,54 +1,50 @@
 {
   "features": {
-    "On-Chain": {
+    "onChain": {
       "name": "On-Chain",
       "description": "The ability to send and receive regular bitcoin transactions on the main blockchain."
     },
-    "Receive On-Chain": {
+    "receiveOnChain": {
       "name": "Receive On-Chain",
       "description": "The ability to receive regular bitcoin transactions on the main blockchain."
     },
-    "Send On-Chain": {
+    "sendOnChain": {
       "name": "Send On-Chain",
       "description": "The ability to send regular bitcoin transactions on the main blockchain."
     },
-    "Lightning": {
-      "name": "Lightning",
-      "description": "The ability to send and receive bitcoin via the Lightning Network."
-    },
-    "Invoice": {
+    "invoice": {
       "name": "Lightning Invoice",
       "description": "The ability to create and use Lightning invoices for receiving payments."
     },
-    "LNURL": {
+    "lnurl": {
       "name": "LNURL Support",
       "description": "Support for the LNURL protocol which simplifies Lightning interactions."
     },
-    "Lightning Address": {
+    "lightningAddress": {
       "name": "Lightning Address",
       "description": "Support for Lightning addresses (user@domain.com) for simplified payments."
     },
-    "BOLT11": {
+    "bolt11": {
       "name": "BOLT11 Invoices",
       "description": "Support for the standard BOLT11 invoice format."
     },
-    "DNS Seeds": {
+    "dnsSeeds": {
       "name": "DNS Seeds",
       "description": "Uses DNS seeds to find Lightning Network nodes."
     },
-    "Payment Routing": {
+    "paymentRouting": {
       "name": "Payment Routing",
       "description": "The ability to route payments through the Lightning Network."
     },
-    "MPP": {
+    "mpp": {
       "name": "Multi-Path Payments",
       "description": "Support for splitting payments across multiple Lightning channels."
     },
-    "Manage Own Channels": {
+    "manageOwnChannels": {
       "name": "Manage Own Channels",
       "description": "Ability for users to manually create and manage Lightning channels."
     },
-    "Low Incoming Liquidity": {
+    "lowIncomingLiquidity": {
       "name": "Low Incoming Liquidity",
       "description": "Can function well with low incoming liquidity on Lightning channels."
     }

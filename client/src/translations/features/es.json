@@ -1,54 +1,50 @@
 {
   "features": {
-    "On-Chain": {
+    "onChain": {
       "name": "On-Chain",
       "description": "La capacidad de enviar y recibir transacciones regulares de bitcoin en la cadena principal."
     },
-    "Receive On-Chain": {
+    "receiveOnChain": {
       "name": "Recibir On-Chain",
       "description": "La capacidad de recibir transacciones regulares de bitcoin en la cadena principal."
     },
-    "Send On-Chain": {
+    "sendOnChain": {
       "name": "Enviar On-Chain",
       "description": "La capacidad de enviar transacciones regulares de bitcoin en la cadena principal."
     },
-    "Lightning": {
-      "name": "Lightning",
-      "description": "La capacidad de enviar y recibir bitcoin a través de la Red Lightning."
-    },
-    "Invoice": {
+    "invoice": {
       "name": "Factura Lightning",
       "description": "La capacidad de crear y usar facturas Lightning para recibir pagos."
     },
-    "LNURL": {
+    "lnurl": {
       "name": "Soporte LNURL",
       "description": "Soporte para el protocolo LNURL que simplifica las interacciones Lightning."
     },
-    "Lightning Address": {
+    "lightningAddress": {
       "name": "Dirección Lightning",
       "description": "Soporte para direcciones Lightning (usuario@dominio.com) para pagos simplificados."
     },
-    "BOLT11": {
+    "bolt11": {
       "name": "Facturas BOLT11",
       "description": "Soporte para el formato estándar de factura BOLT11."
     },
-    "DNS Seeds": {
+    "dnsSeeds": {
       "name": "Semillas DNS",
       "description": "Utiliza semillas DNS para encontrar nodos de la Red Lightning."
     },
-    "Payment Routing": {
+    "paymentRouting": {
       "name": "Enrutamiento de Pagos",
       "description": "La capacidad de enrutar pagos a través de la Red Lightning."
     },
-    "MPP": {
+    "mpp": {
       "name": "Pagos Multi-Ruta",
       "description": "Soporte para dividir pagos a través de múltiples canales Lightning."
     },
-    "Manage Own Channels": {
+    "manageOwnChannels": {
       "name": "Gestionar Canales Propios",
       "description": "Capacidad para que los usuarios creen y gestionen manualmente canales Lightning."
     },
-    "Low Incoming Liquidity": {
+    "lowIncomingLiquidity": {
       "name": "Baja Liquidez Entrante",
       "description": "Puede funcionar bien con baja liquidez entrante en canales Lightning."
     }

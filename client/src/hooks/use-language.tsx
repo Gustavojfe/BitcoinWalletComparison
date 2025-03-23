@@ -64,8 +64,12 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
 
   // Feature translation function
   const translateFeature = (feature: Feature) => {
-    const translatedName = getTranslation(language, `features.${feature.name}.name`) || feature.name;
-    const translatedDescription = getTranslation(language, `features.${feature.name}.description`) || feature.description;
+    // Get feature ID
+    const featureId = feature.id.toString();
+    
+    // Look up translation by feature ID
+    const translatedName = getTranslation(language, `features.${featureId}.name`) || feature.name;
+    const translatedDescription = getTranslation(language, `features.${featureId}.description`) || feature.description;
     
     return {
       name: translatedName,
@@ -75,6 +79,7 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
 
   // Wallet translation function
   const translateWallet = (wallet: Wallet) => {
+    // Look up translation by wallet name exactly as it appears in the data files
     const translatedName = getTranslation(language, `wallets.${wallet.name}.name`) || wallet.name;
     const translatedDescription = getTranslation(language, `wallets.${wallet.name}.description`) || wallet.description;
     

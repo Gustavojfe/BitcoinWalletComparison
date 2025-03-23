@@ -32,10 +32,6 @@
       "name": "Cash App",
       "description": "Una aplicación de pago popular con funcionalidad integrada de Bitcoin y Lightning."
     },
-    "BLW": {
-      "name": "Bitcoin Lightning Wallet",
-      "description": "Una de las carteras Lightning más antiguas con un enfoque en la seguridad y control del usuario."
-    },
     "Bitkit": {
       "name": "Bitkit",
       "description": "Una cartera móvil no custodial con soporte on-chain y Lightning enfocada en usabilidad."
@@ -48,17 +44,61 @@
       "name": "Blixt",
       "description": "Una cartera Lightning no custodial que ejecuta un nodo ligero en tu teléfono."
     },
-    "Mutiny": {
-      "name": "Mutiny",
-      "description": "Una cartera enfocada en la privacidad que se ejecuta en el navegador sin necesidad de registro."
+    "Blitz Wallet": {
+      "name": "Blitz Wallet",
+      "description": "Una cartera autosoberana que funciona en un nodo Lightning con características avanzadas."
     },
-    "Zap": {
-      "name": "Zap",
-      "description": "Una cartera Lightning enfocada en la experiencia de usuario con capacidades de conexión a nodos."
+    "Strike": {
+      "name": "Strike",
+      "description": "Una aplicación de pagos Bitcoin con integración Lightning centrada en transacciones rápidas y de bajo costo y remesas globales."
     },
-    "Simple Bitcoin Wallet": {
-      "name": "Simple Bitcoin Wallet",
-      "description": "Una cartera sencilla desarrollada por SBW con soporte on-chain y Lightning."
+    "ZBD": {
+      "name": "ZBD",
+      "description": "Una cartera Lightning custodial simple con soluciones de pago globales y APIs amigables para desarrolladores."
+    },
+    "River": {
+      "name": "River",
+      "description": "Una plataforma financiera que ofrece comercio, almacenamiento y pagos Bitcoin con Lightning habilitado."
+    },
+    "Aqua": {
+      "name": "Aqua",
+      "description": "Una cartera móvil fácil de usar con soporte para Bitcoin y Lightning, enfocada en seguridad y simplicidad."
+    },
+    "Sati": {
+      "name": "Sati",
+      "description": "Una cartera Lightning multiplataforma que soporta protocolos estándar de pago Lightning."
+    },
+    "Speed": {
+      "name": "Speed",
+      "description": "Una cartera Lightning compatible con dispositivos móviles con una interfaz limpia para pagos rápidos y fáciles."
+    },
+    "CoinoS": {
+      "name": "CoinoS",
+      "description": "Una plataforma basada en web con integración Lightning Network para servicios de pagos y carteras."
+    },
+    "RTL": {
+      "name": "RTL",
+      "description": "Ride The Lightning, una interfaz web para gestionar nodos Lightning Network con amplias características."
+    },
+    "Primal": {
+      "name": "Primal",
+      "description": "Una plataforma de redes sociales integrada con Lightning con funcionalidad de cartera nativa."
+    },
+    "LIFPAY": {
+      "name": "LIFPAY",
+      "description": "Una cartera Lightning con características sociales y experiencia de pago simplificada."
+    },
+    "LAWALLET": {
+      "name": "LAWALLET",
+      "description": "Una cartera Lightning enfocada en Latinoamérica diseñada para necesidades regionales y pagos cotidianos."
+    },
+    "Green Lightning": {
+      "name": "Green Lightning",
+      "description": "Una cartera Bitcoin bien establecida con funcionalidad Lightning integrada para pagos fáciles."
+    },
+    "Exodus": {
+      "name": "Exodus",
+      "description": "Una cartera multimoneda con capacidades Lightning integradas para transacciones Bitcoin."
     }
   }
 }
