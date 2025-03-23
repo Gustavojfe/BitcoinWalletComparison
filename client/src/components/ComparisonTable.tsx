@@ -3,6 +3,9 @@ import { useQuery } from '@tanstack/react-query';
 import WalletTooltip from './WalletTooltip';
 import { WalletType, WalletWithFeatures, Feature } from '@/lib/types';
 import { Skeleton } from '@/components/ui/skeleton';
+import { Button } from '@/components/ui/button';
+import { EyeOff } from 'lucide-react';
+import { useVisibility } from '@/hooks/use-visibility';
 
 interface ComparisonTableProps {
   walletType: WalletType;
@@ -10,6 +13,14 @@ interface ComparisonTableProps {
 }
 
 const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
+  // Use the visibility hook
+  const {
+    isWalletHidden,
+    isFeatureHidden,
+    toggleWalletVisibility,
+    toggleFeatureVisibility
+  } = useVisibility(walletType);
+
   // Fetch wallets with features
   const { data: walletsWithFeatures, isLoading: isWalletsLoading } = useQuery({
     queryKey: ['/api/wallet-features', { type: walletType }],
@@ -30,10 +41,11 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
     }
   });
 
-  // Filter wallets based on search term
+  // Filter wallets based on search term and visibility
   const filteredWallets = walletsWithFeatures?.filter(wallet => 
-    wallet.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    wallet.description.toLowerCase().includes(searchTerm.toLowerCase())
+    (wallet.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    wallet.description.toLowerCase().includes(searchTerm.toLowerCase())) &&
+    !isWalletHidden(wallet.id)
   );
 
   if (isWalletsLoading || isFeaturesLoading) {
@@ -100,6 +112,9 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
     }
   };
 
+  // Filter visible features
+  const visibleFeatures = sortedFeatures.filter(feature => !isFeatureHidden(feature.id));
+
   return (
     <div className="bg-white shadow rounded-lg overflow-hidden">
       <div className="overflow-x-auto">
@@ -111,41 +126,63 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
                   <th scope="col" className="sticky left-0 z-10 bg-gray-50 px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider min-w-[200px]">
                     Wallet
                   </th>
-                  {sortedFeatures.map((feature) => (
+                  {visibleFeatures.map((feature) => (
                     <th 
                       key={feature.id} 
                       scope="col" 
-                      className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider min-w-[140px]"
+                      className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider min-w-[140px] group"
                     >
-                      <WalletTooltip 
-                        title={feature.name} 
-                        description={feature.description}
-                      >
-                        {feature.name}
-                      </WalletTooltip>
+                      <div className="flex items-center justify-center space-x-1">
+                        <WalletTooltip 
+                          title={feature.name} 
+                          description={feature.description}
+                        >
+                          <span>{feature.name}</span>
+                        </WalletTooltip>
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          className="h-5 w-5 opacity-0 group-hover:opacity-100 transition-opacity ml-1"
+                          onClick={() => toggleFeatureVisibility(feature.id)}
+                          title={`Hide ${feature.name}`}
+                        >
+                          <EyeOff className="h-3 w-3" />
+                        </Button>
+                      </div>
                     </th>
                   ))}
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
                 {sortedWallets.map((wallet) => (
-                  <tr key={wallet.id} className="hover:bg-gray-50">
+                  <tr key={wallet.id} className="hover:bg-gray-50 group">
                     <td className="sticky left-0 z-10 bg-white px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 hover:bg-gray-50">
-                      <WalletTooltip 
-                        title={wallet.name} 
-                        description={wallet.description}
-                      >
-                        <a 
-                          href={wallet.website} 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
-                          className="hover:text-primary"
+                      <div className="flex items-center space-x-2">
+                        <WalletTooltip 
+                          title={wallet.name} 
+                          description={wallet.description}
                         >
-                          {wallet.name}
-                        </a>
-                      </WalletTooltip>
+                          <a 
+                            href={wallet.website} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="hover:text-primary"
+                          >
+                            {wallet.name}
+                          </a>
+                        </WalletTooltip>
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          className="h-5 w-5 opacity-0 group-hover:opacity-100 transition-opacity"
+                          onClick={() => toggleWalletVisibility(wallet.id)}
+                          title={`Hide ${wallet.name}`}
+                        >
+                          <EyeOff className="h-3 w-3" />
+                        </Button>
+                      </div>
                     </td>
-                    {sortedFeatures.map((feature) => {
+                    {visibleFeatures.map((feature) => {
                       const walletFeature = wallet.features.find(
                         (f) => f.featureId === feature.id
                       );
