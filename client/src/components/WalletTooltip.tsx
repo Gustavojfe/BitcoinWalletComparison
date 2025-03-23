@@ -76,7 +76,7 @@ const WalletTooltip = ({ title, description, children }: TooltipProps) => {
       {isVisible && (
         <div 
           ref={tooltipRef}
-          className="absolute z-10 bg-gray-900 text-white p-3 rounded shadow-lg max-w-xs swapido-tooltip"
+          className="absolute z-10 bg-gray-900 text-white p-3 rounded shadow-lg max-w-xs app-tooltip"
           style={{ 
             left: `${position.x}px`, 
             top: `${position.y}px` 
