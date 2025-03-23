@@ -1,0 +1,25 @@
+{
+  "name": "ZBD",
+  "website": "https://zbd.gg/",
+  "description": "A user-friendly Lightning wallet with instant Bitcoin payments, gaming integrations, and developer tools.",
+  "type": "lightning",
+  "logo": "zbd",
+  "order": 9,
+  "features": {
+    "onChain": "no",
+    "receiveOnChain": "no",
+    "sendOnChain": "no",
+    "invoice": "yes",
+    "lnurl": "yes",
+    "lightningAddress": "yes",
+    "bolt11": "yes",
+    "dnsSeeds": "yes",
+    "paymentRouting": "yes",
+    "mpp": "yes",
+    "manageOwnChannels": "no",
+    "lowIncomingLiquidity": {
+      "value": "custom",
+      "customText": "Custodial"
+    }
+  }
+}

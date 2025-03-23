@@ -1,0 +1,25 @@
+{
+  "name": "Cash App",
+  "website": "https://cash.app/",
+  "description": "A popular mobile payment service with integrated Bitcoin and Lightning Network functionality.",
+  "type": "lightning",
+  "logo": "cashapp",
+  "order": 10,
+  "features": {
+    "onChain": "yes",
+    "receiveOnChain": "yes",
+    "sendOnChain": "yes",
+    "invoice": "yes",
+    "lnurl": "partial",
+    "lightningAddress": "no",
+    "bolt11": "yes",
+    "dnsSeeds": "yes",
+    "paymentRouting": "yes",
+    "mpp": "yes",
+    "manageOwnChannels": "no",
+    "lowIncomingLiquidity": {
+      "value": "custom",
+      "customText": "Custodial"
+    }
+  }
+}
