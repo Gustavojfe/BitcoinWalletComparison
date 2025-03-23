@@ -6,20 +6,18 @@
   "logo": "zbd",
   "order": 9,
   "features": {
-    "onChain": "no",
-    "receiveOnChain": "no",
-    "sendOnChain": "no",
-    "invoice": "yes",
-    "lnurl": "yes",
-    "lightningAddress": "yes",
-    "bolt11": "yes",
-    "dnsSeeds": "yes",
-    "paymentRouting": "yes",
-    "mpp": "yes",
-    "manageOwnChannels": "no",
-    "lowIncomingLiquidity": {
-      "value": "custom",
-      "customText": "Custodial"
-    }
+    "platform": ["ios", "android", "web"],
+    "openSource": "no",
+    "kyc": "yes",
+    "walletType": "custodial",
+    "onChainSupport": "no",
+    "implementation": "lnd",
+    "bolt11Support": "yes",
+    "lnurlSupport": "yes",
+    "lightningAddressSupport": "yes",
+    "bolt12Support": "no",
+    "hrnBlip32Support": "yes",
+    "mppSupport": "yes",
+    "channelManagement": "not_possible"
   }
 }

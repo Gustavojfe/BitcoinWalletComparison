@@ -268,12 +268,12 @@ const WalletComparisonResult = () => {
                 </div>
                 <div className="col-span-1 flex justify-center items-center">
                   {wallet1Feature 
-                    ? renderFeatureStatus(wallet1Feature.value, wallet1Feature.customText) 
+                    ? renderFeatureStatus(wallet1Feature.value, wallet1Feature.customText, feature.name) 
                     : renderFeatureStatus('unknown')}
                 </div>
                 <div className="col-span-1 flex justify-center items-center">
                   {wallet2Feature 
-                    ? renderFeatureStatus(wallet2Feature.value, wallet2Feature.customText) 
+                    ? renderFeatureStatus(wallet2Feature.value, wallet2Feature.customText, feature.name) 
                     : renderFeatureStatus('unknown')}
                 </div>
               </div>
