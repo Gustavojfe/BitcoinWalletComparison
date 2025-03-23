@@ -177,10 +177,11 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
         );
       case 'no':
       case 'not_possible':
+        const noTitle = value === 'no' ? t('help.supportedNone') : translateFeatureValue('not_possible');
         return (
           <span 
             className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-destructive/20"
-            title={t('help.supportedNone')}
+            title={noTitle}
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-destructive" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -189,10 +190,11 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
         );
       case 'partial':
       case 'optional':
+        const partialTitle = value === 'partial' ? t('help.supportedPartial') : translateFeatureValue('optional');
         return (
           <span 
             className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-orange-500/20"
-            title={t('help.supportedPartial')}
+            title={partialTitle}
           >
             <span className="text-xs font-medium text-orange-500">P</span>
           </span>
@@ -203,34 +205,34 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
             className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-orange-100"
             title={customText || t('help.supportedCustom')}
           >
-            <span className="text-xs font-medium text-orange-600">{customText || t('common.custom')}</span>
+            <span className="text-xs font-medium text-orange-600">{customText || translateFeatureValue('custom')}</span>
           </span>
         );
       case 'send_only':
         return (
           <span 
             className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-amber-100"
-            title={t('features.send_only')}
+            title={translateFeatureValue('send_only')}
           >
-            <span className="text-xs font-medium text-amber-600">{t('features.send')}</span>
+            <span className="text-xs font-medium text-amber-600">{translateFeatureValue('send_only')}</span>
           </span>
         );
       case 'receive_only':
         return (
           <span 
             className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-amber-100"
-            title={t('features.receive_only')}
+            title={translateFeatureValue('receive_only')}
           >
-            <span className="text-xs font-medium text-amber-600">{t('features.receive')}</span>
+            <span className="text-xs font-medium text-amber-600">{translateFeatureValue('receive_only')}</span>
           </span>
         );
       case 'mandatory':
         return (
           <span 
             className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-orange-100"
-            title={t('features.mandatory')}
+            title={translateFeatureValue('mandatory')}
           >
-            <span className="text-xs font-medium text-orange-600">{t('features.required')}</span>
+            <span className="text-xs font-medium text-orange-600">{translateFeatureValue('mandatory')}</span>
           </span>
         );
       default:

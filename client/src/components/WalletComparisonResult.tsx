@@ -8,7 +8,7 @@ import { useLanguage } from '@/hooks/use-language';
 const WalletComparisonResult = () => {
   const { wallet1: wallet1Id, wallet2: wallet2Id } = useParams();
   const [, navigate] = useLocation();
-  const { t } = useLanguage();
+  const { t, translateFeatureValue } = useLanguage();
 
   // Fetch wallets with features
   const { data: walletsWithFeatures, isLoading: isWalletsLoading } = useQuery({
@@ -66,25 +66,8 @@ const WalletComparisonResult = () => {
         <div className="flex flex-wrap gap-2 items-center">
           <div className="flex flex-wrap gap-1">
             {platforms.map((platform, index) => {
-              // Icon mapping for platforms
-              let displayText = '';
-              
-              switch (platform) {
-                case 'ios':
-                  displayText = 'iOS';
-                  break;
-                case 'android':
-                  displayText = 'Android';
-                  break;
-                case 'desktop':
-                  displayText = 'Desktop';
-                  break;
-                case 'web':
-                  displayText = 'Web';
-                  break;
-                default:
-                  displayText = platform;
-              }
+              // Get translated platform name
+              const displayText = translateFeatureValue(platform.trim() as any) || platform;
               
               return (
                 <span 
@@ -102,32 +85,27 @@ const WalletComparisonResult = () => {
     
     // Handle special value types with consistent styling (implementation types)
     if (['lnd', 'ldk', 'core_lightning', 'eclair'].includes(value)) {
+      const displayValue = translateFeatureValue(value as any);
       return (
         <div className="flex items-center">
           <span className="px-2 py-1 text-xs font-medium rounded-md bg-blue-100 text-blue-600 mr-2">
             {value}
           </span>
-          <span className="text-foreground">{t(`features.${value}`) || value}</span>
+          <span className="text-foreground">{displayValue}</span>
         </div>
       );
     }
     
     // Handle wallet types
     if (['custodial', 'ln_node', 'liquid_swap', 'on_chain_swap', 'remote_node'].includes(value)) {
-      const displayMap: Record<string, string> = {
-        'custodial': t('features.custodial'),
-        'ln_node': t('features.ln_node'),
-        'liquid_swap': t('features.liquid_swap'),
-        'on_chain_swap': t('features.on_chain_swap'),
-        'remote_node': t('features.remote_node')
-      };
+      const displayValue = translateFeatureValue(value as any);
       
       return (
         <div className="flex items-center">
           <span className="px-2 py-1 text-xs font-medium rounded-md bg-purple-100 text-purple-600 mr-2">
             {value}
           </span>
-          <span className="text-foreground">{displayMap[value] || value}</span>
+          <span className="text-foreground">{displayValue}</span>
         </div>
       );
     }
@@ -142,11 +120,12 @@ const WalletComparisonResult = () => {
                 <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
               </svg>
             </span>
-            <span className="text-foreground">{t('common.yes')}</span>
+            <span className="text-foreground">{translateFeatureValue('yes')}</span>
           </div>
         );
       case 'no':
       case 'not_possible':
+        const displayText = value === 'no' ? translateFeatureValue('no') : translateFeatureValue('not_possible');
         return (
           <div className="flex items-center">
             <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-destructive/20 mr-2">
@@ -154,17 +133,18 @@ const WalletComparisonResult = () => {
                 <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
             </span>
-            <span className="text-foreground">{t('common.no')}</span>
+            <span className="text-foreground">{displayText}</span>
           </div>
         );
       case 'partial':
       case 'optional':
+        const partialDisplayText = value === 'partial' ? translateFeatureValue('partial') : translateFeatureValue('optional');
         return (
           <div className="flex items-center">
             <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-orange-500/20 mr-2">
               <span className="text-xs font-medium text-orange-500">P</span>
             </span>
-            <span className="text-foreground">{t('common.partial')}</span>
+            <span className="text-foreground">{partialDisplayText}</span>
           </div>
         );
       case 'custom':
@@ -173,34 +153,34 @@ const WalletComparisonResult = () => {
             <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-orange-500/20 mr-2">
               <span className="text-xs font-medium text-orange-500">C</span>
             </span>
-            <span className="text-foreground">{customText || t('common.custom')}</span>
+            <span className="text-foreground">{customText || translateFeatureValue('custom')}</span>
           </div>
         );
       case 'send_only':
         return (
           <div className="flex items-center">
             <span className="px-2 py-1 text-xs font-medium rounded-md bg-amber-100 text-amber-600 mr-2">
-              {t('features.send')}
+              Send
             </span>
-            <span className="text-foreground">{t('features.send_only')}</span>
+            <span className="text-foreground">{translateFeatureValue('send_only')}</span>
           </div>
         );
       case 'receive_only':
         return (
           <div className="flex items-center">
             <span className="px-2 py-1 text-xs font-medium rounded-md bg-amber-100 text-amber-600 mr-2">
-              {t('features.receive')}
+              Receive
             </span>
-            <span className="text-foreground">{t('features.receive_only')}</span>
+            <span className="text-foreground">{translateFeatureValue('receive_only')}</span>
           </div>
         );
       case 'mandatory':
         return (
           <div className="flex items-center">
             <span className="px-2 py-1 text-xs font-medium rounded-md bg-orange-100 text-orange-600 mr-2">
-              {t('features.required')}
+              Required
             </span>
-            <span className="text-foreground">{t('features.mandatory')}</span>
+            <span className="text-foreground">{translateFeatureValue('mandatory')}</span>
           </div>
         );
       default:
