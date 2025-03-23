@@ -10,6 +10,7 @@ import WalletComparisonResult from "@/components/WalletComparisonResult";
 import { VisibilityProvider } from "@/hooks/use-visibility-context";
 import { LanguageProvider } from "@/hooks/use-language";
 import { ThemeProvider } from "@/hooks/use-theme";
+import DebugTranslation from "@/components/DebugTranslation";
 
 function Router() {
   return (
@@ -57,6 +58,7 @@ function App() {
                 </div>
               </footer>
               <Toaster />
+              <DebugTranslation />
             </div>
           </VisibilityProvider>
         </LanguageProvider>
