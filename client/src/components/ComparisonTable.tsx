@@ -203,10 +203,13 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
     // Handle regular values with icons
     switch (value) {
       case 'yes':
+        // Handle translations directly based on language
+        let yesTitle = language === 'es' ? 'Característica completamente soportada' : 'Feature fully supported';
+        
         return (
           <span 
             className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-primary/20"
-            title={t('help.supportedFull')}
+            title={yesTitle}
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -215,11 +218,15 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
         );
       case 'no':
       case 'not_possible':
-        const notPossibleTitle = value === 'not_possible' ? t('features.not_possible') : t('features.no');
+        // Handle translations directly based on language
+        let noTitle = language === 'es' ? 
+                    (value === 'not_possible' ? 'No es posible' : 'No') : 
+                    (value === 'not_possible' ? 'Not possible' : 'No');
+        
         return (
           <span 
             className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-destructive/20"
-            title={notPossibleTitle}
+            title={noTitle}
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-destructive" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -228,16 +235,35 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
         );
       case 'partial':
       case 'optional':
-        const partialTitle = value === 'partial' ? t('features.partial') : t('features.optional');
+        // Handle translations directly based on language
+        let titleText = '';
+        let displayLetter = '';
+        
+        if (language === 'es') {
+          if (value === 'partial') {
+            titleText = 'Parcial';
+            displayLetter = 'P';
+          } else {
+            titleText = 'Opcional';
+            displayLetter = 'O';
+          }
+        } else {
+          if (value === 'partial') {
+            titleText = 'Partial';
+            displayLetter = 'P';
+          } else {
+            titleText = 'Optional';
+            displayLetter = 'O';
+          }
+        }
+        
         return (
           <span 
             className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-orange-500/20"
-            title={partialTitle}
+            title={titleText}
           >
             <span className="text-xs font-medium text-orange-500">
-              {value === 'partial' ? 
-                (t('features.partial').charAt(0).toUpperCase()) : 
-                (t('features.optional').charAt(0).toUpperCase())}
+              {displayLetter}
             </span>
           </span>
         );
@@ -304,10 +330,13 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
           </span>
         );
       default:
+        // Handle translations directly based on language
+        let unknownTitle = language === 'es' ? 'Desconocido' : 'Unknown';
+        
         return (
           <span 
             className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-muted"
-            title={t('common.unknown')}
+            title={unknownTitle}
           >
             <span className="text-xs font-medium text-muted-foreground">?</span>
           </span>
