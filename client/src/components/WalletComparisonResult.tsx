@@ -45,9 +45,9 @@ const WalletComparisonResult = () => {
   if (!wallet1 || !wallet2 || !features) {
     return (
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
-        <div className="bg-white p-6 shadow rounded-lg">
-          <h1 className="text-xl font-bold mb-4">{t('wizard.comparisonResult')}</h1>
-          <p className="text-gray-500 mb-4">{t('table.noData')}</p>
+        <div className="bg-card p-6 shadow rounded-lg">
+          <h1 className="text-xl font-bold mb-4 text-card-foreground">{t('wizard.comparisonResult')}</h1>
+          <p className="text-muted-foreground mb-4">{t('table.noData')}</p>
           <Button onClick={() => navigate('/')} className="app-button">{t('common.return')}</Button>
         </div>
       </div>
@@ -114,18 +114,18 @@ const WalletComparisonResult = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
-      <div className="bg-white p-6 shadow rounded-lg">
+      <div className="bg-card p-6 shadow rounded-lg">
         <div className="flex flex-col sm:flex-row justify-between items-center mb-6">
-          <h1 className="text-xl font-bold mb-2 sm:mb-0">{t('wizard.comparisonResult')}</h1>
+          <h1 className="text-xl font-bold mb-2 sm:mb-0 text-card-foreground">{t('wizard.comparisonResult')}</h1>
           <Button onClick={() => navigate('/')} className="app-button">{t('common.return')}</Button>
         </div>
 
         <div className="grid grid-cols-3 gap-4 mb-6">
           <div className="col-span-1">
-            <h2 className="font-medium text-gray-800">{t('wizard.feature')}</h2>
+            <h2 className="font-medium text-foreground">{t('wizard.feature')}</h2>
           </div>
           <div className="col-span-1">
-            <h2 className="font-medium text-gray-800 text-center">
+            <h2 className="font-medium text-foreground text-center">
               <a 
                 href={wallet1.website} 
                 target="_blank" 
@@ -138,7 +138,7 @@ const WalletComparisonResult = () => {
             </h2>
           </div>
           <div className="col-span-1">
-            <h2 className="font-medium text-gray-800 text-center">
+            <h2 className="font-medium text-foreground text-center">
               <a 
                 href={wallet2.website} 
                 target="_blank" 
@@ -152,7 +152,7 @@ const WalletComparisonResult = () => {
           </div>
         </div>
 
-        <div className="divide-y divide-gray-200">
+        <div className="divide-y divide-border">
           {sortedFeatures.map(feature => {
             const wallet1Feature = wallet1.features.find(f => f.featureId === feature.id);
             const wallet2Feature = wallet2.features.find(f => f.featureId === feature.id);
@@ -160,8 +160,8 @@ const WalletComparisonResult = () => {
             return (
               <div key={feature.id} className="grid grid-cols-3 gap-4 py-4">
                 <div className="col-span-1">
-                  <div className="font-medium">{feature.name}</div>
-                  <div className="text-sm text-gray-500">{feature.description}</div>
+                  <div className="font-medium text-foreground">{feature.name}</div>
+                  <div className="text-sm text-muted-foreground">{feature.description}</div>
                 </div>
                 <div className="col-span-1 flex justify-center items-center">
                   {wallet1Feature 

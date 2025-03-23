@@ -64,13 +64,13 @@ const ComparisonWizard = ({ walletType }: ComparisonWizardProps) => {
     : [];
 
   return (
-    <div className="mt-8 bg-white shadow rounded-lg p-6">
-      <h2 className="text-lg font-medium text-gray-900 mb-4">{t('wizard.title')}</h2>
-      <p className="text-sm text-gray-500 mb-4">{t('help.wizardTip')}</p>
+    <div className="mt-8 bg-card shadow rounded-lg p-6">
+      <h2 className="text-lg font-medium text-card-foreground mb-4">{t('wizard.title')}</h2>
+      <p className="text-sm text-muted-foreground mb-4">{t('help.wizardTip')}</p>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
         <div>
-          <label htmlFor="wallet1" className="block text-sm font-medium text-gray-700">{t('wizard.selectFirst')}</label>
+          <label htmlFor="wallet1" className="block text-sm font-medium text-foreground">{t('wizard.selectFirst')}</label>
           <Select 
             value={wallet1} 
             onValueChange={setWallet1}
@@ -90,7 +90,7 @@ const ComparisonWizard = ({ walletType }: ComparisonWizardProps) => {
         </div>
         
         <div>
-          <label htmlFor="wallet2" className="block text-sm font-medium text-gray-700">{t('wizard.selectSecond')}</label>
+          <label htmlFor="wallet2" className="block text-sm font-medium text-foreground">{t('wizard.selectSecond')}</label>
           <Select 
             value={wallet2} 
             onValueChange={setWallet2}

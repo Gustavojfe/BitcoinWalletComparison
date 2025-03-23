@@ -168,7 +168,7 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
                     <th 
                       key={feature.id} 
                       scope="col" 
-                      className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider min-w-[140px] group"
+                      className="px-6 py-3 text-center text-xs font-medium text-muted-foreground uppercase tracking-wider min-w-[140px] group"
                     >
                       <div className="flex items-center justify-center space-x-1">
                         {(() => {
@@ -196,10 +196,10 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
                   ))}
                 </tr>
               </thead>
-              <tbody className="bg-white divide-y divide-gray-200">
+              <tbody className="bg-card divide-y divide-border">
                 {sortedWallets.map((wallet) => (
-                  <tr key={wallet.id} className="hover:bg-gray-50 group">
-                    <td className="sticky left-0 z-10 bg-white px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 hover:bg-gray-50">
+                  <tr key={wallet.id} className="hover:bg-accent group">
+                    <td className="sticky left-0 z-10 bg-card px-6 py-4 whitespace-nowrap text-sm font-medium text-foreground hover:bg-accent">
                       <div className="flex items-center space-x-2">
                         {(() => {
                           const translatedWallet = translateWallet(wallet);
