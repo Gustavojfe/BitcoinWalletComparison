@@ -65,19 +65,19 @@ const ComparisonWizard = ({ walletType }: ComparisonWizardProps) => {
 
   return (
     <div className="mt-8 bg-white shadow rounded-lg p-6">
-      <h2 className="text-lg font-medium text-gray-900 mb-4">Wallet Comparison</h2>
-      <p className="text-sm text-gray-500 mb-4">Select two wallets to compare their features side by side</p>
+      <h2 className="text-lg font-medium text-gray-900 mb-4">{t('wizard.title')}</h2>
+      <p className="text-sm text-gray-500 mb-4">{t('help.wizardTip')}</p>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
         <div>
-          <label htmlFor="wallet1" className="block text-sm font-medium text-gray-700">First Wallet</label>
+          <label htmlFor="wallet1" className="block text-sm font-medium text-gray-700">{t('wizard.selectFirst')}</label>
           <Select 
             value={wallet1} 
             onValueChange={setWallet1}
             disabled={isLoading}
           >
             <SelectTrigger className="mt-1 w-full">
-              <SelectValue placeholder="Select a wallet..." />
+              <SelectValue placeholder={t('common.selectWallet')} />
             </SelectTrigger>
             <SelectContent>
               {sortedWallets.map(wallet => (
@@ -90,14 +90,14 @@ const ComparisonWizard = ({ walletType }: ComparisonWizardProps) => {
         </div>
         
         <div>
-          <label htmlFor="wallet2" className="block text-sm font-medium text-gray-700">Second Wallet</label>
+          <label htmlFor="wallet2" className="block text-sm font-medium text-gray-700">{t('wizard.selectSecond')}</label>
           <Select 
             value={wallet2} 
             onValueChange={setWallet2}
             disabled={isLoading}
           >
             <SelectTrigger className="mt-1 w-full">
-              <SelectValue placeholder="Select a wallet..." />
+              <SelectValue placeholder={t('common.selectWallet')} />
             </SelectTrigger>
             <SelectContent>
               {sortedWallets.map(wallet => (
@@ -116,7 +116,7 @@ const ComparisonWizard = ({ walletType }: ComparisonWizardProps) => {
           disabled={isLoading || !wallet1 || !wallet2}
           className="app-button inline-flex items-center px-4 py-2 text-sm font-medium shadow-sm"
         >
-          Compare Wallets
+          {t('wizard.compareButton')}
         </Button>
       </div>
     </div>

@@ -15,13 +15,15 @@
     "no": "No",
     "partial": "Partial",
     "custom": "Custom",
+    "unknown": "Unknown",
     "show": "Show",
     "hide": "Hide",
     "help": "Help",
     "selectionRequired": "Selection Required",
     "selectTwoWallets": "Please select two wallets to compare.",
     "invalidSelection": "Invalid Selection",
-    "selectDifferentWallets": "Please select two different wallets to compare."
+    "selectDifferentWallets": "Please select two different wallets to compare.",
+    "return": "Return to Comparison Page"
   },
   "header": {
     "title": "Bitcoin Wallet Comparison",

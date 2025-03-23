@@ -14,10 +14,16 @@
     "yes": "Sí",
     "no": "No",
     "partial": "Parcial",
-    "custom": "Personalizado",
+    "custom": "Personalizado", 
+    "unknown": "Desconocido",
     "show": "Mostrar",
     "hide": "Ocultar",
-    "help": "Ayuda"
+    "help": "Ayuda",
+    "selectionRequired": "Selección Requerida",
+    "selectTwoWallets": "Por favor selecciona dos carteras para comparar.",
+    "invalidSelection": "Selección Inválida",
+    "selectDifferentWallets": "Por favor selecciona dos carteras diferentes para comparar.",
+    "return": "Volver a la Página de Comparación"
   },
   "header": {
     "title": "Comparación de Carteras Bitcoin",

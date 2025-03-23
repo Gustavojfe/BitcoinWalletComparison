@@ -3,10 +3,12 @@ import { useParams, useLocation } from 'wouter';
 import { WalletWithFeatures, Feature } from '@/lib/types';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
+import { useLanguage } from '@/hooks/use-language';
 
 const WalletComparisonResult = () => {
   const { wallet1: wallet1Id, wallet2: wallet2Id } = useParams();
   const [, navigate] = useLocation();
+  const { t } = useLanguage();
 
   // Fetch wallets with features
   const { data: walletsWithFeatures, isLoading: isWalletsLoading } = useQuery({
@@ -44,9 +46,9 @@ const WalletComparisonResult = () => {
     return (
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
         <div className="bg-white p-6 shadow rounded-lg">
-          <h1 className="text-xl font-bold mb-4">Wallet Comparison</h1>
-          <p className="text-gray-500 mb-4">Unable to find the selected wallets or features.</p>
-          <Button onClick={() => navigate('/')} className="app-button">Return to Comparison Page</Button>
+          <h1 className="text-xl font-bold mb-4">{t('wizard.comparisonResult')}</h1>
+          <p className="text-gray-500 mb-4">{t('table.noData')}</p>
+          <Button onClick={() => navigate('/')} className="app-button">{t('common.return')}</Button>
         </div>
       </div>
     );
@@ -66,7 +68,7 @@ const WalletComparisonResult = () => {
                 <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
               </svg>
             </span>
-            <span>Yes</span>
+            <span>{t('common.yes')}</span>
           </div>
         );
       case 'no':
@@ -77,7 +79,7 @@ const WalletComparisonResult = () => {
                 <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
             </span>
-            <span>No</span>
+            <span>{t('common.no')}</span>
           </div>
         );
       case 'partial':
@@ -86,7 +88,7 @@ const WalletComparisonResult = () => {
             <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-amber-100 mr-2">
               <span className="text-xs font-medium text-amber-600">P</span>
             </span>
-            <span>Partial</span>
+            <span>{t('common.partial')}</span>
           </div>
         );
       case 'custom':
@@ -95,7 +97,7 @@ const WalletComparisonResult = () => {
             <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-amber-100 mr-2">
               <span className="text-xs font-medium text-amber-600">C</span>
             </span>
-            <span>{customText || 'Custom'}</span>
+            <span>{customText || t('common.custom')}</span>
           </div>
         );
       default:
@@ -104,7 +106,7 @@ const WalletComparisonResult = () => {
             <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-gray-100 mr-2">
               <span className="text-xs font-medium text-gray-700">?</span>
             </span>
-            <span>Unknown</span>
+            <span>{t('common.unknown') || 'Unknown'}</span>
           </div>
         );
     }
