@@ -6,20 +6,18 @@
   "logo": "primal",
   "order": 21,
   "features": {
-    "onChain": "partial",
-    "receiveOnChain": "no",
-    "sendOnChain": "no",
-    "invoice": "yes",
-    "lnurl": "yes",
-    "lightningAddress": "yes",
-    "bolt11": "yes",
-    "dnsSeeds": "yes",
-    "paymentRouting": "yes",
-    "mpp": "yes",
-    "manageOwnChannels": "no",
-    "lowIncomingLiquidity": {
-      "value": "custom",
-      "customText": "Custodial"
-    }
+    "platform": ["ios", "android", "web"],
+    "openSource": "yes",
+    "kyc": "no",
+    "walletType": "custodial",
+    "onChainSupport": "partial",
+    "implementation": "lnd",
+    "bolt11Support": "yes",
+    "lnurlSupport": "yes",
+    "lightningAddressSupport": "yes",
+    "bolt12Support": "no",
+    "hrnBlip32Support": "no",
+    "mppSupport": "yes",
+    "channelManagement": "no"
   }
 }
