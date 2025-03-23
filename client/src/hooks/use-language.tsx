@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { Language, getTranslation, languageNames } from '../translations';
-import { Feature, Wallet } from '../lib/types';
+import { Feature, FeatureValue, Wallet } from '../lib/types';
 
 interface LanguageContextType {
   language: Language;
@@ -8,6 +8,7 @@ interface LanguageContextType {
   t: (key: string) => string;
   translateFeature: (feature: Feature) => { name: string; description: string };
   translateWallet: (wallet: Wallet) => { name: string; description: string };
+  translateFeatureValue: (value: FeatureValue) => string;
   availableLanguages: Language[];
   languageNames: Record<Language, string>;
 }
@@ -20,6 +21,7 @@ const LanguageContext = createContext<LanguageContextType>({
   t: (key: string) => key,
   translateFeature: (feature) => ({ name: feature.name, description: feature.description }),
   translateWallet: (wallet) => ({ name: wallet.name, description: wallet.description }),
+  translateFeatureValue: (value) => String(value),
   availableLanguages: ['en', 'es'],
   languageNames
 });
