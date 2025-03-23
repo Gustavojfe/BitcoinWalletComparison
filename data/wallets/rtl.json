@@ -1,0 +1,25 @@
+{
+  "name": "RTL",
+  "website": "https://github.com/Ride-The-Lightning/RTL",
+  "description": "Ride The Lightning (RTL) is a full-featured, open-source web interface for managing Lightning Network nodes.",
+  "type": "lightning",
+  "logo": "rtl",
+  "order": 17,
+  "features": {
+    "onChain": "yes",
+    "receiveOnChain": "yes",
+    "sendOnChain": "yes",
+    "invoice": "yes",
+    "lnurl": "yes",
+    "lightningAddress": "partial",
+    "bolt11": "yes",
+    "dnsSeeds": "yes",
+    "paymentRouting": "yes",
+    "mpp": "yes",
+    "manageOwnChannels": "yes",
+    "lowIncomingLiquidity": {
+      "value": "custom",
+      "customText": "Manual"
+    }
+  }
+}

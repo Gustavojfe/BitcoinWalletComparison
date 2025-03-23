@@ -1,0 +1,25 @@
+{
+  "name": "Lawallet",
+  "website": "https://lawallet.io/",
+  "description": "A Bitcoin wallet focused on Latin American users with Lightning Network capabilities.",
+  "type": "lightning",
+  "logo": "lawallet",
+  "order": 18,
+  "features": {
+    "onChain": "yes",
+    "receiveOnChain": "yes",
+    "sendOnChain": "yes",
+    "invoice": "yes",
+    "lnurl": "yes",
+    "lightningAddress": "yes",
+    "bolt11": "yes",
+    "dnsSeeds": "yes",
+    "paymentRouting": "yes",
+    "mpp": "yes",
+    "manageOwnChannels": "no",
+    "lowIncomingLiquidity": {
+      "value": "custom",
+      "customText": "Custodial"
+    }
+  }
+}

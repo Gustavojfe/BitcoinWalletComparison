@@ -1,0 +1,25 @@
+{
+  "name": "Primal",
+  "website": "https://primal.net/",
+  "description": "A social media platform with integrated Lightning Network wallet capabilities for Bitcoin payments.",
+  "type": "lightning",
+  "logo": "primal",
+  "order": 21,
+  "features": {
+    "onChain": "partial",
+    "receiveOnChain": "no",
+    "sendOnChain": "no",
+    "invoice": "yes",
+    "lnurl": "yes",
+    "lightningAddress": "yes",
+    "bolt11": "yes",
+    "dnsSeeds": "yes",
+    "paymentRouting": "yes",
+    "mpp": "yes",
+    "manageOwnChannels": "no",
+    "lowIncomingLiquidity": {
+      "value": "custom",
+      "customText": "Custodial"
+    }
+  }
+}

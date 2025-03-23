@@ -1,0 +1,25 @@
+{
+  "name": "Blitz",
+  "website": "https://blitz-wallet.github.io/",
+  "description": "An open-source Lightning Network wallet with support for advanced features and self-custody.",
+  "type": "lightning",
+  "logo": "blitz",
+  "order": 20,
+  "features": {
+    "onChain": "yes",
+    "receiveOnChain": "yes",
+    "sendOnChain": "yes",
+    "invoice": "yes",
+    "lnurl": "yes",
+    "lightningAddress": "yes",
+    "bolt11": "yes",
+    "dnsSeeds": "yes",
+    "paymentRouting": "yes",
+    "mpp": "yes",
+    "manageOwnChannels": "yes",
+    "lowIncomingLiquidity": {
+      "value": "custom",
+      "customText": "Manual"
+    }
+  }
+}

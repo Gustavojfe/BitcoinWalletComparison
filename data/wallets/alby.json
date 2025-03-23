@@ -1,0 +1,25 @@
+{
+  "name": "Alby",
+  "website": "https://getalby.com/",
+  "description": "A browser extension wallet that enables Bitcoin payments over the Lightning Network directly from your browser.",
+  "type": "lightning",
+  "logo": "alby",
+  "order": 19,
+  "features": {
+    "onChain": "partial",
+    "receiveOnChain": "yes",
+    "sendOnChain": "partial",
+    "invoice": "yes",
+    "lnurl": "yes",
+    "lightningAddress": "yes",
+    "bolt11": "yes",
+    "dnsSeeds": "yes",
+    "paymentRouting": "yes",
+    "mpp": "yes",
+    "manageOwnChannels": "partial",
+    "lowIncomingLiquidity": {
+      "value": "custom",
+      "customText": "Account-based"
+    }
+  }
+}

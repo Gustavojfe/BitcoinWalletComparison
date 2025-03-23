@@ -1,0 +1,25 @@
+{
+  "name": "Exodus",
+  "website": "https://www.exodus.com/",
+  "description": "A multi-cryptocurrency wallet with Lightning Network support for Bitcoin transactions.",
+  "type": "lightning",
+  "logo": "exodus",
+  "order": 22,
+  "features": {
+    "onChain": "yes",
+    "receiveOnChain": "yes",
+    "sendOnChain": "yes",
+    "invoice": "yes",
+    "lnurl": "partial",
+    "lightningAddress": "partial",
+    "bolt11": "yes",
+    "dnsSeeds": "yes",
+    "paymentRouting": "yes",
+    "mpp": "yes",
+    "manageOwnChannels": "no",
+    "lowIncomingLiquidity": {
+      "value": "custom",
+      "customText": "Custodial"
+    }
+  }
+}
