@@ -8,8 +8,8 @@ import esWallets from './wallets/es.json';
 export type Language = 'en' | 'es';
 
 export interface TranslationMap {
-  [key: string]: {
-    [key: string]: string | TranslationMap
+  [key: string]: string | TranslationMap | {
+    [key: string]: any;
   };
 }
 

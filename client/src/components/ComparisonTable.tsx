@@ -22,8 +22,8 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
     toggleFeatureVisibility
   } = useVisibility(walletType);
   
-  // Get translation function
-  const { t } = useLanguage();
+  // Get translation functions
+  const { t, translateFeature, translateWallet } = useLanguage();
 
   // Fetch wallets with features
   const { data: walletsWithFeatures, isLoading: isWalletsLoading } = useQuery({
@@ -171,18 +171,23 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
                       className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider min-w-[140px] group"
                     >
                       <div className="flex items-center justify-center space-x-1">
-                        <WalletTooltip 
-                          title={feature.name} 
-                          description={feature.description}
-                        >
-                          <span>{feature.name}</span>
-                        </WalletTooltip>
+                        {(() => {
+                          const translatedFeature = translateFeature(feature);
+                          return (
+                            <WalletTooltip 
+                              title={translatedFeature.name} 
+                              description={translatedFeature.description}
+                            >
+                              <span>{translatedFeature.name}</span>
+                            </WalletTooltip>
+                          );
+                        })()}
                         <Button
                           variant="ghost"
                           size="icon"
                           className="h-5 w-5 opacity-0 group-hover:opacity-100 transition-opacity ml-1"
                           onClick={() => toggleFeatureVisibility(feature.id)}
-                          title={`${t('common.hide')} ${feature.name}`}
+                          title={`${t('common.hide')} ${translateFeature(feature).name}`}
                         >
                           <EyeOff className="h-3 w-3" />
                         </Button>
@@ -196,25 +201,30 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
                   <tr key={wallet.id} className="hover:bg-gray-50 group">
                     <td className="sticky left-0 z-10 bg-white px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 hover:bg-gray-50">
                       <div className="flex items-center space-x-2">
-                        <WalletTooltip 
-                          title={wallet.name} 
-                          description={wallet.description}
-                        >
-                          <a 
-                            href={wallet.website} 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
-                            className="hover:text-primary"
-                          >
-                            {wallet.name}
-                          </a>
-                        </WalletTooltip>
+                        {(() => {
+                          const translatedWallet = translateWallet(wallet);
+                          return (
+                            <WalletTooltip 
+                              title={translatedWallet.name} 
+                              description={translatedWallet.description}
+                            >
+                              <a 
+                                href={wallet.website} 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                className="hover:text-primary"
+                              >
+                                {translatedWallet.name}
+                              </a>
+                            </WalletTooltip>
+                          );
+                        })()}
                         <Button
                           variant="ghost"
                           size="icon"
                           className="h-5 w-5 opacity-0 group-hover:opacity-100 transition-opacity"
                           onClick={() => toggleWalletVisibility(wallet.id)}
-                          title={`${t('common.hide')} ${wallet.name}`}
+                          title={`${t('common.hide')} ${translateWallet(wallet).name}`}
                         >
                           <EyeOff className="h-3 w-3" />
                         </Button>

@@ -18,6 +18,8 @@ const LanguageContext = createContext<LanguageContextType>({
   language: defaultLanguage,
   setLanguage: () => {},
   t: (key: string) => key,
+  translateFeature: (feature) => ({ name: feature.name, description: feature.description }),
+  translateWallet: (wallet) => ({ name: wallet.name, description: wallet.description }),
   availableLanguages: ['en', 'es'],
   languageNames
 });
@@ -60,10 +62,34 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     return getTranslation(language, key);
   };
 
+  // Feature translation function
+  const translateFeature = (feature: Feature) => {
+    const translatedName = getTranslation(language, `features.${feature.name}.name`) || feature.name;
+    const translatedDescription = getTranslation(language, `features.${feature.name}.description`) || feature.description;
+    
+    return {
+      name: translatedName,
+      description: translatedDescription
+    };
+  };
+
+  // Wallet translation function
+  const translateWallet = (wallet: Wallet) => {
+    const translatedName = getTranslation(language, `wallets.${wallet.name}.name`) || wallet.name;
+    const translatedDescription = getTranslation(language, `wallets.${wallet.name}.description`) || wallet.description;
+    
+    return {
+      name: translatedName,
+      description: translatedDescription
+    };
+  };
+
   const value = {
     language,
     setLanguage,
     t,
+    translateFeature,
+    translateWallet,
     availableLanguages: ['en', 'es'] as Language[],
     languageNames
   };
