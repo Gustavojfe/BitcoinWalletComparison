@@ -1,86 +1,93 @@
 [
   {
-    "id": "onChain",
-    "name": "On-Chain",
-    "description": "The ability to send and receive on-chain Bitcoin transactions.",
+    "id": "platform",
+    "name": "Platform",
+    "description": "Supported operating systems and platforms for the wallet.",
     "type": "lightning",
     "order": 1
   },
   {
-    "id": "receiveOnChain",
-    "name": "Receive On-Chain",
-    "description": "The ability to generate addresses and receive on-chain Bitcoin.",
+    "id": "openSource",
+    "name": "Open-Source",
+    "description": "Whether the wallet's code is open-source and publicly available.",
     "type": "lightning",
     "order": 2
   },
   {
-    "id": "sendOnChain",
-    "name": "Send On-Chain",
-    "description": "The ability to send Bitcoin through on-chain transactions.",
+    "id": "kyc",
+    "name": "KYC",
+    "description": "Know Your Customer requirements for using the wallet.",
     "type": "lightning",
     "order": 3
   },
   {
-    "id": "invoice",
-    "name": "Invoice",
-    "description": "Create and manage Lightning Network invoices for receiving payments.",
+    "id": "walletType",
+    "name": "Type of Wallet",
+    "description": "The architecture and design approach of the wallet.",
     "type": "lightning",
     "order": 4
   },
   {
-    "id": "lnurl",
-    "name": "LNURL(s)",
-    "description": "Support for different LNURL protocols like LNURL-pay, LNURL-withdraw, etc.",
+    "id": "onChainSupport",
+    "name": "On-Chain Support",
+    "description": "The wallet's capability to handle on-chain Bitcoin transactions.",
     "type": "lightning",
     "order": 5
   },
   {
-    "id": "lightningAddress",
-    "name": "Lightning Address",
-    "description": "Support for Lightning Addresses in the format user@domain.com.",
+    "id": "implementation",
+    "name": "Implementation",
+    "description": "The Lightning Network implementation used by the wallet.",
     "type": "lightning",
     "order": 6
   },
   {
-    "id": "bolt11",
-    "name": "BoltII",
-    "description": "Implementation of the BOLT 11 specification for Lightning payments.",
+    "id": "bolt11Support",
+    "name": "Bolt11 Support",
+    "description": "Support for the BOLT11 Lightning Network invoice format.",
     "type": "lightning",
     "order": 7
   },
   {
-    "id": "dnsSeeds",
-    "name": "DNS (Seeds)",
-    "description": "Use of DNS seeds for finding Lightning Network nodes.",
+    "id": "lnurlSupport",
+    "name": "LNURL Support",
+    "description": "Support for the LNURL protocol for Lightning Network interactions.",
     "type": "lightning",
     "order": 8
   },
   {
-    "id": "paymentRouting",
-    "name": "Payment Routing",
-    "description": "Ability to route payments through the Lightning Network.",
+    "id": "lightningAddressSupport",
+    "name": "Lightning Address Support",
+    "description": "Support for Lightning Addresses in the format user@domain.com.",
     "type": "lightning",
     "order": 9
   },
   {
-    "id": "mpp",
-    "name": "MPP",
-    "description": "Multi-Path Payments: splitting payments across multiple Lightning channels.",
+    "id": "bolt12Support",
+    "name": "Bolt12 Support",
+    "description": "Support for the BOLT12 Lightning Network offer format.",
     "type": "lightning",
     "order": 10
   },
   {
-    "id": "manageOwnChannels",
-    "name": "Manage Own Channels",
-    "description": "Ability for users to create and manage their own Lightning channels.",
+    "id": "hrnBlip32Support",
+    "name": "HRN BLIP32 Support",
+    "description": "Support for Human-Readable Names based on BLIP-0032.",
     "type": "lightning",
     "order": 11
   },
   {
-    "id": "lowIncomingLiquidity",
-    "name": "Low Incoming Liquidity",
-    "description": "Ways to address incoming liquidity challenges for receiving payments.",
+    "id": "mppSupport",
+    "name": "MPP Support",
+    "description": "Multi-Path Payments: ability to split payments across multiple Lightning channels.",
     "type": "lightning",
     "order": 12
+  },
+  {
+    "id": "channelManagement",
+    "name": "Channel Management",
+    "description": "The wallet's approach to Lightning Network channel management.",
+    "type": "lightning",
+    "order": 13
   }
 ]

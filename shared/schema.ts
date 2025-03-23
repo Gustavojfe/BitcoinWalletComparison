@@ -7,7 +7,7 @@ export const walletTypes = ["lightning", "onchain", "hardware"] as const;
 export type WalletType = typeof walletTypes[number];
 
 // Define feature value types
-export const featureValues = ["yes", "no", "partial", "custom"] as const;
+export const featureValues = ["yes", "no", "partial", "custom", "send_only", "receive_only", "mandatory", "optional", "not_possible", "ios", "android", "desktop", "web", "custodial", "ln_node", "liquid_swap", "on_chain_swap", "remote_node", "lnd", "ldk", "core_lightning", "eclair"] as const;
 export type FeatureValue = typeof featureValues[number];
 
 // Users table (kept from original schema)

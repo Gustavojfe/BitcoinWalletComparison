@@ -1,6 +1,6 @@
 export type WalletType = "lightning" | "onchain" | "hardware";
 
-export type FeatureValue = "yes" | "no" | "partial" | "custom";
+export type FeatureValue = "yes" | "no" | "partial" | "custom" | "send_only" | "receive_only" | "mandatory" | "optional" | "not_possible" | "ios" | "android" | "desktop" | "web" | "custodial" | "ln_node" | "liquid_swap" | "on_chain_swap" | "remote_node" | "lnd" | "ldk" | "core_lightning" | "eclair";
 
 export interface Wallet {
   id: number;
