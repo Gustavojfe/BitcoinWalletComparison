@@ -1,5 +1,9 @@
 import en from './en.json';
 import es from './es.json';
+import enFeatures from './features/en.json';
+import esFeatures from './features/es.json';
+import enWallets from './wallets/en.json';
+import esWallets from './wallets/es.json';
 
 export type Language = 'en' | 'es';
 
@@ -9,9 +13,22 @@ export interface TranslationMap {
   };
 }
 
+// Merge the feature and wallet translations with the main translations
+const mergedEn = {
+  ...en,
+  ...enFeatures,
+  ...enWallets
+};
+
+const mergedEs = {
+  ...es,
+  ...esFeatures,
+  ...esWallets
+};
+
 export const translations: Record<Language, TranslationMap> = {
-  en,
-  es
+  en: mergedEn,
+  es: mergedEs
 };
 
 export const languageNames: Record<Language, string> = {

@@ -1,10 +1,13 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { Language, getTranslation, languageNames } from '../translations';
+import { Feature, Wallet } from '../lib/types';
 
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
   t: (key: string) => string;
+  translateFeature: (feature: Feature) => { name: string; description: string };
+  translateWallet: (wallet: Wallet) => { name: string; description: string };
   availableLanguages: Language[];
   languageNames: Record<Language, string>;
 }

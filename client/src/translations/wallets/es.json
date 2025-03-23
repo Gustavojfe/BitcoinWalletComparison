@@ -1,0 +1,64 @@
+{
+  "wallets": {
+    "Phoenix": {
+      "name": "Phoenix",
+      "description": "Una cartera Lightning fácil de usar con un modelo de saldo simplificado y gestión automatizada de canales."
+    },
+    "Wallet of Satoshi": {
+      "name": "Wallet of Satoshi",
+      "description": "Una cartera Lightning custodial enfocada en la simplicidad con pagos instantáneos y sin necesidad de configuración."
+    },
+    "Zeus": {
+      "name": "Zeus",
+      "description": "Una cartera Lightning móvil que se conecta a tu propio nodo para un control total."
+    },
+    "Muun": {
+      "name": "Muun",
+      "description": "Una cartera no custodial que soporta pagos tanto on-chain como Lightning con seguridad multisig."
+    },
+    "Breez": {
+      "name": "Breez",
+      "description": "Una cartera Lightning no custodial con reproductor de podcasts integrado y funciones de punto de venta."
+    },
+    "Blink": {
+      "name": "Blink",
+      "description": "Una cartera Lightning con capacidades on-chain construida sobre una arquitectura cliente-servidor."
+    },
+    "Alby": {
+      "name": "Alby",
+      "description": "Una extensión de navegador Lightning que te ayuda a hacer micropagos en toda la web."
+    },
+    "Cash App": {
+      "name": "Cash App",
+      "description": "Una aplicación de pago popular con funcionalidad integrada de Bitcoin y Lightning."
+    },
+    "BLW": {
+      "name": "Bitcoin Lightning Wallet",
+      "description": "Una de las carteras Lightning más antiguas con un enfoque en la seguridad y control del usuario."
+    },
+    "Bitkit": {
+      "name": "Bitkit",
+      "description": "Una cartera móvil no custodial con soporte on-chain y Lightning enfocada en usabilidad."
+    },
+    "Electrum": {
+      "name": "Electrum",
+      "description": "Una cartera Bitcoin veterana que agregó capacidades de Red Lightning."
+    },
+    "Blixt": {
+      "name": "Blixt",
+      "description": "Una cartera Lightning no custodial que ejecuta un nodo ligero en tu teléfono."
+    },
+    "Mutiny": {
+      "name": "Mutiny",
+      "description": "Una cartera enfocada en la privacidad que se ejecuta en el navegador sin necesidad de registro."
+    },
+    "Zap": {
+      "name": "Zap",
+      "description": "Una cartera Lightning enfocada en la experiencia de usuario con capacidades de conexión a nodos."
+    },
+    "Simple Bitcoin Wallet": {
+      "name": "Simple Bitcoin Wallet",
+      "description": "Una cartera sencilla desarrollada por SBW con soporte on-chain y Lightning."
+    }
+  }
+}

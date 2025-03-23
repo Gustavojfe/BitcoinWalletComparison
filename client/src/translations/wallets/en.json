@@ -1,0 +1,64 @@
+{
+  "wallets": {
+    "Phoenix": {
+      "name": "Phoenix",
+      "description": "A user-friendly Lightning wallet with a simplified balance model and automated channel management."
+    },
+    "Wallet of Satoshi": {
+      "name": "Wallet of Satoshi",
+      "description": "A custodial Lightning wallet focused on simplicity with instant payments and no setup required."
+    },
+    "Zeus": {
+      "name": "Zeus",
+      "description": "A mobile Lightning wallet that connects to your own node for full control."
+    },
+    "Muun": {
+      "name": "Muun",
+      "description": "A non-custodial wallet supporting both on-chain and Lightning payments with multisig security."
+    },
+    "Breez": {
+      "name": "Breez",
+      "description": "A non-custodial Lightning wallet with built-in podcast player and point-of-sale features."
+    },
+    "Blink": {
+      "name": "Blink",
+      "description": "A Lightning wallet with on-chain capabilities built on a client-server architecture."
+    },
+    "Alby": {
+      "name": "Alby",
+      "description": "A Lightning browser extension that helps you make micropayments across the web."
+    },
+    "Cash App": {
+      "name": "Cash App",
+      "description": "A popular payment app with integrated Bitcoin and Lightning functionality."
+    },
+    "BLW": {
+      "name": "Bitcoin Lightning Wallet",
+      "description": "One of the oldest Lightning wallets with a focus on security and user control."
+    },
+    "Bitkit": {
+      "name": "Bitkit",
+      "description": "A non-custodial mobile wallet with on-chain and Lightning support focused on usability."
+    },
+    "Electrum": {
+      "name": "Electrum",
+      "description": "A veteran Bitcoin wallet that added Lightning Network capabilities."
+    },
+    "Blixt": {
+      "name": "Blixt",
+      "description": "A non-custodial Lightning wallet that runs a lightweight node on your phone."
+    },
+    "Mutiny": {
+      "name": "Mutiny",
+      "description": "A privacy-focused wallet that runs in the browser with no registration required."
+    },
+    "Zap": {
+      "name": "Zap",
+      "description": "A Lightning wallet focused on user experience with node connection capabilities."
+    },
+    "Simple Bitcoin Wallet": {
+      "name": "Simple Bitcoin Wallet",
+      "description": "A straightforward wallet built by SBW with on-chain and Lightning support."
+    }
+  }
+}
