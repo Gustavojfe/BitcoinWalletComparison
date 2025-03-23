@@ -21,6 +21,9 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
     toggleWalletVisibility,
     toggleFeatureVisibility
   } = useVisibility(walletType);
+  
+  // Get translation function
+  const { t } = useLanguage();
 
   // Fetch wallets with features
   const { data: walletsWithFeatures, isLoading: isWalletsLoading } = useQuery({
@@ -68,13 +71,13 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
 
   if (!filteredWallets || !features) {
     return <div className="bg-white shadow rounded-lg overflow-hidden p-6">
-      <p className="text-center text-gray-500">No data available</p>
+      <p className="text-center text-gray-500">{t('table.noData')}</p>
     </div>;
   }
 
   if (filteredWallets.length === 0) {
     return <div className="bg-white shadow rounded-lg overflow-hidden p-6">
-      <p className="text-center text-gray-500">No wallets match your search</p>
+      <p className="text-center text-gray-500">{t('table.noResults')}</p>
     </div>;
   }
 
@@ -144,7 +147,7 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
               <thead className="bg-gray-50">
                 <tr>
                   <th scope="col" className="sticky left-0 z-10 bg-gray-50 px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider min-w-[200px]">
-                    Wallet
+                    {t('common.wallets')}
                   </th>
                   {visibleFeatures.map((feature) => (
                     <th 
@@ -164,7 +167,7 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
                           size="icon"
                           className="h-5 w-5 opacity-0 group-hover:opacity-100 transition-opacity ml-1"
                           onClick={() => toggleFeatureVisibility(feature.id)}
-                          title={`Hide ${feature.name}`}
+                          title={`${t('common.hide')} ${feature.name}`}
                         >
                           <EyeOff className="h-3 w-3" />
                         </Button>
@@ -196,7 +199,7 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
                           size="icon"
                           className="h-5 w-5 opacity-0 group-hover:opacity-100 transition-opacity"
                           onClick={() => toggleWalletVisibility(wallet.id)}
-                          title={`Hide ${wallet.name}`}
+                          title={`${t('common.hide')} ${wallet.name}`}
                         >
                           <EyeOff className="h-3 w-3" />
                         </Button>

@@ -31,6 +31,7 @@
     "description": "Descripción",
     "type": "Tipo",
     "noResults": "No se encontraron resultados",
+    "noData": "No hay datos disponibles",
     "searchPlaceholder": "Buscar monederos y características...",
     "loadingWallets": "Cargando monederos...",
     "loadingFeatures": "Cargando características..."
