@@ -225,6 +225,7 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
         );
       case 'no':
       case 'not_possible':
+        const notPossibleTitle = value === 'not_possible' ? t('features.not_possible') : t('features.no');
         return (
           <span 
             className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-destructive/20"
@@ -237,12 +238,13 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
         );
       case 'partial':
       case 'optional':
+        const partialTitle = value === 'partial' ? t('features.partial') : t('features.optional');
         return (
           <span 
             className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-orange-500/20"
-            title={t('help.supportedPartial')}
+            title={value === 'partial' ? t('help.supportedPartial') : partialTitle}
           >
-            <span className="text-xs font-medium text-orange-500">P</span>
+            <span className="text-xs font-medium text-orange-500">{value === 'partial' ? 'P' : 'O'}</span>
           </span>
         );
       case 'custom':
@@ -251,7 +253,7 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
             className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-orange-100"
             title={customText || t('help.supportedCustom')}
           >
-            <span className="text-xs font-medium text-orange-600">{customText || t('common.custom')}</span>
+            <span className="text-xs font-medium text-orange-600">{customText || t('features.custom')}</span>
           </span>
         );
       case 'send_only':
