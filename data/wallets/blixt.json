@@ -6,20 +6,18 @@
   "logo": "blixt",
   "order": 16,
   "features": {
-    "onChain": "yes",
-    "receiveOnChain": "yes",
-    "sendOnChain": "yes",
-    "invoice": "yes",
-    "lnurl": "yes",
-    "lightningAddress": "yes",
-    "bolt11": "yes",
-    "dnsSeeds": "yes",
-    "paymentRouting": "yes",
-    "mpp": "yes",
-    "manageOwnChannels": "yes",
-    "lowIncomingLiquidity": {
-      "value": "custom",
-      "customText": "Manual"
-    }
+    "platform": ["android"],
+    "openSource": "yes",
+    "kyc": "no",
+    "walletType": "ln_node",
+    "onChainSupport": "yes",
+    "implementation": "lnd",
+    "bolt11Support": "yes",
+    "lnurlSupport": "yes",
+    "lightningAddressSupport": "yes",
+    "bolt12Support": "no",
+    "hrnBlip32Support": "partial",
+    "mppSupport": "yes",
+    "channelManagement": "yes"
   }
 }

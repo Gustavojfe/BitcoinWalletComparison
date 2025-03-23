@@ -6,20 +6,18 @@
   "logo": "coinos",
   "order": 11,
   "features": {
-    "onChain": "yes",
-    "receiveOnChain": "yes",
-    "sendOnChain": "yes",
-    "invoice": "yes",
-    "lnurl": "yes",
-    "lightningAddress": "yes",
-    "bolt11": "yes",
-    "dnsSeeds": "yes",
-    "paymentRouting": "yes",
-    "mpp": "yes",
-    "manageOwnChannels": "partial",
-    "lowIncomingLiquidity": {
-      "value": "custom",
-      "customText": "Hosted"
-    }
+    "platform": ["web", "android", "ios"],
+    "openSource": "yes",
+    "kyc": "partial",
+    "walletType": "remote_node",
+    "onChainSupport": "yes",
+    "implementation": "core_lightning",
+    "bolt11Support": "yes",
+    "lnurlSupport": "yes",
+    "lightningAddressSupport": "yes",
+    "bolt12Support": "partial",
+    "hrnBlip32Support": "no",
+    "mppSupport": "yes",
+    "channelManagement": "partial"
   }
 }
