@@ -133,6 +133,17 @@
     "supportedPartial": "Feature is partially supported",
     "supportedCustom": "Feature has special implementation or limitations (hover to see details)"
   },
+  "features": {
+    "custodial": "Custodial",
+    "ln_node": "LN Node",
+    "liquid_swap": "Liquid Swap",
+    "on_chain_swap": "On-Chain Swap",
+    "remote_node": "Remote Node",
+    "lnd": "LND",
+    "ldk": "LDK",
+    "core_lightning": "Core Lightning",
+    "eclair": "Eclair"
+  },
   "comingSoon": {
     "title": "Coming Soon",
     "inDevelopment": "{type} wallet comparisons are currently in development.",

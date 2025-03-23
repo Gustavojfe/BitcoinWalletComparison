@@ -133,6 +133,17 @@
     "supportedPartial": "Característica parcialmente soportada",
     "supportedCustom": "Característica tiene implementación especial o limitaciones (pasa el cursor para ver detalles)"
   },
+  "features": {
+    "custodial": "Custodial",
+    "ln_node": "Nodo LN",
+    "liquid_swap": "Intercambio Liquid",
+    "on_chain_swap": "Intercambio On-Chain",
+    "remote_node": "Nodo Remoto",
+    "lnd": "LND",
+    "ldk": "LDK",
+    "core_lightning": "Core Lightning",
+    "eclair": "Eclair"
+  },
   "comingSoon": {
     "title": "Próximamente",
     "inDevelopment": "Las comparaciones de carteras de {type} están actualmente en desarrollo.",
