@@ -27,15 +27,6 @@
     "selectWallet": "Select a wallet",
     "toggleTheme": "Toggle theme"
   },
-  "features": {
-    "custodial": "Custodial",
-    "ln_node": "Lightning Node",
-    "remote_node": "Remote Node",
-    "lnd": "LND",
-    "ldk": "LDK",
-    "core_lightning": "Core Lightning",
-    "eclair": "Eclair"
-  },
   "theme": {
     "light": "Light",
     "dark": "Dark",

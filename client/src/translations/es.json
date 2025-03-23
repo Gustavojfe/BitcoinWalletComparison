@@ -27,15 +27,6 @@
     "selectWallet": "Selecciona una cartera",
     "toggleTheme": "Cambiar tema"
   },
-  "features": {
-    "custodial": "Custodia",
-    "ln_node": "Nodo Lightning",
-    "remote_node": "Nodo Remoto",
-    "lnd": "LND",
-    "ldk": "LDK",
-    "core_lightning": "Core Lightning",
-    "eclair": "Eclair"
-  },
   "theme": {
     "light": "Claro",
     "dark": "Oscuro",
