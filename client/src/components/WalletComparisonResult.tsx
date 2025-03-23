@@ -126,14 +126,26 @@ const WalletComparisonResult = () => {
           </div>
           <div className="col-span-1">
             <h2 className="font-medium text-gray-800 text-center">
-              <a href={wallet1.website} target="_blank" rel="noopener noreferrer" className="hover:text-primary">
+              <a 
+                href={wallet1.website} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="hover:text-primary" 
+                title={t('common.website')}
+              >
                 {wallet1.name}
               </a>
             </h2>
           </div>
           <div className="col-span-1">
             <h2 className="font-medium text-gray-800 text-center">
-              <a href={wallet2.website} target="_blank" rel="noopener noreferrer" className="hover:text-primary">
+              <a 
+                href={wallet2.website} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="hover:text-primary"
+                title={t('common.website')}
+              >
                 {wallet2.name}
               </a>
             </h2>
