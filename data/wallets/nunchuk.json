@@ -1,0 +1,22 @@
+{
+  "name": "Nunchuk",
+  "website": "https://nunchuk.io/",
+  "description": "A Bitcoin wallet platform designed for collaborative custody and multisignature security with hardware wallet integration.",
+  "type": "onchain",
+  "logo": "nunchuk",
+  "order": 27,
+  "features": {
+    "onChain": "yes",
+    "receiveOnChain": "yes",
+    "sendOnChain": "yes",
+    "invoice": "no",
+    "lnurl": "no",
+    "lightningAddress": "no",
+    "bolt11": "no",
+    "dnsSeeds": "no",
+    "paymentRouting": "no",
+    "mpp": "no",
+    "manageOwnChannels": "no",
+    "lowIncomingLiquidity": "no"
+  }
+}
