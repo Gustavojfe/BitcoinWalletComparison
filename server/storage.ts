@@ -250,6 +250,196 @@ export class MemStorage implements IStorage {
       logo: "zeus",
       order: 5
     });
+    
+    // Adding additional wallets
+    const blink = await this.createWallet({
+      name: "Blink",
+      website: "https://blink.sv/",
+      description: "A Lightning wallet focused on simplicity and ease of use.",
+      type: "lightning",
+      logo: "blink",
+      order: 6
+    });
+    
+    const electrum = await this.createWallet({
+      name: "Electrum",
+      website: "https://electrum.org/",
+      description: "A popular lightweight Bitcoin wallet with Lightning support.",
+      type: "lightning",
+      logo: "electrum",
+      order: 7
+    });
+    
+    const zbd = await this.createWallet({
+      name: "ZBD",
+      website: "https://zbd.gg/",
+      description: "A Lightning wallet with gaming and developer features.",
+      type: "lightning",
+      logo: "zbd",
+      order: 8
+    });
+    
+    const cashApp = await this.createWallet({
+      name: "Cash App",
+      website: "https://cash.app/",
+      description: "A popular payment app with Bitcoin and Lightning support.",
+      type: "lightning",
+      logo: "cashapp",
+      order: 9
+    });
+    
+    const strike = await this.createWallet({
+      name: "Strike",
+      website: "https://strike.me/",
+      description: "A payment app with Bitcoin and Lightning integration.",
+      type: "lightning",
+      logo: "strike",
+      order: 10
+    });
+    
+    const river = await this.createWallet({
+      name: "River",
+      website: "https://river.com/",
+      description: "A Bitcoin exchange and wallet with Lightning support.",
+      type: "lightning",
+      logo: "river",
+      order: 11
+    });
+    
+    const exodus = await this.createWallet({
+      name: "Exodus",
+      website: "https://www.exodus.com/",
+      description: "A multi-cryptocurrency wallet with Bitcoin Lightning integration.",
+      type: "lightning",
+      logo: "exodus",
+      order: 12
+    });
+    
+    const aqua = await this.createWallet({
+      name: "Aqua",
+      website: "https://aquawallet.io/",
+      description: "A Liquid Network and Lightning wallet.",
+      type: "lightning",
+      logo: "aqua",
+      order: 13
+    });
+    
+    const bitkit = await this.createWallet({
+      name: "Bitkit",
+      website: "https://bitkit.to/",
+      description: "A self-custodial Bitcoin and Lightning wallet.",
+      type: "lightning",
+      logo: "bitkit",
+      order: 14
+    });
+    
+    const coinos = await this.createWallet({
+      name: "Coinos",
+      website: "https://coinos.io/",
+      description: "A web-based Lightning wallet with multiple network support.",
+      type: "lightning",
+      logo: "coinos",
+      order: 15
+    });
+    
+    const speed = await this.createWallet({
+      name: "Speed",
+      website: "https://speed.techlooper.io/",
+      description: "A Lightning wallet with fast and simple payments.",
+      type: "lightning",
+      logo: "speed",
+      order: 16
+    });
+    
+    const sati = await this.createWallet({
+      name: "Sati",
+      website: "https://sati.io/",
+      description: "A Lightning wallet with a focus on privacy and speed.",
+      type: "lightning",
+      logo: "sati",
+      order: 17
+    });
+    
+    const lifpay = await this.createWallet({
+      name: "Lifpay",
+      website: "https://www.lifpay.io/",
+      description: "A Lightning wallet for everyday payments.",
+      type: "lightning",
+      logo: "lifpay",
+      order: 18
+    });
+    
+    const green = await this.createWallet({
+      name: "Green",
+      website: "https://blockstream.com/green/",
+      description: "A Bitcoin wallet by Blockstream with Lightning integration.",
+      type: "lightning",
+      logo: "green",
+      order: 19
+    });
+    
+    const blixt = await this.createWallet({
+      name: "Blixt",
+      website: "https://blixtwallet.github.io/",
+      description: "An open-source Lightning Network wallet.",
+      type: "lightning",
+      logo: "blixt",
+      order: 20
+    });
+    
+    const rtl = await this.createWallet({
+      name: "RTL",
+      website: "https://github.com/Ride-The-Lightning/RTL",
+      description: "Ride The Lightning - A web interface for Lightning Network node management.",
+      type: "lightning",
+      logo: "rtl",
+      order: 21
+    });
+    
+    const lawallet = await this.createWallet({
+      name: "Lawallet",
+      website: "https://lawallet.io/",
+      description: "A Lightning wallet focused on simplicity and usability.",
+      type: "lightning",
+      logo: "lawallet",
+      order: 22
+    });
+    
+    const alby = await this.createWallet({
+      name: "Alby",
+      website: "https://getalby.com/",
+      description: "A Lightning browser extension and wallet.",
+      type: "lightning",
+      logo: "alby",
+      order: 23
+    });
+    
+    const btcpayServer = await this.createWallet({
+      name: "BTCPay Server",
+      website: "https://btcpayserver.org/",
+      description: "A self-hosted, open-source cryptocurrency payment processor.",
+      type: "lightning",
+      logo: "btcpayserver",
+      order: 24
+    });
+    
+    const blitz = await this.createWallet({
+      name: "Blitz",
+      website: "https://blitz.cash/",
+      description: "A Lightning wallet focused on simplicity and speed.",
+      type: "lightning",
+      logo: "blitz",
+      order: 25
+    });
+    
+    const primal = await this.createWallet({
+      name: "Primal",
+      website: "https://primal.net/",
+      description: "A social network and wallet with Lightning integration.",
+      type: "lightning",
+      logo: "primal",
+      order: 26
+    });
 
     // Add Lightning features
     const onChain = await this.createFeature({
@@ -407,6 +597,188 @@ export class MemStorage implements IStorage {
     await this.setWalletFeature({ walletId: zeus.id, featureId: mpp.id, value: "custom", customText: "Node" });
     await this.setWalletFeature({ walletId: zeus.id, featureId: manageOwnChannels.id, value: "yes" });
     await this.setWalletFeature({ walletId: zeus.id, featureId: lowIncomingLiquidity.id, value: "custom", customText: "Node" });
+    
+    // Blink features
+    await this.setWalletFeature({ walletId: blink.id, featureId: onChain.id, value: "yes" });
+    await this.setWalletFeature({ walletId: blink.id, featureId: receiveOnChain.id, value: "yes" });
+    await this.setWalletFeature({ walletId: blink.id, featureId: sendOnChain.id, value: "yes" });
+    await this.setWalletFeature({ walletId: blink.id, featureId: invoice.id, value: "yes" });
+    await this.setWalletFeature({ walletId: blink.id, featureId: lnurl.id, value: "yes" });
+    await this.setWalletFeature({ walletId: blink.id, featureId: lightningAddress.id, value: "yes" });
+    await this.setWalletFeature({ walletId: blink.id, featureId: bolt11.id, value: "yes" });
+    await this.setWalletFeature({ walletId: blink.id, featureId: dnsSeeds.id, value: "no" });
+    await this.setWalletFeature({ walletId: blink.id, featureId: paymentRouting.id, value: "yes" });
+    await this.setWalletFeature({ walletId: blink.id, featureId: mpp.id, value: "partial" });
+    await this.setWalletFeature({ walletId: blink.id, featureId: manageOwnChannels.id, value: "no" });
+    await this.setWalletFeature({ walletId: blink.id, featureId: lowIncomingLiquidity.id, value: "partial" });
+    
+    // Electrum features
+    await this.setWalletFeature({ walletId: electrum.id, featureId: onChain.id, value: "yes" });
+    await this.setWalletFeature({ walletId: electrum.id, featureId: receiveOnChain.id, value: "yes" });
+    await this.setWalletFeature({ walletId: electrum.id, featureId: sendOnChain.id, value: "yes" });
+    await this.setWalletFeature({ walletId: electrum.id, featureId: invoice.id, value: "yes" });
+    await this.setWalletFeature({ walletId: electrum.id, featureId: lnurl.id, value: "partial" });
+    await this.setWalletFeature({ walletId: electrum.id, featureId: lightningAddress.id, value: "no" });
+    await this.setWalletFeature({ walletId: electrum.id, featureId: bolt11.id, value: "yes" });
+    await this.setWalletFeature({ walletId: electrum.id, featureId: dnsSeeds.id, value: "yes" });
+    await this.setWalletFeature({ walletId: electrum.id, featureId: paymentRouting.id, value: "yes" });
+    await this.setWalletFeature({ walletId: electrum.id, featureId: mpp.id, value: "partial" });
+    await this.setWalletFeature({ walletId: electrum.id, featureId: manageOwnChannels.id, value: "yes" });
+    await this.setWalletFeature({ walletId: electrum.id, featureId: lowIncomingLiquidity.id, value: "custom", customText: "Manual" });
+    
+    // ZBD features
+    await this.setWalletFeature({ walletId: zbd.id, featureId: onChain.id, value: "yes" });
+    await this.setWalletFeature({ walletId: zbd.id, featureId: receiveOnChain.id, value: "yes" });
+    await this.setWalletFeature({ walletId: zbd.id, featureId: sendOnChain.id, value: "yes" });
+    await this.setWalletFeature({ walletId: zbd.id, featureId: invoice.id, value: "yes" });
+    await this.setWalletFeature({ walletId: zbd.id, featureId: lnurl.id, value: "yes" });
+    await this.setWalletFeature({ walletId: zbd.id, featureId: lightningAddress.id, value: "yes" });
+    await this.setWalletFeature({ walletId: zbd.id, featureId: bolt11.id, value: "yes" });
+    await this.setWalletFeature({ walletId: zbd.id, featureId: dnsSeeds.id, value: "custom", customText: "Custodial" });
+    await this.setWalletFeature({ walletId: zbd.id, featureId: paymentRouting.id, value: "custom", customText: "Custodial" });
+    await this.setWalletFeature({ walletId: zbd.id, featureId: mpp.id, value: "custom", customText: "Custodial" });
+    await this.setWalletFeature({ walletId: zbd.id, featureId: manageOwnChannels.id, value: "no" });
+    await this.setWalletFeature({ walletId: zbd.id, featureId: lowIncomingLiquidity.id, value: "custom", customText: "Custodial" });
+    
+    // Cash App features
+    await this.setWalletFeature({ walletId: cashApp.id, featureId: onChain.id, value: "yes" });
+    await this.setWalletFeature({ walletId: cashApp.id, featureId: receiveOnChain.id, value: "yes" });
+    await this.setWalletFeature({ walletId: cashApp.id, featureId: sendOnChain.id, value: "yes" });
+    await this.setWalletFeature({ walletId: cashApp.id, featureId: invoice.id, value: "yes" });
+    await this.setWalletFeature({ walletId: cashApp.id, featureId: lnurl.id, value: "partial" });
+    await this.setWalletFeature({ walletId: cashApp.id, featureId: lightningAddress.id, value: "no" });
+    await this.setWalletFeature({ walletId: cashApp.id, featureId: bolt11.id, value: "yes" });
+    await this.setWalletFeature({ walletId: cashApp.id, featureId: dnsSeeds.id, value: "custom", customText: "Custodial" });
+    await this.setWalletFeature({ walletId: cashApp.id, featureId: paymentRouting.id, value: "custom", customText: "Custodial" });
+    await this.setWalletFeature({ walletId: cashApp.id, featureId: mpp.id, value: "custom", customText: "Custodial" });
+    await this.setWalletFeature({ walletId: cashApp.id, featureId: manageOwnChannels.id, value: "no" });
+    await this.setWalletFeature({ walletId: cashApp.id, featureId: lowIncomingLiquidity.id, value: "custom", customText: "Custodial" });
+    
+    // Strike features
+    await this.setWalletFeature({ walletId: strike.id, featureId: onChain.id, value: "yes" });
+    await this.setWalletFeature({ walletId: strike.id, featureId: receiveOnChain.id, value: "yes" });
+    await this.setWalletFeature({ walletId: strike.id, featureId: sendOnChain.id, value: "yes" });
+    await this.setWalletFeature({ walletId: strike.id, featureId: invoice.id, value: "yes" });
+    await this.setWalletFeature({ walletId: strike.id, featureId: lnurl.id, value: "yes" });
+    await this.setWalletFeature({ walletId: strike.id, featureId: lightningAddress.id, value: "yes" });
+    await this.setWalletFeature({ walletId: strike.id, featureId: bolt11.id, value: "yes" });
+    await this.setWalletFeature({ walletId: strike.id, featureId: dnsSeeds.id, value: "custom", customText: "Custodial" });
+    await this.setWalletFeature({ walletId: strike.id, featureId: paymentRouting.id, value: "custom", customText: "Custodial" });
+    await this.setWalletFeature({ walletId: strike.id, featureId: mpp.id, value: "custom", customText: "Custodial" });
+    await this.setWalletFeature({ walletId: strike.id, featureId: manageOwnChannels.id, value: "no" });
+    await this.setWalletFeature({ walletId: strike.id, featureId: lowIncomingLiquidity.id, value: "custom", customText: "Custodial" });
+    
+    // River features
+    await this.setWalletFeature({ walletId: river.id, featureId: onChain.id, value: "yes" });
+    await this.setWalletFeature({ walletId: river.id, featureId: receiveOnChain.id, value: "yes" });
+    await this.setWalletFeature({ walletId: river.id, featureId: sendOnChain.id, value: "yes" });
+    await this.setWalletFeature({ walletId: river.id, featureId: invoice.id, value: "yes" });
+    await this.setWalletFeature({ walletId: river.id, featureId: lnurl.id, value: "yes" });
+    await this.setWalletFeature({ walletId: river.id, featureId: lightningAddress.id, value: "yes" });
+    await this.setWalletFeature({ walletId: river.id, featureId: bolt11.id, value: "yes" });
+    await this.setWalletFeature({ walletId: river.id, featureId: dnsSeeds.id, value: "custom", customText: "Custodial" });
+    await this.setWalletFeature({ walletId: river.id, featureId: paymentRouting.id, value: "custom", customText: "Custodial" });
+    await this.setWalletFeature({ walletId: river.id, featureId: mpp.id, value: "custom", customText: "Custodial" });
+    await this.setWalletFeature({ walletId: river.id, featureId: manageOwnChannels.id, value: "no" });
+    await this.setWalletFeature({ walletId: river.id, featureId: lowIncomingLiquidity.id, value: "custom", customText: "Custodial" });
+    
+    // Exodus features
+    await this.setWalletFeature({ walletId: exodus.id, featureId: onChain.id, value: "yes" });
+    await this.setWalletFeature({ walletId: exodus.id, featureId: receiveOnChain.id, value: "yes" });
+    await this.setWalletFeature({ walletId: exodus.id, featureId: sendOnChain.id, value: "yes" });
+    await this.setWalletFeature({ walletId: exodus.id, featureId: invoice.id, value: "yes" });
+    await this.setWalletFeature({ walletId: exodus.id, featureId: lnurl.id, value: "partial" });
+    await this.setWalletFeature({ walletId: exodus.id, featureId: lightningAddress.id, value: "no" });
+    await this.setWalletFeature({ walletId: exodus.id, featureId: bolt11.id, value: "yes" });
+    await this.setWalletFeature({ walletId: exodus.id, featureId: dnsSeeds.id, value: "no" });
+    await this.setWalletFeature({ walletId: exodus.id, featureId: paymentRouting.id, value: "partial" });
+    await this.setWalletFeature({ walletId: exodus.id, featureId: mpp.id, value: "partial" });
+    await this.setWalletFeature({ walletId: exodus.id, featureId: manageOwnChannels.id, value: "no" });
+    await this.setWalletFeature({ walletId: exodus.id, featureId: lowIncomingLiquidity.id, value: "partial" });
+    
+    // Aqua features
+    await this.setWalletFeature({ walletId: aqua.id, featureId: onChain.id, value: "yes" });
+    await this.setWalletFeature({ walletId: aqua.id, featureId: receiveOnChain.id, value: "yes" });
+    await this.setWalletFeature({ walletId: aqua.id, featureId: sendOnChain.id, value: "yes" });
+    await this.setWalletFeature({ walletId: aqua.id, featureId: invoice.id, value: "yes" });
+    await this.setWalletFeature({ walletId: aqua.id, featureId: lnurl.id, value: "yes" });
+    await this.setWalletFeature({ walletId: aqua.id, featureId: lightningAddress.id, value: "yes" });
+    await this.setWalletFeature({ walletId: aqua.id, featureId: bolt11.id, value: "yes" });
+    await this.setWalletFeature({ walletId: aqua.id, featureId: dnsSeeds.id, value: "yes" });
+    await this.setWalletFeature({ walletId: aqua.id, featureId: paymentRouting.id, value: "yes" });
+    await this.setWalletFeature({ walletId: aqua.id, featureId: mpp.id, value: "yes" });
+    await this.setWalletFeature({ walletId: aqua.id, featureId: manageOwnChannels.id, value: "custom", customText: "Limited" });
+    await this.setWalletFeature({ walletId: aqua.id, featureId: lowIncomingLiquidity.id, value: "custom", customText: "LSP" });
+    
+    // Bitkit features
+    await this.setWalletFeature({ walletId: bitkit.id, featureId: onChain.id, value: "yes" });
+    await this.setWalletFeature({ walletId: bitkit.id, featureId: receiveOnChain.id, value: "yes" });
+    await this.setWalletFeature({ walletId: bitkit.id, featureId: sendOnChain.id, value: "yes" });
+    await this.setWalletFeature({ walletId: bitkit.id, featureId: invoice.id, value: "yes" });
+    await this.setWalletFeature({ walletId: bitkit.id, featureId: lnurl.id, value: "yes" });
+    await this.setWalletFeature({ walletId: bitkit.id, featureId: lightningAddress.id, value: "yes" });
+    await this.setWalletFeature({ walletId: bitkit.id, featureId: bolt11.id, value: "yes" });
+    await this.setWalletFeature({ walletId: bitkit.id, featureId: dnsSeeds.id, value: "yes" });
+    await this.setWalletFeature({ walletId: bitkit.id, featureId: paymentRouting.id, value: "yes" });
+    await this.setWalletFeature({ walletId: bitkit.id, featureId: mpp.id, value: "yes" });
+    await this.setWalletFeature({ walletId: bitkit.id, featureId: manageOwnChannels.id, value: "custom", customText: "Limited" });
+    await this.setWalletFeature({ walletId: bitkit.id, featureId: lowIncomingLiquidity.id, value: "custom", customText: "LSP" });
+    
+    // Coinos features
+    await this.setWalletFeature({ walletId: coinos.id, featureId: onChain.id, value: "yes" });
+    await this.setWalletFeature({ walletId: coinos.id, featureId: receiveOnChain.id, value: "yes" });
+    await this.setWalletFeature({ walletId: coinos.id, featureId: sendOnChain.id, value: "yes" });
+    await this.setWalletFeature({ walletId: coinos.id, featureId: invoice.id, value: "yes" });
+    await this.setWalletFeature({ walletId: coinos.id, featureId: lnurl.id, value: "yes" });
+    await this.setWalletFeature({ walletId: coinos.id, featureId: lightningAddress.id, value: "yes" });
+    await this.setWalletFeature({ walletId: coinos.id, featureId: bolt11.id, value: "yes" });
+    await this.setWalletFeature({ walletId: coinos.id, featureId: dnsSeeds.id, value: "yes" });
+    await this.setWalletFeature({ walletId: coinos.id, featureId: paymentRouting.id, value: "yes" });
+    await this.setWalletFeature({ walletId: coinos.id, featureId: mpp.id, value: "yes" });
+    await this.setWalletFeature({ walletId: coinos.id, featureId: manageOwnChannels.id, value: "yes" });
+    await this.setWalletFeature({ walletId: coinos.id, featureId: lowIncomingLiquidity.id, value: "yes" });
+    
+    // Speed features
+    await this.setWalletFeature({ walletId: speed.id, featureId: onChain.id, value: "yes" });
+    await this.setWalletFeature({ walletId: speed.id, featureId: receiveOnChain.id, value: "yes" });
+    await this.setWalletFeature({ walletId: speed.id, featureId: sendOnChain.id, value: "yes" });
+    await this.setWalletFeature({ walletId: speed.id, featureId: invoice.id, value: "yes" });
+    await this.setWalletFeature({ walletId: speed.id, featureId: lnurl.id, value: "yes" });
+    await this.setWalletFeature({ walletId: speed.id, featureId: lightningAddress.id, value: "yes" });
+    await this.setWalletFeature({ walletId: speed.id, featureId: bolt11.id, value: "yes" });
+    await this.setWalletFeature({ walletId: speed.id, featureId: dnsSeeds.id, value: "no" });
+    await this.setWalletFeature({ walletId: speed.id, featureId: paymentRouting.id, value: "yes" });
+    await this.setWalletFeature({ walletId: speed.id, featureId: mpp.id, value: "partial" });
+    await this.setWalletFeature({ walletId: speed.id, featureId: manageOwnChannels.id, value: "no" });
+    await this.setWalletFeature({ walletId: speed.id, featureId: lowIncomingLiquidity.id, value: "partial" });
+    
+    // Sati features
+    await this.setWalletFeature({ walletId: sati.id, featureId: onChain.id, value: "yes" });
+    await this.setWalletFeature({ walletId: sati.id, featureId: receiveOnChain.id, value: "yes" });
+    await this.setWalletFeature({ walletId: sati.id, featureId: sendOnChain.id, value: "yes" });
+    await this.setWalletFeature({ walletId: sati.id, featureId: invoice.id, value: "yes" });
+    await this.setWalletFeature({ walletId: sati.id, featureId: lnurl.id, value: "yes" });
+    await this.setWalletFeature({ walletId: sati.id, featureId: lightningAddress.id, value: "yes" });
+    await this.setWalletFeature({ walletId: sati.id, featureId: bolt11.id, value: "yes" });
+    await this.setWalletFeature({ walletId: sati.id, featureId: dnsSeeds.id, value: "no" });
+    await this.setWalletFeature({ walletId: sati.id, featureId: paymentRouting.id, value: "partial" });
+    await this.setWalletFeature({ walletId: sati.id, featureId: mpp.id, value: "partial" });
+    await this.setWalletFeature({ walletId: sati.id, featureId: manageOwnChannels.id, value: "no" });
+    await this.setWalletFeature({ walletId: sati.id, featureId: lowIncomingLiquidity.id, value: "partial" });
+    
+    // Lifpay features
+    await this.setWalletFeature({ walletId: lifpay.id, featureId: onChain.id, value: "yes" });
+    await this.setWalletFeature({ walletId: lifpay.id, featureId: receiveOnChain.id, value: "yes" });
+    await this.setWalletFeature({ walletId: lifpay.id, featureId: sendOnChain.id, value: "yes" });
+    await this.setWalletFeature({ walletId: lifpay.id, featureId: invoice.id, value: "yes" });
+    await this.setWalletFeature({ walletId: lifpay.id, featureId: lnurl.id, value: "yes" });
+    await this.setWalletFeature({ walletId: lifpay.id, featureId: lightningAddress.id, value: "yes" });
+    await this.setWalletFeature({ walletId: lifpay.id, featureId: bolt11.id, value: "yes" });
+    await this.setWalletFeature({ walletId: lifpay.id, featureId: dnsSeeds.id, value: "custom", customText: "Custodial" });
+    await this.setWalletFeature({ walletId: lifpay.id, featureId: paymentRouting.id, value: "custom", customText: "Custodial" });
+    await this.setWalletFeature({ walletId: lifpay.id, featureId: mpp.id, value: "custom", customText: "Custodial" });
+    await this.setWalletFeature({ walletId: lifpay.id, featureId: manageOwnChannels.id, value: "no" });
+    await this.setWalletFeature({ walletId: lifpay.id, featureId: lowIncomingLiquidity.id, value: "custom", customText: "Custodial" });
   }
 }
 
