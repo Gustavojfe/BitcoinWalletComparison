@@ -64,12 +64,9 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
 
   // Feature translation function
   const translateFeature = (feature: Feature) => {
-    // Get feature ID
-    const featureId = feature.id.toString();
-    
-    // Look up translation by feature ID
-    const translatedName = getTranslation(language, `features.${featureId}.name`) || feature.name;
-    const translatedDescription = getTranslation(language, `features.${featureId}.description`) || feature.description;
+    // Look up translation by feature name exactly as it appears in the data files
+    const translatedName = getTranslation(language, `features.${feature.name}.name`) || feature.name;
+    const translatedDescription = getTranslation(language, `features.${feature.name}.description`) || feature.description;
     
     return {
       name: translatedName,
