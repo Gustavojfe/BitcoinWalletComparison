@@ -16,7 +16,8 @@
     "partial": "Partial",
     "custom": "Custom",
     "show": "Show",
-    "hide": "Hide"
+    "hide": "Hide",
+    "help": "Help"
   },
   "header": {
     "title": "Bitcoin Wallet Comparison",

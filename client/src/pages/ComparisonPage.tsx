@@ -4,10 +4,12 @@ import TabSection from '@/components/TabSection';
 import ControlPanel from '@/components/ControlPanel';
 import ComparisonTable from '@/components/ComparisonTable';
 import ComparisonWizard from '@/components/ComparisonWizard';
+import { useLanguage } from '@/hooks/use-language';
 
 const ComparisonPage = () => {
   const [activeTab, setActiveTab] = useState<WalletType>('lightning');
   const [searchTerm, setSearchTerm] = useState('');
+  const { t } = useLanguage();
 
   const handleTabChange = (tab: WalletType) => {
     setActiveTab(tab);

@@ -1,9 +1,9 @@
 {
   "common": {
-    "walletComparison": "Comparación de Monederos Bitcoin",
+    "walletComparison": "Comparación de Carteras Bitcoin",
     "about": "Acerca de",
     "features": "Características",
-    "wallets": "Monederos",
+    "wallets": "Carteras",
     "search": "Buscar",
     "lightning": "Lightning",
     "onchain": "On-Chain",
@@ -16,10 +16,11 @@
     "partial": "Parcial",
     "custom": "Personalizado",
     "show": "Mostrar",
-    "hide": "Ocultar"
+    "hide": "Ocultar",
+    "help": "Ayuda"
   },
   "header": {
-    "title": "Comparación de Monederos Bitcoin",
+    "title": "Comparación de Carteras Bitcoin",
     "lightningTab": "Lightning",
     "onchainTab": "On-Chain",
     "hardwareTab": "Hardware",
@@ -32,55 +33,55 @@
     "type": "Tipo",
     "noResults": "No se encontraron resultados",
     "noData": "No hay datos disponibles",
-    "searchPlaceholder": "Buscar monederos y características...",
-    "loadingWallets": "Cargando monederos...",
+    "searchPlaceholder": "Buscar carteras y características...",
+    "loadingWallets": "Cargando carteras...",
     "loadingFeatures": "Cargando características..."
   },
   "control": {
-    "showHiddenWallets": "Mostrar Monederos Ocultos",
+    "showHiddenWallets": "Mostrar Carteras Ocultas",
     "showHiddenFeatures": "Mostrar Características Ocultas",
-    "addWallet": "Añadir Monedero",
+    "addWallet": "Añadir Cartera",
     "addFeature": "Añadir Característica",
     "export": "Exportar Datos",
     "import": "Importar Datos"
   },
   "hidden": {
-    "noHiddenWallets": "No hay monederos ocultos",
+    "noHiddenWallets": "No hay carteras ocultas",
     "noHiddenFeatures": "No hay características ocultas",
     "showAll": "Mostrar Todos",
     "hideAll": "Ocultar Todos",
-    "notHiddenAnyWallets": "Aún no has ocultado ningún monedero.",
+    "notHiddenAnyWallets": "Aún no has ocultado ninguna cartera.",
     "notHiddenAnyFeatures": "Aún no has ocultado ninguna característica.",
     "selectToShow": "Selecciona elementos ocultos para mostrarlos nuevamente en la tabla de comparación.",
-    "walletUnhidden": "Monedero visible",
+    "walletUnhidden": "Cartera visible",
     "featureUnhidden": "Característica visible",
-    "walletAddedBack": "El monedero ha sido añadido nuevamente a la tabla de comparación.",
+    "walletAddedBack": "La cartera ha sido añadida nuevamente a la tabla de comparación.",
     "featureAddedBack": "La característica ha sido añadida nuevamente a la tabla de comparación.",
     "close": "Cerrar"
   },
   "about": {
-    "title": "Acerca de la Comparación de Monederos Bitcoin",
-    "description": "Esta herramienta de Comparación de Monederos Bitcoin ayuda a los usuarios a tomar decisiones informadas sobre qué monedero Bitcoin se adapta mejor a sus necesidades.",
+    "title": "Acerca de la Comparación de Carteras Bitcoin",
+    "description": "Esta herramienta de Comparación de Carteras Bitcoin ayuda a los usuarios a tomar decisiones informadas sobre qué cartera Bitcoin se adapta mejor a sus necesidades.",
     "purpose": "Propósito",
-    "purposeText": "Nuestro objetivo es proporcionar información precisa y actualizada sobre monederos Bitcoin de diferentes tipos (Lightning, On-Chain y Hardware) para ayudarte a elegir el monedero adecuado según tus requisitos específicos.",
+    "purposeText": "Nuestro objetivo es proporcionar información precisa y actualizada sobre carteras Bitcoin de diferentes tipos (Lightning, On-Chain y Hardware) para ayudarte a elegir la cartera adecuada según tus requisitos específicos.",
     "contribution": "Contribución",
-    "contributionText": "Este proyecto es de código abierto y está impulsado por la comunidad. Si deseas contribuir añadiendo nuevos monederos, actualizando información o traduciendo a otros idiomas, consulta nuestro repositorio de GitHub.",
+    "contributionText": "Este proyecto es de código abierto y está impulsado por la comunidad. Si deseas contribuir añadiendo nuevas carteras, actualizando información o traduciendo a otros idiomas, consulta nuestro repositorio de GitHub.",
     "disclaimer": "Aviso Legal",
-    "disclaimerText": "La información proporcionada es solo para fines educativos. Siempre haz tu propia investigación antes de elegir un monedero para almacenar tus bitcoins."
+    "disclaimerText": "La información proporcionada es solo para fines educativos. Siempre haz tu propia investigación antes de elegir una cartera para almacenar tus bitcoins."
   },
   "wizard": {
-    "title": "Asistente de Comparación de Monederos",
-    "selectFirst": "Seleccionar primer monedero",
-    "selectSecond": "Seleccionar segundo monedero",
-    "compareButton": "Comparar Monederos",
+    "title": "Asistente de Comparación de Carteras",
+    "selectFirst": "Seleccionar primera cartera",
+    "selectSecond": "Seleccionar segunda cartera",
+    "compareButton": "Comparar Carteras",
     "resetButton": "Reiniciar Selección",
     "comparisonResult": "Resultado de la Comparación",
     "feature": "Característica",
-    "wallet1": "Monedero 1",
-    "wallet2": "Monedero 2"
+    "wallet1": "Cartera 1",
+    "wallet2": "Cartera 2"
   },
   "footer": {
-    "copyright": "© Comparación de Monederos Bitcoin. Todos los derechos reservados.",
+    "copyright": "© Comparación de Carteras Bitcoin. Todos los derechos reservados.",
     "terms": "Términos de Servicio",
     "privacy": "Política de Privacidad",
     "community": "Comunidad"
