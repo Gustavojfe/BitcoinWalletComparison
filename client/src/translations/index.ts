@@ -44,6 +44,44 @@ export function getTranslation(lang: Language, key: string): string {
   const keys = getTranslationPath(key);
   let current: any = translations[lang];
   
+  // Handle feature values specially to ensure they're properly translated
+  if (keys.length === 2 && keys[0] === 'features') {
+    const featureKey = keys[1];
+    
+    // Check if the features section exists in current language
+    if (typeof current === 'object' && 
+        current !== null && 
+        'features' in current && 
+        typeof current.features === 'object' && 
+        current.features !== null && 
+        featureKey in current.features) {
+      const featureValue = current.features[featureKey];
+      if (typeof featureValue === 'string') {
+        return featureValue;
+      }
+    }
+    
+    // If we're not in English and the key doesn't exist, fall back to English
+    if (lang !== 'en') {
+      const enTranslations = translations['en'];
+      if (typeof enTranslations === 'object' && 
+          enTranslations !== null && 
+          'features' in enTranslations && 
+          typeof enTranslations.features === 'object' && 
+          enTranslations.features !== null && 
+          featureKey in enTranslations.features) {
+        const enValue = enTranslations.features[featureKey];
+        if (typeof enValue === 'string') {
+          return enValue;
+        }
+      }
+    }
+    
+    // If all else fails, return a formatted version of the key
+    return featureKey.replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+  }
+  
+  // Regular translation lookup
   for (const k of keys) {
     if (!current[k]) {
       // Fallback to English if key doesn't exist in the selected language

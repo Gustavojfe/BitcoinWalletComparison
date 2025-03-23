@@ -211,7 +211,9 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
             title={partialTitle}
           >
             <span className="text-xs font-medium text-orange-500">
-              {value === 'partial' ? 'P' : 'O'}
+              {value === 'partial' ? 
+                (t('features.partial').charAt(0).toUpperCase()) : 
+                (t('features.optional').charAt(0).toUpperCase())}
             </span>
           </span>
         );
