@@ -21,13 +21,14 @@ const WalletTooltip = ({ title, description, children }: TooltipProps) => {
           <span className="cursor-help">{children}</span>
         </TooltipTrigger>
         <TooltipContent 
-          side="top" 
-          align="center"
-          className="bg-gray-900 text-white border-gray-800 max-w-sm p-3 z-50"
+          side="right" 
+          align="start"
+          sideOffset={5}
+          className="bg-gray-900 text-white border-gray-800 w-72 p-4 z-50"
         >
-          <div className="flex flex-col gap-1">
-            <div className="text-sm font-medium mb-1">{title}</div>
-            <div className="text-xs text-gray-200 max-w-xs">{description}</div>
+          <div className="flex flex-col gap-2">
+            <div className="text-sm font-medium">{title}</div>
+            <div className="text-xs text-gray-200 whitespace-normal break-words">{description}</div>
           </div>
         </TooltipContent>
       </Tooltip>
