@@ -184,12 +184,17 @@ const WalletComparisonResult = () => {
           </div>
         );
       default:
+        // Get unknown translation
+        const unknownValue = value === 'unknown' ? 
+          t('common.unknown') : 
+          (translateFeatureValue(value as any) || t('common.unknown'));
+          
         return (
           <div className="flex items-center">
             <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-muted mr-2">
               <span className="text-xs font-medium text-muted-foreground">?</span>
             </span>
-            <span className="text-foreground">{t('common.unknown')}</span>
+            <span className="text-foreground">{unknownValue}</span>
           </div>
         );
     }
