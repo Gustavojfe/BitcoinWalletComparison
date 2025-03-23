@@ -1,10 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
-import { 
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+import { useState } from 'react';
 
 interface TooltipProps {
   title: string;
@@ -13,26 +7,27 @@ interface TooltipProps {
 }
 
 const WalletTooltip = ({ title, description, children }: TooltipProps) => {
-  // Use shadcn's Tooltip component for better positioning and styling
+  const [showTooltip, setShowTooltip] = useState(false);
+  
   return (
-    <TooltipProvider delayDuration={300}>
-      <Tooltip>
-        <TooltipTrigger asChild>
-          <span className="cursor-help">{children}</span>
-        </TooltipTrigger>
-        <TooltipContent 
-          side="right" 
-          align="start"
-          sideOffset={5}
-          className="bg-gray-900 text-white border-gray-800 w-72 p-4 z-50"
-        >
-          <div className="flex flex-col gap-2">
-            <div className="text-sm font-medium">{title}</div>
-            <div className="text-xs text-gray-200 whitespace-normal break-words">{description}</div>
+    <div className="relative inline-block">
+      <div 
+        onMouseEnter={() => setShowTooltip(true)} 
+        onMouseLeave={() => setShowTooltip(false)}
+        className="inline-flex cursor-help"
+      >
+        {children}
+      </div>
+      
+      {showTooltip && (
+        <div className="absolute left-full ml-2 top-0 z-50 w-80 transform translate-y-[-25%]">
+          <div className="bg-gray-900 text-white p-4 rounded-md shadow-lg">
+            <h3 className="font-medium text-sm mb-2">{title}</h3>
+            <p className="text-xs text-gray-200 whitespace-normal">{description}</p>
           </div>
-        </TooltipContent>
-      </Tooltip>
-    </TooltipProvider>
+        </div>
+      )}
+    </div>
   );
 };
 
