@@ -27,18 +27,17 @@ const HiddenFeaturesModal = ({ isOpen, onClose, walletType }: HiddenFeaturesModa
   const { getHiddenFeatures, toggleFeatureVisibility } = useVisibility(walletType);
   const hiddenFeatureIds = getHiddenFeatures();
   
-  // Fetch all features to filter for hidden ones
+  // Fetch all features (always enabled)
   const { data: allFeatures, isLoading: isFeaturesLoading } = useQuery({
     queryKey: ['/api/features', { type: walletType }],
     queryFn: async () => {
       const res = await fetch(`/api/features?type=${walletType}`);
       if (!res.ok) throw new Error('Failed to fetch features');
       return res.json() as Promise<Feature[]>;
-    },
-    enabled: isOpen // Only fetch when modal is open
+    }
   });
 
-  // Filter to only show hidden features
+  // Filter to only show hidden features (recalculated every render)
   const hiddenFeatures = allFeatures?.filter(feature => 
     hiddenFeatureIds.includes(feature.id)
   ) || [];

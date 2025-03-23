@@ -123,8 +123,16 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
     }
   };
 
-  // Filter visible features
-  const visibleFeatures = sortedFeatures.filter(feature => !isFeatureHidden(feature.id));
+  // Filter visible features based on search and visibility settings
+  const visibleFeatures = sortedFeatures.filter(feature => {
+    // Check if feature matches search term
+    const featureMatchesSearch = searchTerm.length === 0 || 
+      feature.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
+      feature.description.toLowerCase().includes(searchTerm.toLowerCase());
+    
+    // Only include feature if it matches search and is not hidden
+    return featureMatchesSearch && !isFeatureHidden(feature.id);
+  });
 
   return (
     <div className="bg-white shadow rounded-lg overflow-hidden">

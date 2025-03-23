@@ -27,18 +27,17 @@ const HiddenWalletsModal = ({ isOpen, onClose, walletType }: HiddenWalletsModalP
   const { getHiddenWallets, toggleWalletVisibility } = useVisibility(walletType);
   const hiddenWalletIds = getHiddenWallets();
   
-  // Fetch all wallets to filter for hidden ones
+  // Fetch all wallets (always enabled)
   const { data: allWallets, isLoading: isWalletsLoading } = useQuery({
     queryKey: ['/api/wallets', { type: walletType }],
     queryFn: async () => {
       const res = await fetch(`/api/wallets?type=${walletType}`);
       if (!res.ok) throw new Error('Failed to fetch wallets');
       return res.json() as Promise<Wallet[]>;
-    },
-    enabled: isOpen // Only fetch when modal is open
+    }
   });
 
-  // Filter to only show hidden wallets
+  // Filter to only show hidden wallets (recalculated every render)
   const hiddenWallets = allWallets?.filter(wallet => 
     hiddenWalletIds.includes(wallet.id)
   ) || [];
