@@ -64,20 +64,20 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
   });
 
   if (isWalletsLoading || isFeaturesLoading) {
-    return <div className="bg-white shadow rounded-lg overflow-hidden p-6">
+    return <div className="bg-card shadow rounded-lg overflow-hidden p-6">
       <Skeleton className="h-96 w-full" />
     </div>;
   }
 
   if (!filteredWallets || !features) {
-    return <div className="bg-white shadow rounded-lg overflow-hidden p-6">
-      <p className="text-center text-gray-500">{t('table.noData')}</p>
+    return <div className="bg-card shadow rounded-lg overflow-hidden p-6">
+      <p className="text-center text-muted-foreground">{t('table.noData')}</p>
     </div>;
   }
 
   if (filteredWallets.length === 0) {
-    return <div className="bg-white shadow rounded-lg overflow-hidden p-6">
-      <p className="text-center text-gray-500">{t('table.noResults')}</p>
+    return <div className="bg-card shadow rounded-lg overflow-hidden p-6">
+      <p className="text-center text-muted-foreground">{t('table.noResults')}</p>
     </div>;
   }
 
@@ -154,14 +154,14 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
   });
 
   return (
-    <div className="bg-white shadow rounded-lg overflow-hidden">
+    <div className="bg-card shadow rounded-lg overflow-hidden">
       <div className="overflow-x-auto">
         <div className="align-middle inline-block min-w-full">
-          <div className="overflow-hidden border-b border-gray-200">
-            <table className="min-w-full divide-y divide-gray-200">
-              <thead className="bg-gray-50">
+          <div className="overflow-hidden border-b border-border">
+            <table className="min-w-full divide-y divide-border">
+              <thead className="bg-muted">
                 <tr>
-                  <th scope="col" className="sticky left-0 z-10 bg-gray-50 px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider min-w-[200px]">
+                  <th scope="col" className="sticky left-0 z-10 bg-muted px-6 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider min-w-[200px]">
                     {t('common.wallets')}
                   </th>
                   {visibleFeatures.map((feature) => (

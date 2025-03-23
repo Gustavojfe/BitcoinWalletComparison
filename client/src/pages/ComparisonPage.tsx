@@ -36,12 +36,12 @@ const ComparisonPage = () => {
             <ComparisonWizard walletType={activeTab} />
           </>
         ) : (
-          <div className="bg-white shadow rounded-lg p-12 text-center my-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('comingSoon.title')}</h2>
-            <p className="text-lg text-gray-600 mb-6">
+          <div className="bg-card text-card-foreground shadow rounded-lg p-12 text-center my-12">
+            <h2 className="text-2xl font-bold mb-4">{t('comingSoon.title')}</h2>
+            <p className="text-lg text-muted-foreground mb-6">
               {t('comingSoon.inDevelopment').replace('{type}', t(`common.${activeTab}`))}
             </p>
-            <p className="text-md text-gray-500">
+            <p className="text-md text-muted-foreground">
               {t('comingSoon.workingHard').replace('{type}', t(`common.${activeTab}`))}
               {' '}
               {t('comingSoon.checkBack')}
@@ -50,9 +50,9 @@ const ComparisonPage = () => {
         )}
         
         {/* Help Section */}
-        <div id="help-section" className="mt-8 bg-white shadow rounded-lg p-6">
-          <h2 className="text-lg font-medium text-gray-900 mb-4">{t('common.help')}</h2>
-          <div className="prose prose-sm text-gray-500">
+        <div id="help-section" className="mt-8 bg-card text-card-foreground shadow rounded-lg p-6">
+          <h2 className="text-lg font-medium mb-4">{t('common.help')}</h2>
+          <div className="prose prose-sm dark:prose-invert">
             <p>
               {t('help.description').replace('{type}', t(`common.${activeTab}`))}
             </p>
