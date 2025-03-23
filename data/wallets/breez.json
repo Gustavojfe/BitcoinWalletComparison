@@ -1,0 +1,31 @@
+{
+  "name": "Breez",
+  "website": "https://breez.technology/",
+  "description": "A non-custodial Lightning wallet with integrated podcast player and point-of-sale features.",
+  "type": "lightning",
+  "logo": "breez",
+  "order": 3,
+  "features": {
+    "onChain": "yes",
+    "receiveOnChain": "yes",
+    "sendOnChain": "yes",
+    "invoice": "yes",
+    "lnurl": "yes",
+    "lightningAddress": "yes",
+    "bolt11": "yes",
+    "dnsSeeds": "yes",
+    "paymentRouting": {
+      "value": "custom",
+      "customText": "LSP"
+    },
+    "mpp": "yes",
+    "manageOwnChannels": {
+      "value": "custom",
+      "customText": "Limited"
+    },
+    "lowIncomingLiquidity": {
+      "value": "custom",
+      "customText": "LSP"
+    }
+  }
+}

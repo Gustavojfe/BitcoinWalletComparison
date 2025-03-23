@@ -1,0 +1,22 @@
+{
+  "name": "Wallet of Satoshi",
+  "website": "https://www.walletofsatoshi.com/",
+  "description": "A custodial Lightning wallet focused on simplicity and ease of use.",
+  "type": "lightning",
+  "logo": "walletofsatoshi",
+  "order": 4,
+  "features": {
+    "onChain": "yes",
+    "receiveOnChain": "yes",
+    "sendOnChain": "yes",
+    "invoice": "yes",
+    "lnurl": "yes",
+    "lightningAddress": "yes",
+    "bolt11": "yes",
+    "dnsSeeds": "no",
+    "paymentRouting": "no",
+    "mpp": "yes",
+    "manageOwnChannels": "no",
+    "lowIncomingLiquidity": "yes"
+  }
+}
