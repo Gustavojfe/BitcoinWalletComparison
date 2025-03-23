@@ -46,7 +46,10 @@ const HiddenWalletsModal = ({ isOpen, onClose, walletType }: HiddenWalletsModalP
   // Handle showing a hidden wallet
   const handleShowWallet = (walletId: number) => {
     toggleWalletVisibility(walletId);
+    
+    // Invalidate all relevant queries to refresh the UI
     queryClient.invalidateQueries({ queryKey: ['/api/wallets'] });
+    queryClient.invalidateQueries({ queryKey: ['/api/wallet-features'] });
     
     // Show success toast
     toast({

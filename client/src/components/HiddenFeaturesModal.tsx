@@ -46,6 +46,9 @@ const HiddenFeaturesModal = ({ isOpen, onClose, walletType }: HiddenFeaturesModa
   // Handle showing a hidden feature
   const handleShowFeature = (featureId: number) => {
     toggleFeatureVisibility(featureId);
+    
+    // Invalidate all relevant queries to refresh the UI
+    queryClient.invalidateQueries({ queryKey: ['/api/features'] });
     queryClient.invalidateQueries({ queryKey: ['/api/wallet-features'] });
     
     // Show success toast

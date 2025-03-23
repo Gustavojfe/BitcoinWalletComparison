@@ -42,11 +42,22 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
   });
 
   // Filter wallets based on search term and visibility
-  const filteredWallets = walletsWithFeatures?.filter(wallet => 
-    (wallet.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    wallet.description.toLowerCase().includes(searchTerm.toLowerCase())) &&
-    !isWalletHidden(wallet.id)
-  );
+  const filteredWallets = walletsWithFeatures?.filter(wallet => {
+    // Check if wallet name or description matches search
+    const walletMatches = (
+      wallet.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      wallet.description.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    
+    // Check if any of the wallet's features match search
+    const featureMatches = wallet.features.some(feature => 
+      feature.featureName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      feature.featureDescription.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    
+    // Include wallet if it matches search and is not hidden
+    return (walletMatches || featureMatches) && !isWalletHidden(wallet.id);
+  });
 
   if (isWalletsLoading || isFeaturesLoading) {
     return <div className="bg-white shadow rounded-lg overflow-hidden p-6">
