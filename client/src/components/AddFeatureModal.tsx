@@ -113,7 +113,7 @@ const AddFeatureModal = ({ isOpen, onClose, walletType }: AddFeatureModalProps) 
             <Button type="button" variant="outline" onClick={onClose} disabled={isSubmitting}>
               Cancel
             </Button>
-            <Button type="submit" disabled={isSubmitting} className="swapido-button">
+            <Button type="submit" disabled={isSubmitting} className="app-button">
               {isSubmitting ? 'Adding...' : 'Add Feature'}
             </Button>
           </DialogFooter>

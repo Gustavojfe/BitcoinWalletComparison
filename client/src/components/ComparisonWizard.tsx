@@ -106,7 +106,7 @@ const ComparisonWizard = ({ walletType }: ComparisonWizardProps) => {
         <Button 
           onClick={handleCompare}
           disabled={isLoading || !wallet1 || !wallet2}
-          className="swapido-button inline-flex items-center px-4 py-2 text-sm font-medium shadow-sm"
+          className="app-button inline-flex items-center px-4 py-2 text-sm font-medium shadow-sm"
         >
           Compare Wallets
         </Button>
