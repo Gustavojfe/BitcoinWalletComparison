@@ -1,0 +1,22 @@
+{
+  "name": "Electrum",
+  "website": "https://electrum.org/",
+  "description": "A lightweight Bitcoin wallet with advanced features including multi-signature support and hardware wallet integration.",
+  "type": "lightning",
+  "logo": "electrum",
+  "order": 8,
+  "features": {
+    "onChain": "yes",
+    "receiveOnChain": "yes",
+    "sendOnChain": "yes",
+    "invoice": "yes",
+    "lnurl": "partial",
+    "lightningAddress": "no",
+    "bolt11": "yes",
+    "dnsSeeds": "yes",
+    "paymentRouting": "yes",
+    "mpp": "yes",
+    "manageOwnChannels": "yes",
+    "lowIncomingLiquidity": "partial"
+  }
+}

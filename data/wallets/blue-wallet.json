@@ -1,0 +1,22 @@
+{
+  "name": "BlueWallet",
+  "website": "https://bluewallet.io/",
+  "description": "A feature-rich open-source Bitcoin and Lightning wallet for iOS and Android.",
+  "type": "lightning",
+  "logo": "bluewallet",
+  "order": 7,
+  "features": {
+    "onChain": "yes",
+    "receiveOnChain": "yes",
+    "sendOnChain": "yes",
+    "invoice": "yes",
+    "lnurl": "yes",
+    "lightningAddress": "yes",
+    "bolt11": "yes",
+    "dnsSeeds": "yes",
+    "paymentRouting": "partial",
+    "mpp": "yes",
+    "manageOwnChannels": "no",
+    "lowIncomingLiquidity": "yes"
+  }
+}
