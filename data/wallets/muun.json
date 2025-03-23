@@ -6,20 +6,18 @@
   "logo": "muun",
   "order": 2,
   "features": {
-    "onChain": "yes",
-    "receiveOnChain": "yes",
-    "sendOnChain": "yes",
-    "invoice": {
-      "value": "custom",
-      "customText": "Receive Only"
-    },
-    "lnurl": "no",
-    "lightningAddress": "no",
-    "bolt11": "yes",
-    "dnsSeeds": "no",
-    "paymentRouting": "partial",
-    "mpp": "partial",
-    "manageOwnChannels": "no",
-    "lowIncomingLiquidity": "yes"
+    "platform": ["ios", "android"],
+    "openSource": "yes",
+    "kyc": "no",
+    "walletType": "on_chain_swap",
+    "onChainSupport": "yes",
+    "implementation": "custom",
+    "bolt11Support": "yes",
+    "lnurlSupport": "no",
+    "lightningAddressSupport": "no",
+    "bolt12Support": "no",
+    "hrnBlip32Support": "no",
+    "mppSupport": "partial",
+    "channelManagement": "not_possible"
   }
 }

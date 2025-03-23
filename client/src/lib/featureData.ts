@@ -8,6 +8,7 @@ import { Feature, FeatureValue, WalletType } from './types';
  */
 export const getFeatureValueDisplay = (value: FeatureValue, customText?: string): string => {
   switch (value) {
+    // Standard values
     case 'yes':
       return 'Yes';
     case 'no':
@@ -16,8 +17,55 @@ export const getFeatureValueDisplay = (value: FeatureValue, customText?: string)
       return 'Partial';
     case 'custom':
       return customText || 'Custom';
+    
+    // Platform types
+    case 'ios':
+      return 'iOS';
+    case 'android':
+      return 'Android';
+    case 'desktop':
+      return 'Desktop';
+    case 'web':
+      return 'Web';
+    
+    // Transactional capabilities
+    case 'send_only':
+      return 'Send Only';
+    case 'receive_only':
+      return 'Receive Only';
+    
+    // Channel management
+    case 'mandatory':
+      return 'Mandatory';
+    case 'optional':
+      return 'Optional';
+    case 'not_possible':
+      return 'Not Possible';
+    
+    // Wallet types
+    case 'custodial':
+      return 'Custodial';
+    case 'ln_node':
+      return 'LN Node';
+    case 'liquid_swap':
+      return 'Liquid Swap';
+    case 'on_chain_swap':
+      return 'On-Chain Swap';
+    case 'remote_node':
+      return 'Remote Node';
+    
+    // Lightning implementations
+    case 'lnd':
+      return 'LND';
+    case 'ldk':
+      return 'LDK';
+    case 'core_lightning':
+      return 'Core Lightning';
+    case 'eclair':
+      return 'Eclair';
+    
     default:
-      return 'Unknown';
+      return String(value).replace(/_/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase());
   }
 };
 
@@ -30,17 +78,33 @@ export const getFeatureValueClasses = (value: FeatureValue): {
   bgColor: string; 
   textColor: string;
 } => {
-  switch (value) {
-    case 'yes':
-      return { bgColor: 'bg-green-100', textColor: 'text-green-600' };
-    case 'no':
-      return { bgColor: 'bg-red-100', textColor: 'text-red-600' };
-    case 'partial':
-    case 'custom':
-      return { bgColor: 'bg-amber-100', textColor: 'text-amber-700' };
-    default:
-      return { bgColor: 'bg-gray-100', textColor: 'text-gray-700' };
+  // Positive values
+  if (['yes', 'ios', 'android', 'desktop', 'web', 'optional'].includes(value)) {
+    return { bgColor: 'bg-green-100', textColor: 'text-green-600' };
   }
+  
+  // Negative values
+  if (['no', 'not_possible'].includes(value)) {
+    return { bgColor: 'bg-red-100', textColor: 'text-red-600' };
+  }
+  
+  // Implementations (neutral blue)
+  if (['lnd', 'ldk', 'core_lightning', 'eclair'].includes(value)) {
+    return { bgColor: 'bg-blue-100', textColor: 'text-blue-600' };
+  }
+  
+  // Wallet types (purple)
+  if (['custodial', 'ln_node', 'liquid_swap', 'on_chain_swap', 'remote_node'].includes(value)) {
+    return { bgColor: 'bg-purple-100', textColor: 'text-purple-600' };
+  }
+  
+  // Partial values (amber/yellow)
+  if (['partial', 'custom', 'send_only', 'receive_only', 'mandatory'].includes(value)) {
+    return { bgColor: 'bg-amber-100', textColor: 'text-amber-700' };
+  }
+  
+  // Default for any other value
+  return { bgColor: 'bg-gray-100', textColor: 'text-gray-700' };
 };
 
 /**
@@ -50,31 +114,53 @@ export const getFeatureValueClasses = (value: FeatureValue): {
  */
 export const categorizeFeatures = (features: Feature[]): { [key: string]: Feature[] } => {
   const categories: { [key: string]: Feature[] } = {
-    'basic': [],
-    'advanced': [],
-    'security': [],
-    'usability': [],
+    'wallet_info': [],
+    'platform': [],
+    'technical': [],
+    'interface': [],
+    'lightning': [],
     'other': []
   };
 
-  // Attempt to categorize features based on their name/description
+  // Categorize features based on their name/id
   features.forEach(feature => {
-    if (feature.name.toLowerCase().includes('chain') || 
-        feature.name.toLowerCase().includes('invoice') ||
-        feature.name.toLowerCase().includes('bolt')) {
-      categories.basic.push(feature);
-    } else if (feature.name.toLowerCase().includes('routing') || 
-              feature.name.toLowerCase().includes('channel') ||
-              feature.name.toLowerCase().includes('liquidity') ||
-              feature.name.toLowerCase().includes('mpp')) {
-      categories.advanced.push(feature);
-    } else if (feature.name.toLowerCase().includes('seed') || 
-              feature.name.toLowerCase().includes('dns')) {
-      categories.security.push(feature);
-    } else if (feature.name.toLowerCase().includes('lnurl') || 
-              feature.name.toLowerCase().includes('address')) {
-      categories.usability.push(feature);
-    } else {
+    const lowerName = feature.name.toLowerCase();
+    const id = feature.id?.toString().toLowerCase() || '';
+    
+    // Wallet info category
+    if (lowerName.includes('open-source') || 
+        lowerName.includes('kyc') || 
+        lowerName.includes('type of wallet') ||
+        id === 'opensource' || 
+        id === 'kyc' || 
+        id === 'wallettype') {
+      categories.wallet_info.push(feature);
+    } 
+    // Platform category
+    else if (lowerName.includes('platform')) {
+      categories.platform.push(feature);
+    } 
+    // Lightning features
+    else if (lowerName.includes('bolt') || 
+             lowerName.includes('lightning') || 
+             lowerName.includes('lnurl') || 
+             lowerName.includes('mpp') ||
+             lowerName.includes('channel')) {
+      categories.lightning.push(feature);
+    } 
+    // Technical features
+    else if (lowerName.includes('implementation') || 
+             lowerName.includes('blip32') || 
+             lowerName.includes('on-chain')) {
+      categories.technical.push(feature);
+    } 
+    // Interface features
+    else if (lowerName.includes('interface') || 
+             lowerName.includes('address')) {
+      categories.interface.push(feature);
+    } 
+    // Fallback for other features
+    else {
       categories.other.push(feature);
     }
   });
@@ -98,25 +184,29 @@ export const getKeyFeatures = (type: WalletType): string[] => {
   switch (type) {
     case 'lightning':
       return [
-        'On-Chain',
-        'Invoice',
-        'Lightning Address',
-        'LNURL(s)',
-        'Manage Own Channels',
-        'Payment Routing'
+        'Platform',
+        'Open-Source',
+        'KYC',
+        'Type of Wallet',
+        'On-Chain Support',
+        'Lightning Address Support',
+        'LNURL Support',
+        'Channel Management'
       ];
     case 'onchain':
       return [
+        'Platform',
+        'Open-Source',
+        'KYC',
         'Segwit Support',
         'RBF Support',
-        'Coin Control',
-        'Multiple Accounts',
-        'Multisig'
+        'Coin Control'
       ];
     case 'hardware':
       return [
+        'Platform',
+        'Open-Source',
         'Secure Element',
-        'Open Source',
         'Supports Multisig',
         'Air-gapped Option',
         'Pin Protection'
