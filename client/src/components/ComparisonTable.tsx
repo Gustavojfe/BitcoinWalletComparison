@@ -6,6 +6,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { Button } from '@/components/ui/button';
 import { EyeOff } from 'lucide-react';
 import { useVisibility } from '@/hooks/use-visibility-context';
+import { useLanguage } from '@/hooks/use-language';
 
 interface ComparisonTableProps {
   walletType: WalletType;
