@@ -6,20 +6,18 @@
   "logo": "lawallet",
   "order": 18,
   "features": {
-    "onChain": "yes",
-    "receiveOnChain": "yes",
-    "sendOnChain": "yes",
-    "invoice": "yes",
-    "lnurl": "yes",
-    "lightningAddress": "yes",
-    "bolt11": "yes",
-    "dnsSeeds": "yes",
-    "paymentRouting": "yes",
-    "mpp": "yes",
-    "manageOwnChannels": "no",
-    "lowIncomingLiquidity": {
-      "value": "custom",
-      "customText": "Custodial"
-    }
+    "platform": ["ios", "android", "web"],
+    "openSource": "yes",
+    "kyc": "no",
+    "walletType": "custodial",
+    "onChainSupport": "yes",
+    "implementation": "custom",
+    "bolt11Support": "yes",
+    "lnurlSupport": "yes",
+    "lightningAddressSupport": "yes",
+    "bolt12Support": "no",
+    "hrnBlip32Support": "no",
+    "mppSupport": "yes",
+    "channelManagement": "no"
   }
 }

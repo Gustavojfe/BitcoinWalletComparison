@@ -6,20 +6,18 @@
   "logo": "exodus",
   "order": 22,
   "features": {
-    "onChain": "yes",
-    "receiveOnChain": "yes",
-    "sendOnChain": "yes",
-    "invoice": "yes",
-    "lnurl": "partial",
-    "lightningAddress": "partial",
-    "bolt11": "yes",
-    "dnsSeeds": "yes",
-    "paymentRouting": "yes",
-    "mpp": "yes",
-    "manageOwnChannels": "no",
-    "lowIncomingLiquidity": {
-      "value": "custom",
-      "customText": "Custodial"
-    }
+    "platform": ["ios", "android", "desktop"],
+    "openSource": "no",
+    "kyc": "no",
+    "walletType": "custodial",
+    "onChainSupport": "yes",
+    "implementation": "custom",
+    "bolt11Support": "yes",
+    "lnurlSupport": "partial",
+    "lightningAddressSupport": "partial",
+    "bolt12Support": "no",
+    "hrnBlip32Support": "no",
+    "mppSupport": "yes",
+    "channelManagement": "no"
   }
 }
