@@ -6,17 +6,18 @@
   "logo": "walletofsatoshi",
   "order": 4,
   "features": {
-    "onChain": "yes",
-    "receiveOnChain": "yes",
-    "sendOnChain": "yes",
-    "invoice": "yes",
-    "lnurl": "yes",
-    "lightningAddress": "yes",
-    "bolt11": "yes",
-    "dnsSeeds": "no",
-    "paymentRouting": "no",
-    "mpp": "yes",
-    "manageOwnChannels": "no",
-    "lowIncomingLiquidity": "yes"
+    "platform": ["ios", "android", "web"],
+    "openSource": "no",
+    "kyc": "yes",
+    "walletType": "custodial",
+    "onChainSupport": "yes",
+    "implementation": "lnd",
+    "bolt11Support": "yes",
+    "lnurlSupport": "yes",
+    "lightningAddressSupport": "yes",
+    "bolt12Support": "no",
+    "hrnBlip32Support": "no",
+    "mppSupport": "yes",
+    "channelManagement": "not_possible"
   }
 }

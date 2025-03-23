@@ -47,6 +47,58 @@
     "Low Incoming Liquidity": {
       "name": "Baja Liquidez Entrante",
       "description": "Formas de abordar los desafíos de liquidez entrante para recibir pagos."
+    },
+    "Platform": {
+      "name": "Plataforma",
+      "description": "Sistemas operativos y plataformas compatibles con la cartera."
+    },
+    "Open-Source": {
+      "name": "Código Abierto",
+      "description": "Si el código de la cartera es de código abierto y está disponible públicamente."
+    },
+    "KYC": {
+      "name": "KYC Requerido",
+      "description": "Requisitos de Conozca a Su Cliente para usar la cartera."
+    },
+    "Type of Wallet": {
+      "name": "Tipo de Cartera",
+      "description": "El enfoque de arquitectura y diseño de la cartera."
+    },
+    "On-Chain Support": {
+      "name": "Soporte On-Chain",
+      "description": "La capacidad de la cartera para manejar transacciones de Bitcoin en cadena."
+    },
+    "Implementation": {
+      "name": "Implementación",
+      "description": "La implementación de Lightning Network utilizada por la cartera."
+    },
+    "Bolt11 Support": {
+      "name": "Soporte BOLT11",
+      "description": "Soporte para el formato de factura BOLT11 de Lightning Network."
+    },
+    "LNURL Support": {
+      "name": "Soporte LNURL",
+      "description": "Soporte para el protocolo LNURL para interacciones de Lightning Network."
+    },
+    "Lightning Address Support": {
+      "name": "Dirección Lightning",
+      "description": "Soporte para direcciones Lightning en el formato usuario@dominio.com."
+    },
+    "Bolt12 Support": {
+      "name": "Soporte BOLT12",
+      "description": "Soporte para el formato de oferta BOLT12 de Lightning Network."
+    },
+    "HRN BLIP32 Support": {
+      "name": "HRN BLIP32",
+      "description": "Soporte para Nombres Legibles por Humanos basados en BLIP-0032."
+    },
+    "MPP Support": {
+      "name": "Pagos Multi-Ruta",
+      "description": "Capacidad para dividir pagos a través de múltiples canales Lightning."
+    },
+    "Channel Management": {
+      "name": "Gestión de Canales",
+      "description": "El enfoque de la cartera para la gestión de canales de Lightning Network."
     }
   }
 }

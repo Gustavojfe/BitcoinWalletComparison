@@ -47,6 +47,58 @@
     "Low Incoming Liquidity": {
       "name": "Low Incoming Liquidity",
       "description": "Ways to address incoming liquidity challenges for receiving payments."
+    },
+    "Platform": {
+      "name": "Platform",
+      "description": "Supported operating systems and platforms for the wallet."
+    },
+    "Open-Source": {
+      "name": "Open Source",
+      "description": "Whether the wallet's code is open-source and publicly available."
+    },
+    "KYC": {
+      "name": "KYC Required",
+      "description": "Know Your Customer requirements for using the wallet."
+    },
+    "Type of Wallet": {
+      "name": "Wallet Type",
+      "description": "The architecture and design approach of the wallet."
+    },
+    "On-Chain Support": {
+      "name": "On-Chain Support",
+      "description": "The wallet's capability to handle on-chain Bitcoin transactions."
+    },
+    "Implementation": {
+      "name": "Implementation",
+      "description": "The Lightning Network implementation used by the wallet."
+    },
+    "Bolt11 Support": {
+      "name": "BOLT11 Support",
+      "description": "Support for the BOLT11 Lightning Network invoice format."
+    },
+    "LNURL Support": {
+      "name": "LNURL Support",
+      "description": "Support for the LNURL protocol for Lightning Network interactions."
+    },
+    "Lightning Address Support": {
+      "name": "Lightning Address",
+      "description": "Support for Lightning Addresses in the format user@domain.com."
+    },
+    "Bolt12 Support": {
+      "name": "BOLT12 Support",
+      "description": "Support for the BOLT12 Lightning Network offer format."
+    },
+    "HRN BLIP32 Support": {
+      "name": "HRN BLIP32",
+      "description": "Support for Human-Readable Names based on BLIP-0032."
+    },
+    "MPP Support": {
+      "name": "Multi-Path Payments",
+      "description": "Ability to split payments across multiple Lightning channels."
+    },
+    "Channel Management": {
+      "name": "Channel Management",
+      "description": "The wallet's approach to Lightning Network channel management."
     }
   }
 }
