@@ -1,75 +1,79 @@
 {
   "common": {
-    "loading": "Cargando...",
+    "walletComparison": "Comparación de Monederos Bitcoin",
+    "about": "Acerca de",
+    "features": "Características",
+    "wallets": "Monederos",
+    "search": "Buscar",
+    "lightning": "Lightning",
+    "onchain": "On-Chain",
+    "hardware": "Hardware",
     "comingSoon": "Próximamente",
+    "compare": "Comparar",
+    "website": "Sitio Web",
     "yes": "Sí",
     "no": "No",
     "partial": "Parcial",
     "custom": "Personalizado",
-    "hide": "Ocultar",
     "show": "Mostrar",
-    "search": "Buscar",
-    "reset": "Reiniciar",
-    "save": "Guardar",
-    "cancel": "Cancelar",
-    "compare": "Comparar",
-    "website": "Sitio web"
+    "hide": "Ocultar"
   },
-  "navigation": {
-    "home": "Inicio",
-    "about": "Acerca de",
-    "comparison": "Comparación"
-  },
-  "walletTypes": {
-    "lightning": "Lightning",
-    "onchain": "On-Chain",
-    "hardware": "Hardware"
-  },
-  "comparisonPage": {
+  "header": {
     "title": "Comparación de Monederos Bitcoin",
-    "subtitle": "Compara características entre diferentes monederos Bitcoin",
-    "tabInfo": "Selecciona un tipo de monedero para comparar",
-    "searchPlaceholder": "Buscar monederos o características...",
+    "lightningTab": "Lightning",
+    "onchainTab": "On-Chain",
+    "hardwareTab": "Hardware",
+    "aboutLink": "Acerca de"
+  },
+  "table": {
+    "name": "Nombre",
+    "website": "Sitio Web",
+    "description": "Descripción",
+    "type": "Tipo",
     "noResults": "No se encontraron resultados",
-    "comingSoonMessage": "Esta sección estará disponible próximamente. Actualmente nos enfocamos en monederos Lightning.",
-    "showHiddenWallets": "Mostrar monederos ocultos",
-    "showHiddenFeatures": "Mostrar características ocultas",
-    "addWallet": "Añadir monedero",
-    "addFeature": "Añadir característica",
-    "resetFilters": "Reiniciar filtros"
+    "searchPlaceholder": "Buscar monederos y características...",
+    "loadingWallets": "Cargando monederos...",
+    "loadingFeatures": "Cargando características..."
   },
-  "comparisonTable": {
-    "walletColumn": "Monedero",
-    "featureHeader": "Características"
+  "control": {
+    "showHiddenWallets": "Mostrar Monederos Ocultos",
+    "showHiddenFeatures": "Mostrar Características Ocultas",
+    "addWallet": "Añadir Monedero",
+    "addFeature": "Añadir Característica",
+    "export": "Exportar Datos",
+    "import": "Importar Datos"
   },
-  "hiddenItems": {
-    "walletsTitle": "Monederos Ocultos",
-    "featuresTitle": "Características Ocultas",
+  "hidden": {
     "noHiddenWallets": "No hay monederos ocultos",
     "noHiddenFeatures": "No hay características ocultas",
-    "showAll": "Mostrar todos"
+    "showAll": "Mostrar Todos",
+    "hideAll": "Ocultar Todos"
+  },
+  "about": {
+    "title": "Acerca de la Comparación de Monederos Bitcoin",
+    "description": "Esta herramienta de Comparación de Monederos Bitcoin ayuda a los usuarios a tomar decisiones informadas sobre qué monedero Bitcoin se adapta mejor a sus necesidades.",
+    "purpose": "Propósito",
+    "purposeText": "Nuestro objetivo es proporcionar información precisa y actualizada sobre monederos Bitcoin de diferentes tipos (Lightning, On-Chain y Hardware) para ayudarte a elegir el monedero adecuado según tus requisitos específicos.",
+    "contribution": "Contribución",
+    "contributionText": "Este proyecto es de código abierto y está impulsado por la comunidad. Si deseas contribuir añadiendo nuevos monederos, actualizando información o traduciendo a otros idiomas, consulta nuestro repositorio de GitHub.",
+    "disclaimer": "Aviso Legal",
+    "disclaimerText": "La información proporcionada es solo para fines educativos. Siempre haz tu propia investigación antes de elegir un monedero para almacenar tus bitcoins."
   },
   "wizard": {
     "title": "Asistente de Comparación de Monederos",
-    "selectWallets": "Selecciona monederos para comparar",
-    "selectFeatures": "Selecciona características para comparar",
-    "compareButton": "Comparar Monederos Seleccionados",
+    "selectFirst": "Seleccionar primer monedero",
+    "selectSecond": "Seleccionar segundo monedero",
+    "compareButton": "Comparar Monederos",
     "resetButton": "Reiniciar Selección",
-    "noWalletsSelected": "Por favor selecciona al menos un monedero para comparar",
-    "maxWalletsSelected": "Se pueden comparar máximo 3 monederos a la vez"
+    "comparisonResult": "Resultado de la Comparación",
+    "feature": "Característica",
+    "wallet1": "Monedero 1",
+    "wallet2": "Monedero 2"
   },
-  "aboutPage": {
-    "title": "Acerca de la Comparación de Monederos Bitcoin",
-    "subtitle": "Ayudándote a encontrar el monedero Bitcoin adecuado",
-    "purpose": "Esta herramienta te ayuda a comparar diferentes monederos Bitcoin basándose en sus características para que encuentres el que mejor se adapte a tus necesidades.",
-    "contribute": "Este proyecto es de código abierto. Puedes contribuir añadiendo nuevos monederos o características a través de GitHub.",
-    "dataModel": "Los datos se almacenan en archivos JSON, facilitando que cualquiera pueda contribuir mediante pull requests.",
-    "disclaimer": "Aviso: Nos esforzamos por la precisión, pero recomendamos verificar las características en los sitios web oficiales de los monederos antes de tomar decisiones.",
-    "contact": "¿Preguntas o sugerencias? Abre un issue en GitHub."
-  },
-  "notFound": {
-    "title": "Página No Encontrada",
-    "message": "La página que estás buscando no existe.",
-    "backToHome": "Volver al Inicio"
+  "footer": {
+    "copyright": "© Comparación de Monederos Bitcoin. Todos los derechos reservados.",
+    "terms": "Términos de Servicio",
+    "privacy": "Política de Privacidad",
+    "community": "Comunidad"
   }
 }

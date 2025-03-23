@@ -3,6 +3,7 @@ import { WalletType } from '@/lib/types';
 import HiddenWalletsModal from './HiddenWalletsModal';
 import HiddenFeaturesModal from './HiddenFeaturesModal';
 import { useVisibility } from '@/hooks/use-visibility-context';
+import { useLanguage } from '@/hooks/use-language';
 import { Eye, Search } from 'lucide-react';
 
 interface ControlPanelProps {
@@ -14,6 +15,7 @@ const ControlPanel = ({ walletType, onSearch }: ControlPanelProps) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [isHiddenWalletsModalOpen, setIsHiddenWalletsModalOpen] = useState(false);
   const [isHiddenFeaturesModalOpen, setIsHiddenFeaturesModalOpen] = useState(false);
+  const { t } = useLanguage();
   
   // Get visibility data to show counts
   const { getHiddenWallets, getHiddenFeatures } = useVisibility(walletType);
@@ -35,7 +37,7 @@ const ControlPanel = ({ walletType, onSearch }: ControlPanelProps) => {
             className="inline-flex items-center px-3 py-2 text-sm leading-4 font-medium border border-gray-300 rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none"
           >
             <Eye className="h-4 w-4 mr-1" />
-            Hidden Wallets
+            {t('control.showHiddenWallets')}
             {hiddenWalletCount > 0 && (
               <span className="ml-1 bg-gray-200 text-gray-700 px-2 rounded-full text-xs">
                 {hiddenWalletCount}
@@ -47,7 +49,7 @@ const ControlPanel = ({ walletType, onSearch }: ControlPanelProps) => {
             className="inline-flex items-center px-3 py-2 text-sm leading-4 font-medium border border-gray-300 rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none"
           >
             <Eye className="h-4 w-4 mr-1" />
-            Hidden Features
+            {t('control.showHiddenFeatures')}
             {hiddenFeatureCount > 0 && (
               <span className="ml-1 bg-gray-200 text-gray-700 px-2 rounded-full text-xs">
                 {hiddenFeatureCount}
@@ -61,7 +63,7 @@ const ControlPanel = ({ walletType, onSearch }: ControlPanelProps) => {
           </div>
           <input 
             type="text" 
-            placeholder="Search wallets and features..." 
+            placeholder={t('table.searchPlaceholder')}
             value={searchTerm}
             onChange={handleSearch}
             className="pl-10 shadow-sm focus:ring-primary focus:border-primary block w-full sm:text-sm border-gray-300 rounded-md"

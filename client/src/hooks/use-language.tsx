@@ -73,5 +73,3 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
 };
 
 export const useLanguage = () => useContext(LanguageContext);
-
-export default useLanguage;

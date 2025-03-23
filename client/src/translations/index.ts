@@ -1,5 +1,5 @@
-import enTranslations from './en.json';
-import esTranslations from './es.json';
+import en from './en.json';
+import es from './es.json';
 
 export type Language = 'en' | 'es';
 
@@ -10,8 +10,8 @@ export interface TranslationMap {
 }
 
 export const translations: Record<Language, TranslationMap> = {
-  en: enTranslations,
-  es: esTranslations
+  en,
+  es
 };
 
 export const languageNames: Record<Language, string> = {
@@ -24,21 +24,19 @@ export function getTranslationPath(key: string): string[] {
 }
 
 export function getTranslation(lang: Language, key: string): string {
-  const path = getTranslationPath(key);
-  let result: any = translations[lang];
+  const keys = getTranslationPath(key);
+  let current: any = translations[lang];
   
-  for (const segment of path) {
-    if (result[segment] === undefined) {
-      console.warn(`Translation key not found: ${key}`);
-      return key;
+  for (const k of keys) {
+    if (!current[k]) {
+      // Fallback to English if key doesn't exist in the selected language
+      if (lang !== 'en') {
+        return getTranslation('en', key);
+      }
+      return key; // Return the key itself as fallback
     }
-    result = result[segment];
+    current = current[k];
   }
   
-  if (typeof result !== 'string') {
-    console.warn(`Translation key does not resolve to a string: ${key}`);
-    return key;
-  }
-  
-  return result;
+  return current as string;
 }
