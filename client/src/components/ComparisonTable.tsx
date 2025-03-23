@@ -80,8 +80,8 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
   // Sort features by order
   const sortedFeatures = [...features].sort((a, b) => a.order - b.order);
   
-  // Sort wallets by order
-  const sortedWallets = [...filteredWallets].sort((a, b) => a.order - b.order);
+  // Sort wallets alphabetically by name
+  const sortedWallets = [...filteredWallets].sort((a, b) => a.name.localeCompare(b.name));
 
   // Render feature status based on value
   const renderFeatureStatus = (value: string, customText?: string) => {
