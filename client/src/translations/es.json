@@ -47,7 +47,15 @@
     "noHiddenWallets": "No hay monederos ocultos",
     "noHiddenFeatures": "No hay características ocultas",
     "showAll": "Mostrar Todos",
-    "hideAll": "Ocultar Todos"
+    "hideAll": "Ocultar Todos",
+    "notHiddenAnyWallets": "Aún no has ocultado ningún monedero.",
+    "notHiddenAnyFeatures": "Aún no has ocultado ninguna característica.",
+    "selectToShow": "Selecciona elementos ocultos para mostrarlos nuevamente en la tabla de comparación.",
+    "walletUnhidden": "Monedero visible",
+    "featureUnhidden": "Característica visible",
+    "walletAddedBack": "El monedero ha sido añadido nuevamente a la tabla de comparación.",
+    "featureAddedBack": "La característica ha sido añadida nuevamente a la tabla de comparación.",
+    "close": "Cerrar"
   },
   "about": {
     "title": "Acerca de la Comparación de Monederos Bitcoin",

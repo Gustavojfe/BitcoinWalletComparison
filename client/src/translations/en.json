@@ -47,7 +47,15 @@
     "noHiddenWallets": "No hidden wallets",
     "noHiddenFeatures": "No hidden features",
     "showAll": "Show All",
-    "hideAll": "Hide All"
+    "hideAll": "Hide All",
+    "notHiddenAnyWallets": "You haven't hidden any wallets yet.",
+    "notHiddenAnyFeatures": "You haven't hidden any features yet.",
+    "selectToShow": "Select hidden items to show them in the comparison table again.",
+    "walletUnhidden": "Wallet unhidden",
+    "featureUnhidden": "Feature unhidden",
+    "walletAddedBack": "The wallet has been added back to the comparison table.",
+    "featureAddedBack": "The feature has been added back to the comparison table.",
+    "close": "Close"
   },
   "about": {
     "title": "About Bitcoin Wallet Comparison",

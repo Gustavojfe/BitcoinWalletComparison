@@ -12,6 +12,7 @@ import { useToast } from '@/hooks/use-toast';
 import { queryClient } from '@/lib/queryClient';
 import { WalletType, Feature } from '@/lib/types';
 import { useVisibility } from '@/hooks/use-visibility-context';
+import { useLanguage } from '@/hooks/use-language';
 import { Eye } from 'lucide-react';
 
 interface HiddenFeaturesModalProps {
@@ -22,6 +23,7 @@ interface HiddenFeaturesModalProps {
 
 const HiddenFeaturesModal = ({ isOpen, onClose, walletType }: HiddenFeaturesModalProps) => {
   const { toast } = useToast();
+  const { t } = useLanguage();
   
   // Get the visibility hook
   const { getHiddenFeatures, toggleFeatureVisibility } = useVisibility(walletType);
@@ -52,8 +54,8 @@ const HiddenFeaturesModal = ({ isOpen, onClose, walletType }: HiddenFeaturesModa
     
     // Show success toast
     toast({
-      title: 'Feature unhidden',
-      description: 'The feature has been added back to the comparison table.'
+      title: t('hidden.featureUnhidden'),
+      description: t('hidden.featureAddedBack')
     });
   };
 
@@ -61,19 +63,19 @@ const HiddenFeaturesModal = ({ isOpen, onClose, walletType }: HiddenFeaturesModa
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[525px]">
         <DialogHeader>
-          <DialogTitle>Hidden Features</DialogTitle>
+          <DialogTitle>{t('control.showHiddenFeatures')}</DialogTitle>
           <DialogDescription>
             {hiddenFeatureIds.length === 0 
-              ? "You haven't hidden any features yet." 
-              : "Select hidden features to show them in the comparison table again."}
+              ? t('hidden.notHiddenAnyFeatures')
+              : t('hidden.selectToShow')}
           </DialogDescription>
         </DialogHeader>
 
         {isFeaturesLoading ? (
-          <div className="text-center py-6">Loading hidden features...</div>
+          <div className="text-center py-6">{t('table.loadingFeatures')}</div>
         ) : hiddenFeatures.length === 0 ? (
           <div className="text-center py-6 text-gray-500">
-            No features are currently hidden.
+            {t('hidden.noHiddenFeatures')}
           </div>
         ) : (
           <div className="space-y-2 max-h-72 overflow-y-auto py-2">
@@ -98,7 +100,7 @@ const HiddenFeaturesModal = ({ isOpen, onClose, walletType }: HiddenFeaturesModa
                   className="flex items-center space-x-1"
                 >
                   <Eye className="h-4 w-4 mr-1" />
-                  <span>Show</span>
+                  <span>{t('common.show')}</span>
                 </Button>
               </div>
             ))}
@@ -107,7 +109,7 @@ const HiddenFeaturesModal = ({ isOpen, onClose, walletType }: HiddenFeaturesModa
 
         <DialogFooter className="mt-4">
           <Button type="button" variant="outline" onClick={onClose}>
-            Close
+            {t('hidden.close')}
           </Button>
         </DialogFooter>
       </DialogContent>

@@ -12,6 +12,7 @@ import { useToast } from '@/hooks/use-toast';
 import { queryClient } from '@/lib/queryClient';
 import { WalletType, Wallet } from '@/lib/types';
 import { useVisibility } from '@/hooks/use-visibility-context';
+import { useLanguage } from '@/hooks/use-language';
 import { Eye } from 'lucide-react';
 
 interface HiddenWalletsModalProps {
@@ -22,6 +23,7 @@ interface HiddenWalletsModalProps {
 
 const HiddenWalletsModal = ({ isOpen, onClose, walletType }: HiddenWalletsModalProps) => {
   const { toast } = useToast();
+  const { t } = useLanguage();
   
   // Get the visibility hook
   const { getHiddenWallets, toggleWalletVisibility } = useVisibility(walletType);
@@ -52,8 +54,8 @@ const HiddenWalletsModal = ({ isOpen, onClose, walletType }: HiddenWalletsModalP
     
     // Show success toast
     toast({
-      title: 'Wallet unhidden',
-      description: 'The wallet has been added back to the comparison table.'
+      title: t('hidden.walletUnhidden'),
+      description: t('hidden.walletAddedBack')
     });
   };
 
@@ -61,19 +63,19 @@ const HiddenWalletsModal = ({ isOpen, onClose, walletType }: HiddenWalletsModalP
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[525px]">
         <DialogHeader>
-          <DialogTitle>Hidden Wallets</DialogTitle>
+          <DialogTitle>{t('control.showHiddenWallets')}</DialogTitle>
           <DialogDescription>
             {hiddenWalletIds.length === 0 
-              ? "You haven't hidden any wallets yet." 
-              : "Select hidden wallets to show them in the comparison table again."}
+              ? t('hidden.notHiddenAnyWallets')
+              : t('hidden.selectToShow')}
           </DialogDescription>
         </DialogHeader>
 
         {isWalletsLoading ? (
-          <div className="text-center py-6">Loading hidden wallets...</div>
+          <div className="text-center py-6">{t('table.loadingWallets')}</div>
         ) : hiddenWallets.length === 0 ? (
           <div className="text-center py-6 text-gray-500">
-            No wallets are currently hidden.
+            {t('hidden.noHiddenWallets')}
           </div>
         ) : (
           <div className="space-y-2 max-h-72 overflow-y-auto py-2">
@@ -98,7 +100,7 @@ const HiddenWalletsModal = ({ isOpen, onClose, walletType }: HiddenWalletsModalP
                   className="flex items-center space-x-1"
                 >
                   <Eye className="h-4 w-4 mr-1" />
-                  <span>Show</span>
+                  <span>{t('common.show')}</span>
                 </Button>
               </div>
             ))}
@@ -107,7 +109,7 @@ const HiddenWalletsModal = ({ isOpen, onClose, walletType }: HiddenWalletsModalP
 
         <DialogFooter className="mt-4">
           <Button type="button" variant="outline" onClick={onClose}>
-            Close
+            {t('hidden.close')}
           </Button>
         </DialogFooter>
       </DialogContent>
