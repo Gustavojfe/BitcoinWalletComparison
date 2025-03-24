@@ -1,104 +1,232 @@
 {
   "features": {
-    "On-Chain": {
-      "name": "On-Chain",
-      "description": "La capacidad de enviar y recibir transacciones Bitcoin en la cadena principal."
+    "Platform Support": {
+      "name": "Soporte de Plataforma",
+      "description": "¿Qué sistemas operativos son compatibles (iOS, Android, Windows, macOS, Linux)?"
     },
-    "Receive On-Chain": {
-      "name": "Recibir On-Chain",
-      "description": "La capacidad de generar direcciones y recibir Bitcoin en la cadena principal."
+    "User Interface (UI/UX)": {
+      "name": "Interfaz de Usuario (UI/UX)",
+      "description": "¿Es amigable para principiantes o está orientado a usuarios avanzados (por ejemplo, CLI vs. GUI)?"
     },
-    "Send On-Chain": {
-      "name": "Enviar On-Chain",
-      "description": "La capacidad de enviar Bitcoin a través de transacciones en la cadena principal."
+    "Open Source Status": {
+      "name": "Estado de Código Abierto",
+      "description": "¿El código es de código abierto? Si es así, enlace al repositorio (por ejemplo, GitHub)."
     },
-    "Invoice": {
-      "name": "Factura",
-      "description": "Crear y gestionar facturas de la Red Lightning para recibir pagos."
-    },
-    "LNURL(s)": {
-      "name": "LNURL(s)",
-      "description": "Soporte para diferentes protocolos LNURL como LNURL-pay, LNURL-withdraw, etc."
-    },
-    "Lightning Address": {
-      "name": "Dirección Lightning",
-      "description": "Soporte para direcciones Lightning en formato usuario@dominio.com."
-    },
-    "BoltII": {
-      "name": "BoltII",
-      "description": "Implementación de la especificación BOLT 11 para pagos Lightning."
-    },
-    "DNS (Seeds)": {
-      "name": "DNS (Semillas)",
-      "description": "Uso de semillas DNS para encontrar nodos de la Red Lightning."
-    },
-    "Payment Routing": {
-      "name": "Enrutamiento de Pagos",
-      "description": "Capacidad para enrutar pagos a través de la Red Lightning."
-    },
-    "MPP": {
-      "name": "MPP",
-      "description": "Pagos Multi-Ruta: división de pagos a través de múltiples canales Lightning."
-    },
-    "Manage Own Channels": {
-      "name": "Gestionar Canales Propios",
-      "description": "Capacidad para que los usuarios creen y gestionen sus propios canales Lightning."
-    },
-    "Low Incoming Liquidity": {
-      "name": "Baja Liquidez Entrante",
-      "description": "Formas de abordar los desafíos de liquidez entrante para recibir pagos."
-    },
-    "Platform": {
-      "name": "Plataforma",
-      "description": "Sistemas operativos y plataformas compatibles con la cartera."
-    },
-    "Open-Source": {
-      "name": "Código Abierto",
-      "description": "Si el código de la cartera es de código abierto y está disponible públicamente."
+    "Custodial vs. Non-Custodial": {
+      "name": "Custodial vs. No-Custodial",
+      "description": "¿La cartera da a los usuarios control total de las claves privadas, o es custodial?"
     },
     "KYC": {
-      "name": "KYC Requerido",
-      "description": "Requisitos de Conozca a Su Cliente para usar la cartera."
+      "name": "KYC",
+      "description": "¿La cartera requiere verificación de Conozca a Su Cliente para su uso?"
     },
-    "Type of Wallet": {
-      "name": "Tipo de Cartera",
-      "description": "El enfoque de arquitectura y diseño de la cartera."
+    "Transaction Fees": {
+      "name": "Comisiones de Transacción",
+      "description": "¿Cómo se manejan las comisiones (fijas, configurables, dinámicas según la red)?"
     },
-    "On-Chain Support": {
-      "name": "Soporte On-Chain",
-      "description": "La capacidad de la cartera para manejar transacciones de Bitcoin en cadena."
+    "Transaction Limits": {
+      "name": "Límites de Transacción",
+      "description": "¿Existen límites en los tamaños o frecuencias de las transacciones?"
     },
-    "Implementation": {
-      "name": "Implementación",
-      "description": "La implementación de Lightning Network utilizada por la cartera."
+    "Backup Options": {
+      "name": "Opciones de Respaldo",
+      "description": "¿Cómo se respaldan las claves y canales (por ejemplo, frase semilla, respaldo estático de canal, nube)?"
     },
-    "Bolt11 Support": {
+    "Lightning Network Implementation": {
+      "name": "Implementación de Lightning Network",
+      "description": "¿Qué implementación de Lightning Network se utiliza (por ejemplo, LND, c-lightning, Eclair)?"
+    },
+    "Node Type": {
+      "name": "Tipo de Nodo",
+      "description": "¿La cartera ejecuta un nodo Lightning completo, un cliente ligero o depende de un nodo remoto?"
+    },
+    "BOLT11 Support": {
       "name": "Soporte BOLT11",
-      "description": "Soporte para el formato de factura BOLT11 de Lightning Network."
+      "description": "¿Admite facturas BOLT11 para pagos?"
+    },
+    "BOLT12 Support": {
+      "name": "Soporte BOLT12",
+      "description": "¿Admite ofertas BOLT12 (por ejemplo, facturas reutilizables)?"
+    },
+    "UMA Support": {
+      "name": "Soporte UMA",
+      "description": "¿Admite Direcciones de Dinero Universal (UMA) para pagos entre plataformas?"
+    },
+    "BOLT12 + HRN (BLIP32) Support": {
+      "name": "Soporte BOLT12 + HRN (BLIP32)",
+      "description": "¿Admite BOLT12 con Nonces Aleatorios Hasheados (HRN) según BLIP32?"
     },
     "LNURL Support": {
       "name": "Soporte LNURL",
-      "description": "Soporte para el protocolo LNURL para interacciones de Lightning Network."
+      "description": "¿Admite LNURL-auth, LNURL-pay, LNURL-withdraw, etc.?"
     },
     "Lightning Address Support": {
-      "name": "Dirección Lightning",
-      "description": "Soporte para direcciones Lightning en el formato usuario@dominio.com."
+      "name": "Soporte de Dirección Lightning",
+      "description": "¿Admite direcciones Lightning legibles por humanos (por ejemplo, usuario@dominio.com)?"
     },
-    "Bolt12 Support": {
-      "name": "Soporte BOLT12",
-      "description": "Soporte para el formato de oferta BOLT12 de Lightning Network."
+    "No-Amount Invoices": {
+      "name": "Facturas Sin Monto",
+      "description": "¿Puede generar facturas sin un monto especificado (abiertas)?"
     },
-    "HRN BLIP32 Support": {
-      "name": "HRN BLIP32",
-      "description": "Soporte para Nombres Legibles por Humanos basados en BLIP-0032."
+    "Invoice Expiry Control": {
+      "name": "Control de Caducidad de Facturas",
+      "description": "¿Los usuarios pueden personalizar los tiempos de vencimiento de las facturas?"
     },
-    "MPP Support": {
-      "name": "Pagos Multi-Ruta",
-      "description": "Capacidad para dividir pagos a través de múltiples canales Lightning."
+    "Custom Invoice Metadata": {
+      "name": "Metadatos Personalizados de Facturas",
+      "description": "¿Los usuarios pueden agregar metadatos personalizados a las facturas (por ejemplo, para seguimiento o descripciones)?"
+    },
+    "Offline Receiving (Non-Custodial)": {
+      "name": "Recepción Offline (No-Custodial)",
+      "description": "¿La cartera puede recibir pagos mientras está offline (por ejemplo, mediante LNURL, pagos asíncronos, no-custodialmente)?"
+    },
+    "On-Chain Integration": {
+      "name": "Integración On-Chain",
+      "description": "¿La cartera puede manejar transacciones Bitcoin en cadena junto con Lightning?"
+    },
+    "Separate LN / On-Chain Balances": {
+      "name": "Saldos Separados LN / On-Chain",
+      "description": "¿Los saldos de Lightning y on-chain se rastrean de manera distinta en la interfaz?"
+    },
+    "Bitcoin Address Type": {
+      "name": "Tipo de Dirección Bitcoin",
+      "description": "¿Qué tipos de direcciones Bitcoin puede generar (por ejemplo, SegWit bech32, Taproot bech32m, Legacy)?"
+    },
+    "Taproot Transactions": {
+      "name": "Transacciones Taproot",
+      "description": "¿Puede enviar y recibir desde direcciones Taproot (por ejemplo, firmas Schnorr compatibles)?"
+    },
+    "Submarine Swaps": {
+      "name": "Intercambios Submarinos",
+      "description": "¿Se admiten intercambios submarinos para conversión fluida entre on-chain ↔ Lightning?"
+    },
+    "Swap-in Potentiam (SIP)": {
+      "name": "Swap-in Potentiam (SIP)",
+      "description": "¿Permite intercambios potenciales para liquidez futura (por ejemplo, conversiones preestablecidas)?"
+    },
+    "Tor": {
+      "name": "Tor",
+      "description": "¿Admite Tor o enrutamiento onion para privacidad?"
+    },
+    "Payment Decorrelation": {
+      "name": "Decorrelación de Pagos",
+      "description": "¿Implementa técnicas para evitar la correlación de pagos (por ejemplo, retrasos aleatorios, saltos ficticios)?"
     },
     "Channel Management": {
       "name": "Gestión de Canales",
-      "description": "El enfoque de la cartera para la gestión de canales de Lightning Network."
+      "description": "¿Los usuarios pueden abrir/cerrar canales manualmente, o es automatizado?"
+    },
+    "Inbound Liquidity": {
+      "name": "Liquidez Entrante",
+      "description": "¿Los usuarios pueden gestionar la capacidad entrante (por ejemplo, intercambios, apertura de canales)?"
+    },
+    "Rebalancing Tools": {
+      "name": "Herramientas de Reequilibrio",
+      "description": "¿Hay herramientas para reequilibrar la liquidez del canal?"
+    },
+    "Maximum Channel Capacity": {
+      "name": "Capacidad Máxima de Canal",
+      "description": "¿Cuál es el tamaño más grande de pago/canal soportado?"
+    },
+    "Number of Confirmations to Channel Usability": {
+      "name": "Número de Confirmaciones para Usabilidad de Canal",
+      "description": "¿Cuántas confirmaciones en cadena se necesitan antes de que un canal sea utilizable?"
+    },
+    "Dual-Funded Channels": {
+      "name": "Canales con Doble Financiamiento",
+      "description": "¿Los canales pueden ser financiados doblemente (ambas partes contribuyen fondos) para mejor liquidez?"
+    },
+    "Splicing Support": {
+      "name": "Soporte de Splicing",
+      "description": "¿Permite splicing (agregar/quitar fondos de canales sin cerrarlos)?"
+    },
+    "Zero-Conf Channels": {
+      "name": "Canales Sin Confirmación",
+      "description": "¿Admite canales sin confirmación para usabilidad instantánea?"
+    },
+    "Private vs. Public Channels": {
+      "name": "Canales Privados vs. Públicos",
+      "description": "¿Los usuarios pueden elegir entre canales privados (no anunciados) y públicos (enrutables)?"
+    },
+    "Lightning Service Provider (LSP) Integration": {
+      "name": "Integración con Proveedor de Servicios Lightning (LSP)",
+      "description": "¿Depende o se integra con LSPs para gestión simplificada de nodos?"
+    },
+    "Hub Connectivity": {
+      "name": "Conectividad de Hub",
+      "description": "¿Se conecta a hubs específicos, o es completamente descentralizado?"
+    },
+    "Watchtower Integration": {
+      "name": "Integración de Watchtower",
+      "description": "¿Hay soporte incorporado para watchtowers para prevenir fraude en canales?"
+    },
+    "Peer Backup Options": {
+      "name": "Opciones de Respaldo de Pares",
+      "description": "¿Los estados de canales pueden respaldarse con pares de confianza en lugar de servicios centralizados?"
+    },
+    "Force-Close Handling": {
+      "name": "Manejo de Cierre Forzado",
+      "description": "¿Cómo gestiona los canales cerrados forzosamente (por ejemplo, transacciones de penalización, opciones de recuperación)?"
+    },
+    "State Channel Recovery": {
+      "name": "Recuperación de Estado de Canal",
+      "description": "¿Existen mecanismos para recuperar estados de canales perdidos (por ejemplo, de datos corruptos)?"
+    },
+    "MPP": {
+      "name": "MPP",
+      "description": "¿Admite Pagos Multi-Ruta (por ejemplo, AMP)?"
+    },
+    "JIT Routing": {
+      "name": "Enrutamiento JIT",
+      "description": "¿Admite enrutamiento Just-In-Time para ajustar dinámicamente la liquidez durante los pagos?"
+    },
+    "Trampoline Payments": {
+      "name": "Pagos Trampolín",
+      "description": "¿Puede usar nodos trampolín para simplificar el enrutamiento para clientes ligeros?"
+    },
+    "Dynamic Fee Bumping": {
+      "name": "Elevación Dinámica de Comisiones",
+      "description": "¿Admite RBF (Replace-By-Fee) o CPFP (Child-Pays-For-Parent) para transacciones atascadas?"
+    },
+    "Channel Liquidity Ads": {
+      "name": "Anuncios de Liquidez de Canal",
+      "description": "¿Admite anunciar liquidez disponible a otros nodos (por ejemplo, via BOLT 14)?"
+    },
+    "Stuckless Payments": {
+      "name": "Pagos Sin Atasco",
+      "description": "¿Admite propuestas de pago sin atasco para evitar tiempos de espera HTLC?"
+    },
+    "HODL Invoices": {
+      "name": "Facturas HODL",
+      "description": "¿Permite \"facturas HODL\" donde el pago se retiene hasta que se cumple una condición?"
+    },
+    "Stateless Invoices": {
+      "name": "Facturas Sin Estado",
+      "description": "¿Admite facturas sin estado que no requieren almacenamiento del lado del servidor?"
+    },
+    "Simple Taproot Channels": {
+      "name": "Canales Taproot Simples",
+      "description": "¿Admite canales Lightning optimizados para Taproot?"
+    },
+    "Taproot Assets": {
+      "name": "Activos Taproot",
+      "description": "¿Puede manejar activos basados en Taproot más allá de BTC en Lightning?"
+    },
+    "CLTV Expiry Delta Custom": {
+      "name": "Delta de Vencimiento CLTV Personalizado",
+      "description": "¿Los usuarios pueden establecer deltas CheckLockTimeVerify (CLTV) personalizados por canal?"
+    },
+    "Advanced Channel Outputs": {
+      "name": "Salidas de Canal Avanzadas",
+      "description": "¿Admite compromisos V3, anclajes efímeros o salidas de anclaje?"
+    },
+    "Testnet Support": {
+      "name": "Soporte de Testnet",
+      "description": "¿Puede conectarse a testnet Bitcoin/Lightning para desarrollo o experimentación?"
+    },
+    "Developer APIs/SDKs": {
+      "name": "APIs/SDKs para Desarrolladores",
+      "description": "¿Hay APIs o SDKs disponibles para integración en otras aplicaciones?"
     }
   }
 }

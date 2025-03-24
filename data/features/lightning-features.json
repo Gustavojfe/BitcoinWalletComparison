@@ -1,93 +1,401 @@
 [
   {
     "id": "platform",
-    "name": "Platform",
-    "description": "Supported operating systems and platforms for the wallet.",
+    "name": "Platform Support",
+    "description": "Which operating systems are supported (iOS, Android, Windows, macOS, Linux)?",
     "type": "lightning",
     "order": 1
   },
   {
-    "id": "openSource",
-    "name": "Open-Source",
-    "description": "Whether the wallet's code is open-source and publicly available.",
+    "id": "userInterface",
+    "name": "User Interface (UI/UX)",
+    "description": "Is it beginner-friendly, or geared toward advanced users (e.g., CLI vs. GUI)?",
     "type": "lightning",
     "order": 2
   },
   {
-    "id": "kyc",
-    "name": "KYC",
-    "description": "Know Your Customer requirements for using the wallet.",
+    "id": "openSource",
+    "name": "Open Source Status",
+    "description": "Is the code open source? If so, link to the repository (e.g., GitHub).",
     "type": "lightning",
     "order": 3
   },
   {
-    "id": "walletType",
-    "name": "Type of Wallet",
-    "description": "The architecture and design approach of the wallet.",
+    "id": "custodialStatus",
+    "name": "Custodial vs. Non-Custodial",
+    "description": "Does the wallet give users full control of private keys, or is it custodial?",
     "type": "lightning",
     "order": 4
   },
   {
-    "id": "onChainSupport",
-    "name": "On-Chain Support",
-    "description": "The wallet's capability to handle on-chain Bitcoin transactions.",
+    "id": "kyc",
+    "name": "KYC",
+    "description": "Does the wallet require Know Your Customer verification for use?",
     "type": "lightning",
     "order": 5
   },
   {
-    "id": "implementation",
-    "name": "Implementation",
-    "description": "The Lightning Network implementation used by the wallet.",
+    "id": "transactionFees",
+    "name": "Transaction Fees",
+    "description": "How are fees handled (fixed, configurable, dynamic based on network)?",
     "type": "lightning",
     "order": 6
   },
   {
-    "id": "bolt11Support",
-    "name": "Bolt11 Support",
-    "description": "Support for the BOLT11 Lightning Network invoice format.",
+    "id": "transactionLimits",
+    "name": "Transaction Limits",
+    "description": "Are there limits on transaction sizes or frequencies?",
     "type": "lightning",
     "order": 7
   },
   {
-    "id": "lnurlSupport",
-    "name": "LNURL Support",
-    "description": "Support for the LNURL protocol for Lightning Network interactions.",
+    "id": "backupOptions",
+    "name": "Backup Options",
+    "description": "How are keys and channels backed up (e.g., seed phrase, static channel backup, cloud)?",
     "type": "lightning",
     "order": 8
   },
   {
-    "id": "lightningAddressSupport",
-    "name": "Lightning Address Support",
-    "description": "Support for Lightning Addresses in the format user@domain.com.",
+    "id": "implementation",
+    "name": "Lightning Network Implementation",
+    "description": "Which Lightning Network implementation is used (e.g., LND, c-lightning, Eclair)?",
     "type": "lightning",
     "order": 9
   },
   {
-    "id": "bolt12Support",
-    "name": "Bolt12 Support",
-    "description": "Support for the BOLT12 Lightning Network offer format.",
+    "id": "nodeType",
+    "name": "Node Type",
+    "description": "Does the wallet run a full Lightning node, a light client, or rely on a remote node?",
     "type": "lightning",
     "order": 10
   },
   {
-    "id": "hrnBlip32Support",
-    "name": "HRN BLIP32 Support",
-    "description": "Support for Human-Readable Names based on BLIP-0032.",
+    "id": "bolt11Support",
+    "name": "BOLT11 Support",
+    "description": "Does it support BOLT11 invoices for payments?",
     "type": "lightning",
     "order": 11
   },
   {
-    "id": "mppSupport",
-    "name": "MPP Support",
-    "description": "Multi-Path Payments: ability to split payments across multiple Lightning channels.",
+    "id": "bolt12Support",
+    "name": "BOLT12 Support",
+    "description": "Does it support BOLT12 offers (e.g., reusable invoices)?",
     "type": "lightning",
     "order": 12
   },
   {
-    "id": "channelManagement",
-    "name": "Channel Management",
-    "description": "The wallet's approach to Lightning Network channel management.",
+    "id": "umaSupport",
+    "name": "UMA Support",
+    "description": "Does it support Universal Money Addresses (UMA) for cross-platform payments?",
     "type": "lightning",
     "order": 13
+  },
+  {
+    "id": "bolt12HrnSupport",
+    "name": "BOLT12 + HRN (BLIP32) Support",
+    "description": "Does it support BOLT12 with Hashed Random Nonces (HRN) per BLIP32?",
+    "type": "lightning",
+    "order": 14
+  },
+  {
+    "id": "lnurlSupport",
+    "name": "LNURL Support",
+    "description": "Does it support LNURL-auth, LNURL-pay, LNURL-withdraw, etc.?",
+    "type": "lightning",
+    "order": 15
+  },
+  {
+    "id": "lightningAddressSupport",
+    "name": "Lightning Address Support",
+    "description": "Does it support human-readable Lightning Addresses (e.g., user@domain.com)?",
+    "type": "lightning",
+    "order": 16
+  },
+  {
+    "id": "noAmountInvoices",
+    "name": "No-Amount Invoices",
+    "description": "Can it generate invoices without a specified amount (open-ended)?",
+    "type": "lightning",
+    "order": 17
+  },
+  {
+    "id": "invoiceExpiryControl",
+    "name": "Invoice Expiry Control",
+    "description": "Can users customize invoice expiration times?",
+    "type": "lightning",
+    "order": 18
+  },
+  {
+    "id": "customInvoiceMetadata",
+    "name": "Custom Invoice Metadata",
+    "description": "Can users add custom metadata to invoices (e.g., for merchant tracking or descriptions)?",
+    "type": "lightning",
+    "order": 19
+  },
+  {
+    "id": "offlineReceiving",
+    "name": "Offline Receiving (Non-Custodial)",
+    "description": "Can the wallet receive payments while offline (e.g., via LNURL, async payments, non-custodially)?",
+    "type": "lightning",
+    "order": 20
+  },
+  {
+    "id": "onChainSupport",
+    "name": "On-Chain Integration",
+    "description": "Can the wallet handle on-chain Bitcoin transactions alongside Lightning?",
+    "type": "lightning",
+    "order": 21
+  },
+  {
+    "id": "separateBalances",
+    "name": "Separate LN / On-Chain Balances",
+    "description": "Are Lightning and on-chain balances tracked distinctly in the UI?",
+    "type": "lightning",
+    "order": 22
+  },
+  {
+    "id": "bitcoinAddressType",
+    "name": "Bitcoin Address Type",
+    "description": "Which Bitcoin address types can it generate (e.g., SegWit bech32, Taproot bech32m, Legacy)?",
+    "type": "lightning",
+    "order": 23
+  },
+  {
+    "id": "taprootTransactions",
+    "name": "Taproot Transactions",
+    "description": "Can it send to and receive from Taproot addresses (e.g., Schnorr signatures supported)?",
+    "type": "lightning",
+    "order": 24
+  },
+  {
+    "id": "submarineSwaps",
+    "name": "Submarine Swaps",
+    "description": "Are submarine swaps supported for seamless on-chain ↔ Lightning conversion?",
+    "type": "lightning",
+    "order": 25
+  },
+  {
+    "id": "swapInPotentiam",
+    "name": "Swap-in Potentiam (SIP)",
+    "description": "Does it allow potential swaps for future liquidity (e.g., pre-arranged conversions)?",
+    "type": "lightning",
+    "order": 26
+  },
+  {
+    "id": "torSupport",
+    "name": "Tor",
+    "description": "Does it support Tor or onion routing for privacy?",
+    "type": "lightning",
+    "order": 27
+  },
+  {
+    "id": "paymentDecorrelation",
+    "name": "Payment Decorrelation",
+    "description": "Does it implement techniques to prevent payment correlation (e.g., random delays, dummy hops)?",
+    "type": "lightning",
+    "order": 28
+  },
+  {
+    "id": "channelManagement",
+    "name": "Channel Management",
+    "description": "Can users open/close channels manually, or is it automated?",
+    "type": "lightning",
+    "order": 29
+  },
+  {
+    "id": "inboundLiquidity",
+    "name": "Inbound Liquidity",
+    "description": "Can users manage inbound capacity (e.g., swaps, channel opening)?",
+    "type": "lightning",
+    "order": 30
+  },
+  {
+    "id": "rebalancingTools",
+    "name": "Rebalancing Tools",
+    "description": "Are there tools to rebalance channel liquidity?",
+    "type": "lightning",
+    "order": 31
+  },
+  {
+    "id": "maxChannelCapacity",
+    "name": "Maximum Channel Capacity",
+    "description": "What's the largest payment/channel size supported?",
+    "type": "lightning",
+    "order": 32
+  },
+  {
+    "id": "confirmationsToUsability",
+    "name": "Number of Confirmations to Channel Usability",
+    "description": "How many on-chain confirmations are needed before a channel is usable?",
+    "type": "lightning",
+    "order": 33
+  },
+  {
+    "id": "dualFundedChannels",
+    "name": "Dual-Funded Channels",
+    "description": "Can channels be dual-funded (both parties contribute funds) for better liquidity?",
+    "type": "lightning",
+    "order": 34
+  },
+  {
+    "id": "splicingSupport",
+    "name": "Splicing Support",
+    "description": "Does it allow splicing (adding/removing funds from channels without closing them)?",
+    "type": "lightning",
+    "order": 35
+  },
+  {
+    "id": "zeroConfChannels",
+    "name": "Zero-Conf Channels",
+    "description": "Does it support zero-confirmation channels for instant usability?",
+    "type": "lightning",
+    "order": 36
+  },
+  {
+    "id": "privateChannels",
+    "name": "Private vs. Public Channels",
+    "description": "Can users choose between private (unannounced) and public (routable) channels?",
+    "type": "lightning",
+    "order": 37
+  },
+  {
+    "id": "lspIntegration",
+    "name": "Lightning Service Provider (LSP) Integration",
+    "description": "Does it rely on or integrate with LSPs for simplified node management?",
+    "type": "lightning",
+    "order": 38
+  },
+  {
+    "id": "hubConnectivity",
+    "name": "Hub Connectivity",
+    "description": "Does it connect to specific hubs, or is it fully decentralized?",
+    "type": "lightning",
+    "order": 39
+  },
+  {
+    "id": "watchtowerIntegration",
+    "name": "Watchtower Integration",
+    "description": "Is there built-in support for watchtowers to prevent channel fraud?",
+    "type": "lightning",
+    "order": 40
+  },
+  {
+    "id": "peerBackupOptions",
+    "name": "Peer Backup Options",
+    "description": "Can channel states be backed up with trusted peers instead of centralized services?",
+    "type": "lightning",
+    "order": 41
+  },
+  {
+    "id": "forceCloseHandling",
+    "name": "Force-Close Handling",
+    "description": "How does it manage force-closed channels (e.g., penalty transactions, recovery options)?",
+    "type": "lightning",
+    "order": 42
+  },
+  {
+    "id": "stateChannelRecovery",
+    "name": "State Channel Recovery",
+    "description": "Are there mechanisms to recover lost channel states (e.g., from corrupted data)?",
+    "type": "lightning",
+    "order": 43
+  },
+  {
+    "id": "mppSupport",
+    "name": "MPP",
+    "description": "Does it support Multi-Path Payments (e.g., AMP)?",
+    "type": "lightning",
+    "order": 44
+  },
+  {
+    "id": "jitRouting",
+    "name": "JIT Routing",
+    "description": "Does it support Just-In-Time routing to dynamically adjust liquidity during payments?",
+    "type": "lightning",
+    "order": 45
+  },
+  {
+    "id": "trampolinePayments",
+    "name": "Trampoline Payments",
+    "description": "Can it use trampoline nodes to simplify routing for lightweight clients?",
+    "type": "lightning",
+    "order": 46
+  },
+  {
+    "id": "dynamicFeeBumping",
+    "name": "Dynamic Fee Bumping",
+    "description": "Does it support RBF (Replace-By-Fee) or CPFP (Child-Pays-For-Parent) for stuck transactions?",
+    "type": "lightning",
+    "order": 47
+  },
+  {
+    "id": "channelLiquidityAds",
+    "name": "Channel Liquidity Ads",
+    "description": "Does it support advertising available liquidity to other nodes (e.g., via BOLT 14)?",
+    "type": "lightning",
+    "order": 48
+  },
+  {
+    "id": "stucklessPayments",
+    "name": "Stuckless Payments",
+    "description": "Does it support stuckless payment proposals to avoid HTLC timeouts?",
+    "type": "lightning",
+    "order": 49
+  },
+  {
+    "id": "hodlInvoices",
+    "name": "HODL Invoices",
+    "description": "Does it allow \"HODL invoices\" where payment is held until a condition is met?",
+    "type": "lightning",
+    "order": 50
+  },
+  {
+    "id": "statelessInvoices",
+    "name": "Stateless Invoices",
+    "description": "Does it support stateless invoices that don't require server-side storage?",
+    "type": "lightning",
+    "order": 51
+  },
+  {
+    "id": "simpleTaprootChannels",
+    "name": "Simple Taproot Channels",
+    "description": "Does it support Taproot-optimized Lightning channels?",
+    "type": "lightning",
+    "order": 52
+  },
+  {
+    "id": "taprootAssets",
+    "name": "Taproot Assets",
+    "description": "Can it handle Taproot-based assets beyond BTC on Lightning?",
+    "type": "lightning",
+    "order": 53
+  },
+  {
+    "id": "cltvExpiryDeltaCustom",
+    "name": "CLTV Expiry Delta Custom",
+    "description": "Can users set custom CheckLockTimeVerify (CLTV) deltas per channel?",
+    "type": "lightning",
+    "order": 54
+  },
+  {
+    "id": "advancedChannelOutputs",
+    "name": "Advanced Channel Outputs",
+    "description": "Does it support V3 commitments, ephemeral anchors, or anchor outputs?",
+    "type": "lightning",
+    "order": 55
+  },
+  {
+    "id": "testnetSupport",
+    "name": "Testnet Support",
+    "description": "Can it connect to Bitcoin/Lightning testnet for development or experimentation?",
+    "type": "lightning",
+    "order": 56
+  },
+  {
+    "id": "developerApis",
+    "name": "Developer APIs/SDKs",
+    "description": "Are there APIs or SDKs available for integration into other apps?",
+    "type": "lightning",
+    "order": 57
   }
 ]
