@@ -13,7 +13,7 @@
       "description": "¿El código es de código abierto? Si es así, enlace al repositorio (por ejemplo, GitHub)."
     },
     "Custodial vs. Non-Custodial": {
-      "name": "Custodial vs. No-Custodial",
+      "name": "Custodial",
       "description": "¿La cartera da a los usuarios control total de las claves privadas, o es custodial?"
     },
     "KYC": {
@@ -145,7 +145,7 @@
       "description": "¿Admite canales sin confirmación para usabilidad instantánea?"
     },
     "Private vs. Public Channels": {
-      "name": "Canales Privados vs. Públicos",
+      "name": "Canales Privados/Públicos",
       "description": "¿Los usuarios pueden elegir entre canales privados (no anunciados) y públicos (enrutables)?"
     },
     "Lightning Service Provider (LSP) Integration": {

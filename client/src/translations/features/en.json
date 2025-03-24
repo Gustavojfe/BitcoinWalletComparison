@@ -13,7 +13,7 @@
       "description": "Is the code open source? If so, link to the repository (e.g., GitHub)."
     },
     "Custodial vs. Non-Custodial": {
-      "name": "Custodial vs. Non-Custodial",
+      "name": "Custodial",
       "description": "Does the wallet give users full control of private keys, or is it custodial?"
     },
     "KYC": {
@@ -145,7 +145,7 @@
       "description": "Does it support zero-confirmation channels for instant usability?"
     },
     "Private vs. Public Channels": {
-      "name": "Private vs. Public Channels",
+      "name": "Private/Public Channels",
       "description": "Can users choose between private (unannounced) and public (routable) channels?"
     },
     "Lightning Service Provider (LSP) Integration": {
