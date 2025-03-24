@@ -89,6 +89,38 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
 
   // Render feature status based on value
   const renderFeatureStatus = (value: string, customText?: string, featureName?: string) => {
+    // Handle Channel Management feature which might have custom values
+    if (featureName === 'Channel Management' || featureName === 'Gestión de Canales') {
+      // Handle translations for custom channel management values
+      if (value === 'custom' && customText) {
+        let displayText = customText;
+        
+        // Translate channel management custom values to Spanish
+        if (language === 'es') {
+          if (customText === 'Automated') {
+            displayText = 'Automatizado';
+          } else if (customText === 'LSP Assisted') {
+            displayText = 'Asistido por LSP';
+          } else if (customText === 'Automatic') {
+            displayText = 'Automático';
+          } else if (customText === 'Manual') {
+            displayText = 'Manual';
+          }
+        }
+        
+        return (
+          <span 
+            className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-orange-100"
+            title={displayText}
+          >
+            <span className="text-xs font-medium text-orange-600">
+              {displayText}
+            </span>
+          </span>
+        );
+      }
+    }
+    
     // Handle platform feature specially (displays array values)
     if (featureName?.toLowerCase() === 'platform' && value === 'custom' && customText) {
       const platforms = customText.split(',');
