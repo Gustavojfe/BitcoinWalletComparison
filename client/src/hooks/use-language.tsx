@@ -64,9 +64,20 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
 
   // Feature translation function
   const translateFeature = (feature: Feature) => {
-    // Look up translation by feature name exactly as it appears in the data files
-    const translatedName = getTranslation(language, `features.${feature.name}.name`) || feature.name;
-    const translatedDescription = getTranslation(language, `features.${feature.name}.description`) || feature.description;
+    // Use proper key lookup path for feature translations
+    // First try direct name match in features file
+    let translatedName = getTranslation(language, `features.${feature.name}.name`);
+    let translatedDescription = getTranslation(language, `features.${feature.name}.description`);
+
+    // If we get back the key itself (no match found), the key might contain spaces
+    // Try again with exact feature name match
+    if (translatedName === `features.${feature.name}.name` || !translatedName) {
+      translatedName = feature.name;
+    }
+    
+    if (translatedDescription === `features.${feature.name}.description` || !translatedDescription) {
+      translatedDescription = feature.description;
+    }
     
     return {
       name: translatedName,
@@ -76,9 +87,19 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
 
   // Wallet translation function
   const translateWallet = (wallet: Wallet) => {
-    // Look up translation by wallet name exactly as it appears in the data files
-    const translatedName = getTranslation(language, `wallets.${wallet.name}.name`) || wallet.name;
-    const translatedDescription = getTranslation(language, `wallets.${wallet.name}.description`) || wallet.description;
+    // Use proper key lookup path for wallet translations
+    // First try direct name match in wallets file
+    let translatedName = getTranslation(language, `wallets.${wallet.name}.name`);
+    let translatedDescription = getTranslation(language, `wallets.${wallet.name}.description`);
+    
+    // If we get back the key itself (no match found), use the original value
+    if (translatedName === `wallets.${wallet.name}.name` || !translatedName) {
+      translatedName = wallet.name;
+    }
+    
+    if (translatedDescription === `wallets.${wallet.name}.description` || !translatedDescription) {
+      translatedDescription = wallet.description;
+    }
     
     return {
       name: translatedName,
