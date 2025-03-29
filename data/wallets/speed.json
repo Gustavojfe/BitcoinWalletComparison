@@ -1,23 +1,64 @@
 {
   "name": "Speed",
-  "website": "https://speed.money/",
-  "description": "A fast, simple Lightning Network wallet focused on providing quick Bitcoin payments.",
+  "website": "https://speed.money",
+  "description": "Custodial wallet for Bitcoin and Lightning",
   "type": "lightning",
   "logo": "speed",
-  "order": 12,
+  "order": 4,
   "features": {
-    "platform": ["ios", "android", "desktop"],
+    "platform": [
+      "android",
+      "ios",
+      "chrome extension"
+    ],
     "openSource": "no",
-    "kyc": "yes",
-    "walletType": "custodial",
-    "onChainSupport": "yes",
-    "implementation": "lnd",
+    "availability": {
+      "value": "custom",
+      "customText": "Unrestricted"
+    },
+    "custodialStatus": {
+      "value": "custom",
+      "customText": "Custodial"
+    },
+    "kyc": {
+      "value": "custom",
+      "customText": "Yes, In USA"
+    },
+    "transactionLimits": {
+      "value": "custom",
+      "customText": "5 BTC "
+    },
+    "transactionFees": "no",
+    "backupOptions": {
+      "value": "custom",
+      "customText": "Email / Google / Apple"
+    },
     "bolt11Support": "yes",
-    "lnurlSupport": "yes",
-    "lightningAddressSupport": "yes",
     "bolt12Support": "no",
-    "hrnBlip32Support": "no",
-    "mppSupport": "yes",
-    "channelManagement": "not_possible"
-  }
+    "bolt12HrnSupport": "no",
+    "lnurlPay": "yes",
+    "lightningAddressSupport": "yes",
+    "lnurlWithdraw": "yes",
+    "noAmountInvoices": "yes",
+    "customInvoiceMetadata": "yes",
+    "invoiceExpiryControl": {
+      "value": "custom",
+      "customText": "24 hours"
+    },
+    "receiveOnChain": "yes",
+    "bitcoinAddressType": {
+      "value": "custom",
+      "customText": "P2WPKH"
+    },
+    "sendOnChain": "yes",
+    "taprootTransactions": "no",
+    "otherNetworks": "no",
+    "nostrWalletConnect": "no",
+    "blindRouting": "no",
+    "torSupport": "no",
+    "testnetSupport": "no",
+    "developerApis": "yes"
+  },
+  "availability": "Unrestricted",
+  "category": "Custodial"
 }

@@ -1,23 +1,111 @@
 {
   "name": "Electrum",
-  "website": "https://electrum.org/",
-  "description": "A lightweight Bitcoin wallet with advanced features including multi-signature support and hardware wallet integration.",
+  "website": "https://electrum.org",
+  "description": "Feature-rich Bitcoin wallet with Lightning support",
   "type": "lightning",
   "logo": "electrum",
-  "order": 8,
+  "order": 16,
   "features": {
-    "platform": ["desktop"],
-    "openSource": "yes",
+    "platform": {
+      "value": "custom",
+      "customText": "Desktop"
+    },
+    "openSource": {
+      "value": "custom",
+      "customText": "Yes (GitHub)"
+    },
+    "availability": {
+      "value": "custom",
+      "customText": "Unrestricted"
+    },
+    "custodialStatus": {
+      "value": "custom",
+      "customText": "L1/L2 (LN Node)"
+    },
     "kyc": "no",
-    "walletType": "ln_node",
-    "onChainSupport": "yes",
-    "implementation": "custom",
+    "transactionFees": "no",
+    "backupOptions": {
+      "value": "custom",
+      "customText": "Seed Phrase + optional SCB"
+    },
+    "peerBackupOptions": {
+      "value": "custom",
+      "customText": "Local Backup or LSP Managed (Recoverable Channels)"
+    },
     "bolt11Support": "yes",
-    "lnurlSupport": "partial",
-    "lightningAddressSupport": "no",
     "bolt12Support": "no",
-    "hrnBlip32Support": "no",
+    "bolt12HrnSupport": "no",
+    "lnurlPay": "yes",
+    "lightningAddressSupport": {
+      "value": "custom",
+      "customText": "Send Only"
+    },
+    "lnurlWithdraw": "no",
+    "noAmountInvoices": "yes",
+    "customInvoiceMetadata": "yes",
+    "invoiceExpiryControl": {
+      "value": "custom",
+      "customText": "24 hours"
+    },
+    "receiveOnChain": {
+      "value": "custom",
+      "customText": "On-Chain Wallet"
+    },
+    "bitcoinAddressType": {
+      "value": "custom",
+      "customText": "P2WPKH"
+    },
+    "sendOnChain": {
+      "value": "custom",
+      "customText": "Yes (+ Boltz Swap)"
+    },
+    "taprootTransactions": {
+      "value": "custom",
+      "customText": "Send"
+    },
+    "nodeType": {
+      "value": "custom",
+      "customText": "Electrum Server (Own Node)"
+    },
+    "submarineSwaps": {
+      "value": "custom",
+      "customText": "Boltz (Reverse Swap)"
+    },
+    "otherNetworks": "no",
+    "implementation": {
+      "value": "custom",
+      "customText": "Electrum"
+    },
+    "lspIntegration": {
+      "value": "custom",
+      "customText": "Electrum LSP (Partial)"
+    },
+    "channelManagement": {
+      "value": "custom",
+      "customText": "LSP or User (3 Possible Peers)"
+    },
+    "zeroConfChannels": "yes",
+    "clientSideRouting": {
+      "value": "custom",
+      "customText": "No (Trampoline)"
+    },
+    "watchtowerIntegration": "yes",
     "mppSupport": "yes",
-    "channelManagement": "yes"
-  }
+    "maxRoutingFee": "yes",
+    "purchaseInbound": "no",
+    "splicingSupport": "no",
+    "routingNode": "no",
+    "nostrWalletConnect": "no",
+    "blindRouting": "no",
+    "scidAlias": "no",
+    "simpleTaprootChannels": "no",
+    "torSupport": "yes",
+    "testnetSupport": "yes",
+    "developerApis": {
+      "value": "custom",
+      "customText": "RPC / CLI"
+    }
+  },
+  "availability": "Unrestricted",
+  "category": "L1/L2 (LN Node)"
 }

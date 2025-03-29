@@ -1,10 +1,10 @@
 {
-  "name": "Breez",
-  "website": "https://breez.technology",
-  "description": "Non-custodial Lightning wallet and payment platform",
+  "name": "Blitz",
+  "website": "https://blitz.cash",
+  "description": "Hybrid Liquid and Lightning wallet",
   "type": "lightning",
-  "logo": "breez",
-  "order": 13,
+  "logo": "blitz",
+  "order": 10,
   "features": {
     "platform": [
       "android",
@@ -20,17 +20,17 @@
     },
     "custodialStatus": {
       "value": "custom",
-      "customText": "L2 Wallet (LN Node)"
+      "customText": "Hybrid Liquid / L2 Wallet (Full Breez SDK)"
     },
     "kyc": "no",
     "transactionFees": "yes",
     "backupOptions": {
       "value": "custom",
-      "customText": "Seed Phrase + SCB"
+      "customText": "Seed Phrase"
     },
     "peerBackupOptions": {
       "value": "custom",
-      "customText": "Automatic Cloud Upload"
+      "customText": "LSP Managed"
     },
     "bolt11Support": "yes",
     "bolt12Support": "no",
@@ -41,53 +41,54 @@
       "customText": "Send Only"
     },
     "lnurlWithdraw": "yes",
-    "noAmountInvoices": "yes",
+    "noAmountInvoices": "no",
     "customInvoiceMetadata": "yes",
     "invoiceExpiryControl": {
       "value": "custom",
-      "customText": "1 Hour"
+      "customText": "12 hours"
     },
     "receiveOnChain": {
       "value": "custom",
-      "customText": "Opens Channel"
+      "customText": "Swap to Liquid (Boltz)"
     },
     "bitcoinAddressType": {
       "value": "custom",
-      "customText": "P2WSH"
+      "customText": "P2TR"
     },
     "sendOnChain": {
       "value": "custom",
-      "customText": "Yes with Boltz Swap"
+      "customText": "Swap from Liquid (Boltz)"
     },
     "taprootTransactions": {
       "value": "custom",
-      "customText": "Send"
-    },
-    "nodeType": {
-      "value": "custom",
-      "customText": "Neutrino (Own Node)"
+      "customText": "Full"
     },
     "submarineSwaps": {
       "value": "custom",
       "customText": "Boltz Swap"
     },
-    "otherNetworks": "no",
+    "otherNetworks": {
+      "value": "custom",
+      "customText": "Liquid, Ecash"
+    },
     "implementation": {
       "value": "custom",
-      "customText": "LND"
+      "customText": "CLN (Greenlight)'"
     },
     "lspIntegration": {
       "value": "custom",
-      "customText": "Breez LSP"
+      "customText": "Breez LSP "
     },
     "channelManagement": {
       "value": "custom",
-      "customText": "LSP managed"
+      "customText": "LSP Managed (500 000 sats minimum)"
     },
     "zeroConfChannels": "yes",
-    "clientSideRouting": "yes",
+    "clientSideRouting": {
+      "value": "custom",
+      "customText": "No (Trampoline)"
+    },
     "watchtowerIntegration": "no",
-    "mppSupport": "yes",
     "maxRoutingFee": "yes",
     "purchaseInbound": "no",
     "splicingSupport": "no",
@@ -96,13 +97,10 @@
     "blindRouting": "no",
     "scidAlias": "no",
     "simpleTaprootChannels": "no",
-    "torSupport": "yes",
+    "torSupport": "no",
     "testnetSupport": "no",
-    "developerApis": {
-      "value": "custom",
-      "customText": "SDK"
-    }
+    "developerApis": "no"
   },
   "availability": "Unrestricted",
-  "category": "L2 Wallet (LN Node)"
+  "category": "Hybrid Liquid / L2 Wallet (Full Breez SDK)"
 }

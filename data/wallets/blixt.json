@@ -1,23 +1,108 @@
 {
   "name": "Blixt",
-  "website": "https://blixtwallet.github.io/",
-  "description": "An open-source, non-custodial Lightning Network wallet for Bitcoin with advanced features.",
+  "website": "https://blixtwallet.github.io",
+  "description": "Non-custodial Lightning wallet",
   "type": "lightning",
   "logo": "blixt",
-  "order": 16,
+  "order": 17,
   "features": {
-    "platform": ["android"],
-    "openSource": "yes",
+    "platform": [
+      "android",
+      "ios"
+    ],
+    "openSource": {
+      "value": "custom",
+      "customText": "Yes (GitHub)"
+    },
+    "availability": {
+      "value": "custom",
+      "customText": "Unrestricted"
+    },
+    "custodialStatus": {
+      "value": "custom",
+      "customText": "L1/L2 (LN Node)"
+    },
     "kyc": "no",
-    "walletType": "ln_node",
-    "onChainSupport": "yes",
-    "implementation": "lnd",
+    "transactionFees": {
+      "value": "custom",
+      "customText": "Yes, dynamic LSP fees"
+    },
+    "backupOptions": {
+      "value": "custom",
+      "customText": "Seed Phrase + SCB"
+    },
+    "peerBackupOptions": {
+      "value": "custom",
+      "customText": "Automatic Cloud Upload"
+    },
     "bolt11Support": "yes",
-    "lnurlSupport": "yes",
-    "lightningAddressSupport": "yes",
     "bolt12Support": "no",
-    "hrnBlip32Support": "partial",
+    "bolt12HrnSupport": "no",
+    "lnurlPay": "yes",
+    "lightningAddressSupport": {
+      "value": "custom",
+      "customText": "Send Only"
+    },
+    "lnurlWithdraw": "yes",
+    "noAmountInvoices": "yes",
+    "customInvoiceMetadata": "yes",
+    "invoiceExpiryControl": {
+      "value": "custom",
+      "customText": "Yes, full. 1 hour default"
+    },
+    "receiveOnChain": {
+      "value": "custom",
+      "customText": "On-Chain Wallet"
+    },
+    "bitcoinAddressType": {
+      "value": "custom",
+      "customText": "P2TR"
+    },
+    "sendOnChain": "yes",
+    "taprootTransactions": "no",
+    "nodeType": {
+      "value": "custom",
+      "customText": "Neutrino (Own Node)"
+    },
+    "submarineSwaps": "yes",
+    "otherNetworks": "no",
+    "implementation": {
+      "value": "custom",
+      "customText": "LND"
+    },
+    "lspIntegration": {
+      "value": "custom",
+      "customText": "Dunder LSP (Custom)"
+    },
+    "channelManagement": {
+      "value": "custom",
+      "customText": "LSP or User Managed"
+    },
+    "zeroConfChannels": {
+      "value": "custom",
+      "customText": "Yes (LSP or other peers)"
+    },
+    "clientSideRouting": "yes",
+    "watchtowerIntegration": "yes",
     "mppSupport": "yes",
-    "channelManagement": "yes"
-  }
+    "maxRoutingFee": "yes",
+    "purchaseInbound": "yes",
+    "splicingSupport": "no",
+    "routingNode": "no",
+    "nostrWalletConnect": "no",
+    "blindRouting": {
+      "value": "custom",
+      "customText": "Yes for BOLT11"
+    },
+    "scidAlias": "yes",
+    "simpleTaprootChannels": "yes",
+    "torSupport": "yes",
+    "testnetSupport": {
+      "value": "custom",
+      "customText": "Android only"
+    },
+    "developerApis": "no"
+  },
+  "availability": "Unrestricted",
+  "category": "L1/L2 (LN Node)"
 }

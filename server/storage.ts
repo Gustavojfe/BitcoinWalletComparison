@@ -88,7 +88,20 @@ export class MemStorage implements IStorage {
 
   async createWallet(wallet: InsertWallet): Promise<Wallet> {
     const id = this.walletId++;
-    const newWallet: Wallet = { ...wallet, id };
+    // Ensure type is a valid WalletType
+    const type = wallet.type as "lightning" | "onchain" | "hardware";
+    
+    // Ensure other fields have proper default values
+    const newWallet: Wallet = { 
+      ...wallet, 
+      id, 
+      type,
+      logo: wallet.logo || null,
+      availability: wallet.availability || null,
+      category: wallet.category || null,
+      order: wallet.order || 0
+    };
+    
     this.wallets.set(id, newWallet);
     return newWallet;
   }
@@ -99,7 +112,18 @@ export class MemStorage implements IStorage {
       return undefined;
     }
 
-    const updatedWallet: Wallet = { ...existingWallet, ...wallet };
+    // Handle the case where type is updated
+    let type = existingWallet.type;
+    if (wallet.type) {
+      type = wallet.type as "lightning" | "onchain" | "hardware";
+    }
+
+    const updatedWallet: Wallet = { 
+      ...existingWallet, 
+      ...wallet,
+      type // Ensure type is valid
+    };
+    
     this.wallets.set(id, updatedWallet);
     return updatedWallet;
   }
@@ -128,8 +152,11 @@ export class MemStorage implements IStorage {
             featureId: feature.id,
             featureName: feature.name,
             featureDescription: feature.description,
+            category: feature.category || "basics", // Default to basics if no category
             value: wf.value,
-            customText: wf.customText
+            customText: wf.customText,
+            referenceLink: wf.referenceLink,
+            notes: wf.notes
           };
         }).filter(Boolean) as WalletWithFeatures['features'];
 
@@ -155,7 +182,26 @@ export class MemStorage implements IStorage {
 
   async createFeature(feature: InsertFeature): Promise<Feature> {
     const id = this.featureId++;
-    const newFeature: Feature = { ...feature, id };
+    
+    // Ensure type is a valid WalletType
+    const type = feature.type as "lightning" | "onchain" | "hardware";
+    
+    // Ensure category is a valid FeatureCategory or null
+    let category = feature.category || null;
+    if (category && !['basics', 'recover', 'ln_formats', 'invoice_customization', 
+                  'on_chain_and_other_layers', 'lightning_specific', 'privacy', 'dev_tools'].includes(category)) {
+      category = "basics";
+    }
+    
+    const newFeature: Feature = { 
+      ...feature, 
+      id,
+      type,
+      category: category as Feature['category'],
+      order: feature.order || 0,
+      infoLink: feature.infoLink || null
+    };
+    
     this.features.set(id, newFeature);
     return newFeature;
   }
@@ -191,9 +237,20 @@ export class MemStorage implements IStorage {
       return this.updateWalletFeature(existing.id, walletFeature) as Promise<WalletFeature>;
     }
 
+    // Ensure value is a valid FeatureValue
+    const value = walletFeature.value as FeatureValue;
+
     // If not, create a new one
     const id = this.walletFeatureId++;
-    const newWalletFeature: WalletFeature = { ...walletFeature, id };
+    const newWalletFeature: WalletFeature = { 
+      ...walletFeature, 
+      id,
+      value,
+      customText: walletFeature.customText || null,
+      referenceLink: walletFeature.referenceLink || null,
+      notes: walletFeature.notes || null
+    };
+    
     this.walletFeatures.set(id, newWalletFeature);
     return newWalletFeature;
   }
@@ -204,7 +261,18 @@ export class MemStorage implements IStorage {
       return undefined;
     }
 
-    const updatedWalletFeature: WalletFeature = { ...existingWalletFeature, ...walletFeature };
+    // Ensure value is a valid FeatureValue if provided
+    let value = existingWalletFeature.value;
+    if (walletFeature.value) {
+      value = walletFeature.value as FeatureValue;
+    }
+
+    const updatedWalletFeature: WalletFeature = { 
+      ...existingWalletFeature, 
+      ...walletFeature,
+      value
+    };
+    
     this.walletFeatures.set(id, updatedWalletFeature);
     return updatedWalletFeature;
   }
@@ -362,6 +430,8 @@ export class MemStorage implements IStorage {
       description: string;
       value: FeatureValue;
       customText?: string;
+      referenceLink?: string;
+      notes?: string;
     }>;
   }) {
     // Create wallet
@@ -400,7 +470,9 @@ export class MemStorage implements IStorage {
         walletId: wallet.id,
         featureId: featureObj.id,
         value: feature.value,
-        customText: feature.customText
+        customText: feature.customText,
+        referenceLink: feature.referenceLink || null,
+        notes: feature.notes || null
       });
     }
   }

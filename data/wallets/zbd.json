@@ -1,23 +1,58 @@
 {
   "name": "ZBD",
-  "website": "https://zbd.gg/",
-  "description": "A user-friendly Lightning wallet with instant Bitcoin payments, gaming integrations, and developer tools.",
+  "website": "https://zbd.gg",
+  "description": "Account-based Lightning wallet and platform",
   "type": "lightning",
   "logo": "zbd",
-  "order": 9,
+  "order": 5,
   "features": {
-    "platform": ["ios", "android", "web"],
+    "platform": [
+      "android",
+      "ios"
+    ],
     "openSource": "no",
+    "availability": {
+      "value": "custom",
+      "customText": "Very Limited"
+    },
+    "custodialStatus": {
+      "value": "custom",
+      "customText": "Custodial"
+    },
     "kyc": "yes",
-    "walletType": "custodial",
-    "onChainSupport": "no",
-    "implementation": "lnd",
+    "transactionLimits": {
+      "value": "custom",
+      "customText": "Detailed"
+    },
+    "transactionFees": "no",
+    "backupOptions": {
+      "value": "custom",
+      "customText": "Email / Google / Apple"
+    },
     "bolt11Support": "yes",
-    "lnurlSupport": "yes",
-    "lightningAddressSupport": "yes",
     "bolt12Support": "no",
-    "hrnBlip32Support": "yes",
-    "mppSupport": "yes",
-    "channelManagement": "not_possible"
-  }
+    "bolt12HrnSupport": "no",
+    "lnurlPay": "yes",
+    "lightningAddressSupport": "yes",
+    "lnurlWithdraw": "yes",
+    "noAmountInvoices": {
+      "value": "custom",
+      "customText": "send only"
+    },
+    "customInvoiceMetadata": "yes",
+    "invoiceExpiryControl": {
+      "value": "custom",
+      "customText": "10 minutes"
+    },
+    "receiveOnChain": "no",
+    "sendOnChain": "no",
+    "otherNetworks": "no",
+    "nostrWalletConnect": "no",
+    "blindRouting": "no",
+    "torSupport": "no",
+    "testnetSupport": "no",
+    "developerApis": "yes"
+  },
+  "availability": "Very Limited",
+  "category": "Custodial"
 }

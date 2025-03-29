@@ -1,26 +1,106 @@
 {
   "name": "Bitkit",
-  "website": "https://bitkit.app/",
-  "description": "A non-custodial Bitcoin and Lightning wallet designed for simplicity with advanced security features.",
+  "website": "https://bitkit.to",
+  "description": "Self-custodial Bitcoin and Lightning wallet",
   "type": "lightning",
   "logo": "bitkit",
-  "order": 10,
+  "order": 11,
   "features": {
-    "platform": ["ios", "android"],
-    "openSource": "yes",
+    "platform": [
+      "android",
+      "ios"
+    ],
+    "openSource": {
+      "value": "custom",
+      "customText": "Yes (GitHub)"
+    },
+    "availability": {
+      "value": "custom",
+      "customText": "US and Canada BlockTank LSP restricted"
+    },
+    "custodialStatus": {
+      "value": "custom",
+      "customText": "L1/L2 (LN Node)"
+    },
     "kyc": "no",
-    "walletType": "ln_node",
-    "onChainSupport": "yes",
-    "implementation": "ldk",
+    "transactionLimits": {
+      "value": "custom",
+      "customText": "999$ MAX with default LSP"
+    },
+    "transactionFees": {
+      "value": "custom",
+      "customText": "Yes, dynamic LSP fees"
+    },
+    "backupOptions": {
+      "value": "custom",
+      "customText": "Seed Phrase"
+    },
+    "peerBackupOptions": {
+      "value": "custom",
+      "customText": "LSP Managed"
+    },
     "bolt11Support": "yes",
-    "lnurlSupport": "yes",
-    "lightningAddressSupport": "yes",
     "bolt12Support": "no",
-    "hrnBlip32Support": "partial",
-    "mppSupport": "yes",
+    "bolt12HrnSupport": "no",
+    "lnurlPay": "yes",
+    "lightningAddressSupport": {
+      "value": "custom",
+      "customText": "Send Only"
+    },
+    "lnurlWithdraw": "yes",
+    "noAmountInvoices": "yes",
+    "customInvoiceMetadata": "no",
+    "invoiceExpiryControl": {
+      "value": "custom",
+      "customText": "48 hours"
+    },
+    "receiveOnChain": {
+      "value": "custom",
+      "customText": "On-Chain Wallet"
+    },
+    "bitcoinAddressType": {
+      "value": "custom",
+      "customText": "P2WPKH, P2SH, P2PKH"
+    },
+    "sendOnChain": "yes",
+    "taprootTransactions": {
+      "value": "custom",
+      "customText": "Send"
+    },
+    "nodeType": {
+      "value": "custom",
+      "customText": "Electrum Server (Own Node)"
+    },
+    "otherNetworks": "no",
+    "implementation": {
+      "value": "custom",
+      "customText": "LDK"
+    },
+    "lspIntegration": {
+      "value": "custom",
+      "customText": "Blocktank LSP"
+    },
     "channelManagement": {
       "value": "custom",
-      "customText": "Automatic"
-    }
-  }
+      "customText": "LSP or User Managed"
+    },
+    "zeroConfChannels": "yes",
+    "clientSideRouting": {
+      "value": "custom",
+      "customText": "Yes (Rapid Gossip Sync)"
+    },
+    "watchtowerIntegration": "no",
+    "maxRoutingFee": "no",
+    "purchaseInbound": "no",
+    "splicingSupport": "no",
+    "routingNode": "no",
+    "nostrWalletConnect": "no",
+    "blindRouting": "no",
+    "scidAlias": "no",
+    "simpleTaprootChannels": "no",
+    "torSupport": "no",
+    "developerApis": "no"
+  },
+  "availability": "US and Canada BlockTank LSP restricted",
+  "category": "L1/L2 (LN Node)"
 }

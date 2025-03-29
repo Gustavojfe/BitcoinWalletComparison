@@ -1,26 +1,123 @@
 {
   "name": "Phoenix",
-  "website": "https://phoenix.acinq.co/",
-  "description": "A self-custodial Lightning Network wallet by ACINQ with simplified channel management.",
+  "website": "https://phoenix.acinq.co",
+  "description": "Non-custodial Lightning wallet by ACINQ",
   "type": "lightning",
   "logo": "phoenix",
-  "order": 1,
+  "order": 12,
   "features": {
-    "platform": ["ios", "android"],
-    "openSource": "yes",
+    "platform": [
+      "android",
+      "ios"
+    ],
+    "openSource": {
+      "value": "custom",
+      "customText": "Yes (GitHub)"
+    },
+    "availability": {
+      "value": "custom",
+      "customText": "Restricted in US and others"
+    },
+    "custodialStatus": {
+      "value": "custom",
+      "customText": "L2 Wallet (LN Node)"
+    },
     "kyc": "no",
-    "walletType": "ln_node",
-    "onChainSupport": "yes",
-    "implementation": "eclair",
+    "transactionFees": "yes",
+    "backupOptions": {
+      "value": "custom",
+      "customText": "Seed Phrase"
+    },
+    "peerBackupOptions": {
+      "value": "custom",
+      "customText": "LSP Managed"
+    },
     "bolt11Support": "yes",
-    "lnurlSupport": "partial",
-    "lightningAddressSupport": "no",
-    "bolt12Support": "no",
-    "hrnBlip32Support": "no",
-    "mppSupport": "yes",
+    "bolt12Support": "yes",
+    "bolt12HrnSupport": "yes",
+    "lnurlPay": "yes",
+    "lightningAddressSupport": {
+      "value": "custom",
+      "customText": "Send Only"
+    },
+    "lnurlWithdraw": "yes",
+    "noAmountInvoices": "yes",
+    "customInvoiceMetadata": "yes",
+    "invoiceExpiryControl": {
+      "value": "custom",
+      "customText": "Yes, 7 (default), 30 or 60 days"
+    },
+    "receiveOnChain": {
+      "value": "custom",
+      "customText": "Via Swap-in Potentiam"
+    },
+    "bitcoinAddressType": {
+      "value": "custom",
+      "customText": "P2TR"
+    },
+    "sendOnChain": {
+      "value": "custom",
+      "customText": "Yes with Reverse Swap"
+    },
+    "taprootTransactions": {
+      "value": "custom",
+      "customText": "Full"
+    },
+    "nodeType": {
+      "value": "custom",
+      "customText": "Electrum Server (Own Node)"
+    },
+    "submarineSwaps": {
+      "value": "custom",
+      "customText": "Phoenix-provided + Swap in Potentiam"
+    },
+    "otherNetworks": "no",
+    "implementation": {
+      "value": "custom",
+      "customText": "Eclair"
+    },
+    "lspIntegration": {
+      "value": "custom",
+      "customText": "ACINQ's LSP"
+    },
     "channelManagement": {
       "value": "custom",
-      "customText": "Automated"
+      "customText": "LSP managed"
+    },
+    "zeroConfChannels": "yes",
+    "clientSideRouting": {
+      "value": "custom",
+      "customText": "No (Trampoline)"
+    },
+    "watchtowerIntegration": "no",
+    "mppSupport": "yes",
+    "maxRoutingFee": "no",
+    "purchaseInbound": {
+      "value": "custom",
+      "customText": "Yes (up to 10M sats)"
+    },
+    "splicingSupport": {
+      "value": "custom",
+      "customText": "Yes, Automated"
+    },
+    "routingNode": "no",
+    "nostrWalletConnect": "no",
+    "blindRouting": {
+      "value": "custom",
+      "customText": "Yes for BOLT12"
+    },
+    "scidAlias": "no",
+    "simpleTaprootChannels": "no",
+    "torSupport": "yes",
+    "testnetSupport": {
+      "value": "custom",
+      "customText": "Android only"
+    },
+    "developerApis": {
+      "value": "custom",
+      "customText": "Phoenixd"
     }
-  }
+  },
+  "availability": "Restricted in US and others",
+  "category": "L2 Wallet (LN Node)"
 }

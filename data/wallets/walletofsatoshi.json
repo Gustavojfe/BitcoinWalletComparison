@@ -1,19 +1,19 @@
 {
-  "name": "Primal",
-  "website": "https://primal.net/wallet",
-  "description": "Nostr-integrated Lightning wallet",
+  "name": "Wallet of Satoshi",
+  "website": "https://www.walletofsatoshi.com",
+  "description": "Simple custodial Lightning wallet",
   "type": "lightning",
-  "logo": "primal",
-  "order": 3,
+  "logo": "walletofsatoshi",
+  "order": 2,
   "features": {
     "platform": [
       "android",
       "ios"
     ],
-    "openSource": "yes",
+    "openSource": "no",
     "availability": {
       "value": "custom",
-      "customText": "Unrestricted"
+      "customText": "Restricted in US and others"
     },
     "custodialStatus": {
       "value": "custom",
@@ -22,27 +22,27 @@
     "kyc": "no",
     "transactionLimits": {
       "value": "custom",
-      "customText": "0.01 BTC"
+      "customText": "5 BTC"
     },
-    "transactionFees": "no",
+    "transactionFees": {
+      "value": "custom",
+      "customText": "Yes, 1% On-Chain Fees"
+    },
     "backupOptions": {
       "value": "custom",
-      "customText": "Nostr nsec (private key)"
+      "customText": "Email"
     },
     "bolt11Support": "yes",
     "bolt12Support": "no",
     "bolt12HrnSupport": "no",
-    "lnurlPay": "no",
+    "lnurlPay": "yes",
     "lightningAddressSupport": "yes",
-    "lnurlWithdraw": "no",
-    "noAmountInvoices": {
-      "value": "custom",
-      "customText": "send only"
-    },
+    "lnurlWithdraw": "yes",
+    "noAmountInvoices": "yes",
     "customInvoiceMetadata": "yes",
     "invoiceExpiryControl": {
       "value": "custom",
-      "customText": "1 hour"
+      "customText": "24 hours"
     },
     "receiveOnChain": "yes",
     "bitcoinAddressType": {
@@ -55,15 +55,12 @@
       "customText": "Send"
     },
     "otherNetworks": "no",
-    "nostrWalletConnect": "yes",
+    "nostrWalletConnect": "no",
     "blindRouting": "no",
     "torSupport": "no",
     "testnetSupport": "no",
-    "developerApis": {
-      "value": "custom",
-      "customText": "Nostr Wallet Connect"
-    }
+    "developerApis": "no"
   },
-  "availability": "Unrestricted",
+  "availability": "Restricted in US and others",
   "category": "Custodial"
 }

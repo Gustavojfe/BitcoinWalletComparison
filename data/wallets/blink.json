@@ -1,23 +1,66 @@
 {
   "name": "Blink",
-  "website": "https://blink.sv/",
-  "description": "A Lightning wallet focused on simplicity and ease of use.",
+  "website": "https://www.blink.sv",
+  "description": "Custodial wallet for Bitcoin and Lightning",
   "type": "lightning",
   "logo": "blink",
-  "order": 6,
+  "order": 1,
   "features": {
-    "platform": ["ios", "android"],
-    "openSource": "no",
-    "kyc": "no",
-    "walletType": "custodial",
-    "onChainSupport": "yes",
-    "implementation": "lnd",
+    "platform": [
+      "android",
+      "ios"
+    ],
+    "openSource": "yes",
+    "availability": {
+      "value": "custom",
+      "customText": "Restricted in USA and others"
+    },
+    "custodialStatus": {
+      "value": "custom",
+      "customText": "Custodial"
+    },
+    "kyc": {
+      "value": "custom",
+      "customText": "Yes, Over 999$/day"
+    },
+    "transactionLimits": {
+      "value": "custom",
+      "customText": "Detailed"
+    },
+    "transactionFees": {
+      "value": "custom",
+      "customText": "Yes, On-Chain + Conversion"
+    },
+    "backupOptions": {
+      "value": "custom",
+      "customText": "Email / Phone"
+    },
     "bolt11Support": "yes",
-    "lnurlSupport": "yes",
-    "lightningAddressSupport": "yes",
     "bolt12Support": "no",
-    "hrnBlip32Support": "no",
-    "mppSupport": "partial",
-    "channelManagement": "not_possible"
-  }
+    "bolt12HrnSupport": "no",
+    "lnurlPay": "yes",
+    "lightningAddressSupport": "yes",
+    "lnurlWithdraw": "yes",
+    "noAmountInvoices": "yes",
+    "customInvoiceMetadata": "yes",
+    "invoiceExpiryControl": {
+      "value": "custom",
+      "customText": "2 hours"
+    },
+    "receiveOnChain": "yes",
+    "bitcoinAddressType": {
+      "value": "custom",
+      "customText": "P2WPKH"
+    },
+    "sendOnChain": "yes",
+    "taprootTransactions": "no",
+    "otherNetworks": "no",
+    "nostrWalletConnect": "no",
+    "blindRouting": "no",
+    "torSupport": "no",
+    "testnetSupport": "no",
+    "developerApis": "no"
+  },
+  "availability": "Restricted in USA and others",
+  "category": "Custodial"
 }

@@ -1,23 +1,81 @@
 {
   "name": "Coinos",
-  "website": "https://coinos.io/",
-  "description": "An open-source web wallet platform supporting Bitcoin, Lightning Network, and Liquid transactions.",
+  "website": "https://coinos.io",
+  "description": "Web-based Lightning and Bitcoin wallet",
   "type": "lightning",
   "logo": "coinos",
-  "order": 11,
+  "order": 7,
   "features": {
-    "platform": ["web", "android", "ios"],
-    "openSource": "yes",
-    "kyc": "partial",
-    "walletType": "remote_node",
-    "onChainSupport": "yes",
-    "implementation": "core_lightning",
+    "platform": {
+      "value": "custom",
+      "customText": "Web"
+    },
+    "openSource": {
+      "value": "custom",
+      "customText": "Yes (GitHub)"
+    },
+    "availability": {
+      "value": "custom",
+      "customText": "Unrestricted"
+    },
+    "custodialStatus": {
+      "value": "custom",
+      "customText": "Custodial"
+    },
+    "kyc": "no",
+    "transactionFees": {
+      "value": "custom",
+      "customText": "Yes, dynamic provider fees"
+    },
+    "backupOptions": {
+      "value": "custom",
+      "customText": "Username / PW"
+    },
     "bolt11Support": "yes",
-    "lnurlSupport": "yes",
+    "bolt12Support": "yes",
+    "bolt12HrnSupport": "no",
+    "lnurlPay": "yes",
     "lightningAddressSupport": "yes",
-    "bolt12Support": "partial",
-    "hrnBlip32Support": "no",
-    "mppSupport": "yes",
-    "channelManagement": "partial"
-  }
+    "lnurlWithdraw": "yes",
+    "noAmountInvoices": "yes",
+    "customInvoiceMetadata": "yes",
+    "invoiceExpiryControl": {
+      "value": "custom",
+      "customText": "24 hours"
+    },
+    "receiveOnChain": {
+      "value": "custom",
+      "customText": "?"
+    },
+    "bitcoinAddressType": {
+      "value": "custom",
+      "customText": "P2TR, P2WPKH, P2PKH"
+    },
+    "sendOnChain": "yes",
+    "taprootTransactions": {
+      "value": "custom",
+      "customText": "Full"
+    },
+    "otherNetworks": {
+      "value": "custom",
+      "customText": "Liquid, Ecash"
+    },
+    "implementation": {
+      "value": "custom",
+      "customText": "Core Lightning"
+    },
+    "nostrWalletConnect": "yes",
+    "blindRouting": {
+      "value": "custom",
+      "customText": "Yes for BOLT12"
+    },
+    "torSupport": "yes",
+    "testnetSupport": {
+      "value": "custom",
+      "customText": "Self-Hosted"
+    },
+    "developerApis": "yes"
+  },
+  "availability": "Unrestricted",
+  "category": "Custodial"
 }

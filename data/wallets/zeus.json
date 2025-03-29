@@ -1,23 +1,123 @@
 {
   "name": "Zeus",
-  "website": "https://zeusln.app/",
-  "description": "A mobile Lightning wallet that can connect to your own node.",
+  "website": "https://zeusln.app",
+  "description": "Mobile client for Lightning node control",
   "type": "lightning",
   "logo": "zeus",
-  "order": 5,
+  "order": 14,
   "features": {
-    "platform": ["ios", "android"],
-    "openSource": "yes",
+    "platform": [
+      "android",
+      "ios"
+    ],
+    "openSource": {
+      "value": "custom",
+      "customText": "Yes (GitHub)"
+    },
+    "availability": {
+      "value": "custom",
+      "customText": "Unrestricted"
+    },
+    "custodialStatus": {
+      "value": "custom",
+      "customText": "L1/L2 (LN Node) or UI for multiple nodes"
+    },
     "kyc": "no",
-    "walletType": "remote_node",
-    "onChainSupport": "yes",
-    "implementation": "lnd",
+    "transactionFees": {
+      "value": "custom",
+      "customText": "Yes, dynamic LSP fees"
+    },
+    "backupOptions": {
+      "value": "custom",
+      "customText": "Seed Phrase"
+    },
+    "peerBackupOptions": {
+      "value": "custom",
+      "customText": "LSP Managed (if not remote)"
+    },
     "bolt11Support": "yes",
-    "lnurlSupport": "yes",
-    "lightningAddressSupport": "yes",
-    "bolt12Support": "no",
-    "hrnBlip32Support": "yes",
+    "bolt12Support": {
+      "value": "custom",
+      "customText": "Yes (with remote Core LN)"
+    },
+    "bolt12HrnSupport": {
+      "value": "custom",
+      "customText": "Yes (with remote Core LN)"
+    },
+    "lnurlPay": "yes",
+    "lightningAddressSupport": {
+      "value": "custom",
+      "customText": "Yes (Non-Custodial LN Addresses) Zaplocker using HODL invoices"
+    },
+    "lnurlWithdraw": "yes",
+    "noAmountInvoices": "yes",
+    "customInvoiceMetadata": "yes",
+    "invoiceExpiryControl": {
+      "value": "custom",
+      "customText": "Yes, full control"
+    },
+    "receiveOnChain": {
+      "value": "custom",
+      "customText": "On-Chain Wallet"
+    },
+    "bitcoinAddressType": {
+      "value": "custom",
+      "customText": "P2WPKH"
+    },
+    "sendOnChain": "yes",
+    "taprootTransactions": {
+      "value": "custom",
+      "customText": "Send"
+    },
+    "nodeType": {
+      "value": "custom",
+      "customText": "Neutrino (Own Node)"
+    },
+    "submarineSwaps": "no",
+    "otherNetworks": "no",
+    "implementation": {
+      "value": "custom",
+      "customText": "LND (+ CLN, LNDHub, NWC)"
+    },
+    "lspIntegration": {
+      "value": "custom",
+      "customText": "Olympus LSP (Custom)"
+    },
+    "channelManagement": {
+      "value": "custom",
+      "customText": "LSP or User Managed"
+    },
+    "zeroConfChannels": {
+      "value": "custom",
+      "customText": "Yes (LSP or other peers)"
+    },
+    "clientSideRouting": {
+      "value": "custom",
+      "customText": "Yes (Express Graph Sync)"
+    },
+    "watchtowerIntegration": "no",
     "mppSupport": "yes",
-    "channelManagement": "yes"
-  }
+    "maxRoutingFee": "yes",
+    "purchaseInbound": {
+      "value": "custom",
+      "customText": "Yes from LSP"
+    },
+    "splicingSupport": "no",
+    "routingNode": "yes",
+    "nostrWalletConnect": "yes",
+    "blindRouting": {
+      "value": "custom",
+      "customText": "Yes for BOLT11 (LND) or BOLT12 (CLN)"
+    },
+    "scidAlias": "yes",
+    "simpleTaprootChannels": {
+      "value": "custom",
+      "customText": "Yes (with LND)"
+    },
+    "torSupport": "yes",
+    "testnetSupport": "yes",
+    "developerApis": "no"
+  },
+  "availability": "Unrestricted",
+  "category": "L1/L2 (LN Node) or UI for multiple nodes"
 }

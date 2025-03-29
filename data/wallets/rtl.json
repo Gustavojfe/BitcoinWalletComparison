@@ -1,23 +1,111 @@
 {
   "name": "RTL",
   "website": "https://github.com/Ride-The-Lightning/RTL",
-  "description": "Ride The Lightning (RTL) is a full-featured, open-source web interface for managing Lightning Network nodes.",
+  "description": "Ride The Lightning node management tool",
   "type": "lightning",
   "logo": "rtl",
-  "order": 17,
+  "order": 15,
   "features": {
-    "platform": ["web"],
-    "openSource": "yes",
+    "platform": {
+      "value": "custom",
+      "customText": "Web (Self-Host)"
+    },
+    "openSource": {
+      "value": "custom",
+      "customText": "Yes (GitHub)"
+    },
+    "availability": {
+      "value": "custom",
+      "customText": "Unrestricted (Self-Hosted)"
+    },
+    "custodialStatus": {
+      "value": "custom",
+      "customText": "L1/ L2 (UI for multiple nodes)"
+    },
     "kyc": "no",
-    "walletType": "ln_node",
-    "onChainSupport": "yes",
-    "implementation": "lnd",
+    "transactionFees": "no",
+    "backupOptions": {
+      "value": "custom",
+      "customText": "Seed Phrase + SCB"
+    },
+    "peerBackupOptions": {
+      "value": "custom",
+      "customText": "Local Backup"
+    },
     "bolt11Support": "yes",
-    "lnurlSupport": "yes",
-    "lightningAddressSupport": "partial",
-    "bolt12Support": "no",
-    "hrnBlip32Support": "no",
+    "bolt12Support": {
+      "value": "custom",
+      "customText": "Yes (with Core LN)"
+    },
+    "bolt12HrnSupport": "no",
+    "lnurlPay": "no",
+    "lightningAddressSupport": {
+      "value": "custom",
+      "customText": "Send Only"
+    },
+    "lnurlWithdraw": "no",
+    "noAmountInvoices": "yes",
+    "customInvoiceMetadata": "yes",
+    "invoiceExpiryControl": {
+      "value": "custom",
+      "customText": "Yes, 1 week default"
+    },
+    "receiveOnChain": {
+      "value": "custom",
+      "customText": "On-Chain Wallet"
+    },
+    "bitcoinAddressType": {
+      "value": "custom",
+      "customText": "P2TR (CLN, LND), P2WSH (Eclair)"
+    },
+    "sendOnChain": "yes",
+    "taprootTransactions": {
+      "value": "custom",
+      "customText": "Full"
+    },
+    "nodeType": {
+      "value": "custom",
+      "customText": "Bitcoin Core RPC (Own Node)"
+    },
+    "submarineSwaps": {
+      "value": "custom",
+      "customText": "Lightning Loop, Boltz"
+    },
+    "otherNetworks": "no",
+    "implementation": {
+      "value": "custom",
+      "customText": "LND, CLN, Eclair"
+    },
+    "lspIntegration": {
+      "value": "custom",
+      "customText": "No LSP"
+    },
+    "channelManagement": {
+      "value": "custom",
+      "customText": "User Managed"
+    },
+    "zeroConfChannels": "no",
+    "clientSideRouting": "yes",
+    "watchtowerIntegration": "no",
     "mppSupport": "yes",
-    "channelManagement": "yes"
-  }
+    "maxRoutingFee": "yes",
+    "purchaseInbound": {
+      "value": "custom",
+      "customText": "Liquidity Ads (CLN)"
+    },
+    "splicingSupport": "no",
+    "routingNode": "yes",
+    "nostrWalletConnect": "no",
+    "blindRouting": {
+      "value": "custom",
+      "customText": "Yes for BOLT12 (CLN)"
+    },
+    "scidAlias": "yes",
+    "simpleTaprootChannels": "no",
+    "torSupport": "yes",
+    "testnetSupport": "yes",
+    "developerApis": "no"
+  },
+  "availability": "Unrestricted (Self-Hosted)",
+  "category": "L1/ L2 (UI for multiple nodes)"
 }

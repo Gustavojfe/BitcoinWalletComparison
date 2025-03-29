@@ -1,26 +1,68 @@
 {
   "name": "Aqua",
-  "website": "https://aquawallet.io/",
-  "description": "A user-friendly Bitcoin and Lightning wallet with a focus on ease of use and secure self-custody.",
+  "website": "https://www.aquawallet.io",
+  "description": "Liquid and Bitcoin wallet with Lightning support",
   "type": "lightning",
   "logo": "aqua",
   "order": 9,
   "features": {
-    "platform": ["ios", "android"],
-    "openSource": "no",
-    "kyc": "no",
-    "walletType": "remote_node",
-    "onChainSupport": "yes",
-    "implementation": "lnd",
-    "bolt11Support": "yes",
-    "lnurlSupport": "yes",
-    "lightningAddressSupport": "yes",
-    "bolt12Support": "no",
-    "hrnBlip32Support": "no",
-    "mppSupport": "yes",
-    "channelManagement": {
+    "platform": [
+      "android",
+      "ios"
+    ],
+    "openSource": "yes",
+    "availability": {
       "value": "custom",
-      "customText": "Automatic"
-    }
-  }
+      "customText": "Unrestricted"
+    },
+    "custodialStatus": {
+      "value": "custom",
+      "customText": "Liquid / On-Chain Wallet with Submarine and Reverse Swaps (Boltz)"
+    },
+    "kyc": "no",
+    "transactionFees": {
+      "value": "custom",
+      "customText": "Yes for LN: 0.1% Send, 0.25% Receive"
+    },
+    "backupOptions": {
+      "value": "custom",
+      "customText": "Seed Phrase"
+    },
+    "bolt11Support": "yes",
+    "bolt12Support": "no",
+    "bolt12HrnSupport": "no",
+    "lnurlPay": "yes",
+    "lightningAddressSupport": {
+      "value": "custom",
+      "customText": "Send Only"
+    },
+    "lnurlWithdraw": "no",
+    "noAmountInvoices": "no",
+    "customInvoiceMetadata": "no",
+    "invoiceExpiryControl": {
+      "value": "custom",
+      "customText": "12 hours"
+    },
+    "receiveOnChain": {
+      "value": "custom",
+      "customText": "On-Chain Wallet"
+    },
+    "bitcoinAddressType": {
+      "value": "custom",
+      "customText": "P2WPKH"
+    },
+    "sendOnChain": "yes",
+    "taprootTransactions": "no",
+    "otherNetworks": {
+      "value": "custom",
+      "customText": "Liquid"
+    },
+    "nostrWalletConnect": "no",
+    "blindRouting": "no",
+    "torSupport": "no",
+    "testnetSupport": "no",
+    "developerApis": "no"
+  },
+  "availability": "Unrestricted",
+  "category": "Liquid / On-Chain Wallet with Submarine and Reverse Swaps (Boltz)"
 }

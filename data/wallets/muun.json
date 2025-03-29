@@ -1,23 +1,75 @@
 {
   "name": "Muun",
-  "website": "https://muun.com/",
-  "description": "A non-custodial bitcoin wallet with integrated Lightning functionality.",
+  "website": "https://muun.com",
+  "description": "Self-custodial wallet with Lightning support",
   "type": "lightning",
   "logo": "muun",
-  "order": 2,
+  "order": 8,
   "features": {
-    "platform": ["ios", "android"],
-    "openSource": "yes",
+    "platform": [
+      "android",
+      "ios"
+    ],
+    "openSource": {
+      "value": "custom",
+      "customText": "Yes (GitHub)"
+    },
+    "availability": {
+      "value": "custom",
+      "customText": "Unrestricted"
+    },
+    "custodialStatus": {
+      "value": "custom",
+      "customText": "On-Chain Wallet with Submarine and Reverse Swap"
+    },
     "kyc": "no",
-    "walletType": "on_chain_swap",
-    "onChainSupport": "yes",
-    "implementation": "custom",
+    "transactionFees": {
+      "value": "custom",
+      "customText": "Yes, dynamic swap fee"
+    },
+    "backupOptions": {
+      "value": "custom",
+      "customText": "Email / PW or Recovery Code + Emergency Kit (Cloud upload or download)"
+    },
     "bolt11Support": "yes",
-    "lnurlSupport": "no",
-    "lightningAddressSupport": "no",
     "bolt12Support": "no",
-    "hrnBlip32Support": "no",
-    "mppSupport": "partial",
-    "channelManagement": "not_possible"
-  }
+    "bolt12HrnSupport": "no",
+    "lnurlPay": "yes",
+    "lightningAddressSupport": {
+      "value": "custom",
+      "customText": "Send Only"
+    },
+    "lnurlWithdraw": "yes",
+    "noAmountInvoices": "yes",
+    "customInvoiceMetadata": "no",
+    "invoiceExpiryControl": {
+      "value": "custom",
+      "customText": "24 hours"
+    },
+    "receiveOnChain": {
+      "value": "custom",
+      "customText": "On-Chain Wallet"
+    },
+    "bitcoinAddressType": {
+      "value": "custom",
+      "customText": "P2TR, P2WSH, P2SH"
+    },
+    "sendOnChain": "yes",
+    "taprootTransactions": {
+      "value": "custom",
+      "customText": "Full"
+    },
+    "submarineSwaps": {
+      "value": "custom",
+      "customText": "Muun-provided"
+    },
+    "otherNetworks": "no",
+    "nostrWalletConnect": "no",
+    "blindRouting": "no",
+    "torSupport": "no",
+    "testnetSupport": "no",
+    "developerApis": "no"
+  },
+  "availability": "Unrestricted",
+  "category": "On-Chain Wallet with Submarine and Reverse Swap"
 }

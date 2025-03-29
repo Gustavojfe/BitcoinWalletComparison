@@ -1,7 +1,8 @@
 import fs from 'fs';
 import path from 'path';
-import { FeatureValue, InsertFeature, InsertWallet, InsertWalletFeature, Wallet, Feature, WalletFeature } from '../shared/schema';
+import { FeatureValue, FeatureCategory, InsertFeature, InsertWallet, InsertWalletFeature, Wallet, Feature, WalletFeature } from '../shared/schema';
 
+// Extended wallet file format with new fields from CSV
 interface WalletFileFormat {
   name: string;
   website: string;
@@ -9,17 +10,27 @@ interface WalletFileFormat {
   type: "lightning" | "onchain" | "hardware";
   logo: string;
   order: number;
+  availability?: string; // From CSV: Restricted in USA, etc.
+  category?: string; // From CSV: Custodial, On-Chain Wallet, etc.
   features: {
-    [key: string]: FeatureValue | FeatureValue[] | { value: FeatureValue; customText: string };
+    [key: string]: FeatureValue | FeatureValue[] | { 
+      value: FeatureValue; 
+      customText?: string;
+      referenceLink?: string;
+      notes?: string;
+    };
   };
 }
 
+// Extended feature file format with new fields from CSV
 interface FeatureFileFormat {
   id: string;
   name: string;
   description: string;
   type: "lightning" | "onchain" | "hardware";
+  category?: FeatureCategory; // From CSV: basics, recover, ln_formats, etc.
   order: number;
+  infoLink?: string; // For additional information links about the feature
 }
 
 // Get a list of all wallet JSON files
@@ -76,6 +87,8 @@ export function walletFileToInsertWallet(wallet: WalletFileFormat): InsertWallet
     description: wallet.description,
     type: wallet.type,
     logo: wallet.logo,
+    availability: wallet.availability || null,
+    category: wallet.category || null,
     order: wallet.order
   };
 }
@@ -86,7 +99,9 @@ export function featureFileToInsertFeature(feature: FeatureFileFormat): InsertFe
     name: feature.name,
     description: feature.description,
     type: feature.type,
-    order: feature.order
+    category: feature.category || null,
+    order: feature.order,
+    infoLink: feature.infoLink || null
   };
 }
 
@@ -94,15 +109,22 @@ export function featureFileToInsertFeature(feature: FeatureFileFormat): InsertFe
 export function createWalletFeature(
   walletId: number,
   featureId: number,
-  featureValue: FeatureValue | FeatureValue[] | { value: FeatureValue; customText: string }
+  featureValue: FeatureValue | FeatureValue[] | { 
+    value: FeatureValue; 
+    customText?: string;
+    referenceLink?: string;
+    notes?: string;
+  }
 ): InsertWalletFeature {
-  // Handle object with custom text
+  // Handle object with custom text and additional fields
   if (typeof featureValue === 'object' && !Array.isArray(featureValue) && 'value' in featureValue) {
     return {
       walletId,
       featureId,
       value: featureValue.value,
-      customText: featureValue.customText
+      customText: featureValue.customText || null,
+      referenceLink: featureValue.referenceLink || null,
+      notes: featureValue.notes || null
     };
   } 
   // Handle array of values (like platform)
@@ -113,7 +135,9 @@ export function createWalletFeature(
       walletId,
       featureId,
       value: 'custom', // Using custom as indicator that this is a multi-value
-      customText: featureValue.join(',')
+      customText: featureValue.join(','),
+      referenceLink: null,
+      notes: null
     };
   } 
   // Handle simple string values
@@ -121,7 +145,10 @@ export function createWalletFeature(
     return {
       walletId,
       featureId,
-      value: featureValue
+      value: featureValue,
+      customText: null,
+      referenceLink: null,
+      notes: null
     };
   }
 }
@@ -150,23 +177,72 @@ export function findFeatureIdByStringId(features: Feature[], stringId: string): 
     f.name.toLowerCase().replace(/[\s-]/g, '_')
   ).join(', ')}`);
   
-  // For new feature structure, map old feature names to new ones
+  // Map feature names from CSV format to our system
   const featureMap: Record<string, string> = {
-    'onchain': 'onchainSupport',
-    'receiveonchain': 'onchainSupport',
-    'sendonchain': 'onchainSupport',
-    'invoice': 'bolt11Support',
+    // Basic mappings
+    'platform': 'platform',
+    'opensource': 'openSource',
+    'availability': 'availability',
+    'category': 'custodialStatus',
+    'kyc': 'kyc',
+    'limits': 'transactionLimits',
+    'extrafees': 'transactionFees',
+    'recoverymethod': 'backupOptions',
+    'scbmanagement': 'peerBackupOptions',
+    
+    // LN Formats
     'bolt11': 'bolt11Support',
+    'bolt12': 'bolt12Support',
+    'bolt12bip353hrn': 'bolt12HrnSupport',
+    'lnurlpay': 'lnurlSupport',
+    'lightningaddresssupport': 'lightningAddressSupport',
+    'lnurlwithdraw': 'lnurlSupport',
+    
+    // Invoice Customization
+    'noamountinvoices': 'noAmountInvoices',
+    'custommetadata': 'customInvoiceMetadata',
+    'expirycontrol': 'invoiceExpiryControl',
+    
+    // On-Chain Integration
+    'receiveonchain': 'onChainSupport',
+    'addresstype': 'bitcoinAddressType',
+    'sendonchain': 'onChainSupport',
+    'taproot': 'taprootTransactions',
+    'bitcoinnetwork': 'nodeType',
+    'swap': 'submarineSwaps',
+    'othernetworks': 'taprootAssets',
+    
+    // Lightning Specific
+    'implementation': 'implementation',
+    'lspintegration': 'lspIntegration',
+    'channelpeermanagement': 'channelManagement',
+    'zeroconfchannels': 'zeroConfChannels',
+    'clientsiderouting': 'jitRouting',
+    'watchtowerintegration': 'watchtowerIntegration',
+    'mppamp': 'mppSupport',
+    
+    // Privacy
+    'tor': 'torSupport',
+    'coincontrol': 'paymentDecorrelation',
+    
+    // Dev Tools
+    'openapidocs': 'developerApis',
+    'testnetsupport': 'testnetSupport',
+    'selfcustodyapi': 'developerApis',
+    
+    // Legacy mappings
+    'onchain': 'onChainSupport',
+    'invoice': 'bolt11Support',
     'lnurl': 'lnurlSupport',
     'lightningaddress': 'lightningAddressSupport',
     'dnsseeds': 'hrnBlip32Support',
     'paymentrouting': 'channelManagement',
     'mpp': 'mppSupport',
     'manageownchannels': 'channelManagement',
-    'lowincoming': 'channelManagement'
+    'lowincoming': 'inboundLiquidity'
   };
   
-  // Check if we have a mapping for this old feature name
+  // Check if we have a mapping for this feature name
   if (featureMap[normalizedId]) {
     const mappedFeature = features.find(f => 
       featureNameToStringId(f.name) === featureMap[normalizedId] ||
@@ -185,4 +261,70 @@ export function findFeatureIdByStringId(features: Feature[], stringId: string): 
 // Convert a feature name to a string ID
 export function featureNameToStringId(name: string): string {
   return name.toLowerCase().replace(/[^a-z0-9]/g, '');
+}
+
+// Helper to normalize values from CSV to our system
+export function normalizeFeatureValue(value: string): FeatureValue {
+  const valueMap: Record<string, FeatureValue> = {
+    // Yes/No/Partial
+    'yes': 'yes',
+    'no': 'no',
+    'partial': 'partial',
+    'detailed': 'detailed',
+    
+    // Direction-specific
+    'send': 'send_only',
+    'send only': 'send_only',
+    'receive': 'receive_only',
+    'receive only': 'receive_only',
+    
+    // Platform values
+    'ios': 'ios',
+    'android': 'android',
+    'desktop': 'desktop',
+    'web': 'web',
+    'chrome extension': 'chrome_extension',
+    'whatsapp': 'whatsapp',
+    
+    // Wallet architecture types
+    'custodial': 'custodial',
+    'non-custodial': 'non_custodial',
+    'ln node': 'ln_node',
+    'hybrid': 'hybrid',
+    'on-chain wallet': 'on_chain',
+    
+    // Implementation types
+    'lnd': 'lnd',
+    'ldk': 'ldk',
+    'core lightning': 'core_lightning',
+    'eclair': 'eclair',
+    'electrum': 'electrum_impl',
+    'greenlight': 'greenlight',
+    
+    // Taproot support levels
+    'full': 'full',
+    
+    // Management approaches
+    'user managed': 'user_managed',
+    'lsp managed': 'lsp_managed',
+    'automatic': 'automatic',
+    'automatic cloud': 'automatic_cloud',
+    
+    // Networks
+    'liquid': 'liquid',
+    'ecash': 'ecash',
+    
+    // Other values
+    'restricted': 'restricted',
+    'unrestricted': 'unrestricted',
+    'not applicable': 'not_applicable',
+    '-': 'none',
+    '': 'none'
+  };
+  
+  // Normalize the input value
+  const normalizedValue = value.trim().toLowerCase();
+  
+  // Return the mapped value or 'custom' if not found
+  return valueMap[normalizedValue] || 'custom';
 }

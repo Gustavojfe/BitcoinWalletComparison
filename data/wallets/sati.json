@@ -1,23 +1,58 @@
 {
   "name": "Sati",
-  "website": "https://sati.app/",
-  "description": "A user-friendly Lightning wallet with social features and simplified Bitcoin transactions.",
+  "website": "https://satiwallet.site",
+  "description": "WhatsApp-based Lightning wallet",
   "type": "lightning",
   "logo": "sati",
-  "order": 13,
+  "order": 6,
   "features": {
-    "platform": ["ios", "android"],
+    "platform": {
+      "value": "custom",
+      "customText": "Whatsapp"
+    },
     "openSource": "no",
-    "kyc": "partial",
-    "walletType": "custodial",
-    "onChainSupport": "yes",
-    "implementation": "lnd",
+    "availability": {
+      "value": "custom",
+      "customText": "Unrestricted"
+    },
+    "custodialStatus": {
+      "value": "custom",
+      "customText": "Custodial"
+    },
+    "kyc": "no",
+    "transactionFees": "no",
+    "backupOptions": {
+      "value": "custom",
+      "customText": "Whatsapp Account"
+    },
     "bolt11Support": "yes",
-    "lnurlSupport": "yes",
-    "lightningAddressSupport": "yes",
     "bolt12Support": "no",
-    "hrnBlip32Support": "no",
-    "mppSupport": "yes",
-    "channelManagement": "not_possible"
-  }
+    "bolt12HrnSupport": "no",
+    "lnurlPay": "no",
+    "lightningAddressSupport": "yes",
+    "lnurlWithdraw": "no",
+    "noAmountInvoices": {
+      "value": "custom",
+      "customText": "send only"
+    },
+    "customInvoiceMetadata": "no",
+    "invoiceExpiryControl": {
+      "value": "custom",
+      "customText": "15 minutes"
+    },
+    "receiveOnChain": "yes",
+    "bitcoinAddressType": {
+      "value": "custom",
+      "customText": "P2WPKH"
+    },
+    "sendOnChain": "no",
+    "otherNetworks": "no",
+    "nostrWalletConnect": "no",
+    "blindRouting": "no",
+    "torSupport": "no",
+    "testnetSupport": "no",
+    "developerApis": "no"
+  },
+  "availability": "Unrestricted",
+  "category": "Custodial"
 }
