@@ -115,36 +115,54 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
     // Create a full translation key path
     const translationKey = `featureStatus.values.${normalizedKey}`;
     
-    // Handle comma-separated lists (like platforms) as special display case
-    // while still using the uniform translation system
+    // Special handling for comma-separated values (like platforms)
     if (customText && customText.includes(',')) {
       const items = customText.split(',').map(p => p.trim());
       return (
         <div className="flex flex-wrap gap-1 justify-center">
           {items.map((item, index) => {
+            // Use the same translation and styling logic for each item
             const itemKey = normalizeKey(item);
             const itemTranslationKey = `featureStatus.values.${itemKey}`;
             
-            // Use translated value or fall back to raw value
-            const displayText = t(itemTranslationKey + '.label', undefined, item);
-            const tooltipText = t(itemTranslationKey + '.title', undefined, item);
+            // Get translated values with fallbacks
+            const displayText = t(`${itemTranslationKey}.label`, undefined, item);
+            const tooltipText = t(`${itemTranslationKey}.title`, undefined, item);
             
-            // Determine text color based on platform types (if this is a platform listing)
-            let textColor = 'text-gray-600';
-            if (featureName?.toLowerCase() === 'platform') {
-              if (item === 'ios') textColor = 'text-blue-500';
-              else if (item === 'android') textColor = 'text-green-600';
-              else if (item === 'desktop') textColor = 'text-purple-600';
-              else if (item === 'web') textColor = 'text-amber-600';
+            // Get style class or use platform-specific styling if this is platform feature
+            let styleClass = '';
+            const itemStyle = t(`featureStatus.styles.${itemKey}`, undefined, "");
+            
+            if (itemStyle && itemStyle !== `featureStatus.styles.${itemKey}`) {
+              styleClass = itemStyle;
+            } else if (featureName?.toLowerCase() === 'platform') {
+              // Platform-specific styling
+              if (item === 'ios') {
+                styleClass = 'bg-blue-100 text-blue-500';
+              } else if (item === 'android') {
+                styleClass = 'bg-green-100 text-green-600';
+              } else if (item === 'desktop') {
+                styleClass = 'bg-purple-100 text-purple-600';
+              } else if (item === 'web') {
+                styleClass = 'bg-amber-100 text-amber-600';
+              } else {
+                styleClass = 'bg-muted text-muted-foreground';
+              }
+            } else {
+              styleClass = 'bg-primary/10 text-gray-600';
             }
+            
+            // Extract background and text colors from the style
+            const bgClass = styleClass.split(' ')[0] || 'bg-primary/10';
+            const textClass = styleClass.split(' ')[1] || 'text-gray-600';
             
             return (
               <span 
                 key={index}
-                className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-primary/10"
+                className={`inline-flex items-center justify-center h-6 px-2 rounded-md ${bgClass}`}
                 title={tooltipText}
               >
-                <span className={`text-xs font-medium ${textColor}`}>{displayText}</span>
+                <span className={`text-xs font-medium ${textClass}`}>{displayText}</span>
               </span>
             );
           })}
@@ -152,7 +170,7 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
       );
     }
     
-    // Fetch translated values with fallbacks
+    // Standard case: Get translated values with fallbacks
     const label = t(`${translationKey}.label`, undefined, displayValue);
     const title = t(`${translationKey}.title`, undefined, displayValue);
     

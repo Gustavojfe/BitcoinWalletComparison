@@ -44,9 +44,10 @@ export function getTranslation(lang: Language, key: string): string {
   const keys = getTranslationPath(key);
   let current: any = translations[lang];
   
-  // Regular translation lookup
   for (const k of keys) {
-    if (!current || !current[k]) {
+    if (current && typeof current === 'object' && k in current) {
+      current = current[k];
+    } else {
       // Log missing translation
       console.warn(`Missing translation for ${lang}: ${key}`);
       
@@ -56,13 +57,12 @@ export function getTranslation(lang: Language, key: string): string {
       }
       return key; // Return the key itself as fallback
     }
-    current = current[k];
   }
 
-  // If the result is an object, it's not a valid translation
-  if (typeof current === 'object') {
-    // Log missing translation
-    console.warn(`Invalid translation (object) for ${lang}: ${key}`);
+  // Only fall back if the final resolved value isn't a string
+  if (typeof current !== 'string') {
+    // Log invalid translation
+    console.warn(`Invalid translation (not a string) for ${lang}: ${key}`);
     
     // Fallback to English if result isn't a string in the selected language
     if (lang !== 'en') {
@@ -71,5 +71,5 @@ export function getTranslation(lang: Language, key: string): string {
     return key; // Return the key itself as fallback
   }
   
-  return current as string;
+  return current;
 }

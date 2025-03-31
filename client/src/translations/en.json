@@ -345,6 +345,70 @@
       "lsp_or_user_managed": {
         "label": "LSP or User Managed",
         "title": "Managed by LSP or the user"
+      },
+      "email_phone": { 
+        "label": "Email / Phone", 
+        "title": "Recovery via email or phone" 
+      },
+      "5_btc": { 
+        "label": "5 BTC", 
+        "title": "Limit of 5 BTC" 
+      },
+      "nostr_nsec_private_key": { 
+        "label": "Nostr nsec (private key)", 
+        "title": "Recovery via Nostr private key" 
+      },
+      "whatsapp_account": { 
+        "label": "Whatsapp Account", 
+        "title": "Recovery via Whatsapp account" 
+      },
+      "username_pw": { 
+        "label": "Username / PW", 
+        "title": "Recovery via username and password" 
+      },
+      "email_pw_or_recovery_code_emergency_kit_cloud_upload_or_download": {
+        "label": "Email / PW or Recovery Code + Emergency Kit",
+        "title": "Recovery via email/password or recovery code with emergency kit"
+      },
+      "seed_phrase": { 
+        "label": "Seed Phrase", 
+        "title": "Recovery via seed phrase" 
+      },
+      "automatic_cloud_upload": { 
+        "label": "Automatic Cloud Upload", 
+        "title": "Automatic cloud backup" 
+      },
+      "send": { 
+        "label": "Send", 
+        "title": "Send capability" 
+      },
+      "restricted_in_usa_and_others": { 
+        "label": "Restricted in USA and others", 
+        "title": "Restricted in USA and other regions" 
+      },
+      "very_limited": { 
+        "label": "Very Limited", 
+        "title": "Very limited availability" 
+      },
+      "24_hours": { 
+        "label": "24 hours", 
+        "title": "24-hour duration" 
+      },
+      "1_hour": { 
+        "label": "1 hour", 
+        "title": "1-hour duration" 
+      },
+      "yes_github": {
+        "label": "Yes (GitHub)",
+        "title": "Yes, via GitHub"
+      },
+      "p2tr_p2wpkh": {
+        "label": "P2TR, P2WPKH",
+        "title": "Supports P2TR and P2WPKH address types"
+      },
+      "seed_phrase_scb": {
+        "label": "Seed Phrase + SCB",
+        "title": "Recovery using Seed Phrase and Static Channel Backup"
       }
     },
     "icons": {

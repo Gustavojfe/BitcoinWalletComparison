@@ -345,6 +345,70 @@
       "lsp_or_user_managed": {
         "label": "Gestionado por PSL o Usuario",
         "title": "Gestionado por el PSL o por el usuario"
+      },
+      "email_phone": { 
+        "label": "Correo / Teléfono", 
+        "title": "Recuperación a través de correo o teléfono" 
+      },
+      "5_btc": { 
+        "label": "5 BTC", 
+        "title": "Límite de 5 BTC" 
+      },
+      "nostr_nsec_private_key": { 
+        "label": "Nostr nsec (clave privada)", 
+        "title": "Recuperación a través de clave privada Nostr" 
+      },
+      "whatsapp_account": { 
+        "label": "Cuenta de Whatsapp", 
+        "title": "Recuperación a través de cuenta de Whatsapp" 
+      },
+      "username_pw": { 
+        "label": "Usuario / Contraseña", 
+        "title": "Recuperación a través de usuario y contraseña" 
+      },
+      "email_pw_or_recovery_code_emergency_kit_cloud_upload_or_download": {
+        "label": "Correo / Contraseña o Código de Recuperación + Kit de Emergencia",
+        "title": "Recuperación a través de correo/contraseña o código de recuperación con kit de emergencia"
+      },
+      "seed_phrase": { 
+        "label": "Frase Semilla", 
+        "title": "Recuperación a través de frase semilla" 
+      },
+      "automatic_cloud_upload": { 
+        "label": "Subida Automática a la Nube", 
+        "title": "Copia de seguridad automática en la nube" 
+      },
+      "send": { 
+        "label": "Enviar", 
+        "title": "Capacidad de envío" 
+      },
+      "restricted_in_usa_and_others": { 
+        "label": "Restringido en EE.UU. y otros", 
+        "title": "Restringido en EE.UU. y otras regiones" 
+      },
+      "very_limited": { 
+        "label": "Muy Limitado", 
+        "title": "Disponibilidad muy limitada" 
+      },
+      "24_hours": { 
+        "label": "24 horas", 
+        "title": "Duración de 24 horas" 
+      },
+      "1_hour": { 
+        "label": "1 hora", 
+        "title": "Duración de 1 hora" 
+      },
+      "yes_github": {
+        "label": "Sí (GitHub)",
+        "title": "Sí, a través de GitHub"
+      },
+      "p2tr_p2wpkh": {
+        "label": "P2TR, P2WPKH",
+        "title": "Soporta tipos de dirección P2TR y P2WPKH"
+      },
+      "seed_phrase_scb": {
+        "label": "Frase Semilla + SCB",
+        "title": "Recuperación mediante Frase Semilla y Copia de Seguridad de Canal Estático"
       }
     },
     "icons": {
