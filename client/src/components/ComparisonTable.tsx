@@ -261,6 +261,47 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
           </span>
         );
       case 'custom':
+        // Handle known custom text patterns with translations
+        if (customText) {
+          // Map customText to translation key pattern
+          let patternKey: string | null = null;
+          
+          // Check for known patterns and map them to translation keys
+          if (customText.match(/yes\s*\(\s*github\s*\)/i)) {
+            patternKey = 'yesGitHub';
+          } else if (customText.match(/no\s*\(\s*github\s*\)/i)) {
+            patternKey = 'noGitHub';
+          } else if (customText.match(/partial\s*\(\s*github\s*\)/i)) {
+            patternKey = 'partialGitHub';
+          } else if (customText.match(/yes\s*\(\s*website\s*\)/i)) {
+            patternKey = 'yesWebsite';
+          } else if (customText.match(/static\s*backups?/i)) {
+            patternKey = 'staticBackups';
+          } else if (customText.match(/not\s*applicable/i)) {
+            patternKey = 'notApplicable';
+          } else if (customText.match(/dynamic\s*fees/i)) {
+            patternKey = 'dynamicFees';
+          }
+          
+          // If we have a pattern key, use it for translation
+          if (patternKey) {
+            const translatedTitle = t(`featureStatus.custom.patterns.${patternKey}.title`);
+            const translatedDescription = t(`featureStatus.custom.patterns.${patternKey}.description`);
+            
+            return (
+              <span 
+                className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-orange-100"
+                title={translatedDescription}
+              >
+                <span className="text-xs font-medium text-orange-600">
+                  {translatedTitle}
+                </span>
+              </span>
+            );
+          }
+        }
+        
+        // Fallback for unknown custom text patterns
         const customTitle = customText || t('featureStatus.custom.description');
         const customDisplay = customText || t('featureStatus.custom.title');
         

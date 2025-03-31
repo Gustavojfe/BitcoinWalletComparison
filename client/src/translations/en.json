@@ -180,7 +180,37 @@
     },
     "custom": {
       "title": "Custom",
-      "description": "Feature has special implementation or limitations"
+      "description": "Feature has special implementation or limitations",
+      "patterns": {
+        "yesGitHub": {
+          "title": "Yes (GitHub)",
+          "description": "Feature is open source with code available on GitHub"
+        },
+        "noGitHub": {
+          "title": "No (GitHub)",
+          "description": "Feature is not available on GitHub"
+        },
+        "partialGitHub": {
+          "title": "Partial (GitHub)",
+          "description": "Feature is partially available on GitHub"
+        },
+        "yesWebsite": {
+          "title": "Yes (Website)",
+          "description": "Feature is available on the website"
+        },
+        "staticBackups": {
+          "title": "Static Backups",
+          "description": "Feature supports static backup files"
+        },
+        "notApplicable": {
+          "title": "Not Applicable",
+          "description": "This feature does not apply to this wallet"
+        },
+        "dynamicFees": {
+          "title": "Dynamic Fees",
+          "description": "Fees are adjusted dynamically based on network conditions"
+        }
+      }
     },
     "send_only": {
       "title": "Send only",

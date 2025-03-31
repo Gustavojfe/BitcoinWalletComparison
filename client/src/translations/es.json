@@ -180,7 +180,37 @@
     },
     "custom": {
       "title": "Personalizado",
-      "description": "La característica tiene implementación especial o limitaciones"
+      "description": "La característica tiene implementación especial o limitaciones",
+      "patterns": {
+        "yesGitHub": {
+          "title": "Sí (GitHub)",
+          "description": "La característica es de código abierto con código disponible en GitHub"
+        },
+        "noGitHub": {
+          "title": "No (GitHub)",
+          "description": "La característica no está disponible en GitHub"
+        },
+        "partialGitHub": {
+          "title": "Parcial (GitHub)",
+          "description": "La característica está parcialmente disponible en GitHub"
+        },
+        "yesWebsite": {
+          "title": "Sí (Sitio Web)",
+          "description": "La característica está disponible en el sitio web"
+        },
+        "staticBackups": {
+          "title": "Copias de Seguridad Estáticas",
+          "description": "La característica admite archivos de copia de seguridad estáticos"
+        },
+        "notApplicable": {
+          "title": "No Aplicable",
+          "description": "Esta característica no se aplica a esta cartera"
+        },
+        "dynamicFees": {
+          "title": "Comisiones Dinámicas",
+          "description": "Las comisiones se ajustan dinámicamente según las condiciones de la red"
+        }
+      }
     },
     "send_only": {
       "title": "Solo envío",
