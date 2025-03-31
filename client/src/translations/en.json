@@ -409,6 +409,122 @@
       "seed_phrase_scb": {
         "label": "Seed Phrase + SCB",
         "title": "Recovery using Seed Phrase and Static Channel Backup"
+      },
+      "dynamic_ln": { 
+        "label": "Dynamic (LN)", 
+        "title": "Dynamic Lightning Network fees" 
+      },
+      "segwit_bech32": { 
+        "label": "SegWit bech32", 
+        "title": "SegWit bech32 address type" 
+      },
+      "user_managed": { 
+        "label": "User-Managed", 
+        "title": "Managed by the user" 
+      },
+      "yes_for_ln_01_send_025_receive": { 
+        "label": "Yes for LN: 0.1% Send, 0.25% Receive", 
+        "title": "Yes for Lightning Network with 0.1% send fee and 0.25% receive fee" 
+      },
+      "yes_on_chain_conversion": { 
+        "label": "Yes, On-Chain + Conversion", 
+        "title": "Yes, with on-chain and conversion fees" 
+      },
+      "yes_1_on_chain_fees": { 
+        "label": "Yes, 1% On-Chain Fees", 
+        "title": "Yes, with 1% on-chain fees" 
+      },
+      "swap_to_liquid_boltz": { 
+        "label": "Swap to Liquid (Boltz)", 
+        "title": "Swap to Liquid using Boltz" 
+      },
+      "swap_from_liquid_boltz": { 
+        "label": "Swap from Liquid (Boltz)", 
+        "title": "Swap from Liquid using Boltz" 
+      },
+      "electrum_server_own_node": { 
+        "label": "Electrum Server (Own Node)", 
+        "title": "Uses Electrum server on own node" 
+      },
+      "bitcoin_core_rpc_own_node": { 
+        "label": "Bitcoin Core RPC (Own Node)", 
+        "title": "Uses Bitcoin Core RPC on own node" 
+      },
+      "lightning_loop_boltz": { 
+        "label": "Lightning Loop, Boltz", 
+        "title": "Supports Lightning Loop and Boltz" 
+      },
+      "lnd_cln_lndhub_nwc": { 
+        "label": "LND (+ CLN, LNDHub, NWC)", 
+        "title": "Supports LND, CLN, LNDHub, and NWC" 
+      },
+      "cln_greenlight": { 
+        "label": "CLN (Greenlight)", 
+        "title": "Uses CLN Greenlight implementation" 
+      },
+      "lsp_managed_500_000_sats_minimum": { 
+        "label": "LSP Managed (500 000 sats minimum)", 
+        "title": "Managed by LSP with a minimum of 500,000 sats" 
+      },
+      "no_trampoline": { 
+        "label": "No (Trampoline)", 
+        "title": "Does not support Trampoline routing" 
+      },
+      "yes_rapid_gossip_sync": { 
+        "label": "Yes (Rapid Gossip Sync)", 
+        "title": "Yes, with Rapid Gossip Sync feature" 
+      },
+      "yes_up_to_10m_sats": { 
+        "label": "Yes (up to 10M sats)", 
+        "title": "Yes, up to 10 million sats" 
+      },
+      "yes_automated": { 
+        "label": "Yes, Automated", 
+        "title": "Yes, with automated features" 
+      },
+      "phoenixd": { 
+        "label": "Phoenixd", 
+        "title": "Phoenixd implementation" 
+      },
+      "android_only": { 
+        "label": "Android only", 
+        "title": "Available only on Android" 
+      },
+      "self_hosted": { 
+        "label": "Self-Hosted", 
+        "title": "Self-hosted implementation" 
+      },
+      "rpc_cli": { 
+        "label": "RPC / CLI", 
+        "title": "Supports RPC and CLI" 
+      },
+      "yes_with_boltz_swap": { 
+        "label": "Yes with Boltz Swap", 
+        "title": "Yes, with Boltz Swap" 
+      },
+      "yes_with_reverse_swap": { 
+        "label": "Yes with Reverse Swap", 
+        "title": "Yes, with reverse swap" 
+      },
+      "p2tr_p2wsh_p2sh": { 
+        "label": "P2TR, P2WSH, P2SH", 
+        "title": "Supports P2TR, P2WSH, and P2SH address types" 
+      },
+      "phoenix_provided_swap_in_potentiam": { 
+        "label": "Phoenix-provided + Swap in Potentiam", 
+        "title": "Provided by Phoenix with Swap in Potentiam" 
+      },
+      "p2tr_cln_lnd_p2wsh_eclair": { 
+        "label": "P2TR (CLN, LND), P2WSH (Eclair)", 
+        "title": "Supports P2TR for CLN and LND, P2WSH for Eclair" 
+      },
+      "neutrino_own_node": {
+        "label": "Neutrino (Own Node)",
+        "title": "Uses Neutrino on own node"
+      },
+      "olympus_lsp_custom": {
+        "label": "Olympus LSP (Custom)",
+        "title": "Uses custom Olympus Lightning Service Provider"
       }
     },
     "icons": {

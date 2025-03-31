@@ -1,0 +1,113 @@
+Task: Further improve the translation system in ./src/translations/en.json and ./src/translations/es.json to ensure all feature values from the provided CSV data display correctly in Spanish on the Spanish page, while preserving icon rendering for "Yes", "No", "Partial", and "Optional". The agent has already made the following fixes:
+
+Updated normalizeKey in ./src/components/ComparisonTable.tsx to handle variations in input values.
+Removed the special case for comma-separated values in renderFeatureStatus for consistent rendering.
+Added key variations to es.json for common problematic values (e.g., "Yes (GitHub)", "P2TR, P2WPKH").
+However, some values (e.g., "Dynamic (LN)", "SegWit bech32", "User-Managed", "Yes for LN: 0.1% Send, 0.25% Receive") still display in English because they are missing from es.json. Add these missing translations to ensure all values translate correctly.
+
+Context:
+
+Files to modify:
+./src/translations/en.json and ./src/translations/es.json: Translation files.
+CSV data includes values like "Dynamic (LN)", "SegWit bech32", "User-Managed", "Yes for LN: 0.1% Send, 0.25% Receive", etc.
+Current State:
+Values like "Yes (GitHub)" now correctly translate to "Sí (GitHub)" in Spanish.
+Comma-separated values (e.g., "P2TR, P2WPKH") render consistently as single pills.
+Icon-based values ("Yes", "No", "Partial", "Optional") correctly show checkmarks/X marks in both languages.
+Issue:
+Missing translations in es.json for values like "Dynamic (LN)", "SegWit bech32", "User-Managed", etc., cause them to display in English.
+Deployment: <html lang="es"> confirms language = 'es', and many values are now translating, but some remain in English.
+Requirements:
+
+Complete Translation Files:
+Add missing CSV values to featureStatus.values in ./src/translations/en.json and ./src/translations/es.json, including "dynamic_ln", "segwit_bech32", "user_managed", "yes_for_ln_01_send_025_receive", and other untranslated values identified in the Spanish page display (e.g., "Yes, On-Chain + Conversion", "Yes, 1% On-Chain Fees", "Swap to Liquid (Boltz)", etc.).
+Ensure existing entries (e.g., "yes_github") remain intact.
+Preserve UI:
+Keep checkmark for "Yes", X for "No", and text for "Partial"/"Optional".
+Apply styles from featureStatus.styles.
+Scalability:
+Support new values with translation file updates only.
+Output:
+
+Updated ./src/translations/en.json and ./src/translations/es.json with all missing CSV values.
+Brief explanation and instructions for adding new translations.
+Instructions:
+
+Add the following missing values to featureStatus.values in both en.json and es.json:
+json
+
+Collapse
+
+Wrap
+
+Copy
+// en.json
+"featureStatus": {
+  "values": {
+    "dynamic_ln": { "label": "Dynamic (LN)", "title": "Dynamic Lightning Network fees" },
+    "segwit_bech32": { "label": "SegWit bech32", "title": "SegWit bech32 address type" },
+    "user_managed": { "label": "User-Managed", "title": "Managed by the user" },
+    "yes_for_ln_01_send_025_receive": { "label": "Yes for LN: 0.1% Send, 0.25% Receive", "title": "Yes for Lightning Network with 0.1% send fee and 0.25% receive fee" },
+    "yes_on_chain_conversion": { "label": "Yes, On-Chain + Conversion", "title": "Yes, with on-chain and conversion fees" },
+    "yes_1_on_chain_fees": { "label": "Yes, 1% On-Chain Fees", "title": "Yes, with 1% on-chain fees" },
+    "swap_to_liquid_boltz": { "label": "Swap to Liquid (Boltz)", "title": "Swap to Liquid using Boltz" },
+    "swap_from_liquid_boltz": { "label": "Swap from Liquid (Boltz)", "title": "Swap from Liquid using Boltz" },
+    "electrum_server_own_node": { "label": "Electrum Server (Own Node)", "title": "Uses Electrum server on own node" },
+    "bitcoin_core_rpc_own_node": { "label": "Bitcoin Core RPC (Own Node)", "title": "Uses Bitcoin Core RPC on own node" },
+    "lightning_loop_boltz": { "label": "Lightning Loop, Boltz", "title": "Supports Lightning Loop and Boltz" },
+    "lnd_cln_lndhub_nwc": { "label": "LND (+ CLN, LNDHub, NWC)", "title": "Supports LND, CLN, LNDHub, and NWC" },
+    "cln_greenlight": { "label": "CLN (Greenlight)", "title": "Uses CLN Greenlight implementation" },
+    "lsp_managed_500_000_sats_minimum": { "label": "LSP Managed (500 000 sats minimum)", "title": "Managed by LSP with a minimum of 500,000 sats" },
+    "no_trampoline": { "label": "No (Trampoline)", "title": "Does not support Trampoline routing" },
+    "yes_rapid_gossip_sync": { "label": "Yes (Rapid Gossip Sync)", "title": "Yes, with Rapid Gossip Sync feature" },
+    "yes_up_to_10m_sats": { "label": "Yes (up to 10M sats)", "title": "Yes, up to 10 million sats" },
+    "yes_automated": { "label": "Yes, Automated", "title": "Yes, with automated features" },
+    "phoenixd": { "label": "Phoenixd", "title": "Phoenixd implementation" },
+    "android_only": { "label": "Android only", "title": "Available only on Android" },
+    "self_hosted": { "label": "Self-Hosted", "title": "Self-hosted implementation" },
+    "rpc_cli": { "label": "RPC / CLI", "title": "Supports RPC and CLI" },
+    "yes_with_boltz_swap": { "label": "Yes with Boltz Swap", "title": "Yes, with Boltz Swap" },
+    "yes_with_reverse_swap": { "label": "Yes with Reverse Swap", "title": "Yes, with reverse swap" },
+    "p2tr_p2wsh_p2sh": { "label": "P2TR, P2WSH, P2SH", "title": "Supports P2TR, P2WSH, and P2SH address types" },
+    "phoenix_provided_swap_in_potentiam": { "label": "Phoenix-provided + Swap in Potentiam", "title": "Provided by Phoenix with Swap in Potentiam" },
+    "p2tr_cln_lnd_p2wsh_eclair": { "label": "P2TR (CLN, LND), P2WSH (Eclair)", "title": "Supports P2TR for CLN and LND, P2WSH for Eclair" }
+  }
+  // ... rest unchanged ...
+}
+
+// es.json
+"featureStatus": {
+  "values": {
+    "dynamic_ln": { "label": "Dinámico (LN)", "title": "Comisiones dinámicas de Lightning Network" },
+    "segwit_bech32": { "label": "SegWit bech32", "title": "Tipo de dirección SegWit bech32" },
+    "user_managed": { "label": "Gestionado por el usuario", "title": "Gestionado por el usuario" },
+    "yes_for_ln_01_send_025_receive": { "label": "Sí para LN: 0.1% Enviar, 0.25% Recibir", "title": "Sí para Lightning Network con 0.1% de comisión de envío y 0.25% de recepción" },
+    "yes_on_chain_conversion": { "label": "Sí, On-Chain + Conversión", "title": "Sí, con on-chain y comisiones de conversión" },
+    "yes_1_on_chain_fees": { "label": "Sí, 1% de Comisiones On-Chain", "title": "Sí, con 1% de comisiones on-chain" },
+    "swap_to_liquid_boltz": { "label": "Intercambio a Liquid (Boltz)", "title": "Intercambio a Liquid usando Boltz" },
+    "swap_from_liquid_boltz": { "label": "Intercambio desde Liquid (Boltz)", "title": "Intercambio desde Liquid usando Boltz" },
+    "electrum_server_own_node": { "label": "Servidor Electrum (Nodo Propio)", "title": "Usa servidor Electrum en nodo propio" },
+    "bitcoin_core_rpc_own_node": { "label": "Bitcoin Core RPC (Nodo Propio)", "title": "Usa Bitcoin Core RPC en nodo propio" },
+    "lightning_loop_boltz": { "label": "Lightning Loop, Boltz", "title": "Soporta Lightning Loop y Boltz" },
+    "lnd_cln_lndhub_nwc": { "label": "LND (+ CLN, LNDHub, NWC)", "title": "Soporta LND, CLN, LNDHub y NWC" },
+    "cln_greenlight": { "label": "CLN (Greenlight)", "title": "Usa implementación CLN Greenlight" },
+    "lsp_managed_500_000_sats_minimum": { "label": "Gestionado por PSL (mínimo 500 000 sats)", "title": "Gestionado por PSL con un mínimo de 500,000 sats" },
+    "no_trampoline": { "label": "No (Trampoline)", "title": "No soporta enrutamiento Trampoline" },
+    "yes_rapid_gossip_sync": { "label": "Sí (Sincronización Rápida de Gossip)", "title": "Sí, con funcionalidad de Sincronización Rápida de Gossip" },
+    "yes_up_to_10m_sats": { "label": "Sí (hasta 10M sats)", "title": "Sí, hasta 10 millones de sats" },
+    "yes_automated": { "label": "Sí, Automatizado", "title": "Sí, con funciones automatizadas" },
+    "phoenixd": { "label": "Phoenixd", "title": "Implementación Phoenixd" },
+    "android_only": { "label": "Solo Android", "title": "Disponible solo en Android" },
+    "self_hosted": { "label": "Autoalojado", "title": "Implementación autoalojada" },
+    "rpc_cli": { "label": "RPC / CLI", "title": "Soporta RPC y CLI" },
+    "yes_with_boltz_swap": { "label": "Sí con Intercambio Boltz", "title": "Sí, con Intercambio Boltz" },
+    "yes_with_reverse_swap": { "label": "Sí con Intercambio Inverso", "title": "Sí, con intercambio inverso" },
+    "p2tr_p2wsh_p2sh": { "label": "P2TR, P2WSH, P2SH", "title": "Soporta tipos de dirección P2TR, P2WSH y P2SH" },
+    "phoenix_provided_swap_in_potentiam": { "label": "Provisto por Phoenix + Intercambio en Potentiam", "title": "Provisto por Phoenix con Intercambio en Potentiam" },
+    "p2tr_cln_lnd_p2wsh_eclair": { "label": "P2TR (CLN, LND), P2WSH (Eclair)", "title": "Soporta P2TR para CLN y LND, P2WSH para Eclair" }
+  }
+  // ... rest unchanged ...
+}
+Test with language = 'es': "Dynamic (LN)" should display "Dinámico (LN)", "SegWit bech32" should display "SegWit bech32", "User-Managed" should display "Gestionado por el usuario", etc.
+Date: March 30, 2025.
+Please proceed and provide the updated files and explanation.

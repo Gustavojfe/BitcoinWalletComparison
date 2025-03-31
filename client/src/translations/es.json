@@ -433,6 +433,122 @@
       "seed_phrase_scb_": {
         "label": "Frase Semilla + SCB",
         "title": "Recuperación mediante Frase Semilla y Copia de Seguridad de Canal Estático"
+      },
+      "dynamic_ln": { 
+        "label": "Dinámico (LN)", 
+        "title": "Comisiones dinámicas de Lightning Network" 
+      },
+      "segwit_bech32": { 
+        "label": "SegWit bech32", 
+        "title": "Tipo de dirección SegWit bech32" 
+      },
+      "user_managed": { 
+        "label": "Gestionado por el usuario", 
+        "title": "Gestionado por el usuario" 
+      },
+      "yes_for_ln_01_send_025_receive": { 
+        "label": "Sí para LN: 0.1% Enviar, 0.25% Recibir", 
+        "title": "Sí para Lightning Network con 0.1% de comisión de envío y 0.25% de recepción" 
+      },
+      "yes_on_chain_conversion": { 
+        "label": "Sí, On-Chain + Conversión", 
+        "title": "Sí, con on-chain y comisiones de conversión" 
+      },
+      "yes_1_on_chain_fees": { 
+        "label": "Sí, 1% de Comisiones On-Chain", 
+        "title": "Sí, con 1% de comisiones on-chain" 
+      },
+      "swap_to_liquid_boltz": { 
+        "label": "Intercambio a Liquid (Boltz)", 
+        "title": "Intercambio a Liquid usando Boltz" 
+      },
+      "swap_from_liquid_boltz": { 
+        "label": "Intercambio desde Liquid (Boltz)", 
+        "title": "Intercambio desde Liquid usando Boltz" 
+      },
+      "electrum_server_own_node": { 
+        "label": "Servidor Electrum (Nodo Propio)", 
+        "title": "Usa servidor Electrum en nodo propio" 
+      },
+      "bitcoin_core_rpc_own_node": { 
+        "label": "Bitcoin Core RPC (Nodo Propio)", 
+        "title": "Usa Bitcoin Core RPC en nodo propio" 
+      },
+      "lightning_loop_boltz": { 
+        "label": "Lightning Loop, Boltz", 
+        "title": "Soporta Lightning Loop y Boltz" 
+      },
+      "lnd_cln_lndhub_nwc": { 
+        "label": "LND (+ CLN, LNDHub, NWC)", 
+        "title": "Soporta LND, CLN, LNDHub y NWC" 
+      },
+      "cln_greenlight": { 
+        "label": "CLN (Greenlight)", 
+        "title": "Usa implementación CLN Greenlight" 
+      },
+      "lsp_managed_500_000_sats_minimum": { 
+        "label": "Gestionado por PSL (mínimo 500 000 sats)", 
+        "title": "Gestionado por PSL con un mínimo de 500,000 sats" 
+      },
+      "no_trampoline": { 
+        "label": "No (Trampoline)", 
+        "title": "No soporta enrutamiento Trampoline" 
+      },
+      "yes_rapid_gossip_sync": { 
+        "label": "Sí (Sincronización Rápida de Gossip)", 
+        "title": "Sí, con funcionalidad de Sincronización Rápida de Gossip" 
+      },
+      "yes_up_to_10m_sats": { 
+        "label": "Sí (hasta 10M sats)", 
+        "title": "Sí, hasta 10 millones de sats" 
+      },
+      "yes_automated": { 
+        "label": "Sí, Automatizado", 
+        "title": "Sí, con funciones automatizadas" 
+      },
+      "phoenixd": { 
+        "label": "Phoenixd", 
+        "title": "Implementación Phoenixd" 
+      },
+      "android_only": { 
+        "label": "Solo Android", 
+        "title": "Disponible solo en Android" 
+      },
+      "self_hosted": { 
+        "label": "Autoalojado", 
+        "title": "Implementación autoalojada" 
+      },
+      "rpc_cli": { 
+        "label": "RPC / CLI", 
+        "title": "Soporta RPC y CLI" 
+      },
+      "yes_with_boltz_swap": { 
+        "label": "Sí con Intercambio Boltz", 
+        "title": "Sí, con Intercambio Boltz" 
+      },
+      "yes_with_reverse_swap": { 
+        "label": "Sí con Intercambio Inverso", 
+        "title": "Sí, con intercambio inverso" 
+      },
+      "p2tr_p2wsh_p2sh": { 
+        "label": "P2TR, P2WSH, P2SH", 
+        "title": "Soporta tipos de dirección P2TR, P2WSH y P2SH" 
+      },
+      "phoenix_provided_swap_in_potentiam": { 
+        "label": "Provisto por Phoenix + Intercambio en Potentiam", 
+        "title": "Provisto por Phoenix con Intercambio en Potentiam" 
+      },
+      "p2tr_cln_lnd_p2wsh_eclair": { 
+        "label": "P2TR (CLN, LND), P2WSH (Eclair)", 
+        "title": "Soporta P2TR para CLN y LND, P2WSH para Eclair" 
+      },
+      "neutrino_own_node": {
+        "label": "Neutrino (Nodo Propio)",
+        "title": "Usa Neutrino en nodo propio"
+      },
+      "olympus_lsp_custom": {
+        "label": "Olympus PSL (Personalizado)",
+        "title": "Usa Proveedor de Servicios Lightning Olympus personalizado"
       }
     },
     "icons": {
