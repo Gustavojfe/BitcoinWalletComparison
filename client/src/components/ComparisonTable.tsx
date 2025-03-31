@@ -89,6 +89,11 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
 
   // Render feature status based on value
   const renderFeatureStatus = (value: string, customText?: string, featureName?: string) => {
+    // Debug the input values
+    if (featureName === 'Channel Management' || featureName === 'Gestión de Canales') {
+      console.log(`Feature cell: ${featureName}, Value: ${value}, Language: ${language}`);
+    }
+    
     // Translate feature value using direct dictionary
     const translateValue = (val: string): string => {
       if (!val) return '';
