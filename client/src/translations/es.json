@@ -402,11 +402,35 @@
         "label": "Sí (GitHub)",
         "title": "Sí, a través de GitHub"
       },
+      "yesgithub": {
+        "label": "Sí (GitHub)",
+        "title": "Sí, a través de GitHub"
+      },
+      "yes_github_": {
+        "label": "Sí (GitHub)",
+        "title": "Sí, a través de GitHub" 
+      },
       "p2tr_p2wpkh": {
         "label": "P2TR, P2WPKH",
         "title": "Soporta tipos de dirección P2TR y P2WPKH"
       },
+      "p2trp2wpkh": {
+        "label": "P2TR, P2WPKH",
+        "title": "Soporta tipos de dirección P2TR y P2WPKH"
+      },
+      "p2tr_p2wpkh_": {
+        "label": "P2TR, P2WPKH",
+        "title": "Soporta tipos de dirección P2TR y P2WPKH"
+      },
       "seed_phrase_scb": {
+        "label": "Frase Semilla + SCB",
+        "title": "Recuperación mediante Frase Semilla y Copia de Seguridad de Canal Estático"
+      },
+      "seedphrasescb": {
+        "label": "Frase Semilla + SCB",
+        "title": "Recuperación mediante Frase Semilla y Copia de Seguridad de Canal Estático"
+      },
+      "seed_phrase_scb_": {
         "label": "Frase Semilla + SCB",
         "title": "Recuperación mediante Frase Semilla y Copia de Seguridad de Canal Estático"
       }
