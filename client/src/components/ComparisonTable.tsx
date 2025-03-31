@@ -248,24 +248,19 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
             );
           } else if (platform === 'android') {
             return (
-              <span key={index} className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-green-100" title="Android">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 16V8a7 7 0 0 1 14 0v8"></path>
-                  <path d="M9 16v4"></path>
-                  <path d="M15 16v4"></path>
-                  <path d="M5 9h14"></path>
+              <span key={index} className="inline-flex items-center justify-center h-6 w-6 rounded-full" title="Android">
+                {/* Android green mustard icon */}
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="#a4c639">
+                  <path d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10zM3.5 8C2.67 8 2 8.67 2 9.5v7c0 .83.67 1.5 1.5 1.5S5 17.33 5 16.5v-7C5 8.67 4.33 8 3.5 8zm17 0c-.83 0-1.5.67-1.5 1.5v7c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-7c0-.83-.67-1.5-1.5-1.5zm-4.97-5.84l1.3-1.3c.2-.2.2-.51 0-.71-.2-.2-.51-.2-.71 0l-1.48 1.48C13.85 1.23 12.95 1 12 1c-.96 0-1.86.23-2.66.63L7.85.15c-.2-.2-.51-.2-.71 0-.2.2-.2.51 0 .71l1.31 1.31C6.97 3.26 6 5.01 6 7h12c0-1.99-.97-3.75-2.47-4.84zM10 5H9V4h1v1zm5 0h-1V4h1v1z"/>
                 </svg>
               </span>
             );
           } else if (platform === 'ios') {
             return (
-              <span key={index} className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-gray-100" title="iOS">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 19a4 4 0 0 0 4-4"></path>
-                  <path d="M15 7a4 4 0 0 0-4 4"></path>
-                  <path d="M8 12h8"></path>
-                  <path d="M12 8v8"></path>
-                  <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+              <span key={index} className="inline-flex items-center justify-center h-6 w-6 rounded-full" title="iOS">
+                {/* Apple logo in white */}
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 384 512" fill="black">
+                  <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/>
                 </svg>
               </span>
             );
@@ -281,13 +276,24 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
             );
           } else if (platform === 'chrome' || platform === 'chrome extension') {
             return (
-              <span key={index} className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-yellow-100" title="Chrome Extension">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-yellow-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <circle cx="12" cy="12" r="4"></circle>
-                  <line x1="21.17" y1="8" x2="12" y2="8"></line>
-                  <line x1="3.95" y1="6.06" x2="8.54" y2="14"></line>
-                  <line x1="10.88" y1="21.94" x2="15.46" y2="14"></line>
+              <span key={index} className="inline-flex items-center justify-center h-6 w-6 rounded-full" title="Chrome Extension">
+                {/* Chrome icon with 4 colors */}
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="50" fill="none" />
+                  <circle cx="50" cy="50" r="23" fill="#4285F4" stroke="white" strokeWidth="4" />
+                  <path d="M50,50 h37 a50,50 0 0,0 -37,-37 Z" fill="#EA4335" />
+                  <path d="M50,50 v37 a50,50 0 0,0 37,-37 Z" fill="#FBBC05" />
+                  <path d="M50,50 h-37 a50,50 0 0,0 37,37 Z" fill="#34A853" />
+                  <path d="M50,50 v-37 a50,50 0 0,0 -37,37 Z" fill="#EA4335" />
+                </svg>
+              </span>
+            );
+          } else if (platform === 'whatsapp') {
+            return (
+              <span key={index} className="inline-flex items-center justify-center h-6 w-6 rounded-full" title="WhatsApp">
+                {/* WhatsApp icon in classic green */}
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 448 512" fill="#25D366">
+                  <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
                 </svg>
               </span>
             );
