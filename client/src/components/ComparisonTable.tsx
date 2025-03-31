@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import WalletTooltip from './WalletTooltip';
-import { WalletType, WalletWithFeatures, Feature } from '@/lib/types';
+import { WalletType, WalletWithFeatures, Feature, Wallet } from '@/lib/types';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Button } from '@/components/ui/button';
-import { EyeOff } from 'lucide-react';
+import { EyeOff, Github } from 'lucide-react';
 import { useVisibility } from '@/hooks/use-visibility-context';
 import { useLanguage } from '@/hooks/use-language';
+import { getGitHubRepo } from '@/lib/githubRepos';
 
 interface ComparisonTableProps {
   walletType: WalletType;
@@ -98,10 +99,15 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
    * 2. Add its style to "featureStatus.styles" if it needs special styling
    * 3. Add it to "featureStatus.icons" if it should display with an icon
    */
-  const renderFeatureStatus = (value: string, customText?: string, featureName?: string) => {
+  const renderFeatureStatus = (value: string, customText?: string, featureName?: string, wallet?: Wallet): JSX.Element => {
     // Special handling for platform values - display icons instead of text
     if (featureName === "Platform") {
       return renderPlatformIcons(value, customText);
+    }
+    
+    // Special handling for openSource="yes" to show GitHub links
+    if (featureName === "openSource" && value === "yes" && wallet) {
+      return renderGitHubLink(wallet.name);
     }
     
     // Normalize a string to create a valid translation key
@@ -222,10 +228,41 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
   };
   
   /**
+   * Render GitHub link for open source wallets
+   * Uses the githubRepos mapping to find the repository URL
+   */
+  const renderGitHubLink = (walletName: string): JSX.Element => {
+    const repoUrl = getGitHubRepo(walletName);
+    if (!repoUrl) {
+      // If no GitHub repo is found, just show a standard "Yes" value
+      return renderFeatureStatus('yes');
+    }
+    
+    // Get the translated label and title from the translation files
+    const label = t('featureStatus.values.yes_github.label', undefined, 'Yes (GitHub)');
+    const title = t('featureStatus.values.yes_github.title', undefined, 'Open source code available on GitHub');
+    
+    return (
+      <a 
+        href={repoUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-primary/10 hover:bg-primary/20 transition-colors"
+        title={title}
+      >
+        <span className="flex items-center text-xs font-medium text-primary gap-1">
+          <Github className="h-3.5 w-3.5" />
+          {label}
+        </span>
+      </a>
+    );
+  };
+  
+  /**
    * Render platform-specific icons
    * Maps platform values to corresponding icons
    */
-  const renderPlatformIcons = (value: string, customText?: string) => {
+  const renderPlatformIcons = (value: string, customText?: string): JSX.Element => {
     // Determine which value to use
     const platformValue = (value === 'custom' && customText) ? customText : value;
     
@@ -472,7 +509,7 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
                       return (
                         <td key={`${wallet.id}-${feature.id}`} className="px-6 py-4 whitespace-nowrap text-sm text-center">
                           {walletFeature 
-                            ? renderFeatureStatus(walletFeature.value, walletFeature.customText, feature.name) 
+                            ? renderFeatureStatus(walletFeature.value, walletFeature.customText, feature.name, wallet) 
                             : renderFeatureStatus('unknown')}
                         </td>
                       );
