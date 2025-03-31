@@ -59,32 +59,30 @@ const WalletComparisonResult = () => {
 
   // Render feature status based on value
   const renderFeatureStatus = (value: string, customText?: string, featureName?: string) => {
+    // Helper function to translate feature values
+    const translateValue = (val: string): string => {
+      // First try with features prefix
+      let translated = t(`features.${val}`);
+      
+      // If we got back the key itself, try the common prefix
+      if (translated === `features.${val}`) {
+        translated = t(`common.${val}`);
+      }
+      
+      // If still no translation found, return the original value
+      return translated === `common.${val}` ? val : translated;
+    };
+    
     // Handle platform feature specially (displays array values)
-    if (featureName?.toLowerCase() === 'platform' && value === 'custom' && customText) {
+    if ((featureName?.toLowerCase() === 'platform' || featureName?.toLowerCase() === 'plataforma') && 
+        value === 'custom' && customText) {
       const platforms = customText.split(',');
       return (
         <div className="flex flex-wrap gap-2 items-center">
           <div className="flex flex-wrap gap-1">
             {platforms.map((platform, index) => {
-              // Icon mapping for platforms
-              let displayText = '';
-              
-              switch (platform) {
-                case 'ios':
-                  displayText = 'iOS';
-                  break;
-                case 'android':
-                  displayText = 'Android';
-                  break;
-                case 'desktop':
-                  displayText = 'Desktop';
-                  break;
-                case 'web':
-                  displayText = 'Web';
-                  break;
-                default:
-                  displayText = platform;
-              }
+              // Translate platform values
+              const displayText = translateValue(platform.trim());
               
               return (
                 <span 
@@ -102,32 +100,55 @@ const WalletComparisonResult = () => {
     
     // Handle special value types with consistent styling (implementation types)
     if (['lnd', 'ldk', 'core_lightning', 'eclair'].includes(value)) {
+      const displayValue = translateValue(value);
+      
       return (
         <div className="flex items-center">
           <span className="px-2 py-1 text-xs font-medium rounded-md bg-blue-100 text-blue-600 mr-2">
             {value}
           </span>
-          <span className="text-foreground">{t(`features.${value}`) || value}</span>
+          <span className="text-foreground">{displayValue}</span>
         </div>
       );
     }
     
     // Handle wallet types
     if (['custodial', 'ln_node', 'liquid_swap', 'on_chain_swap', 'remote_node'].includes(value)) {
-      const displayMap: Record<string, string> = {
-        'custodial': t('features.custodial'),
-        'ln_node': t('features.ln_node'),
-        'liquid_swap': t('features.liquid_swap'),
-        'on_chain_swap': t('features.on_chain_swap'),
-        'remote_node': t('features.remote_node')
-      };
+      const displayValue = translateValue(value);
       
       return (
         <div className="flex items-center">
           <span className="px-2 py-1 text-xs font-medium rounded-md bg-purple-100 text-purple-600 mr-2">
             {value}
           </span>
-          <span className="text-foreground">{displayMap[value] || value}</span>
+          <span className="text-foreground">{displayValue}</span>
+        </div>
+      );
+    }
+    
+    // Handle common channel management custom values
+    if ((featureName === 'Channel Management' || featureName === 'Channel / Peer Management' || 
+         featureName === 'Gestión de Canales' || featureName === 'Gestión de Canales / Pares') && 
+        value === 'custom' && customText) {
+      let displayText = customText;
+      
+      // Translate common channel management custom values
+      if (customText === 'Automated') {
+        displayText = translateValue('automated');
+      } else if (customText === 'LSP Assisted') {
+        displayText = translateValue('lsp_assisted');
+      } else if (customText === 'Automatic') {
+        displayText = translateValue('automatic');
+      } else if (customText === 'Manual') {
+        displayText = translateValue('manual');
+      }
+      
+      return (
+        <div className="flex items-center">
+          <span className="px-2 py-1 text-xs font-medium rounded-md bg-orange-100 text-orange-600 mr-2">
+            {displayText}
+          </span>
+          <span className="text-foreground">{translateValue('custom')}</span>
         </div>
       );
     }
@@ -142,11 +163,13 @@ const WalletComparisonResult = () => {
                 <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
               </svg>
             </span>
-            <span className="text-foreground">{t('common.yes')}</span>
+            <span className="text-foreground">{translateValue('yes')}</span>
           </div>
         );
       case 'no':
       case 'not_possible':
+        const noDisplay = value === 'not_possible' ? translateValue('not_possible') : translateValue('no');
+        
         return (
           <div className="flex items-center">
             <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-destructive/20 mr-2">
@@ -154,53 +177,60 @@ const WalletComparisonResult = () => {
                 <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
             </span>
-            <span className="text-foreground">{t('common.no')}</span>
+            <span className="text-foreground">{noDisplay}</span>
           </div>
         );
       case 'partial':
       case 'optional':
+        const displayValue = translateValue(value);
+        const displayLetter = value === 'partial' ? 'P' : 'O';
+        
         return (
           <div className="flex items-center">
             <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-orange-500/20 mr-2">
-              <span className="text-xs font-medium text-orange-500">P</span>
+              <span className="text-xs font-medium text-orange-500">
+                {displayLetter}
+              </span>
             </span>
-            <span className="text-foreground">{t('common.partial')}</span>
+            <span className="text-foreground">{displayValue}</span>
           </div>
         );
       case 'custom':
+        const customDisplay = translateValue('custom');
+        
         return (
           <div className="flex items-center">
             <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-orange-500/20 mr-2">
               <span className="text-xs font-medium text-orange-500">C</span>
             </span>
-            <span className="text-foreground">{customText || t('common.custom')}</span>
+            <span className="text-foreground">{customText || customDisplay}</span>
           </div>
         );
       case 'send_only':
         return (
           <div className="flex items-center">
             <span className="px-2 py-1 text-xs font-medium rounded-md bg-amber-100 text-amber-600 mr-2">
-              {t('features.send')}
+              {translateValue('send')}
             </span>
-            <span className="text-foreground">{t('features.send_only')}</span>
+            <span className="text-foreground">{translateValue('send_only')}</span>
           </div>
         );
       case 'receive_only':
         return (
           <div className="flex items-center">
             <span className="px-2 py-1 text-xs font-medium rounded-md bg-amber-100 text-amber-600 mr-2">
-              {t('features.receive')}
+              {translateValue('receive')}
             </span>
-            <span className="text-foreground">{t('features.receive_only')}</span>
+            <span className="text-foreground">{translateValue('receive_only')}</span>
           </div>
         );
       case 'mandatory':
         return (
           <div className="flex items-center">
             <span className="px-2 py-1 text-xs font-medium rounded-md bg-orange-100 text-orange-600 mr-2">
-              {t('features.required')}
+              {translateValue('required')}
             </span>
-            <span className="text-foreground">{t('features.mandatory')}</span>
+            <span className="text-foreground">{translateValue('mandatory')}</span>
           </div>
         );
       default:
@@ -209,7 +239,7 @@ const WalletComparisonResult = () => {
             <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-muted mr-2">
               <span className="text-xs font-medium text-muted-foreground">?</span>
             </span>
-            <span className="text-foreground">{t('common.unknown')}</span>
+            <span className="text-foreground">{translateValue('unknown')}</span>
           </div>
         );
     }

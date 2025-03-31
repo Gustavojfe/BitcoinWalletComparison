@@ -158,7 +158,12 @@
     "web": "Web",
     "send": "Enviar",
     "receive": "Recibir",
-    "required": "Requerido"
+    "required": "Requerido",
+    "automated": "Automatizado",
+    "automatic": "Automático",
+    "manual": "Manual",
+    "lsp_assisted": "Asistido por LSP",
+    "unknown": "Desconocido"
   },
   "comingSoon": {
     "title": "Próximamente",

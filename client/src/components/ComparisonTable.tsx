@@ -89,23 +89,35 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
 
   // Render feature status based on value
   const renderFeatureStatus = (value: string, customText?: string, featureName?: string) => {
+    // Translate feature value using the translation function
+    const translateValue = (val: string): string => {
+      // First try with features prefix
+      let translated = t(`features.${val}`);
+      
+      // If we got back the key itself, try the common prefix
+      if (translated === `features.${val}`) {
+        translated = t(`common.${val}`);
+      }
+      
+      // If still no translation found, return the original value
+      return translated === `common.${val}` ? val : translated;
+    };
+    
     // Handle Channel Management feature which might have custom values
-    if (featureName === 'Channel Management' || featureName === 'Gestión de Canales') {
-      // Handle translations for custom channel management values
+    if (featureName === 'Channel Management' || featureName === 'Channel / Peer Management' || 
+        featureName === 'Gestión de Canales' || featureName === 'Gestión de Canales / Pares') {
       if (value === 'custom' && customText) {
         let displayText = customText;
         
-        // Translate channel management custom values to Spanish
-        if (language === 'es') {
-          if (customText === 'Automated') {
-            displayText = 'Automatizado';
-          } else if (customText === 'LSP Assisted') {
-            displayText = 'Asistido por LSP';
-          } else if (customText === 'Automatic') {
-            displayText = 'Automático';
-          } else if (customText === 'Manual') {
-            displayText = 'Manual';
-          }
+        // Translate common channel management custom values
+        if (customText === 'Automated') {
+          displayText = language === 'es' ? 'Automatizado' : 'Automated';
+        } else if (customText === 'LSP Assisted') {
+          displayText = language === 'es' ? 'Asistido por LSP' : 'LSP Assisted';
+        } else if (customText === 'Automatic') {
+          displayText = language === 'es' ? 'Automático' : 'Automatic';
+        } else if (customText === 'Manual') {
+          displayText = language === 'es' ? 'Manual' : 'Manual';
         }
         
         return (
@@ -122,30 +134,19 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
     }
     
     // Handle platform feature specially (displays array values)
-    if (featureName?.toLowerCase() === 'platform' && value === 'custom' && customText) {
+    if ((featureName?.toLowerCase() === 'platform' || featureName?.toLowerCase() === 'plataforma') && 
+        value === 'custom' && customText) {
       const platforms = customText.split(',');
       return (
         <div className="flex flex-wrap gap-1 justify-center">
           {platforms.map((platform, index) => {
-            // Handle translations directly based on language
-            let displayPlatform: string;
-            
-            if (language === 'es') {
-              displayPlatform = platform === 'ios' ? 'iOS' : 
-                              platform === 'android' ? 'Android' : 
-                              platform === 'desktop' ? 'Escritorio' : 
-                              platform === 'web' ? 'Web' : platform;
-            } else {
-              displayPlatform = platform === 'ios' ? 'iOS' : 
-                              platform === 'android' ? 'Android' : 
-                              platform === 'desktop' ? 'Desktop' : 
-                              platform === 'web' ? 'Web' : platform;
-            }
+            // Translate platform values
+            let displayPlatform = translateValue(platform.trim());
             
             // Icon mapping for platforms 
             let textColor = '';
             
-            switch (platform) {
+            switch (platform.trim()) {
               case 'ios':
                 textColor = 'text-blue-500';
                 break;
@@ -176,22 +177,9 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
       );
     }
     
-    // Handle special value types with consistent styling
+    // Handle implementation value types with consistent styling
     if (['lnd', 'ldk', 'core_lightning', 'eclair'].includes(value)) {
-      // Handle translations directly based on language
-      let displayValue: string;
-      
-      if (language === 'es') {
-        displayValue = value === 'lnd' ? 'LND' :
-                     value === 'ldk' ? 'LDK' :
-                     value === 'core_lightning' ? 'Core Lightning' :
-                     value === 'eclair' ? 'Eclair' : value;
-      } else {
-        displayValue = value === 'lnd' ? 'LND' :
-                     value === 'ldk' ? 'LDK' :
-                     value === 'core_lightning' ? 'Core Lightning' :
-                     value === 'eclair' ? 'Eclair' : value;
-      }
+      const displayValue = translateValue(value);
       
       return (
         <span 
@@ -203,24 +191,9 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
       );
     }
     
-    // Handle wallet types
+    // Handle wallet category/types
     if (['custodial', 'ln_node', 'liquid_swap', 'on_chain_swap', 'remote_node'].includes(value)) {
-      // Handle translations directly based on language
-      let displayValue: string;
-      
-      if (language === 'es') {
-        displayValue = value === 'custodial' ? 'Custodial' : 
-                     value === 'ln_node' ? 'Nodo LN' : 
-                     value === 'liquid_swap' ? 'Intercambio Liquid' : 
-                     value === 'on_chain_swap' ? 'Intercambio On-Chain' : 
-                     value === 'remote_node' ? 'Nodo Remoto' : value;
-      } else {
-        displayValue = value === 'custodial' ? 'Custodial' : 
-                     value === 'ln_node' ? 'LN Node' : 
-                     value === 'liquid_swap' ? 'Liquid Swap' : 
-                     value === 'on_chain_swap' ? 'On-Chain Swap' : 
-                     value === 'remote_node' ? 'Remote Node' : value;
-      }
+      const displayValue = translateValue(value);
       
       return (
         <span 
@@ -235,8 +208,7 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
     // Handle regular values with icons
     switch (value) {
       case 'yes':
-        // Handle translations directly based on language
-        let yesTitle = language === 'es' ? 'Característica completamente soportada' : 'Feature fully supported';
+        const yesTitle = t('help.supportedFull');
         
         return (
           <span 
@@ -250,10 +222,7 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
         );
       case 'no':
       case 'not_possible':
-        // Handle translations directly based on language
-        let noTitle = language === 'es' ? 
-                    (value === 'not_possible' ? 'No es posible' : 'No') : 
-                    (value === 'not_possible' ? 'Not possible' : 'No');
+        const noTitle = value === 'not_possible' ? translateValue('not_possible') : t('help.supportedNone');
         
         return (
           <span 
@@ -267,27 +236,8 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
         );
       case 'partial':
       case 'optional':
-        // Handle translations directly based on language
-        let titleText = '';
-        let displayLetter = '';
-        
-        if (language === 'es') {
-          if (value === 'partial') {
-            titleText = 'Parcial';
-            displayLetter = 'P';
-          } else {
-            titleText = 'Opcional';
-            displayLetter = 'O';
-          }
-        } else {
-          if (value === 'partial') {
-            titleText = 'Partial';
-            displayLetter = 'P';
-          } else {
-            titleText = 'Optional';
-            displayLetter = 'O';
-          }
-        }
+        const titleText = translateValue(value);
+        const displayLetter = value === 'partial' ? 'P' : 'O';
         
         return (
           <span 
@@ -300,11 +250,8 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
           </span>
         );
       case 'custom':
-        // Handle translations directly based on language
-        let customDisplay = language === 'es' ? 'Personalizado' : 'Custom';
-        let customTitle = language === 'es' ? 
-            (customText || 'La característica tiene implementación especial o limitaciones') : 
-            (customText || 'Feature has special implementation or limitations');
+        const customDisplay = translateValue('custom');
+        const customTitle = customText || t('help.supportedCustom');
         
         return (
           <span 
@@ -317,9 +264,8 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
           </span>
         );
       case 'send_only':
-        // Handle translations directly based on language
-        let sendOnlyTitle = language === 'es' ? 'Solo envío' : 'Send only';
-        let sendDisplay = language === 'es' ? 'Enviar' : 'Send';
+        const sendOnlyTitle = translateValue('send_only');
+        const sendDisplay = translateValue('send');
         
         return (
           <span 
@@ -332,9 +278,8 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
           </span>
         );
       case 'receive_only':
-        // Handle translations directly based on language
-        let receiveOnlyTitle = language === 'es' ? 'Solo recepción' : 'Receive only';
-        let receiveDisplay = language === 'es' ? 'Recibir' : 'Receive';
+        const receiveOnlyTitle = translateValue('receive_only');
+        const receiveDisplay = translateValue('receive');
         
         return (
           <span 
@@ -347,9 +292,8 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
           </span>
         );
       case 'mandatory':
-        // Handle translations directly based on language
-        let mandatoryTitle = language === 'es' ? 'Obligatorio' : 'Mandatory';
-        let requiredDisplay = language === 'es' ? 'Requerido' : 'Required';
+        const mandatoryTitle = translateValue('mandatory');
+        const requiredDisplay = translateValue('required');
         
         return (
           <span 
@@ -362,8 +306,7 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
           </span>
         );
       default:
-        // Handle translations directly based on language
-        let unknownTitle = language === 'es' ? 'Desconocido' : 'Unknown';
+        const unknownTitle = translateValue('unknown');
         
         return (
           <span 
