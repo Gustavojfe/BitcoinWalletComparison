@@ -99,6 +99,11 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
    * 3. Add it to "featureStatus.icons" if it should display with an icon
    */
   const renderFeatureStatus = (value: string, customText?: string, featureName?: string) => {
+    // Special handling for platform values - display icons instead of text
+    if (featureName === "Platform") {
+      return renderPlatformIcons(value, customText);
+    }
+    
     // Normalize a string to create a valid translation key
     // e.g., "Yes (GitHub)" -> "yes_github" 
     const normalizeKey = (key: string): string => {
@@ -213,6 +218,92 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
           {label}
         </span>
       </span>
+    );
+  };
+  
+  /**
+   * Render platform-specific icons
+   * Maps platform values to corresponding icons
+   */
+  const renderPlatformIcons = (value: string, customText?: string) => {
+    // Determine which value to use
+    const platformValue = (value === 'custom' && customText) ? customText : value;
+    
+    // Split platforms if there are multiple separated by commas
+    const platforms = platformValue.split(',').map(p => p.trim().toLowerCase());
+    
+    return (
+      <div className="flex flex-wrap gap-1" title={platformValue}>
+        {platforms.map((platform, index) => {
+          // Return the appropriate icon based on the platform
+          if (platform === 'web') {
+            return (
+              <span key={index} className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-blue-100" title="Web">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+              </span>
+            );
+          } else if (platform === 'android') {
+            return (
+              <span key={index} className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-green-100" title="Android">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 16V8a7 7 0 0 1 14 0v8"></path>
+                  <path d="M9 16v4"></path>
+                  <path d="M15 16v4"></path>
+                  <path d="M5 9h14"></path>
+                </svg>
+              </span>
+            );
+          } else if (platform === 'ios') {
+            return (
+              <span key={index} className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-gray-100" title="iOS">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 19a4 4 0 0 0 4-4"></path>
+                  <path d="M15 7a4 4 0 0 0-4 4"></path>
+                  <path d="M8 12h8"></path>
+                  <path d="M12 8v8"></path>
+                  <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                </svg>
+              </span>
+            );
+          } else if (platform === 'desktop') {
+            return (
+              <span key={index} className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-purple-100" title="Desktop">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-purple-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+              </span>
+            );
+          } else if (platform === 'chrome' || platform === 'chrome extension') {
+            return (
+              <span key={index} className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-yellow-100" title="Chrome Extension">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-yellow-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <line x1="21.17" y1="8" x2="12" y2="8"></line>
+                  <line x1="3.95" y1="6.06" x2="8.54" y2="14"></line>
+                  <line x1="10.88" y1="21.94" x2="15.46" y2="14"></line>
+                </svg>
+              </span>
+            );
+          } else {
+            // Default for any other platforms
+            return (
+              <span key={index} className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-gray-100" title={platform}>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+              </span>
+            );
+          }
+        })}
+      </div>
     );
   };
 
