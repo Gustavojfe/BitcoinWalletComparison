@@ -621,6 +621,22 @@
       "chrome_extension": { 
         "label": "Extensión de Chrome", 
         "title": "Plataforma de Extensión de Chrome" 
+      },
+      "yes_with_remote_core_ln": {
+        "label": "Sí (con Core LN remoto)",
+        "title": "Sí, con Nodo Core Lightning remoto"
+      },
+      "12_hours": {
+        "label": "12 horas",
+        "title": "Duración de 12 horas"
+      },
+      "us_and_canada_blocktank_lsp_restricted": {
+        "label": "Restringido en EE.UU. y Canadá para BlockTank LSP",
+        "title": "Restringido en EE.UU. y Canadá para BlockTank LSP"
+      },
+      "android_ios_chrome_extension": {
+        "label": "Android, iOS, Extensión de Chrome",
+        "title": "Disponible en Android, iOS y como Extensión de Chrome"
       }
     },
     "icons": {
