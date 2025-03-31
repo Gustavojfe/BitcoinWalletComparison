@@ -613,6 +613,86 @@
       "android_ios_chrome_extension": {
         "label": "Android, iOS, Chrome Extension",
         "title": "Available on Android, iOS, and as Chrome Extension"
+      },
+      "unrestricted": {
+        "label": "Unrestricted",
+        "title": "Unrestricted access or availability"
+      },
+      "liquid_on_chain_wallet_with_submarine_and_reverse_swaps_boltz": {
+        "label": "Liquid / On-Chain Wallet with Submarine and Reverse Swaps (Boltz)",
+        "title": "Liquid and On-Chain wallet supporting submarine and reverse swaps via Boltz"
+      },
+      "on_chain_wallet": {
+        "label": "On-Chain Wallet",
+        "title": "On-Chain wallet"
+      },
+      "l1_l2_ln_node": {
+        "label": "L1/L2 (LN Node)",
+        "title": "Layer 1 and Layer 2 wallet with Lightning Network Node"
+      },
+      "lsp_managed": {
+        "label": "LSP Managed",
+        "title": "Managed by Lightning Service Provider"
+      },
+      "hybrid_liquid_l2_wallet_full_breez_sdk": {
+        "label": "Hybrid Liquid / L2 Wallet (Full Breez SDK)",
+        "title": "Hybrid Liquid and Layer 2 wallet using full Breez SDK"
+      },
+      "dunder_lsp_custom": {
+        "label": "Dunder LSP (Custom)",
+        "title": "Custom Dunder Lightning Service Provider"
+      },
+      "yes_for_bolt11": {
+        "label": "Yes for BOLT11",
+        "title": "Supports BOLT11 invoices"
+      },
+      "l2_wallet_ln_node": {
+        "label": "L2 Wallet (LN Node)",
+        "title": "Layer 2 wallet with Lightning Network Node"
+      },
+      "yes_for_bolt12": {
+        "label": "Yes for BOLT12",
+        "title": "Supports BOLT12 invoices"
+      },
+      "web_self_host": {
+        "label": "Web (Self-Host)",
+        "title": "Web-based self-hosted implementation"
+      },
+      "unrestricted_self_hosted": {
+        "label": "Unrestricted (Self-Hosted)",
+        "title": "Unrestricted access with self-hosted implementation"
+      },
+      "l1_l2_ui_for_multiple_nodes": {
+        "label": "L1/ L2 (UI for multiple nodes)",
+        "title": "Layer 1 and Layer 2 wallet with UI for multiple nodes"
+      },
+      "local_backup": {
+        "label": "Local Backup",
+        "title": "Local backup of wallet data"
+      },
+      "yes_1_week_default": {
+        "label": "Yes, 1 week default",
+        "title": "Yes, with 1 week default duration"
+      },
+      "liquidity_ads_cln": {
+        "label": "Liquidity Ads (CLN)",
+        "title": "Liquidity Ads for Core Lightning"
+      },
+      "yes_for_bolt12_cln": {
+        "label": "Yes for BOLT12 (CLN)",
+        "title": "Supports BOLT12 invoices with Core Lightning"
+      },
+      "restricted_in_us_and_others": {
+        "label": "Restricted in US and others",
+        "title": "Restricted in the US and other regions"
+      },
+      "l1_l2_ln_node_or_ui_for_multiple_nodes": {
+        "label": "L1/L2 (LN Node) or UI for multiple nodes",
+        "title": "Layer 1 and Layer 2 wallet with Lightning Network Node or UI for multiple nodes"
+      },
+      "lsp_managed_if_not_remote": {
+        "label": "LSP Managed (if not remote)",
+        "title": "Managed by Lightning Service Provider if not remote"
       }
     },
     "icons": {

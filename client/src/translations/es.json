@@ -637,6 +637,86 @@
       "android_ios_chrome_extension": {
         "label": "Android, iOS, Extensión de Chrome",
         "title": "Disponible en Android, iOS y como Extensión de Chrome"
+      },
+      "unrestricted": {
+        "label": "Sin Restricciones",
+        "title": "Acceso o disponibilidad sin restricciones"
+      },
+      "liquid_on_chain_wallet_with_submarine_and_reverse_swaps_boltz": {
+        "label": "Cartera Liquid / On-Chain con Intercambios Submarinos e Inversos (Boltz)",
+        "title": "Cartera Liquid y On-Chain que soporta intercambios submarinos e inversos vía Boltz"
+      },
+      "on_chain_wallet": {
+        "label": "Cartera On-Chain",
+        "title": "Cartera On-Chain"
+      },
+      "l1_l2_ln_node": {
+        "label": "L1/L2 (Nodo LN)",
+        "title": "Cartera de Capa 1 y Capa 2 con Nodo de Lightning Network"
+      },
+      "lsp_managed": {
+        "label": "Gestionado por PSL",
+        "title": "Gestionado por Proveedor de Servicios Lightning"
+      },
+      "hybrid_liquid_l2_wallet_full_breez_sdk": {
+        "label": "Cartera Híbrida Liquid / L2 (SDK Breez Completo)",
+        "title": "Cartera híbrida Liquid y Capa 2 usando el SDK Breez completo"
+      },
+      "dunder_lsp_custom": {
+        "label": "PSL Dunder (Personalizado)",
+        "title": "Proveedor de Servicios Lightning Dunder personalizado"
+      },
+      "yes_for_bolt11": {
+        "label": "Sí para BOLT11",
+        "title": "Soporta facturas BOLT11"
+      },
+      "l2_wallet_ln_node": {
+        "label": "Cartera L2 (Nodo LN)",
+        "title": "Cartera de Capa 2 con Nodo de Lightning Network"
+      },
+      "yes_for_bolt12": {
+        "label": "Sí para BOLT12",
+        "title": "Soporta facturas BOLT12"
+      },
+      "web_self_host": {
+        "label": "Web (Autoalojado)",
+        "title": "Implementación web autoalojada"
+      },
+      "unrestricted_self_hosted": {
+        "label": "Sin Restricciones (Autoalojado)",
+        "title": "Acceso sin restricciones con implementación autoalojada"
+      },
+      "l1_l2_ui_for_multiple_nodes": {
+        "label": "L1/ L2 (UI para múltiples nodos)",
+        "title": "Cartera de Capa 1 y Capa 2 con UI para múltiples nodos"
+      },
+      "local_backup": {
+        "label": "Respaldo Local",
+        "title": "Respaldo local de datos de la cartera"
+      },
+      "yes_1_week_default": {
+        "label": "Sí, 1 semana por defecto",
+        "title": "Sí, con duración predeterminada de 1 semana"
+      },
+      "liquidity_ads_cln": {
+        "label": "Anuncios de Liquidez (CLN)",
+        "title": "Anuncios de Liquidez para Core Lightning"
+      },
+      "yes_for_bolt12_cln": {
+        "label": "Sí para BOLT12 (CLN)",
+        "title": "Soporta facturas BOLT12 con Core Lightning"
+      },
+      "restricted_in_us_and_others": {
+        "label": "Restringido en EE.UU. y otros",
+        "title": "Restringido en EE.UU. y otras regiones"
+      },
+      "l1_l2_ln_node_or_ui_for_multiple_nodes": {
+        "label": "L1/L2 (Nodo LN) o UI para múltiples nodos",
+        "title": "Cartera de Capa 1 y Capa 2 con Nodo de Lightning Network o UI para múltiples nodos"
+      },
+      "lsp_managed_if_not_remote": {
+        "label": "Gestionado por PSL (si no es remoto)",
+        "title": "Gestionado por Proveedor de Servicios Lightning si no es remoto"
       }
     },
     "icons": {
