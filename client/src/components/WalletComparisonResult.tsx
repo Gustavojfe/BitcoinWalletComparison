@@ -8,7 +8,7 @@ import { useLanguage } from '@/hooks/use-language';
 const WalletComparisonResult = () => {
   const { wallet1: wallet1Id, wallet2: wallet2Id } = useParams();
   const [, navigate] = useLocation();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   // Fetch wallets with features
   const { data: walletsWithFeatures, isLoading: isWalletsLoading } = useQuery({
@@ -59,35 +59,66 @@ const WalletComparisonResult = () => {
 
   // Render feature status based on value
   const renderFeatureStatus = (value: string, customText?: string, featureName?: string) => {
-    // Helper function to translate feature values
+    // Helper function to translate feature values using direct dictionary
     const translateValue = (val: string): string => {
       if (!val) return '';
       
-      // Normalize the value by replacing spaces with underscores and converting to lowercase
+      // Direct translations for common values
+      const translations: Record<string, Record<string, string>> = {
+        en: {
+          'yes': 'Yes',
+          'no': 'No',
+          'partial': 'Partial',
+          'optional': 'Optional',
+          'custom': 'Custom',
+          'send_only': 'Send only',
+          'receive_only': 'Receive only',
+          'send': 'Send',
+          'receive': 'Receive',
+          'mandatory': 'Mandatory',
+          'required': 'Required',
+          'not_possible': 'Not possible',
+          'unknown': 'Unknown',
+          'automated': 'Automated',
+          'automatic': 'Automatic',
+          'manual': 'Manual',
+          'lsp_assisted': 'LSP Assisted',
+          'ios': 'iOS',
+          'android': 'Android',
+          'desktop': 'Desktop',
+          'web': 'Web'
+        },
+        es: {
+          'yes': 'Sí',
+          'no': 'No',
+          'partial': 'Parcial',
+          'optional': 'Opcional',
+          'custom': 'Personalizado',
+          'send_only': 'Solo envío',
+          'receive_only': 'Solo recepción',
+          'send': 'Enviar',
+          'receive': 'Recibir',
+          'mandatory': 'Obligatorio',
+          'required': 'Requerido',
+          'not_possible': 'No es posible',
+          'unknown': 'Desconocido',
+          'automated': 'Automatizado',
+          'automatic': 'Automático',
+          'manual': 'Manual',
+          'lsp_assisted': 'Asistido por LSP',
+          'ios': 'iOS',
+          'android': 'Android',
+          'desktop': 'Escritorio',
+          'web': 'Web'
+        }
+      };
+      
+      // Normalize the value
       const normalizedVal = val.trim().toLowerCase().replace(/\s+/g, '_');
       
-      // Directly check common terms first as they are most reliable
-      const commonTranslation = t(`common.${normalizedVal}`);
-      console.log(`Result - Looking up common.${normalizedVal}: "${commonTranslation}"`);
-      
-      // If this isn't a key path (meaning we got a real translation), return it
-      if (commonTranslation && !commonTranslation.includes(`.${normalizedVal}`)) {
-        return commonTranslation;
-      }
-      
-      // Then try with features prefix
-      let featureTranslation = t(`features.${normalizedVal}`);
-      console.log(`Result - Looking up features.${normalizedVal}: "${featureTranslation}"`);
-      
-      // If we got a valid translation, use it
-      if (featureTranslation && !featureTranslation.includes(`.${normalizedVal}`)) {
-        return featureTranslation;
-      }
-      
-      // If still no translation found, return the original value with first letter capitalized
-      const capitalized = val.charAt(0).toUpperCase() + val.slice(1);
-      console.log(`Result - No translation found for ${val}, returning: ${capitalized}`);
-      return capitalized;
+      // Return translation or capitalized original value
+      const currentLang = language as 'en' | 'es';
+      return translations[currentLang]?.[normalizedVal] || val.charAt(0).toUpperCase() + val.slice(1);
     };
     
     // Handle platform feature specially (displays array values)
@@ -147,7 +178,7 @@ const WalletComparisonResult = () => {
     if ((featureName === 'Channel Management' || featureName === 'Channel / Peer Management' || 
          featureName === 'Gestión de Canales' || featureName === 'Gestión de Canales / Pares') && 
         value === 'custom' && customText) {
-      let displayText = customText;
+      let displayText = '';
       
       // Translate common channel management custom values
       if (customText === 'Automated') {
@@ -158,6 +189,8 @@ const WalletComparisonResult = () => {
         displayText = translateValue('automatic');
       } else if (customText === 'Manual') {
         displayText = translateValue('manual');
+      } else {
+        displayText = customText;
       }
       
       return (
@@ -185,7 +218,7 @@ const WalletComparisonResult = () => {
         );
       case 'no':
       case 'not_possible':
-        const noDisplay = value === 'not_possible' ? translateValue('not_possible') : translateValue('no');
+        const noDisplay = translateValue(value);
         
         return (
           <div className="flex items-center">
