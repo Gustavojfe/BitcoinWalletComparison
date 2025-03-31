@@ -66,20 +66,28 @@ const WalletComparisonResult = () => {
       // Normalize the value by replacing spaces with underscores and converting to lowercase
       const normalizedVal = val.trim().toLowerCase().replace(/\s+/g, '_');
       
-      // First try with features prefix
-      let translated = t(`features.${normalizedVal}`);
+      // Directly check common terms first as they are most reliable
+      const commonTranslation = t(`common.${normalizedVal}`);
+      console.log(`Result - Looking up common.${normalizedVal}: "${commonTranslation}"`);
       
-      // If we got back the key itself, try the common prefix
-      if (translated === `features.${normalizedVal}`) {
-        translated = t(`common.${normalizedVal}`);
+      // If this isn't a key path (meaning we got a real translation), return it
+      if (commonTranslation && !commonTranslation.includes(`.${normalizedVal}`)) {
+        return commonTranslation;
+      }
+      
+      // Then try with features prefix
+      let featureTranslation = t(`features.${normalizedVal}`);
+      console.log(`Result - Looking up features.${normalizedVal}: "${featureTranslation}"`);
+      
+      // If we got a valid translation, use it
+      if (featureTranslation && !featureTranslation.includes(`.${normalizedVal}`)) {
+        return featureTranslation;
       }
       
       // If still no translation found, return the original value with first letter capitalized
-      if (translated === `common.${normalizedVal}`) {
-        return val.charAt(0).toUpperCase() + val.slice(1);
-      }
-      
-      return translated;
+      const capitalized = val.charAt(0).toUpperCase() + val.slice(1);
+      console.log(`Result - No translation found for ${val}, returning: ${capitalized}`);
+      return capitalized;
     };
     
     // Handle platform feature specially (displays array values)
