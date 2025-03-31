@@ -239,7 +239,7 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
     }
     
     // Get the translated label and title from the translation files
-    const label = t('featureStatus.values.yes_github.label', undefined, 'Yes (GitHub)');
+    const label = t('featureStatus.values.yes_github.label', undefined, 'Yes');
     const title = t('featureStatus.values.yes_github.title', undefined, 'Open source code available on GitHub');
     
     return (

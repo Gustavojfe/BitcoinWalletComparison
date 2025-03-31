@@ -175,7 +175,7 @@
         "title": "Feature fully supported"
       },
       "yes_github": {
-        "label": "Yes (GitHub)",
+        "label": "Yes",
         "title": "Open source code available on GitHub"
       },
       "no": {
@@ -283,7 +283,7 @@
         "title": "Available on Web"
       },
       "yes_github": {
-        "label": "Yes (GitHub)",
+        "label": "Yes",
         "title": "Feature is open source with code available on GitHub"
       },
       "no_github": {
@@ -411,7 +411,7 @@
         "title": "1-hour duration" 
       },
       "yes_github": {
-        "label": "Yes (GitHub)",
+        "label": "Yes",
         "title": "Yes, via GitHub"
       },
       "p2tr_p2wpkh": {
