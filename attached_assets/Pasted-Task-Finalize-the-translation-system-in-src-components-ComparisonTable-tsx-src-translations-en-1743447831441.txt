@@ -1,0 +1,96 @@
+Task: Finalize the translation system in ./src/components/ComparisonTable.tsx, ./src/translations/en.json, and ./src/translations/es.json to ensure all feature values from the provided CSV data display correctly in Spanish on the Spanish page, while preserving icon rendering for "Yes", "No", "Partial", and "Optional". The agent has made the following fixes:
+
+Updated normalizeKey in ./src/components/ComparisonTable.tsx to handle variations in input values.
+Added key variations to es.json for common problematic values (e.g., "Yes (GitHub)", "P2TR, P2WPKH").
+Added 30+ missing translations to en.json and es.json, including "Dynamic (LN)", "SegWit bech32", "User-Managed", etc.
+However, some values (e.g., "Yes, Over 999$/day", "Yes, In USA", "999$ MAX with default LSP", "Yes, dynamic swap fee") remain untranslated because they are missing from es.json. Additionally, the agent claimed to have removed the special case for comma-separated values in renderFeatureStatus, but it’s still present, breaking uniformity.
+
+Context:
+
+Files to modify:
+./src/components/ComparisonTable.tsx: Contains renderFeatureStatus.
+./src/translations/en.json and ./src/translations/es.json: Translation files.
+CSV data includes values like "Yes, Over 999$/day", "Yes, In USA", "999$ MAX with default LSP", "Yes, dynamic swap fee", etc.
+Issues:
+Missing translations in es.json for values like "Yes, Over 999$/day", "Yes, In USA", etc.
+The special case for comma-separated values (if (customText && customText.includes(','))) in renderFeatureStatus is still present, despite the agent’s claim.
+Deployment: <html lang="es"> confirms language = 'es', and many values are now translating, but some remain in English.
+Requirements:
+
+Remove Comma-Separated Special Case:
+Remove the if (customText && customText.includes(',')) block in renderFeatureStatus in ./src/components/ComparisonTable.tsx.
+Use a single rendering logic for all values, rendering them as single pills with bgClass and textClass.
+Complete Translation Files:
+Add the remaining untranslated CSV values to featureStatus.values in ./src/translations/en.json and ./src/translations/es.json, including "yes_over_999day", "yes_in_usa", "999_max_with_default_lsp", "yes_dynamic_swap_fee", etc.
+Ensure existing entries (e.g., "yes_github") remain intact.
+Preserve UI:
+Keep checkmark for "Yes", X for "No", and text for "Partial"/"Optional".
+Apply styles from featureStatus.styles.
+Output:
+
+Updated ./src/components/ComparisonTable.tsx with the special case removed.
+Updated ./src/translations/en.json and ./src/translations/es.json with all remaining CSV values.
+Brief explanation and instructions for adding new translations.
+Instructions:
+
+In ./src/components/ComparisonTable.tsx, remove the if (customText && customText.includes(',')) block in renderFeatureStatus, ensuring all values use the generic rendering logic (render as a single pill with bgClass and textClass).
+Add the following missing values to featureStatus.values in both en.json and es.json:
+json
+
+Collapse
+
+Wrap
+
+Copy
+// en.json
+"featureStatus": {
+  "values": {
+    "yes_over_999day": { "label": "Yes, Over 999$/day", "title": "Yes, over 999 dollars per day" },
+    "yes_in_usa": { "label": "Yes, In USA", "title": "Yes, in the USA" },
+    "999_max_with_default_lsp": { "label": "999$ MAX with default LSP", "title": "Maximum of 999 dollars with default Lightning Service Provider" },
+    "yes_dynamic_swap_fee": { "label": "Yes, dynamic swap fee", "title": "Yes, with dynamic swap fee" },
+    "yes_boltz_swap": { "label": "Yes (+ Boltz Swap)", "title": "Yes, with Boltz Swap" },
+    "boltz_reverse_swap": { "label": "Boltz (Reverse Swap)", "title": "Boltz with reverse swap" },
+    "yes_non_custodial_ln_addresses_zaplocker_using_hodl_invoices": { "label": "Yes (Non-Custodial LN Addresses) Zaplocker using HODL invoices", "title": "Yes, non-custodial Lightning Network addresses using Zaplocker with HODL invoices" },
+    "yes_full_control": { "label": "Yes, full control", "title": "Yes, with full control" },
+    "yes_7_default_30_or_60_days": { "label": "Yes, 7 (default), 30 or 60 days", "title": "Yes, 7 days by default, 30 or 60 days" },
+    "via_swap_in_potentiam": { "label": "Via Swap-in Potentiam", "title": "Via Swap-in Potentiam" },
+    "opens_channel": { "label": "Opens Channel", "title": "Opens a channel" },
+    "yes_dynamic_provider_fees": { "label": "Yes, dynamic provider fees", "title": "Yes, with dynamic provider fees" },
+    "yes_full_1_hour_default": { "label": "Yes, full. 1 hour default", "title": "Yes, full with 1 hour default duration" },
+    "10_minutes": { "label": "10 minutes", "title": "10-minute duration" },
+    "15_minutes": { "label": "15 minutes", "title": "15-minute duration" },
+    "2_hours": { "label": "2 hours", "title": "2-hour duration" },
+    "48_hours": { "label": "48 hours", "title": "48-hour duration" },
+    "chrome_extension": { "label": "Chrome Extension", "title": "Chrome Extension platform" }
+  }
+  // ... rest unchanged ...
+}
+
+// es.json
+"featureStatus": {
+  "values": {
+    "yes_over_999day": { "label": "Sí, Más de 999$/día", "title": "Sí, más de 999 dólares por día" },
+    "yes_in_usa": { "label": "Sí, En EE.UU.", "title": "Sí, en los EE.UU." },
+    "999_max_with_default_lsp": { "label": "999$ MÁX con PSL predeterminado", "title": "Máximo de 999 dólares con Proveedor de Servicios Lightning predeterminado" },
+    "yes_dynamic_swap_fee": { "label": "Sí, tarifa de intercambio dinámica", "title": "Sí, con tarifa de intercambio dinámica" },
+    "yes_boltz_swap": { "label": "Sí (+ Intercambio Boltz)", "title": "Sí, con Intercambio Boltz" },
+    "boltz_reverse_swap": { "label": "Boltz (Intercambio Inverso)", "title": "Boltz con intercambio inverso" },
+    "yes_non_custodial_ln_addresses_zaplocker_using_hodl_invoices": { "label": "Sí (Direcciones LN No Custodiales) Zaplocker usando facturas HODL", "title": "Sí, direcciones de Lightning Network no custodiales usando Zaplocker con facturas HODL" },
+    "yes_full_control": { "label": "Sí, control total", "title": "Sí, con control total" },
+    "yes_7_default_30_or_60_days": { "label": "Sí, 7 (predeterminado), 30 o 60 días", "title": "Sí, 7 días por defecto, 30 o 60 días" },
+    "via_swap_in_potentiam": { "label": "A través de Swap-in Potentiam", "title": "A través de Swap-in Potentiam" },
+    "opens_channel": { "label": "Abre Canal", "title": "Abre un canal" },
+    "yes_dynamic_provider_fees": { "label": "Sí, tarifas dinámicas del proveedor", "title": "Sí, con tarifas dinámicas del proveedor" },
+    "yes_full_1_hour_default": { "label": "Sí, completo. 1 hora por defecto", "title": "Sí, completo con duración predeterminada de 1 hora" },
+    "10_minutes": { "label": "10 minutos", "title": "Duración de 10 minutos" },
+    "15_minutes": { "label": "15 minutos", "title": "Duración de 15 minutos" },
+    "2_hours": { "label": "2 horas", "title": "Duración de 2 horas" },
+    "48_hours": { "label": "48 horas", "title": "Duración de 48 horas" },
+    "chrome_extension": { "label": "Extensión de Chrome", "title": "Plataforma de Extensión de Chrome" }
+  }
+  // ... rest unchanged ...
+}
+Test with language = 'es': "Yes, Over 999$/day" should display "Sí, Más de 999$/día", "Yes, In USA" should display "Sí, En EE.UU.", "P2TR, P2WPKH" should render as a single pill, etc.
+Date: March 30, 2025.
+Please proceed and provide the updated files and explanation.

@@ -549,6 +549,78 @@
       "olympus_lsp_custom": {
         "label": "Olympus PSL (Personalizado)",
         "title": "Usa Proveedor de Servicios Lightning Olympus personalizado"
+      },
+      "yes_over_999day": { 
+        "label": "Sí, Más de 999$/día", 
+        "title": "Sí, más de 999 dólares por día" 
+      },
+      "yes_in_usa": { 
+        "label": "Sí, En EE.UU.", 
+        "title": "Sí, en los EE.UU." 
+      },
+      "999_max_with_default_lsp": { 
+        "label": "999$ MÁX con PSL predeterminado", 
+        "title": "Máximo de 999 dólares con Proveedor de Servicios Lightning predeterminado" 
+      },
+      "yes_dynamic_swap_fee": { 
+        "label": "Sí, tarifa de intercambio dinámica", 
+        "title": "Sí, con tarifa de intercambio dinámica" 
+      },
+      "yes_boltz_swap": { 
+        "label": "Sí (+ Intercambio Boltz)", 
+        "title": "Sí, con Intercambio Boltz" 
+      },
+      "boltz_reverse_swap": { 
+        "label": "Boltz (Intercambio Inverso)", 
+        "title": "Boltz con intercambio inverso" 
+      },
+      "yes_non_custodial_ln_addresses_zaplocker_using_hodl_invoices": { 
+        "label": "Sí (Direcciones LN No Custodiales) Zaplocker usando facturas HODL", 
+        "title": "Sí, direcciones de Lightning Network no custodiales usando Zaplocker con facturas HODL" 
+      },
+      "yes_full_control": { 
+        "label": "Sí, control total", 
+        "title": "Sí, con control total" 
+      },
+      "yes_7_default_30_or_60_days": { 
+        "label": "Sí, 7 (predeterminado), 30 o 60 días", 
+        "title": "Sí, 7 días por defecto, 30 o 60 días" 
+      },
+      "via_swap_in_potentiam": { 
+        "label": "A través de Swap-in Potentiam", 
+        "title": "A través de Swap-in Potentiam" 
+      },
+      "opens_channel": { 
+        "label": "Abre Canal", 
+        "title": "Abre un canal" 
+      },
+      "yes_dynamic_provider_fees": { 
+        "label": "Sí, tarifas dinámicas del proveedor", 
+        "title": "Sí, con tarifas dinámicas del proveedor" 
+      },
+      "yes_full_1_hour_default": { 
+        "label": "Sí, completo. 1 hora por defecto", 
+        "title": "Sí, completo con duración predeterminada de 1 hora" 
+      },
+      "10_minutes": { 
+        "label": "10 minutos", 
+        "title": "Duración de 10 minutos" 
+      },
+      "15_minutes": { 
+        "label": "15 minutos", 
+        "title": "Duración de 15 minutos" 
+      },
+      "2_hours": { 
+        "label": "2 horas", 
+        "title": "Duración de 2 horas" 
+      },
+      "48_hours": { 
+        "label": "48 horas", 
+        "title": "Duración de 48 horas" 
+      },
+      "chrome_extension": { 
+        "label": "Extensión de Chrome", 
+        "title": "Plataforma de Extensión de Chrome" 
       }
     },
     "icons": {
