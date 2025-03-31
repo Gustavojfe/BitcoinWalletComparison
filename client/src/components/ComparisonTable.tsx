@@ -276,14 +276,15 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
             );
           } else if (platform === 'chrome' || platform === 'chrome extension') {
             return (
-              <span key={index} className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-yellow-100" title="Chrome Extension">
-                {/* Simpler Chrome icon */}
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 100 100">
-                  <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" strokeWidth="2"/>
-                  <circle cx="50" cy="50" r="20" fill="#4285F4"/>
-                  <path d="M50,50 L85,50" stroke="#EA4335" strokeWidth="18" strokeLinecap="round"/>
-                  <path d="M50,50 L67,15" stroke="#FBBC05" strokeWidth="18" strokeLinecap="round"/>
-                  <path d="M50,50 L33,85" stroke="#34A853" strokeWidth="18" strokeLinecap="round"/>
+              <span key={index} className="inline-flex items-center justify-center h-6 w-6 rounded-full" title="Chrome Extension">
+                {/* Official Chrome logo */}
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="50" fill="none" />
+                  <circle cx="50" cy="50" r="50" fill="white" />
+                  <circle cx="50" cy="50" r="22" fill="#4285F4" />
+                  <path d="M50,50 L84,50 A40,40 0 0,0 50,10 Z" fill="#EA4335" />
+                  <path d="M50,50 L30,85 A40,40 0 0,0 85,71 Z" fill="#34A853" />
+                  <path d="M50,50 L15,30 A40,40 0 0,0 15,70 Z" fill="#FBBC05" />
                 </svg>
               </span>
             );
