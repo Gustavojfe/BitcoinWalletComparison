@@ -60,6 +60,9 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     console.log(`'custom' in ${lang}: ${getTranslation(lang, 'common.custom')}`);
     console.log(`'send_only' in ${lang}: ${getTranslation(lang, 'common.send_only')}`);
     console.log(`'receive_only' in ${lang}: ${getTranslation(lang, 'common.receive_only')}`);
+    // Also test feature translations
+    console.log(`'yes' from features in ${lang}: ${getTranslation(lang, 'features.yes')}`);
+    console.log(`'no' from features in ${lang}: ${getTranslation(lang, 'features.no')}`);
   };
 
   // Initialize language on mount

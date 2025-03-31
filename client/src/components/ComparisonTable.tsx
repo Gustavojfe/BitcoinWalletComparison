@@ -94,92 +94,32 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
       console.log(`Feature cell: ${featureName}, Value: ${value}, Language: ${language}`);
     }
     
-    // Translate feature value using direct dictionary
+    // Translate feature value using our translation system
     const translateValue = (val: string): string => {
       if (!val) return '';
       
-      // Direct translations for common values
-      const translations: Record<string, Record<string, string>> = {
-        en: {
-          'yes': 'Yes',
-          'no': 'No',
-          'partial': 'Partial',
-          'optional': 'Optional',
-          'custom': 'Custom',
-          'send_only': 'Send only',
-          'receive_only': 'Receive only',
-          'send': 'Send',
-          'receive': 'Receive',
-          'mandatory': 'Mandatory',
-          'required': 'Required',
-          'not_possible': 'Not possible',
-          'unknown': 'Unknown',
-          'automated': 'Automated',
-          'automatic': 'Automatic',
-          'manual': 'Manual',
-          'lsp_assisted': 'LSP Assisted',
-          'ios': 'iOS',
-          'android': 'Android',
-          'desktop': 'Desktop',
-          'web': 'Web',
-          'lnd': 'LND',
-          'ldk': 'LDK',
-          'core_lightning': 'Core Lightning',
-          'eclair': 'Eclair',
-          'custodial': 'Custodial',
-          'ln_node': 'LN Node',
-          'liquid_swap': 'Liquid Swap',
-          'on_chain_swap': 'On-chain Swap',
-          'remote_node': 'Remote Node',
-          'chrome_extension': 'Chrome Extension',
-          'browser_extension': 'Browser Extension',
-          'web_(self-host)': 'Web (Self-Host)',
-          'whatsapp': 'WhatsApp'
-        },
-        es: {
-          'yes': 'Sí',
-          'no': 'No',
-          'partial': 'Parcial',
-          'optional': 'Opcional',
-          'custom': 'Personalizado',
-          'send_only': 'Solo envío',
-          'receive_only': 'Solo recepción',
-          'send': 'Enviar',
-          'receive': 'Recibir',
-          'mandatory': 'Obligatorio',
-          'required': 'Requerido',
-          'not_possible': 'No es posible',
-          'unknown': 'Desconocido',
-          'automated': 'Automatizado',
-          'automatic': 'Automático',
-          'manual': 'Manual',
-          'lsp_assisted': 'Asistido por LSP',
-          'ios': 'iOS',
-          'android': 'Android',
-          'desktop': 'Escritorio',
-          'web': 'Web',
-          'lnd': 'LND',
-          'ldk': 'LDK',
-          'core_lightning': 'Core Lightning',
-          'eclair': 'Eclair',
-          'custodial': 'Custodial',
-          'ln_node': 'Nodo LN',
-          'liquid_swap': 'Intercambio Liquid',
-          'on_chain_swap': 'Intercambio On-chain',
-          'remote_node': 'Nodo Remoto',
-          'chrome_extension': 'Extensión Chrome',
-          'browser_extension': 'Extensión de Navegador',
-          'web_(self-host)': 'Web (Auto-alojado)',
-          'whatsapp': 'WhatsApp'
-        }
-      };
-      
-      // Normalize the value
+      // Normalize the value for looking up in translations
       const normalizedVal = val.trim().toLowerCase().replace(/\s+/g, '_');
       
-      // Return translation or capitalized original value
-      const currentLang = language as 'en' | 'es';
-      return translations[currentLang]?.[normalizedVal] || val.charAt(0).toUpperCase() + val.slice(1);
+      // First try to find in features namespace
+      let translated = t(`features.${normalizedVal}`);
+      
+      // If not found in features, try common namespace
+      if (translated === `features.${normalizedVal}`) {
+        translated = t(`common.${normalizedVal}`);
+        
+        // If still not found, use original with first letter capitalized
+        if (translated === `common.${normalizedVal}`) {
+          translated = val.charAt(0).toUpperCase() + val.slice(1);
+        }
+      }
+      
+      // For debugging
+      if (featureName === 'Channel Management' || featureName === 'Gestión de Canales') {
+        console.log(`Translating ${val} to ${translated} (normalized: ${normalizedVal})`);
+      }
+      
+      return translated;
     };
     
     // Handle Channel Management feature which might have custom values
@@ -188,15 +128,15 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
       if (value === 'custom' && customText) {
         let displayText = customText;
         
-        // Translate common channel management custom values
+        // Translate common channel management custom values using t function
         if (customText === 'Automated') {
-          displayText = language === 'es' ? 'Automatizado' : 'Automated';
+          displayText = t('common.automated');
         } else if (customText === 'LSP Assisted') {
-          displayText = language === 'es' ? 'Asistido por LSP' : 'LSP Assisted';
+          displayText = t('common.lsp_assisted');
         } else if (customText === 'Automatic') {
-          displayText = language === 'es' ? 'Automático' : 'Automatic';
+          displayText = t('common.automatic');
         } else if (customText === 'Manual') {
-          displayText = language === 'es' ? 'Manual' : 'Manual';
+          displayText = t('common.manual');
         }
         
         return (
@@ -287,8 +227,8 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
     // Handle regular values with icons
     switch (value) {
       case 'yes':
-        // Direct translation for yes
-        const yesTitle = language === 'es' ? 'Característica completamente soportada' : 'Feature fully supported';
+        // Use t function for title
+        const yesTitle = t('help.supportedFull');
         
         return (
           <span 
@@ -302,10 +242,10 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
         );
       case 'no':
       case 'not_possible':
-        // Direct translation for no and not_possible
+        // Use t function for title
         const noTitle = value === 'not_possible' 
-          ? (language === 'es' ? 'No es posible' : 'Not possible')
-          : (language === 'es' ? 'Característica no soportada' : 'Feature not supported');
+          ? t('common.not_possible')
+          : t('help.supportedNone');
         
         return (
           <span 
@@ -319,16 +259,16 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
         );
       case 'partial':
       case 'optional':
-        // Direct translation for partial and optional
+        // Use t function for title
         const titleText = value === 'partial' 
-          ? (language === 'es' ? 'Parcial' : 'Partial')
-          : (language === 'es' ? 'Opcional' : 'Optional');
+          ? t('features.partial')
+          : t('features.optional');
         const displayLetter = value === 'partial' ? 'P' : 'O';
         
         return (
           <span 
             className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-orange-500/20"
-            title={titleText}
+            title={value === 'partial' ? t('help.supportedPartial') : titleText}
           >
             <span className="text-xs font-medium text-orange-500">
               {displayLetter}
@@ -336,9 +276,9 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
           </span>
         );
       case 'custom':
-        // Direct translation for custom
-        const customDisplay = language === 'es' ? 'Personalizado' : 'Custom';
-        const customTitle = customText || (language === 'es' ? 'Característica tiene implementación especial o limitaciones' : 'Feature has special implementation or limitations');
+        // Use t function for title
+        const customDisplay = t('features.custom');
+        const customTitle = customText || t('help.supportedCustom');
         
         return (
           <span 
@@ -351,9 +291,9 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
           </span>
         );
       case 'send_only':
-        // Direct translation for send_only
-        const sendOnlyTitle = language === 'es' ? 'Solo envío' : 'Send only';
-        const sendDisplay = language === 'es' ? 'Enviar' : 'Send';
+        // Use t function for title
+        const sendOnlyTitle = t('common.send_only');
+        const sendDisplay = t('common.send');
         
         return (
           <span 
@@ -366,9 +306,9 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
           </span>
         );
       case 'receive_only':
-        // Direct translation for receive_only
-        const receiveOnlyTitle = language === 'es' ? 'Solo recepción' : 'Receive only';
-        const receiveDisplay = language === 'es' ? 'Recibir' : 'Receive';
+        // Use t function for title
+        const receiveOnlyTitle = t('common.receive_only');
+        const receiveDisplay = t('common.receive');
         
         return (
           <span 
@@ -381,9 +321,9 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
           </span>
         );
       case 'mandatory':
-        // Direct translation for mandatory
-        const mandatoryTitle = language === 'es' ? 'Obligatorio' : 'Mandatory';
-        const requiredDisplay = language === 'es' ? 'Requerido' : 'Required';
+        // Use t function for title
+        const mandatoryTitle = t('common.mandatory');
+        const requiredDisplay = t('common.required');
         
         return (
           <span 
@@ -396,8 +336,8 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
           </span>
         );
       default:
-        // Direct translation for unknown
-        const unknownTitle = language === 'es' ? 'Desconocido' : 'Unknown';
+        // Use t function for title
+        const unknownTitle = t('common.unknown');
         
         return (
           <span 

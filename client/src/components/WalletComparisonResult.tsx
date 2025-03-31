@@ -59,66 +59,27 @@ const WalletComparisonResult = () => {
 
   // Render feature status based on value
   const renderFeatureStatus = (value: string, customText?: string, featureName?: string) => {
-    // Helper function to translate feature values using direct dictionary
+    // Translate feature value using our translation system
     const translateValue = (val: string): string => {
       if (!val) return '';
       
-      // Direct translations for common values
-      const translations: Record<string, Record<string, string>> = {
-        en: {
-          'yes': 'Yes',
-          'no': 'No',
-          'partial': 'Partial',
-          'optional': 'Optional',
-          'custom': 'Custom',
-          'send_only': 'Send only',
-          'receive_only': 'Receive only',
-          'send': 'Send',
-          'receive': 'Receive',
-          'mandatory': 'Mandatory',
-          'required': 'Required',
-          'not_possible': 'Not possible',
-          'unknown': 'Unknown',
-          'automated': 'Automated',
-          'automatic': 'Automatic',
-          'manual': 'Manual',
-          'lsp_assisted': 'LSP Assisted',
-          'ios': 'iOS',
-          'android': 'Android',
-          'desktop': 'Desktop',
-          'web': 'Web'
-        },
-        es: {
-          'yes': 'Sí',
-          'no': 'No',
-          'partial': 'Parcial',
-          'optional': 'Opcional',
-          'custom': 'Personalizado',
-          'send_only': 'Solo envío',
-          'receive_only': 'Solo recepción',
-          'send': 'Enviar',
-          'receive': 'Recibir',
-          'mandatory': 'Obligatorio',
-          'required': 'Requerido',
-          'not_possible': 'No es posible',
-          'unknown': 'Desconocido',
-          'automated': 'Automatizado',
-          'automatic': 'Automático',
-          'manual': 'Manual',
-          'lsp_assisted': 'Asistido por LSP',
-          'ios': 'iOS',
-          'android': 'Android',
-          'desktop': 'Escritorio',
-          'web': 'Web'
-        }
-      };
-      
-      // Normalize the value
+      // Normalize the value for looking up in translations
       const normalizedVal = val.trim().toLowerCase().replace(/\s+/g, '_');
       
-      // Return translation or capitalized original value
-      const currentLang = language as 'en' | 'es';
-      return translations[currentLang]?.[normalizedVal] || val.charAt(0).toUpperCase() + val.slice(1);
+      // First try to find in features namespace
+      let translated = t(`features.${normalizedVal}`);
+      
+      // If not found in features, try common namespace
+      if (translated === `features.${normalizedVal}`) {
+        translated = t(`common.${normalizedVal}`);
+        
+        // If still not found, use original with first letter capitalized
+        if (translated === `common.${normalizedVal}`) {
+          translated = val.charAt(0).toUpperCase() + val.slice(1);
+        }
+      }
+      
+      return translated;
     };
     
     // Handle platform feature specially (displays array values)
@@ -180,15 +141,15 @@ const WalletComparisonResult = () => {
         value === 'custom' && customText) {
       let displayText = '';
       
-      // Translate common channel management custom values
+      // Translate common channel management custom values using t function
       if (customText === 'Automated') {
-        displayText = translateValue('automated');
+        displayText = t('common.automated');
       } else if (customText === 'LSP Assisted') {
-        displayText = translateValue('lsp_assisted');
+        displayText = t('common.lsp_assisted');
       } else if (customText === 'Automatic') {
-        displayText = translateValue('automatic');
+        displayText = t('common.automatic');
       } else if (customText === 'Manual') {
-        displayText = translateValue('manual');
+        displayText = t('common.manual');
       } else {
         displayText = customText;
       }
