@@ -10,10 +10,7 @@
       "web",
       "browser extension"
     ],
-    "openSource": {
-      "value": "custom",
-      "customText": "Yes (GitHub)"
-    },
+    "openSource": "yes",
     "custodialStatus": "no",
     "kyc": "no",
     "transactionFees": {

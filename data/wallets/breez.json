@@ -10,10 +10,7 @@
       "android",
       "ios"
     ],
-    "openSource": {
-      "value": "custom",
-      "customText": "Yes (GitHub)"
-    },
+    "openSource": "yes",
     "availability": {
       "value": "custom",
       "customText": "Unrestricted"
