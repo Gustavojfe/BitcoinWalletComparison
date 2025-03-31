@@ -127,17 +127,18 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
     if (featureName === 'Channel Management' || featureName === 'Channel / Peer Management' || 
         featureName === 'Gestión de Canales' || featureName === 'Gestión de Canales / Pares') {
       if (value === 'custom' && customText) {
+        // Use hardcoded translations based on language
         let displayText = customText;
         
-        // Translate common channel management custom values using t function
+        // Translate common channel management custom values
         if (customText === 'Automated') {
-          displayText = t('common.automated');
+          displayText = language === 'es' ? 'Automatizado' : 'Automated';
         } else if (customText === 'LSP Assisted') {
-          displayText = t('common.lsp_assisted');
+          displayText = language === 'es' ? 'Asistido por LSP' : 'LSP Assisted';
         } else if (customText === 'Automatic') {
-          displayText = t('common.automatic');
+          displayText = language === 'es' ? 'Automático' : 'Automatic';
         } else if (customText === 'Manual') {
-          displayText = t('common.manual');
+          displayText = language === 'es' ? 'Manual' : 'Manual';
         }
         
         return (
@@ -157,16 +158,26 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
     if ((featureName?.toLowerCase() === 'platform' || featureName?.toLowerCase() === 'plataforma') && 
         value === 'custom' && customText) {
       const platforms = customText.split(',');
+      
+      // Use hardcoded translations based on language
+      const platformTranslations = {
+        ios: 'iOS', // Same in both languages
+        android: 'Android', // Same in both languages
+        desktop: language === 'es' ? 'Escritorio' : 'Desktop',
+        web: 'Web' // Same in both languages
+      };
+      
       return (
         <div className="flex flex-wrap gap-1 justify-center">
           {platforms.map((platform, index) => {
-            // Translate platform values
-            let displayPlatform = translateValue(platform.trim());
+            // Use hardcoded translations
+            const platformKey = platform.trim().toLowerCase();
+            let displayPlatform = platformTranslations[platformKey as keyof typeof platformTranslations] || platform.trim();
             
             // Icon mapping for platforms 
             let textColor = '';
             
-            switch (platform.trim()) {
+            switch (platformKey) {
               case 'ios':
                 textColor = 'text-blue-500';
                 break;
@@ -199,7 +210,13 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
     
     // Handle implementation value types with consistent styling
     if (['lnd', 'ldk', 'core_lightning', 'eclair'].includes(value)) {
-      const displayValue = translateValue(value);
+      // Use hardcoded translations based on language
+      let displayValue = value.toUpperCase(); // Default to uppercase version for implementation types
+      
+      // Core Lightning has a specific translation in Spanish
+      if (value === 'core_lightning' && language === 'es') {
+        displayValue = 'Core Lightning'; // Same in both languages, but with proper spacing
+      }
       
       return (
         <span 
@@ -213,7 +230,28 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
     
     // Handle wallet category/types
     if (['custodial', 'ln_node', 'liquid_swap', 'on_chain_swap', 'remote_node'].includes(value)) {
-      const displayValue = translateValue(value);
+      // Use hardcoded translations based on language
+      let displayValue = '';
+      
+      switch (value) {
+        case 'custodial':
+          displayValue = 'Custodial'; // Same in both languages
+          break;
+        case 'ln_node':
+          displayValue = language === 'es' ? 'Nodo LN' : 'LN Node';
+          break;
+        case 'liquid_swap':
+          displayValue = language === 'es' ? 'Intercambio Liquid' : 'Liquid Swap';
+          break;
+        case 'on_chain_swap':
+          displayValue = language === 'es' ? 'Intercambio On-Chain' : 'On-Chain Swap';
+          break;
+        case 'remote_node':
+          displayValue = language === 'es' ? 'Nodo Remoto' : 'Remote Node';
+          break;
+        default:
+          displayValue = value; // Fallback to the original value
+      }
       
       return (
         <span 
@@ -228,7 +266,8 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
     // Handle regular values with icons
     switch (value) {
       case 'yes':
-        // Use t function for title
+        // Use hardcoded translations based on language
+        const yesText = language === 'es' ? 'Sí' : 'Yes';
         const yesTitle = t('help.supportedFull');
         
         return (
@@ -243,10 +282,10 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
         );
       case 'no':
       case 'not_possible':
-        // Use t function for title
-        const noTitle = value === 'not_possible' 
-          ? t('common.not_possible')
-          : t('help.supportedNone');
+        // Use hardcoded translations based on language
+        const noText = 'No'; // Same in both languages
+        const notPossibleText = language === 'es' ? 'No es posible' : 'Not Possible';
+        const noTitle = value === 'not_possible' ? notPossibleText : t('help.supportedNone');
         
         return (
           <span 
@@ -260,10 +299,10 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
         );
       case 'partial':
       case 'optional':
-        // Use t function for title
-        const titleText = value === 'partial' 
-          ? t('features.partial')
-          : t('features.optional');
+        // Use hardcoded translations based on language
+        const partialText = language === 'es' ? 'Parcial' : 'Partial';
+        const optionalText = language === 'es' ? 'Opcional' : 'Optional';
+        const titleText = value === 'partial' ? partialText : optionalText;
         const displayLetter = value === 'partial' ? 'P' : 'O';
         
         return (
@@ -277,9 +316,9 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
           </span>
         );
       case 'custom':
-        // Use t function for title
-        const customDisplay = t('features.custom');
-        const customTitle = customText || t('help.supportedCustom');
+        // Use hardcoded translations based on language
+        const customText = language === 'es' ? 'Personalizado' : 'Custom';
+        const customTitle = customText || (language === 'es' ? 'Implementación especial' : 'Special implementation');
         
         return (
           <span 
@@ -287,63 +326,63 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
             title={customTitle}
           >
             <span className="text-xs font-medium text-orange-600">
-              {customText || customDisplay}
+              {customText || customTitle}
             </span>
           </span>
         );
       case 'send_only':
-        // Use t function for title
-        const sendOnlyTitle = t('common.send_only');
-        const sendDisplay = t('common.send');
+        // Use hardcoded translations based on language
+        const sendOnlyText = language === 'es' ? 'Solo envío' : 'Send Only';
+        const sendText = language === 'es' ? 'Enviar' : 'Send';
         
         return (
           <span 
             className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-amber-100"
-            title={sendOnlyTitle}
+            title={sendOnlyText}
           >
             <span className="text-xs font-medium text-amber-600">
-              {sendDisplay}
+              {sendText}
             </span>
           </span>
         );
       case 'receive_only':
-        // Use t function for title
-        const receiveOnlyTitle = t('common.receive_only');
-        const receiveDisplay = t('common.receive');
+        // Use hardcoded translations based on language
+        const receiveOnlyText = language === 'es' ? 'Solo recepción' : 'Receive Only';
+        const receiveText = language === 'es' ? 'Recibir' : 'Receive';
         
         return (
           <span 
             className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-amber-100"
-            title={receiveOnlyTitle}
+            title={receiveOnlyText}
           >
             <span className="text-xs font-medium text-amber-600">
-              {receiveDisplay}
+              {receiveText}
             </span>
           </span>
         );
       case 'mandatory':
-        // Use t function for title
-        const mandatoryTitle = t('common.mandatory');
-        const requiredDisplay = t('common.required');
+        // Use hardcoded translations based on language
+        const mandatoryText = language === 'es' ? 'Obligatorio' : 'Mandatory';
+        const requiredText = language === 'es' ? 'Requerido' : 'Required';
         
         return (
           <span 
             className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-orange-100"
-            title={mandatoryTitle}
+            title={mandatoryText}
           >
             <span className="text-xs font-medium text-orange-600">
-              {requiredDisplay}
+              {requiredText}
             </span>
           </span>
         );
       default:
-        // Use t function for title
-        const unknownTitle = t('common.unknown');
+        // Use hardcoded translations based on language
+        const unknownText = language === 'es' ? 'Desconocido' : 'Unknown';
         
         return (
           <span 
             className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-muted"
-            title={unknownTitle}
+            title={unknownText}
           >
             <span className="text-xs font-medium text-muted-foreground">?</span>
           </span>

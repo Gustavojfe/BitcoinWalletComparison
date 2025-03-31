@@ -139,27 +139,31 @@ const WalletComparisonResult = () => {
     if ((featureName === 'Channel Management' || featureName === 'Channel / Peer Management' || 
          featureName === 'Gestión de Canales' || featureName === 'Gestión de Canales / Pares') && 
         value === 'custom' && customText) {
+      // Use hardcoded translations based on language
       let displayText = '';
       
-      // Translate common channel management custom values using t function
+      // Translate common channel management custom values
       if (customText === 'Automated') {
-        displayText = t('common.automated');
+        displayText = language === 'es' ? 'Automatizado' : 'Automated';
       } else if (customText === 'LSP Assisted') {
-        displayText = t('common.lsp_assisted');
+        displayText = language === 'es' ? 'Asistido por LSP' : 'LSP Assisted';
       } else if (customText === 'Automatic') {
-        displayText = t('common.automatic');
+        displayText = language === 'es' ? 'Automático' : 'Automatic';
       } else if (customText === 'Manual') {
-        displayText = t('common.manual');
+        displayText = language === 'es' ? 'Manual' : 'Manual';
       } else {
         displayText = customText;
       }
+      
+      // Use hardcoded translations based on language
+      const customText2 = language === 'es' ? 'Personalizado' : 'Custom';
       
       return (
         <div className="flex items-center">
           <span className="px-2 py-1 text-xs font-medium rounded-md bg-orange-100 text-orange-600 mr-2">
             {displayText}
           </span>
-          <span className="text-foreground">{translateValue('custom')}</span>
+          <span className="text-foreground">{customText2}</span>
         </div>
       );
     }
@@ -167,6 +171,9 @@ const WalletComparisonResult = () => {
     // Handle regular values with icons
     switch (value) {
       case 'yes':
+        // Use hardcoded translations based on language
+        const yesText = language === 'es' ? 'Sí' : 'Yes';
+        
         return (
           <div className="flex items-center">
             <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-primary/20 mr-2">
@@ -174,12 +181,15 @@ const WalletComparisonResult = () => {
                 <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
               </svg>
             </span>
-            <span className="text-foreground">{translateValue('yes')}</span>
+            <span className="text-foreground">{yesText}</span>
           </div>
         );
       case 'no':
       case 'not_possible':
-        const noDisplay = translateValue(value);
+        // Use hardcoded translations based on language
+        const noText = 'No'; // Same in both languages
+        const notPossibleText = language === 'es' ? 'No es posible' : 'Not Possible';
+        const noDisplay = value === 'not_possible' ? notPossibleText : noText;
         
         return (
           <div className="flex items-center">
@@ -193,7 +203,10 @@ const WalletComparisonResult = () => {
         );
       case 'partial':
       case 'optional':
-        const displayValue = translateValue(value);
+        // Use hardcoded translations based on language
+        const partialText = language === 'es' ? 'Parcial' : 'Partial';
+        const optionalText = language === 'es' ? 'Opcional' : 'Optional';
+        const displayValue = value === 'partial' ? partialText : optionalText;
         const displayLetter = value === 'partial' ? 'P' : 'O';
         
         return (
@@ -207,50 +220,66 @@ const WalletComparisonResult = () => {
           </div>
         );
       case 'custom':
-        const customDisplay = translateValue('custom');
+        // Use hardcoded translations based on language
+        const customText = language === 'es' ? 'Personalizado' : 'Custom';
         
         return (
           <div className="flex items-center">
             <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-orange-500/20 mr-2">
               <span className="text-xs font-medium text-orange-500">C</span>
             </span>
-            <span className="text-foreground">{customText || customDisplay}</span>
+            <span className="text-foreground">{customText || customText}</span>
           </div>
         );
       case 'send_only':
+        // Use hardcoded translations based on language
+        const sendText = language === 'es' ? 'Enviar' : 'Send';
+        const sendOnlyText = language === 'es' ? 'Solo envío' : 'Send Only';
+        
         return (
           <div className="flex items-center">
             <span className="px-2 py-1 text-xs font-medium rounded-md bg-amber-100 text-amber-600 mr-2">
-              {translateValue('send')}
+              {sendText}
             </span>
-            <span className="text-foreground">{translateValue('send_only')}</span>
+            <span className="text-foreground">{sendOnlyText}</span>
           </div>
         );
       case 'receive_only':
+        // Use hardcoded translations based on language
+        const receiveText = language === 'es' ? 'Recibir' : 'Receive';
+        const receiveOnlyText = language === 'es' ? 'Solo recepción' : 'Receive Only';
+        
         return (
           <div className="flex items-center">
             <span className="px-2 py-1 text-xs font-medium rounded-md bg-amber-100 text-amber-600 mr-2">
-              {translateValue('receive')}
+              {receiveText}
             </span>
-            <span className="text-foreground">{translateValue('receive_only')}</span>
+            <span className="text-foreground">{receiveOnlyText}</span>
           </div>
         );
       case 'mandatory':
+        // Use hardcoded translations based on language
+        const requiredText = language === 'es' ? 'Requerido' : 'Required';
+        const mandatoryText = language === 'es' ? 'Obligatorio' : 'Mandatory';
+        
         return (
           <div className="flex items-center">
             <span className="px-2 py-1 text-xs font-medium rounded-md bg-orange-100 text-orange-600 mr-2">
-              {translateValue('required')}
+              {requiredText}
             </span>
-            <span className="text-foreground">{translateValue('mandatory')}</span>
+            <span className="text-foreground">{mandatoryText}</span>
           </div>
         );
       default:
+        // Use hardcoded translations based on language
+        const unknownText = language === 'es' ? 'Desconocido' : 'Unknown';
+        
         return (
           <div className="flex items-center">
             <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-muted mr-2">
               <span className="text-xs font-medium text-muted-foreground">?</span>
             </span>
-            <span className="text-foreground">{translateValue('unknown')}</span>
+            <span className="text-foreground">{unknownText}</span>
           </div>
         );
     }
