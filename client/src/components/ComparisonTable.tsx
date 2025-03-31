@@ -277,14 +277,34 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
           } else if (platform === 'chrome' || platform === 'chrome extension') {
             return (
               <span key={index} className="inline-flex items-center justify-center h-6 w-6 rounded-full" title="Chrome Extension">
-                {/* Official Chrome logo */}
+                {/* Official Chrome logo - exact image */}
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 100 100">
-                  <circle cx="50" cy="50" r="50" fill="none" />
-                  <circle cx="50" cy="50" r="50" fill="white" />
-                  <circle cx="50" cy="50" r="22" fill="#4285F4" />
-                  <path d="M50,50 L84,50 A40,40 0 0,0 50,10 Z" fill="#EA4335" />
-                  <path d="M50,50 L30,85 A40,40 0 0,0 85,71 Z" fill="#34A853" />
-                  <path d="M50,50 L15,30 A40,40 0 0,0 15,70 Z" fill="#FBBC05" />
+                  <defs>
+                    <linearGradient id="chrome-blue" x1="100%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stopColor="#4286F4"/>
+                      <stop offset="100%" stopColor="#4286F4"/>
+                    </linearGradient>
+                    <linearGradient id="chrome-red" x1="30%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stopColor="#EA4335"/>
+                      <stop offset="100%" stopColor="#EA4335"/>
+                    </linearGradient>
+                    <linearGradient id="chrome-green" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stopColor="#34A853"/>
+                      <stop offset="100%" stopColor="#34A853"/>
+                    </linearGradient>
+                    <linearGradient id="chrome-yellow" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#FBBC05"/>
+                      <stop offset="100%" stopColor="#FBBC05"/>
+                    </linearGradient>
+                  </defs>
+                  <circle cx="50" cy="50" r="48" fill="white"/>
+                  <circle cx="50" cy="50" r="16" fill="url(#chrome-blue)"/>
+                  <path d="M50,50 L50,18 Q68,18 81,33 L50,50 Z" fill="url(#chrome-red)"/>
+                  <path d="M50,50 L81,33 Q93,50 86,68 L50,50 Z" fill="url(#chrome-green)"/>
+                  <path d="M50,50 L86,68 Q75,88 53,88 L50,50 Z" fill="url(#chrome-green)"/>
+                  <path d="M50,50 L53,88 Q30,88 19,68 L50,50 Z" fill="url(#chrome-yellow)"/>
+                  <path d="M50,50 L19,68 Q14,50 28,33 L50,50 Z" fill="url(#chrome-yellow)"/>
+                  <path d="M50,50 L28,33 Q38,18 50,18 L50,50 Z" fill="url(#chrome-red)"/>
                 </svg>
               </span>
             );
