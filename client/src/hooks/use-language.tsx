@@ -5,7 +5,7 @@ import { Feature, Wallet } from '../lib/types';
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: (key: string) => string;
+  t: (key: string, options?: any, fallback?: string) => string;
   translateFeature: (feature: Feature) => { name: string; description: string };
   translateWallet: (wallet: Wallet) => { name: string; description: string };
   availableLanguages: Language[];
@@ -17,7 +17,7 @@ const defaultLanguage: Language = 'en';
 const LanguageContext = createContext<LanguageContextType>({
   language: defaultLanguage,
   setLanguage: () => {},
-  t: (key: string) => key,
+  t: (key: string, _options?: any, fallback?: string) => fallback !== undefined ? fallback : key,
   translateFeature: (feature) => ({ name: feature.name, description: feature.description }),
   translateWallet: (wallet) => ({ name: wallet.name, description: wallet.description }),
   availableLanguages: ['en', 'es'],
@@ -58,8 +58,9 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
   }, []);
 
   // Translation function
-  const t = (key: string): string => {
-    return getTranslation(language, key);
+  const t = (key: string, _options?: any, fallback?: string): string => {
+    const result = getTranslation(language, key);
+    return result === key && fallback !== undefined ? fallback : result;
   };
 
   // Feature translation function

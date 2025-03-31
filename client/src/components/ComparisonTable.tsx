@@ -99,23 +99,34 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
    * 3. Add it to "featureStatus.icons" if it should display with an icon
    */
   const renderFeatureStatus = (value: string, customText?: string, featureName?: string) => {
-    // Define helpers for normalization and translation
+    // Normalize a string to create a valid translation key
+    // e.g., "Yes (GitHub)" -> "yes_github" 
     const normalizeKey = (key: string): string => {
       return key.toLowerCase().replace(/[^\w]/gi, '_');
     };
     
-    // Handle platform comma-separated lists specially
+    // For all values, handle them uniformly with the same approach
+    // Determine which value to use for display
+    const displayValue = (value === 'custom' && customText) ? customText : value;
+    
+    // Normalize to create a valid translation key
+    const normalizedKey = normalizeKey(displayValue);
+    
+    // Create a full translation key path
+    const translationKey = `featureStatus.values.${normalizedKey}`;
+    
+    // Check if we're dealing with a platform list (comma-separated)
     if (featureName?.toLowerCase() === 'platform' && customText && customText.includes(',')) {
       const platforms = customText.split(',').map(p => p.trim());
       return (
         <div className="flex flex-wrap gap-1 justify-center">
           {platforms.map((platform, index) => {
-            const normalizedKey = normalizeKey(platform);
-            const translationKey = `featureStatus.values.${normalizedKey}`;
+            const platformKey = normalizeKey(platform);
+            const platformTranslationKey = `featureStatus.values.${platformKey}`;
             
             // Use translated value or fall back to raw value
-            const displayText = t(translationKey + '.label', undefined, platform);
-            const tooltipText = t(translationKey + '.title', undefined, platform);
+            const displayText = t(platformTranslationKey + '.label', undefined, platform);
+            const tooltipText = t(platformTranslationKey + '.title', undefined, platform);
             
             // Determine text color based on platform
             let textColor = 'text-gray-600';
@@ -138,55 +149,50 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
       );
     }
     
-    // For all other values, handle them uniformly
-    // Determine which value to use and normalize it to a translation key
-    const displayValue = (value === 'custom' && customText) ? customText : value;
-    // Normalize to create a valid translation key (e.g., "Yes (GitHub)" -> "yes_github")
-    const normalizedKey = normalizeKey(displayValue);
-    
-    // Create a full translation key path
-    const translationKey = `featureStatus.values.${normalizedKey}`;
-    
-    // Fetch translated values or fall back to raw values
+    // Fetch translated values with fallbacks
     const label = t(`${translationKey}.label`, undefined, displayValue);
     const title = t(`${translationKey}.title`, undefined, displayValue);
     
     // Determine if this value uses an icon
-    const useIcon = t(`featureStatus.icons.${normalizedKey}`, undefined, false);
+    const useIconStr = t(`featureStatus.icons.${normalizedKey}`, undefined, "false");
+    const useIcon = useIconStr === "true"; // Convert to boolean
     
     // Get style class or use default based on value
     let styleClass = '';
     
-    // First check if there's a direct style for the normalized key
-    if (t(`featureStatus.styles.${normalizedKey}`, undefined, null)) {
-      styleClass = t(`featureStatus.styles.${normalizedKey}`);
+    // Check for styles in this priority order:
+    // 1. Direct style for the normalized key
+    const normalizedKeyStyle = t(`featureStatus.styles.${normalizedKey}`, undefined, "");
+    if (normalizedKeyStyle && normalizedKeyStyle !== `featureStatus.styles.${normalizedKey}`) {
+      styleClass = normalizedKeyStyle;
     } 
-    // Then check if there's a style for the raw value
-    else if (t(`featureStatus.styles.${value}`, undefined, null)) {
-      styleClass = t(`featureStatus.styles.${value}`);
-    } 
-    // Special style for implementation values
-    else if (['lnd', 'ldk', 'core_lightning', 'eclair'].includes(value)) {
-      styleClass = t('featureStatus.styles.implementation');
-    } 
-    // Special style for wallet types
-    else if (['custodial', 'ln_node', 'liquid_swap', 'on_chain_swap', 'remote_node'].includes(value)) {
-      styleClass = t('featureStatus.styles.walletType');
-    } 
-    // Use custom style for custom values with text
-    else if (value === 'custom' && customText) {
-      styleClass = t('featureStatus.styles.custom');
-    } 
-    // Default to unknown/muted style
+    // 2. Style for the raw value
     else {
-      styleClass = t('featureStatus.styles.unknown');
+      const rawValueStyle = t(`featureStatus.styles.${value}`, undefined, "");
+      if (rawValueStyle && rawValueStyle !== `featureStatus.styles.${value}`) {
+        styleClass = rawValueStyle;
+      }
+      // 3. Special categories
+      else if (['lnd', 'ldk', 'core_lightning', 'eclair'].includes(value)) {
+        styleClass = t('featureStatus.styles.implementation', undefined, "");
+      } 
+      else if (['custodial', 'ln_node', 'liquid_swap', 'on_chain_swap', 'remote_node'].includes(value)) {
+        styleClass = t('featureStatus.styles.walletType', undefined, "");
+      } 
+      else if (value === 'custom' && customText) {
+        styleClass = t('featureStatus.styles.custom', undefined, "");
+      } 
+      // 4. Default style
+      else {
+        styleClass = t('featureStatus.styles.unknown', undefined, "");
+      }
     }
     
-    // Split the style class to get background and text color for styling
+    // Extract background and text colors from the style
     const bgClass = styleClass.split(' ')[0] || 'bg-muted';
     const textClass = styleClass.split(' ')[1] || 'text-muted-foreground';
     
-    // Render icon-based statuses (yes, no, etc.)
+    // Render icon-based values (yes, no, partial, optional)
     if (useIcon) {
       if (value === 'yes') {
         return (
@@ -224,7 +230,7 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
       }
     }
     
-    // For everything else, render as a text pill
+    // For all other values, render as a text pill
     return (
       <span 
         className={`inline-flex items-center justify-center h-6 px-2 rounded-md ${bgClass}`}

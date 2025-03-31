@@ -47,6 +47,9 @@ export function getTranslation(lang: Language, key: string): string {
   // Regular translation lookup
   for (const k of keys) {
     if (!current || !current[k]) {
+      // Log missing translation
+      console.warn(`Missing translation for ${lang}: ${key}`);
+      
       // Fallback to English if key doesn't exist in the selected language
       if (lang !== 'en') {
         return getTranslation('en', key);
@@ -58,6 +61,9 @@ export function getTranslation(lang: Language, key: string): string {
 
   // If the result is an object, it's not a valid translation
   if (typeof current === 'object') {
+    // Log missing translation
+    console.warn(`Invalid translation (object) for ${lang}: ${key}`);
+    
     // Fallback to English if result isn't a string in the selected language
     if (lang !== 'en') {
       return getTranslation('en', key);
