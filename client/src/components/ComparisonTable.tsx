@@ -87,26 +87,41 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
   // Sort wallets alphabetically by name
   const sortedWallets = [...filteredWallets].sort((a, b) => a.name.localeCompare(b.name));
 
-  // Render feature status based on value
+  /**
+   * Render feature status based on value
+   * Uses the translation system via t() function for all text displayed to users
+   * Translation keys are organized under "featureStatus" in translation files (en.json/es.json)
+   */
   const renderFeatureStatus = (value: string, customText?: string, featureName?: string) => {
     // Handle Channel Management feature which might have custom values
-    if (featureName === 'Channel Management' || featureName === 'Gestión de Canales') {
-      // Handle translations for custom channel management values
+    if (featureName === 'Channel Management' || featureName === 'Gestión de Canales' || featureName === 'Channel / Peer Management') {
       if (value === 'custom' && customText) {
-        let displayText = customText;
+        // Map the customText to a translation key for channel management options
+        let translationKey = '';
         
-        // Translate channel management custom values to Spanish
-        if (language === 'es') {
-          if (customText === 'Automated') {
-            displayText = 'Automatizado';
-          } else if (customText === 'LSP Assisted') {
-            displayText = 'Asistido por LSP';
-          } else if (customText === 'Automatic') {
-            displayText = 'Automático';
-          } else if (customText === 'Manual') {
-            displayText = 'Manual';
-          }
+        if (customText === 'Automated' || customText === 'Automatizado') {
+          translationKey = 'automated';
+        } else if (customText === 'LSP Assisted' || customText === 'Asistido por LSP') {
+          translationKey = 'lspAssisted';
+        } else if (customText === 'Automatic' || customText === 'Automático') {
+          translationKey = 'automatic';
+        } else if (customText === 'Manual') {
+          translationKey = 'manual';
+        } else {
+          // Fallback for unknown values
+          return (
+            <span 
+              className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-orange-100"
+              title={customText}
+            >
+              <span className="text-xs font-medium text-orange-600">
+                {customText}
+              </span>
+            </span>
+          );
         }
+        
+        const displayText = t(`featureStatus.channelManagement.${translationKey}`);
         
         return (
           <span 
@@ -127,20 +142,24 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
       return (
         <div className="flex flex-wrap gap-1 justify-center">
           {platforms.map((platform, index) => {
-            // Handle translations directly based on language
-            let displayPlatform: string;
-            
-            if (language === 'es') {
-              displayPlatform = platform === 'ios' ? 'iOS' : 
-                              platform === 'android' ? 'Android' : 
-                              platform === 'desktop' ? 'Escritorio' : 
-                              platform === 'web' ? 'Web' : platform;
+            // Map platform names to translation keys
+            let translationKey = '';
+            if (['ios', 'android', 'desktop', 'web'].includes(platform)) {
+              translationKey = platform;
             } else {
-              displayPlatform = platform === 'ios' ? 'iOS' : 
-                              platform === 'android' ? 'Android' : 
-                              platform === 'desktop' ? 'Desktop' : 
-                              platform === 'web' ? 'Web' : platform;
+              // For unknown platforms, just use the platform value
+              return (
+                <span 
+                  key={index}
+                  className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-primary/10"
+                  title={platform}
+                >
+                  <span className="text-xs font-medium text-gray-600">{platform}</span>
+                </span>
+              );
             }
+            
+            const displayPlatform = t(`featureStatus.platform.${translationKey}`);
             
             // Icon mapping for platforms 
             let textColor = '';
@@ -176,22 +195,9 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
       );
     }
     
-    // Handle special value types with consistent styling
+    // Handle implementation values (LND, LDK, etc.)
     if (['lnd', 'ldk', 'core_lightning', 'eclair'].includes(value)) {
-      // Handle translations directly based on language
-      let displayValue: string;
-      
-      if (language === 'es') {
-        displayValue = value === 'lnd' ? 'LND' :
-                     value === 'ldk' ? 'LDK' :
-                     value === 'core_lightning' ? 'Core Lightning' :
-                     value === 'eclair' ? 'Eclair' : value;
-      } else {
-        displayValue = value === 'lnd' ? 'LND' :
-                     value === 'ldk' ? 'LDK' :
-                     value === 'core_lightning' ? 'Core Lightning' :
-                     value === 'eclair' ? 'Eclair' : value;
-      }
+      const displayValue = t(`featureStatus.implementation.${value}`);
       
       return (
         <span 
@@ -205,22 +211,7 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
     
     // Handle wallet types
     if (['custodial', 'ln_node', 'liquid_swap', 'on_chain_swap', 'remote_node'].includes(value)) {
-      // Handle translations directly based on language
-      let displayValue: string;
-      
-      if (language === 'es') {
-        displayValue = value === 'custodial' ? 'Custodial' : 
-                     value === 'ln_node' ? 'Nodo LN' : 
-                     value === 'liquid_swap' ? 'Intercambio Liquid' : 
-                     value === 'on_chain_swap' ? 'Intercambio On-Chain' : 
-                     value === 'remote_node' ? 'Nodo Remoto' : value;
-      } else {
-        displayValue = value === 'custodial' ? 'Custodial' : 
-                     value === 'ln_node' ? 'LN Node' : 
-                     value === 'liquid_swap' ? 'Liquid Swap' : 
-                     value === 'on_chain_swap' ? 'On-Chain Swap' : 
-                     value === 'remote_node' ? 'Remote Node' : value;
-      }
+      const displayValue = t(`featureStatus.walletType.${value}`);
       
       return (
         <span 
@@ -235,13 +226,10 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
     // Handle regular values with icons
     switch (value) {
       case 'yes':
-        // Handle translations directly based on language
-        let yesTitle = language === 'es' ? 'Característica completamente soportada' : 'Feature fully supported';
-        
         return (
           <span 
             className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-primary/20"
-            title={yesTitle}
+            title={t('featureStatus.yes.title')}
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -250,15 +238,10 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
         );
       case 'no':
       case 'not_possible':
-        // Handle translations directly based on language
-        let noTitle = language === 'es' ? 
-                    (value === 'not_possible' ? 'No es posible' : 'No') : 
-                    (value === 'not_possible' ? 'Not possible' : 'No');
-        
         return (
           <span 
             className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-destructive/20"
-            title={noTitle}
+            title={t(`featureStatus.${value}.title`)}
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-destructive" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -267,44 +250,19 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
         );
       case 'partial':
       case 'optional':
-        // Handle translations directly based on language
-        let titleText = '';
-        let displayLetter = '';
-        
-        if (language === 'es') {
-          if (value === 'partial') {
-            titleText = 'Parcial';
-            displayLetter = 'P';
-          } else {
-            titleText = 'Opcional';
-            displayLetter = 'O';
-          }
-        } else {
-          if (value === 'partial') {
-            titleText = 'Partial';
-            displayLetter = 'P';
-          } else {
-            titleText = 'Optional';
-            displayLetter = 'O';
-          }
-        }
-        
         return (
           <span 
             className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-orange-500/20"
-            title={titleText}
+            title={t(`featureStatus.${value}.title`)}
           >
             <span className="text-xs font-medium text-orange-500">
-              {displayLetter}
+              {t(`featureStatus.${value}.label`)}
             </span>
           </span>
         );
       case 'custom':
-        // Handle translations directly based on language
-        let customDisplay = language === 'es' ? 'Personalizado' : 'Custom';
-        let customTitle = language === 'es' ? 
-            (customText || 'La característica tiene implementación especial o limitaciones') : 
-            (customText || 'Feature has special implementation or limitations');
+        const customTitle = customText || t('featureStatus.custom.description');
+        const customDisplay = customText || t('featureStatus.custom.title');
         
         return (
           <span 
@@ -312,63 +270,48 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
             title={customTitle}
           >
             <span className="text-xs font-medium text-orange-600">
-              {customText || customDisplay}
+              {customDisplay}
             </span>
           </span>
         );
       case 'send_only':
-        // Handle translations directly based on language
-        let sendOnlyTitle = language === 'es' ? 'Solo envío' : 'Send only';
-        let sendDisplay = language === 'es' ? 'Enviar' : 'Send';
-        
         return (
           <span 
             className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-amber-100"
-            title={sendOnlyTitle}
+            title={t('featureStatus.send_only.title')}
           >
             <span className="text-xs font-medium text-amber-600">
-              {sendDisplay}
+              {t('featureStatus.send_only.label')}
             </span>
           </span>
         );
       case 'receive_only':
-        // Handle translations directly based on language
-        let receiveOnlyTitle = language === 'es' ? 'Solo recepción' : 'Receive only';
-        let receiveDisplay = language === 'es' ? 'Recibir' : 'Receive';
-        
         return (
           <span 
             className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-amber-100"
-            title={receiveOnlyTitle}
+            title={t('featureStatus.receive_only.title')}
           >
             <span className="text-xs font-medium text-amber-600">
-              {receiveDisplay}
+              {t('featureStatus.receive_only.label')}
             </span>
           </span>
         );
       case 'mandatory':
-        // Handle translations directly based on language
-        let mandatoryTitle = language === 'es' ? 'Obligatorio' : 'Mandatory';
-        let requiredDisplay = language === 'es' ? 'Requerido' : 'Required';
-        
         return (
           <span 
             className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-orange-100"
-            title={mandatoryTitle}
+            title={t('featureStatus.mandatory.title')}
           >
             <span className="text-xs font-medium text-orange-600">
-              {requiredDisplay}
+              {t('featureStatus.mandatory.label')}
             </span>
           </span>
         );
       default:
-        // Handle translations directly based on language
-        let unknownTitle = language === 'es' ? 'Desconocido' : 'Unknown';
-        
         return (
           <span 
             className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-muted"
-            title={unknownTitle}
+            title={t('featureStatus.unknown.title')}
           >
             <span className="text-xs font-medium text-muted-foreground">?</span>
           </span>

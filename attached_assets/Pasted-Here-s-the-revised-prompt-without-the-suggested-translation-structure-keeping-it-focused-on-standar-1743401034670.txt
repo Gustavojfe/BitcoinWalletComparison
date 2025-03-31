@@ -1,0 +1,58 @@
+Here’s the revised prompt without the suggested translation structure, keeping it focused on standardizing the ComparisonTable component using the existing useLanguage hook and en.json/es.json files, without prescribing a specific structure for the translation files.
+
+Prompt for Replit Agent v2 (Claude Sonnet 3.5)
+Task: Refactor the provided ComparisonTable React component to standardize its translation management, making it more consistent and easier to maintain. The component currently uses a functional useLanguage hook with a t() function that reads from existing en.json and es.json translation files. However, it mixes t() usage with inline translation logic in renderFeatureStatus, leading to inconsistency. Your goal is to centralize all translations using the existing t() function and eliminate inline logic, leveraging the current translation files.
+
+Current Code:
+
+[Insert the full ComparisonTable component code from your original question here]
+
+Assumptions:
+
+The useLanguage hook works well and provides:
+t(key: string): A function that retrieves translations from en.json or es.json based on the current language (e.g., 'en' or 'es').
+translateFeature(feature): Translates feature objects (name and description).
+translateWallet(wallet): Translates wallet objects (name and description).
+language: The current language code (e.g., 'en' or 'es').
+Existing translation files (en.json and es.json) exist and can be extended with new keys as needed. Their current structure is unknown but assumed to support nested keys (e.g., 'common.wallets').
+No new libraries (e.g., react-i18next) or integrations are required.
+Requirements:
+
+Centralize Translations:
+Eliminate all inline translation logic in renderFeatureStatus (e.g., if (language === 'es')) and replace it with t() calls using appropriate keys.
+Update en.json and es.json to include all necessary strings for feature statuses, including special cases like Channel Management and Platform.
+Consistency:
+Use t() exclusively for all static text (e.g., table headers, no-data messages) and feature status labels/titles.
+Ensure translateWallet and translateFeature are used consistently for wallet and feature objects, assuming they already leverage t() internally.
+Maintainability:
+Provide updated en.json and es.json files with all translations used in the component, organized in a logical structure of your choosing.
+Add comments in the code explaining how translations are accessed and where to update them.
+Preserve Functionality:
+Maintain all existing behavior (e.g., feature status rendering with icons, tooltips, visibility toggling) while standardizing translations.
+Keep the UI intact (e.g., Tailwind CSS styling, layout).
+Scalability:
+Use translation keys that support future additions (e.g., new feature statuses or languages) without requiring code changes in the component.
+Output:
+
+Provide the refactored ComparisonTable component code.
+Include updated en.json and es.json files with all necessary translations, structured in a way that fits the existing system and meets the requirements.
+Add a brief explanation of the changes and instructions for adding new translations to the JSON files.
+Context:
+
+The component supports English ('en') and Spanish ('es') using useLanguage.
+It uses Tailwind CSS for styling and React Query for data fetching.
+The environment is Replit, but no new dependencies are needed since useLanguage and the JSON files are already in place.
+Today’s date is March 30, 2025.
+Instructions:
+
+Refactor renderFeatureStatus to use t() for all status titles and display text (e.g., t('featureStatus.yes'), t('featureStatus.channelManagement.automated') if applicable).
+Keep existing logic for rendering icons and styles, but source text from the translation files via t().
+Update en.json and es.json with keys for all text currently hardcoded in renderFeatureStatus, maintaining or enhancing the existing structure.
+Test the refactored code to ensure it renders correctly in both English and Spanish.
+Please proceed with the refactoring and provide the updated component code, translation files, and an explanation.
+
+Notes for Usage
+Replace [Insert the full ComparisonTable component code from your original question here] with the actual code from your first message.
+Copy this prompt into Replit Agent v2’s input field.
+The agent will refactor the component and provide updated en.json and es.json files based on the existing structure it infers, focusing on standardization within the current setup.
+This version avoids imposing a specific translation structure, giving the agent flexibility to work with whatever structure already exists in en.json and es.json. Let me know if you need further tweaks!

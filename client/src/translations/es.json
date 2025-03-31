@@ -160,6 +160,69 @@
     "receive": "Recibir",
     "required": "Requerido"
   },
+  "featureStatus": {
+    "yes": {
+      "title": "Característica completamente soportada"
+    },
+    "no": {
+      "title": "No"
+    },
+    "not_possible": {
+      "title": "No es posible"
+    },
+    "partial": {
+      "title": "Parcial",
+      "label": "P"
+    },
+    "optional": {
+      "title": "Opcional",
+      "label": "O"
+    },
+    "custom": {
+      "title": "Personalizado",
+      "description": "La característica tiene implementación especial o limitaciones"
+    },
+    "send_only": {
+      "title": "Solo envío",
+      "label": "Enviar"
+    },
+    "receive_only": {
+      "title": "Solo recepción",
+      "label": "Recibir"
+    },
+    "mandatory": {
+      "title": "Obligatorio",
+      "label": "Requerido"
+    },
+    "unknown": {
+      "title": "Desconocido"
+    },
+    "channelManagement": {
+      "automated": "Automatizado",
+      "lspAssisted": "Asistido por LSP",
+      "automatic": "Automático",
+      "manual": "Manual"
+    },
+    "platform": {
+      "ios": "iOS",
+      "android": "Android",
+      "desktop": "Escritorio",
+      "web": "Web"
+    },
+    "implementation": {
+      "lnd": "LND",
+      "ldk": "LDK",
+      "core_lightning": "Core Lightning",
+      "eclair": "Eclair"
+    },
+    "walletType": {
+      "custodial": "Custodial",
+      "ln_node": "Nodo LN",
+      "liquid_swap": "Intercambio Liquid",
+      "on_chain_swap": "Intercambio On-Chain",
+      "remote_node": "Nodo Remoto"
+    }
+  },
   "comingSoon": {
     "title": "Próximamente",
     "inDevelopment": "Las comparaciones de carteras de {type} están actualmente en desarrollo.",

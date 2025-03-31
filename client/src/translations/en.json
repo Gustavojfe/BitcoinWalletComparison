@@ -160,6 +160,69 @@
     "receive": "Receive",
     "required": "Required"
   },
+  "featureStatus": {
+    "yes": {
+      "title": "Feature fully supported"
+    },
+    "no": {
+      "title": "No"
+    },
+    "not_possible": {
+      "title": "Not possible"
+    },
+    "partial": {
+      "title": "Partial",
+      "label": "P"
+    },
+    "optional": {
+      "title": "Optional",
+      "label": "O"
+    },
+    "custom": {
+      "title": "Custom",
+      "description": "Feature has special implementation or limitations"
+    },
+    "send_only": {
+      "title": "Send only",
+      "label": "Send"
+    },
+    "receive_only": {
+      "title": "Receive only",
+      "label": "Receive"
+    },
+    "mandatory": {
+      "title": "Mandatory",
+      "label": "Required"
+    },
+    "unknown": {
+      "title": "Unknown"
+    },
+    "channelManagement": {
+      "automated": "Automated",
+      "lspAssisted": "LSP Assisted",
+      "automatic": "Automatic",
+      "manual": "Manual"
+    },
+    "platform": {
+      "ios": "iOS",
+      "android": "Android",
+      "desktop": "Desktop",
+      "web": "Web"
+    },
+    "implementation": {
+      "lnd": "LND",
+      "ldk": "LDK",
+      "core_lightning": "Core Lightning",
+      "eclair": "Eclair"
+    },
+    "walletType": {
+      "custodial": "Custodial",
+      "ln_node": "LN Node",
+      "liquid_swap": "Liquid Swap",
+      "on_chain_swap": "On-Chain Swap",
+      "remote_node": "Remote Node"
+    }
+  },
   "comingSoon": {
     "title": "Coming Soon",
     "inDevelopment": "{type} wallet comparisons are currently in development.",
