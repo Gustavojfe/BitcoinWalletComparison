@@ -105,8 +105,8 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
       return renderPlatformIcons(value, customText);
     }
     
-    // Special handling for openSource="yes" to show GitHub links
-    if (featureName === "openSource" && value === "yes" && wallet) {
+    // Special handling for open source feature with value="yes" to show GitHub links
+    if ((featureName === "openSource" || featureName === "Open Source") && value === "yes" && wallet) {
       return renderGitHubLink(wallet.name);
     }
     
