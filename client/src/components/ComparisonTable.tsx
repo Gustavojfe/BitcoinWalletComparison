@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { EyeOff } from 'lucide-react';
 import { useVisibility } from '@/hooks/use-visibility-context';
 import { useLanguage } from '@/hooks/use-language';
+import { translations } from '@/translations/index';
 
 interface ComparisonTableProps {
   walletType: WalletType;
@@ -101,22 +102,22 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
       // Normalize the value for looking up in translations
       const normalizedVal = val.trim().toLowerCase().replace(/\s+/g, '_');
       
+      // For debugging
+      if (featureName === 'Channel Management' || featureName === 'Gestión de Canales') {
+        console.log(`Looking up translation for value: ${val} (normalized: ${normalizedVal}), language: ${language}`);
+      }
+      
       // First try to find in features namespace
       let translated = t(`features.${normalizedVal}`);
       
-      // If not found in features, try common namespace
+      // If key not found (it returns the key itself), try common namespace
       if (translated === `features.${normalizedVal}`) {
         translated = t(`common.${normalizedVal}`);
         
-        // If still not found, use original with first letter capitalized
+        // If still not found, use the original value with first letter capitalized
         if (translated === `common.${normalizedVal}`) {
           translated = val.charAt(0).toUpperCase() + val.slice(1);
         }
-      }
-      
-      // For debugging
-      if (featureName === 'Channel Management' || featureName === 'Gestión de Canales') {
-        console.log(`Translating ${val} to ${translated} (normalized: ${normalizedVal})`);
       }
       
       return translated;
