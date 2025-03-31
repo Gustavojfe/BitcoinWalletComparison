@@ -160,6 +160,14 @@
     "receive": "Recibir",
     "required": "Requerido"
   },
+  "platforms": {
+    "ios": "iOS",
+    "android": "Android",
+    "desktop": "Escritorio",
+    "web": "Web",
+    "chrome": "Extensión de Chrome",
+    "whatsapp": "WhatsApp"
+  },
   "featureStatus": {
     "values": {
       "yes": {
