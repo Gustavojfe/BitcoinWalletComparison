@@ -45,17 +45,39 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
 
   // Update localStorage when language changes
   const setLanguage = (lang: Language) => {
+    console.log(`Setting language to: ${lang}`);
     setLanguageState(lang);
     localStorage.setItem('language', lang);
     
-    // Optional: Set lang attribute on html element
+    // Set lang attribute on html element
     document.documentElement.setAttribute('lang', lang);
+    
+    // Debug test translations for common values in the new language
+    console.log("Testing translations in new language:");
+    console.log(`'yes' in ${lang}: ${getTranslation(lang, 'common.yes')}`);
+    console.log(`'no' in ${lang}: ${getTranslation(lang, 'common.no')}`);
+    console.log(`'partial' in ${lang}: ${getTranslation(lang, 'common.partial')}`);
+    console.log(`'custom' in ${lang}: ${getTranslation(lang, 'common.custom')}`);
+    console.log(`'send_only' in ${lang}: ${getTranslation(lang, 'common.send_only')}`);
+    console.log(`'receive_only' in ${lang}: ${getTranslation(lang, 'common.receive_only')}`);
   };
 
   // Initialize language on mount
   useEffect(() => {
     document.documentElement.setAttribute('lang', language);
-  }, []);
+    
+    // Debug current language state
+    console.log(`Language initialized/updated to: ${language}`);
+    console.log(`Current language in localStorage: ${localStorage.getItem('language')}`);
+    
+    // Debug translations in current language context
+    console.log(`Current language translations test:`);
+    console.log(`'yes' translation: ${getTranslation(language, 'common.yes')}`);
+    console.log(`'no' translation: ${getTranslation(language, 'common.no')}`);
+    console.log(`'partial' translation: ${getTranslation(language, 'common.partial')}`);
+    console.log(`'custom' translation: ${getTranslation(language, 'common.custom')}`);
+    console.log(`'send_only' translation: ${getTranslation(language, 'common.send_only')}`);
+  }, [language]);
 
   // Translation function
   const t = (key: string): string => {
