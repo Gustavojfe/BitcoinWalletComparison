@@ -16,7 +16,6 @@
     "partial": "Parcial",
     "custom": "Personalizado", 
     "unknown": "Desconocido",
-    "optional": "Opcional",
     "show": "Mostrar",
     "hide": "Ocultar",
     "help": "Ayuda",
@@ -26,22 +25,7 @@
     "selectDifferentWallets": "Por favor selecciona dos carteras diferentes para comparar.",
     "return": "Volver a la Página de Comparación",
     "selectWallet": "Selecciona una cartera",
-    "toggleTheme": "Cambiar tema",
-    "not_possible": "No es posible",
-    "send_only": "Solo envío",
-    "receive_only": "Solo recepción",
-    "mandatory": "Obligatorio",
-    "send": "Enviar",
-    "receive": "Recibir",
-    "required": "Requerido",
-    "automated": "Automatizado",
-    "automatic": "Automático",
-    "manual": "Manual",
-    "lsp_assisted": "Asistido por LSP",
-    "ios": "iOS",
-    "android": "Android",
-    "desktop": "Escritorio",
-    "web": "Web"
+    "toggleTheme": "Cambiar tema"
   },
   "theme": {
     "light": "Claro",
@@ -174,12 +158,7 @@
     "web": "Web",
     "send": "Enviar",
     "receive": "Recibir",
-    "required": "Requerido",
-    "automated": "Automatizado",
-    "automatic": "Automático",
-    "manual": "Manual",
-    "lsp_assisted": "Asistido por LSP",
-    "unknown": "Desconocido"
+    "required": "Requerido"
   },
   "comingSoon": {
     "title": "Próximamente",
