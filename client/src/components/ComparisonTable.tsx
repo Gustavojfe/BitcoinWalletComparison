@@ -249,17 +249,17 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
           } else if (platform === 'android') {
             return (
               <span key={index} className="inline-flex items-center justify-center h-6 w-6 rounded-full" title="Android">
-                {/* Android green mustard icon */}
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="#a4c639">
-                  <path d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10zM3.5 8C2.67 8 2 8.67 2 9.5v7c0 .83.67 1.5 1.5 1.5S5 17.33 5 16.5v-7C5 8.67 4.33 8 3.5 8zm17 0c-.83 0-1.5.67-1.5 1.5v7c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-7c0-.83-.67-1.5-1.5-1.5zm-4.97-5.84l1.3-1.3c.2-.2.2-.51 0-.71-.2-.2-.51-.2-.71 0l-1.48 1.48C13.85 1.23 12.95 1 12 1c-.96 0-1.86.23-2.66.63L7.85.15c-.2-.2-.51-.2-.71 0-.2.2-.2.51 0 .71l1.31 1.31C6.97 3.26 6 5.01 6 7h12c0-1.99-.97-3.75-2.47-4.84zM10 5H9V4h1v1zm5 0h-1V4h1v1z"/>
+                {/* Android green mustard icon - using the exact image provided */}
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 427 505" fill="#A4C639">
+                  <path d="M105.7 83.3L64.2 23.2C61.4 19.4 62.2 14.2 66 11.3c3.8-2.9 9-2.1 11.9 1.7l41.9 60.7c35.8-16.6 75.8-26 118.1-26s82.3 9.4 118.1 26l41.9-60.7c2.9-3.8 8.1-4.6 11.9-1.7 3.8 2.9 4.6 8.1 1.7 11.9l-41.5 60.1c73.2 37.2 123 109.2 130.1 195.5H0c2.1-91.9 57.3-170 105.7-195.4zM140.2 50.5c-7.9 0-14.3 6.4-14.3 14.3s6.4 14.3 14.3 14.3 14.3-6.4 14.3-14.3-6.4-14.3-14.3-14.3zm146.6 0c-7.9 0-14.3 6.4-14.3 14.3s6.4 14.3 14.3 14.3 14.3-6.4 14.3-14.3-6.4-14.3-14.3-14.3zM39.9 499.8c-12 0-22-10-22-22V271.1h22v206.7c0 12 10 22 22 22h22.8v-250h277v250h22.8c12 0 22-10 22-22V271.1h22v206.7c0 12-10 22-22 22H39.9zM0 227.8C0 213.6 11.6 202 25.8 202h22.8v60h330.2v-60h22.7c14.2 0 25.8 11.6 25.8 25.8v33.9H0v-33.9z"/>
                 </svg>
               </span>
             );
           } else if (platform === 'ios') {
             return (
               <span key={index} className="inline-flex items-center justify-center h-6 w-6 rounded-full" title="iOS">
-                {/* Apple logo in white */}
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 384 512" fill="black">
+                {/* Apple logo that adapts to dark/light mode */}
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-foreground" viewBox="0 0 384 512" fill="currentColor">
                   <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/>
                 </svg>
               </span>
@@ -277,14 +277,15 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
           } else if (platform === 'chrome' || platform === 'chrome extension') {
             return (
               <span key={index} className="inline-flex items-center justify-center h-6 w-6 rounded-full" title="Chrome Extension">
-                {/* Chrome icon with 4 colors */}
+                {/* Chrome icon with 4 colors - using the exact image provided */}
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 100 100">
                   <circle cx="50" cy="50" r="50" fill="none" />
-                  <circle cx="50" cy="50" r="23" fill="#4285F4" stroke="white" strokeWidth="4" />
-                  <path d="M50,50 h37 a50,50 0 0,0 -37,-37 Z" fill="#EA4335" />
-                  <path d="M50,50 v37 a50,50 0 0,0 37,-37 Z" fill="#FBBC05" />
-                  <path d="M50,50 h-37 a50,50 0 0,0 37,37 Z" fill="#34A853" />
-                  <path d="M50,50 v-37 a50,50 0 0,0 -37,37 Z" fill="#EA4335" />
+                  <path d="M50 18.18c-8.95 0-17.23 2.97-23.9 8C31.44 19.15 41.06 15 51.67 15h31.67a35.01 35.01 0 00-33.33 3.18z" fill="#EA4335" />
+                  <path d="M26.1 26.18c-6.69 6.67-10.88 16-10.88 26.15 0 9.69 3.8 18.5 9.97 25.05L44.5 51.34a17.5 17.5 0 01-3.65-10.51c0-5.52 2.53-10.43 6.48-13.74-8.9-.08-16.88 3.82-21.23 9.09z" fill="#34A853" />
+                  <path d="M50 75.7a25.86 25.86 0 01-24.8-18.32L6.88 76.7C14.06 88.7 27.9 96.67 43.33 96.67c10.2 0 19.67-3.08 27.54-8.31L50 75.7z" fill="#FBBC05" />
+                  <path d="M85 50c0-5.2-1.16-10.14-3.21-14.61H50v17.5h18.33c-1.64 5.62-5.66 10.29-11.12 12.8L78.1 80c7.9-7.28 12.26-18.14 12.26-30z" fill="#4285F4" />
+                  <circle cx="50" cy="50" r="14.5" fill="white" />
+                  <circle cx="50" cy="50" r="11.67" fill="#4285F4" />
                 </svg>
               </span>
             );
