@@ -313,13 +313,45 @@
       "detailed": {
         "label": "Detallado",
         "title": "La característica tiene implementación detallada"
+      },
+      "email": {
+        "label": "Correo",
+        "title": "Recuperación a través de correo electrónico"
+      },
+      "full": {
+        "label": "Completo",
+        "title": "Soporte completo"
+      },
+      "yes_from_lsp": {
+        "label": "Sí (del PSL)",
+        "title": "Sí, provisto por el Proveedor de Servicios Lightning"
+      },
+      "yes_with_lnd": {
+        "label": "Sí (con LND)",
+        "title": "Sí, con implementación LND"
+      },
+      "yes_express_graph_sync": {
+        "label": "Sí (Sincronización Express)",
+        "title": "Sí, con funcionalidad de Sincronización Express del Grafo"
+      },
+      "yes_lsp_or_other_peers": {
+        "label": "Sí (PSL u otros pares)",
+        "title": "Sí, ya sea a través de PSL u otros pares"
+      },
+      "yes_for_bolt11_lnd_or_bolt12_cln": {
+        "label": "Sí para BOLT11 (LND) o BOLT12 (CLN)",
+        "title": "Sí para BOLT11 (LND) o BOLT12 (CLN)"
+      },
+      "lsp_or_user_managed": {
+        "label": "Gestionado por PSL o Usuario",
+        "title": "Gestionado por el PSL o por el usuario"
       }
     },
     "icons": {
-      "yes": true,
-      "no": true,
-      "partial": true,
-      "optional": true
+      "yes": "true",
+      "no": "true",
+      "partial": "true",
+      "optional": "true"
     },
     "styles": {
       "yes": "bg-primary/20 text-primary",

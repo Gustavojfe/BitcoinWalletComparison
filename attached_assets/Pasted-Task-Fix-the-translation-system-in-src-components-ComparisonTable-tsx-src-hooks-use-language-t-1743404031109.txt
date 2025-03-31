@@ -1,0 +1,40 @@
+Task: Fix the translation system in ./src/components/ComparisonTable.tsx, ./src/hooks/use-language.tsx, and ./src/translations/index.ts to ensure all feature values from the CSV data are translated consistently in English and Spanish, preserving icon rendering for "Yes", "No", "Partial", and "Optional". The current deployment shows English values on the Spanish page (except "Sí", "No", "Detallado", "Enviar") and lacks icons due to incomplete translations and a retained Platform special case.
+
+Context:
+
+Files:
+./src/components/ComparisonTable.tsx
+./src/hooks/use-language.tsx
+./src/translations/index.ts
+Translation files: ./src/locales/en.json, ./src/locales/es.json.
+CSV values: "Yes", "No", "Yes (GitHub)", "Email", "Full", "P2TR, P2WPKH", etc.
+Issues:
+Missing translations in es.json cause fallbacks to English raw values.
+Platform special case remains, breaking uniformity.
+Icons for "Yes" and "No" not rendering despite code presence.
+Requirements:
+
+Fix renderFeatureStatus:
+Remove the Platform special case in ./src/components/ComparisonTable.tsx.
+Use uniform logic for all values, preserving icons for "Yes" (checkmark), "No" (X), "Partial" (P), "Optional" (O) via featureStatus.icons.
+Ensure Icon Rendering:
+Verify featureStatus.icons.{normalizedKey} (e.g., yes, no) returns "true" and triggers SVG icons.
+Translation Files:
+Update ./src/locales/en.json and ./src/locales/es.json with all CSV values under featureStatus.values (e.g., "email", "full", "p2tr_p2wsh_p2pkh").
+Preserve UI:
+Keep checkmark for "Yes", X for "No", and text for "Partial"/"Optional".
+Apply styles from featureStatus.styles (e.g., bg-orange-100 for "custom").
+Debugging:
+Log missing translations in ./src/translations/index.ts.
+Output:
+
+Updated ./src/components/ComparisonTable.tsx, ./src/hooks/use-language.tsx, ./src/translations/index.ts.
+Updated ./src/locales/en.json and ./src/locales/es.json.
+Explanation and instructions.
+Instructions:
+
+Remove if (featureName?.toLowerCase() === 'platform') block in renderFeatureStatus.
+Ensure useIcon uses t(featureStatus.icons.${normalizedKey}, undefined, "false") === "true" and triggers icons.
+Add CSV values to featureStatus.values (e.g., "email": { "label": "Email", "title": "Recovery via email" }).
+Test with language = 'es': "Sí" (checkmark), "No" (X), "Correo" (muted pill if style undefined).
+Date: March 30, 2025.

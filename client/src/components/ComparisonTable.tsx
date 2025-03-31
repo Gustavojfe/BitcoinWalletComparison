@@ -115,25 +115,28 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
     // Create a full translation key path
     const translationKey = `featureStatus.values.${normalizedKey}`;
     
-    // Check if we're dealing with a platform list (comma-separated)
-    if (featureName?.toLowerCase() === 'platform' && customText && customText.includes(',')) {
-      const platforms = customText.split(',').map(p => p.trim());
+    // Handle comma-separated lists (like platforms) as special display case
+    // while still using the uniform translation system
+    if (customText && customText.includes(',')) {
+      const items = customText.split(',').map(p => p.trim());
       return (
         <div className="flex flex-wrap gap-1 justify-center">
-          {platforms.map((platform, index) => {
-            const platformKey = normalizeKey(platform);
-            const platformTranslationKey = `featureStatus.values.${platformKey}`;
+          {items.map((item, index) => {
+            const itemKey = normalizeKey(item);
+            const itemTranslationKey = `featureStatus.values.${itemKey}`;
             
             // Use translated value or fall back to raw value
-            const displayText = t(platformTranslationKey + '.label', undefined, platform);
-            const tooltipText = t(platformTranslationKey + '.title', undefined, platform);
+            const displayText = t(itemTranslationKey + '.label', undefined, item);
+            const tooltipText = t(itemTranslationKey + '.title', undefined, item);
             
-            // Determine text color based on platform
+            // Determine text color based on platform types (if this is a platform listing)
             let textColor = 'text-gray-600';
-            if (platform === 'ios') textColor = 'text-blue-500';
-            else if (platform === 'android') textColor = 'text-green-600';
-            else if (platform === 'desktop') textColor = 'text-purple-600';
-            else if (platform === 'web') textColor = 'text-amber-600';
+            if (featureName?.toLowerCase() === 'platform') {
+              if (item === 'ios') textColor = 'text-blue-500';
+              else if (item === 'android') textColor = 'text-green-600';
+              else if (item === 'desktop') textColor = 'text-purple-600';
+              else if (item === 'web') textColor = 'text-amber-600';
+            }
             
             return (
               <span 

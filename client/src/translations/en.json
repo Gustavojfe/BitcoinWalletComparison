@@ -313,13 +313,45 @@
       "detailed": {
         "label": "Detailed",
         "title": "Feature has detailed implementation"
+      },
+      "email": {
+        "label": "Email",
+        "title": "Recovery via email"
+      },
+      "full": {
+        "label": "Full",
+        "title": "Full support"
+      },
+      "yes_from_lsp": {
+        "label": "Yes (from LSP)",
+        "title": "Yes, provided by Lightning Service Provider"
+      },
+      "yes_with_lnd": {
+        "label": "Yes (with LND)",
+        "title": "Yes, with LND implementation"
+      },
+      "yes_express_graph_sync": {
+        "label": "Yes (Express Graph Sync)",
+        "title": "Yes, with Express Graph Sync feature"
+      },
+      "yes_lsp_or_other_peers": {
+        "label": "Yes (LSP or other peers)",
+        "title": "Yes, either via LSP or other peers"
+      },
+      "yes_for_bolt11_lnd_or_bolt12_cln": {
+        "label": "Yes for BOLT11 (LND) or BOLT12 (CLN)",
+        "title": "Yes for BOLT11 (LND) or BOLT12 (CLN)"
+      },
+      "lsp_or_user_managed": {
+        "label": "LSP or User Managed",
+        "title": "Managed by LSP or the user"
       }
     },
     "icons": {
-      "yes": true,
-      "no": true,
-      "partial": true,
-      "optional": true
+      "yes": "true",
+      "no": "true",
+      "partial": "true",
+      "optional": "true"
     },
     "styles": {
       "yes": "bg-primary/20 text-primary",
