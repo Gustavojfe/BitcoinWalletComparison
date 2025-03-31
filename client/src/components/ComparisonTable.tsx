@@ -248,10 +248,13 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
             );
           } else if (platform === 'android') {
             return (
-              <span key={index} className="inline-flex items-center justify-center h-6 w-6 rounded-full" title="Android">
-                {/* Android green mustard icon - using the exact image provided */}
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 427 505" fill="#A4C639">
-                  <path d="M105.7 83.3L64.2 23.2C61.4 19.4 62.2 14.2 66 11.3c3.8-2.9 9-2.1 11.9 1.7l41.9 60.7c35.8-16.6 75.8-26 118.1-26s82.3 9.4 118.1 26l41.9-60.7c2.9-3.8 8.1-4.6 11.9-1.7 3.8 2.9 4.6 8.1 1.7 11.9l-41.5 60.1c73.2 37.2 123 109.2 130.1 195.5H0c2.1-91.9 57.3-170 105.7-195.4zM140.2 50.5c-7.9 0-14.3 6.4-14.3 14.3s6.4 14.3 14.3 14.3 14.3-6.4 14.3-14.3-6.4-14.3-14.3-14.3zm146.6 0c-7.9 0-14.3 6.4-14.3 14.3s6.4 14.3 14.3 14.3 14.3-6.4 14.3-14.3-6.4-14.3-14.3-14.3zM39.9 499.8c-12 0-22-10-22-22V271.1h22v206.7c0 12 10 22 22 22h22.8v-250h277v250h22.8c12 0 22-10 22-22V271.1h22v206.7c0 12-10 22-22 22H39.9zM0 227.8C0 213.6 11.6 202 25.8 202h22.8v60h330.2v-60h22.7c14.2 0 25.8 11.6 25.8 25.8v33.9H0v-33.9z"/>
+              <span key={index} className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-green-100" title="Android">
+                {/* Going back to the previous Android icon */}
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 16V8a7 7 0 0 1 14 0v8"></path>
+                  <path d="M9 16v4"></path>
+                  <path d="M15 16v4"></path>
+                  <path d="M5 9h14"></path>
                 </svg>
               </span>
             );
@@ -276,16 +279,14 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
             );
           } else if (platform === 'chrome' || platform === 'chrome extension') {
             return (
-              <span key={index} className="inline-flex items-center justify-center h-6 w-6 rounded-full" title="Chrome Extension">
-                {/* Chrome icon with 4 colors - using the exact image provided */}
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 100 100">
-                  <circle cx="50" cy="50" r="50" fill="none" />
-                  <path d="M50 18.18c-8.95 0-17.23 2.97-23.9 8C31.44 19.15 41.06 15 51.67 15h31.67a35.01 35.01 0 00-33.33 3.18z" fill="#EA4335" />
-                  <path d="M26.1 26.18c-6.69 6.67-10.88 16-10.88 26.15 0 9.69 3.8 18.5 9.97 25.05L44.5 51.34a17.5 17.5 0 01-3.65-10.51c0-5.52 2.53-10.43 6.48-13.74-8.9-.08-16.88 3.82-21.23 9.09z" fill="#34A853" />
-                  <path d="M50 75.7a25.86 25.86 0 01-24.8-18.32L6.88 76.7C14.06 88.7 27.9 96.67 43.33 96.67c10.2 0 19.67-3.08 27.54-8.31L50 75.7z" fill="#FBBC05" />
-                  <path d="M85 50c0-5.2-1.16-10.14-3.21-14.61H50v17.5h18.33c-1.64 5.62-5.66 10.29-11.12 12.8L78.1 80c7.9-7.28 12.26-18.14 12.26-30z" fill="#4285F4" />
-                  <circle cx="50" cy="50" r="14.5" fill="white" />
-                  <circle cx="50" cy="50" r="11.67" fill="#4285F4" />
+              <span key={index} className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-yellow-100" title="Chrome Extension">
+                {/* Simpler Chrome icon */}
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" strokeWidth="2"/>
+                  <circle cx="50" cy="50" r="20" fill="#4285F4"/>
+                  <path d="M50,50 L85,50" stroke="#EA4335" strokeWidth="18" strokeLinecap="round"/>
+                  <path d="M50,50 L67,15" stroke="#FBBC05" strokeWidth="18" strokeLinecap="round"/>
+                  <path d="M50,50 L33,85" stroke="#34A853" strokeWidth="18" strokeLinecap="round"/>
                 </svg>
               </span>
             );
