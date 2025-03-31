@@ -161,96 +161,179 @@
     "required": "Requerido"
   },
   "featureStatus": {
-    "yes": {
-      "title": "Característica completamente soportada"
-    },
-    "no": {
-      "title": "No"
-    },
-    "not_possible": {
-      "title": "No es posible"
-    },
-    "partial": {
-      "title": "Parcial",
-      "label": "P"
-    },
-    "optional": {
-      "title": "Opcional",
-      "label": "O"
-    },
-    "custom": {
-      "title": "Personalizado",
-      "description": "La característica tiene implementación especial o limitaciones",
-      "patterns": {
-        "yesGitHub": {
-          "title": "Sí (GitHub)",
-          "description": "La característica es de código abierto con código disponible en GitHub"
-        },
-        "noGitHub": {
-          "title": "No (GitHub)",
-          "description": "La característica no está disponible en GitHub"
-        },
-        "partialGitHub": {
-          "title": "Parcial (GitHub)",
-          "description": "La característica está parcialmente disponible en GitHub"
-        },
-        "yesWebsite": {
-          "title": "Sí (Sitio Web)",
-          "description": "La característica está disponible en el sitio web"
-        },
-        "staticBackups": {
-          "title": "Copias de Seguridad Estáticas",
-          "description": "La característica admite archivos de copia de seguridad estáticos"
-        },
-        "notApplicable": {
-          "title": "No Aplicable",
-          "description": "Esta característica no se aplica a esta cartera"
-        },
-        "dynamicFees": {
-          "title": "Comisiones Dinámicas",
-          "description": "Las comisiones se ajustan dinámicamente según las condiciones de la red"
-        }
+    "values": {
+      "yes": {
+        "label": "Sí",
+        "title": "Característica completamente soportada"
+      },
+      "no": {
+        "label": "No",
+        "title": "Característica no soportada"
+      },
+      "not_possible": {
+        "label": "No es posible",
+        "title": "Esta característica no es posible con esta cartera"
+      },
+      "partial": {
+        "label": "P",
+        "title": "Soporte parcial"
+      },
+      "optional": {
+        "label": "O",
+        "title": "Característica opcional"
+      },
+      "custom": {
+        "label": "Personalizado",
+        "title": "Implementación personalizada"
+      },
+      "send_only": {
+        "label": "Enviar",
+        "title": "Solo envío"
+      },
+      "receive_only": {
+        "label": "Recibir",
+        "title": "Solo recepción"
+      },
+      "mandatory": {
+        "label": "Requerido",
+        "title": "La característica es obligatoria"
+      },
+      "unknown": {
+        "label": "?",
+        "title": "Estado desconocido"
+      },
+      "custodial": {
+        "label": "Custodial",
+        "title": "Cartera custodial"
+      },
+      "ln_node": {
+        "label": "Nodo LN",
+        "title": "Nodo de Lightning Network"
+      },
+      "liquid_swap": {
+        "label": "Intercambio Liquid",
+        "title": "Funcionalidad de Intercambio Liquid"
+      },
+      "on_chain_swap": {
+        "label": "Intercambio On-Chain",
+        "title": "Funcionalidad de Intercambio On-Chain"
+      },
+      "remote_node": {
+        "label": "Nodo Remoto",
+        "title": "Usa un nodo remoto"
+      },
+      "lnd": {
+        "label": "LND",
+        "title": "Usa implementación LND"
+      },
+      "ldk": {
+        "label": "LDK",
+        "title": "Usa Lightning Development Kit"
+      },
+      "core_lightning": {
+        "label": "Core Lightning",
+        "title": "Usa implementación Core Lightning"
+      },
+      "eclair": {
+        "label": "Eclair",
+        "title": "Usa implementación Eclair"
+      },
+      "automated": {
+        "label": "Automatizado",
+        "title": "Gestión de canales automatizada"
+      },
+      "lsp_assisted": {
+        "label": "Asistido por LSP",
+        "title": "Gestión de canales asistida por Proveedor de Servicios Lightning"
+      },
+      "automatic": {
+        "label": "Automático",
+        "title": "Gestión de canales automática"
+      },
+      "manual": {
+        "label": "Manual",
+        "title": "Gestión de canales manual"
+      },
+      "ios": {
+        "label": "iOS",
+        "title": "Disponible en iOS"
+      },
+      "android": {
+        "label": "Android",
+        "title": "Disponible en Android"
+      },
+      "desktop": {
+        "label": "Escritorio",
+        "title": "Disponible en Escritorio"
+      },
+      "web": {
+        "label": "Web",
+        "title": "Disponible en Web"
+      },
+      "yes_github": {
+        "label": "Sí (GitHub)",
+        "title": "La característica es de código abierto con código disponible en GitHub"
+      },
+      "no_github": {
+        "label": "No (GitHub)",
+        "title": "La característica no está disponible en GitHub"
+      },
+      "partial_github": {
+        "label": "Parcial (GitHub)",
+        "title": "La característica está parcialmente disponible en GitHub"
+      },
+      "yes_website": {
+        "label": "Sí (Sitio Web)",
+        "title": "La característica está disponible en el sitio web"
+      },
+      "static_backups": {
+        "label": "Copias de Seguridad Estáticas",
+        "title": "La característica admite archivos de copia de seguridad estáticos"
+      },
+      "not_applicable": {
+        "label": "No Aplicable",
+        "title": "Esta característica no se aplica a esta cartera"
+      },
+      "dynamic_fees": {
+        "label": "Comisiones Dinámicas",
+        "title": "Las comisiones se ajustan dinámicamente según las condiciones de la red"
+      },
+      "seed_phrase_scb": {
+        "label": "Frase Semilla + SCB",
+        "title": "Respaldado con frase semilla y copias de seguridad de canal estáticas"
+      },
+      "p2tr_p2wpkh": {
+        "label": "P2TR, P2WPKH",
+        "title": "Soporta tipos de dirección P2TR y P2WPKH"
+      },
+      "yes_dynamic_lsp_fees": {
+        "label": "Sí, comisiones LSP dinámicas",
+        "title": "Característica soportada con comisiones dinámicas de Proveedor de Servicios Lightning"
+      },
+      "detailed": {
+        "label": "Detallado",
+        "title": "La característica tiene implementación detallada"
       }
     },
-    "send_only": {
-      "title": "Solo envío",
-      "label": "Enviar"
+    "icons": {
+      "yes": true,
+      "no": true,
+      "partial": true,
+      "optional": true
     },
-    "receive_only": {
-      "title": "Solo recepción",
-      "label": "Recibir"
-    },
-    "mandatory": {
-      "title": "Obligatorio",
-      "label": "Requerido"
-    },
-    "unknown": {
-      "title": "Desconocido"
-    },
-    "channelManagement": {
-      "automated": "Automatizado",
-      "lspAssisted": "Asistido por LSP",
-      "automatic": "Automático",
-      "manual": "Manual"
-    },
-    "platform": {
-      "ios": "iOS",
-      "android": "Android",
-      "desktop": "Escritorio",
-      "web": "Web"
-    },
-    "implementation": {
-      "lnd": "LND",
-      "ldk": "LDK",
-      "core_lightning": "Core Lightning",
-      "eclair": "Eclair"
-    },
-    "walletType": {
-      "custodial": "Custodial",
-      "ln_node": "Nodo LN",
-      "liquid_swap": "Intercambio Liquid",
-      "on_chain_swap": "Intercambio On-Chain",
-      "remote_node": "Nodo Remoto"
+    "styles": {
+      "yes": "bg-primary/20 text-primary",
+      "no": "bg-destructive/20 text-destructive",
+      "not_possible": "bg-destructive/20 text-destructive",
+      "partial": "bg-orange-500/20 text-orange-500",
+      "optional": "bg-orange-500/20 text-orange-500",
+      "custom": "bg-orange-100 text-orange-600",
+      "send_only": "bg-amber-100 text-amber-600",
+      "receive_only": "bg-amber-100 text-amber-600",
+      "mandatory": "bg-orange-100 text-orange-600",
+      "unknown": "bg-muted text-muted-foreground",
+      "implementation": "bg-blue-100 text-blue-600",
+      "walletType": "bg-purple-100 text-purple-600"
     }
   },
   "comingSoon": {

@@ -90,104 +90,47 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
   /**
    * Render feature status based on value
    * Uses the translation system via t() function for all text displayed to users
-   * Translation keys are organized under "featureStatus" in translation files (en.json/es.json)
+   * Translation keys are organized under "featureStatus.values" in translation files (en.json/es.json)
+   * 
+   * This function provides a uniform approach to translating all feature values.
+   * To add a new feature value:
+   * 1. Add the translation key to "featureStatus.values" in both en.json and es.json
+   * 2. Add its style to "featureStatus.styles" if it needs special styling
+   * 3. Add it to "featureStatus.icons" if it should display with an icon
    */
   const renderFeatureStatus = (value: string, customText?: string, featureName?: string) => {
-    // Handle Channel Management feature which might have custom values
-    if (featureName === 'Channel Management' || featureName === 'Gestión de Canales' || featureName === 'Channel / Peer Management') {
-      if (value === 'custom' && customText) {
-        // Map the customText to a translation key for channel management options
-        let translationKey = '';
-        
-        if (customText === 'Automated' || customText === 'Automatizado') {
-          translationKey = 'automated';
-        } else if (customText === 'LSP Assisted' || customText === 'Asistido por LSP') {
-          translationKey = 'lspAssisted';
-        } else if (customText === 'Automatic' || customText === 'Automático') {
-          translationKey = 'automatic';
-        } else if (customText === 'Manual') {
-          translationKey = 'manual';
-        } else {
-          // Fallback for unknown values
-          return (
-            <span 
-              className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-orange-100"
-              title={customText}
-            >
-              <span className="text-xs font-medium text-orange-600">
-                {customText}
-              </span>
-            </span>
-          );
-        }
-        
-        const displayText = t(`featureStatus.channelManagement.${translationKey}`);
-        
-        return (
-          <span 
-            className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-orange-100"
-            title={displayText}
-          >
-            <span className="text-xs font-medium text-orange-600">
-              {displayText}
-            </span>
-          </span>
-        );
-      }
-    }
+    // Define helpers for normalization and translation
+    const normalizeKey = (key: string): string => {
+      return key.toLowerCase().replace(/[^\w]/gi, '_');
+    };
     
-    // Handle platform feature specially (displays array values)
-    if (featureName?.toLowerCase() === 'platform' && value === 'custom' && customText) {
-      const platforms = customText.split(',');
+    // Handle platform comma-separated lists specially
+    if (featureName?.toLowerCase() === 'platform' && customText && customText.includes(',')) {
+      const platforms = customText.split(',').map(p => p.trim());
       return (
         <div className="flex flex-wrap gap-1 justify-center">
           {platforms.map((platform, index) => {
-            // Map platform names to translation keys
-            let translationKey = '';
-            if (['ios', 'android', 'desktop', 'web'].includes(platform)) {
-              translationKey = platform;
-            } else {
-              // For unknown platforms, just use the platform value
-              return (
-                <span 
-                  key={index}
-                  className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-primary/10"
-                  title={platform}
-                >
-                  <span className="text-xs font-medium text-gray-600">{platform}</span>
-                </span>
-              );
-            }
+            const normalizedKey = normalizeKey(platform);
+            const translationKey = `featureStatus.values.${normalizedKey}`;
             
-            const displayPlatform = t(`featureStatus.platform.${translationKey}`);
+            // Use translated value or fall back to raw value
+            const displayText = t(translationKey + '.label', undefined, platform);
+            const tooltipText = t(translationKey + '.title', undefined, platform);
             
-            // Icon mapping for platforms 
-            let textColor = '';
-            
-            switch (platform) {
-              case 'ios':
-                textColor = 'text-blue-500';
-                break;
-              case 'android':
-                textColor = 'text-green-600';
-                break;
-              case 'desktop':
-                textColor = 'text-purple-600';
-                break;
-              case 'web':
-                textColor = 'text-amber-600';
-                break;
-              default:
-                textColor = 'text-gray-600';
-            }
+            // Determine text color based on platform
+            let textColor = 'text-gray-600';
+            if (platform === 'ios') textColor = 'text-blue-500';
+            else if (platform === 'android') textColor = 'text-green-600';
+            else if (platform === 'desktop') textColor = 'text-purple-600';
+            else if (platform === 'web') textColor = 'text-amber-600';
             
             return (
               <span 
                 key={index}
                 className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-primary/10"
-                title={displayPlatform}
+                title={tooltipText}
               >
-                <span className={`text-xs font-medium ${textColor}`}>{displayPlatform}</span>
+                <span className={`text-xs font-medium ${textColor}`}>{displayText}</span>
               </span>
             );
           })}
@@ -195,169 +138,103 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
       );
     }
     
-    // Handle implementation values (LND, LDK, etc.)
-    if (['lnd', 'ldk', 'core_lightning', 'eclair'].includes(value)) {
-      const displayValue = t(`featureStatus.implementation.${value}`);
-      
-      return (
-        <span 
-          className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-blue-100 text-blue-600"
-          title={displayValue}
-        >
-          <span className="text-xs font-medium">{displayValue}</span>
-        </span>
-      );
+    // For all other values, handle them uniformly
+    // Determine which value to use and normalize it to a translation key
+    const displayValue = (value === 'custom' && customText) ? customText : value;
+    // Normalize to create a valid translation key (e.g., "Yes (GitHub)" -> "yes_github")
+    const normalizedKey = normalizeKey(displayValue);
+    
+    // Create a full translation key path
+    const translationKey = `featureStatus.values.${normalizedKey}`;
+    
+    // Fetch translated values or fall back to raw values
+    const label = t(`${translationKey}.label`, undefined, displayValue);
+    const title = t(`${translationKey}.title`, undefined, displayValue);
+    
+    // Determine if this value uses an icon
+    const useIcon = t(`featureStatus.icons.${normalizedKey}`, undefined, false);
+    
+    // Get style class or use default based on value
+    let styleClass = '';
+    
+    // First check if there's a direct style for the normalized key
+    if (t(`featureStatus.styles.${normalizedKey}`, undefined, null)) {
+      styleClass = t(`featureStatus.styles.${normalizedKey}`);
+    } 
+    // Then check if there's a style for the raw value
+    else if (t(`featureStatus.styles.${value}`, undefined, null)) {
+      styleClass = t(`featureStatus.styles.${value}`);
+    } 
+    // Special style for implementation values
+    else if (['lnd', 'ldk', 'core_lightning', 'eclair'].includes(value)) {
+      styleClass = t('featureStatus.styles.implementation');
+    } 
+    // Special style for wallet types
+    else if (['custodial', 'ln_node', 'liquid_swap', 'on_chain_swap', 'remote_node'].includes(value)) {
+      styleClass = t('featureStatus.styles.walletType');
+    } 
+    // Use custom style for custom values with text
+    else if (value === 'custom' && customText) {
+      styleClass = t('featureStatus.styles.custom');
+    } 
+    // Default to unknown/muted style
+    else {
+      styleClass = t('featureStatus.styles.unknown');
     }
     
-    // Handle wallet types
-    if (['custodial', 'ln_node', 'liquid_swap', 'on_chain_swap', 'remote_node'].includes(value)) {
-      const displayValue = t(`featureStatus.walletType.${value}`);
-      
-      return (
-        <span 
-          className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-purple-100 text-purple-600"
-          title={displayValue}
-        >
-          <span className="text-xs font-medium">{displayValue}</span>
-        </span>
-      );
-    }
+    // Split the style class to get background and text color for styling
+    const bgClass = styleClass.split(' ')[0] || 'bg-muted';
+    const textClass = styleClass.split(' ')[1] || 'text-muted-foreground';
     
-    // Handle regular values with icons
-    switch (value) {
-      case 'yes':
+    // Render icon-based statuses (yes, no, etc.)
+    if (useIcon) {
+      if (value === 'yes') {
         return (
           <span 
             className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-primary/20"
-            title={t('featureStatus.yes.title')}
+            title={title}
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
             </svg>
           </span>
         );
-      case 'no':
-      case 'not_possible':
+      } else if (value === 'no' || value === 'not_possible') {
         return (
           <span 
             className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-destructive/20"
-            title={t(`featureStatus.${value}.title`)}
+            title={title}
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-destructive" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
             </svg>
           </span>
         );
-      case 'partial':
-      case 'optional':
+      } else if (value === 'partial' || value === 'optional') {
         return (
           <span 
             className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-orange-500/20"
-            title={t(`featureStatus.${value}.title`)}
+            title={title}
           >
             <span className="text-xs font-medium text-orange-500">
-              {t(`featureStatus.${value}.label`)}
+              {label}
             </span>
           </span>
         );
-      case 'custom':
-        // Handle known custom text patterns with translations
-        if (customText) {
-          // Map customText to translation key pattern
-          let patternKey: string | null = null;
-          
-          // Check for known patterns and map them to translation keys
-          if (customText.match(/yes\s*\(\s*github\s*\)/i)) {
-            patternKey = 'yesGitHub';
-          } else if (customText.match(/no\s*\(\s*github\s*\)/i)) {
-            patternKey = 'noGitHub';
-          } else if (customText.match(/partial\s*\(\s*github\s*\)/i)) {
-            patternKey = 'partialGitHub';
-          } else if (customText.match(/yes\s*\(\s*website\s*\)/i)) {
-            patternKey = 'yesWebsite';
-          } else if (customText.match(/static\s*backups?/i)) {
-            patternKey = 'staticBackups';
-          } else if (customText.match(/not\s*applicable/i)) {
-            patternKey = 'notApplicable';
-          } else if (customText.match(/dynamic\s*fees/i)) {
-            patternKey = 'dynamicFees';
-          }
-          
-          // If we have a pattern key, use it for translation
-          if (patternKey) {
-            const translatedTitle = t(`featureStatus.custom.patterns.${patternKey}.title`);
-            const translatedDescription = t(`featureStatus.custom.patterns.${patternKey}.description`);
-            
-            return (
-              <span 
-                className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-orange-100"
-                title={translatedDescription}
-              >
-                <span className="text-xs font-medium text-orange-600">
-                  {translatedTitle}
-                </span>
-              </span>
-            );
-          }
-        }
-        
-        // Fallback for unknown custom text patterns
-        const customTitle = customText || t('featureStatus.custom.description');
-        const customDisplay = customText || t('featureStatus.custom.title');
-        
-        return (
-          <span 
-            className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-orange-100"
-            title={customTitle}
-          >
-            <span className="text-xs font-medium text-orange-600">
-              {customDisplay}
-            </span>
-          </span>
-        );
-      case 'send_only':
-        return (
-          <span 
-            className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-amber-100"
-            title={t('featureStatus.send_only.title')}
-          >
-            <span className="text-xs font-medium text-amber-600">
-              {t('featureStatus.send_only.label')}
-            </span>
-          </span>
-        );
-      case 'receive_only':
-        return (
-          <span 
-            className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-amber-100"
-            title={t('featureStatus.receive_only.title')}
-          >
-            <span className="text-xs font-medium text-amber-600">
-              {t('featureStatus.receive_only.label')}
-            </span>
-          </span>
-        );
-      case 'mandatory':
-        return (
-          <span 
-            className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-orange-100"
-            title={t('featureStatus.mandatory.title')}
-          >
-            <span className="text-xs font-medium text-orange-600">
-              {t('featureStatus.mandatory.label')}
-            </span>
-          </span>
-        );
-      default:
-        return (
-          <span 
-            className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-muted"
-            title={t('featureStatus.unknown.title')}
-          >
-            <span className="text-xs font-medium text-muted-foreground">?</span>
-          </span>
-        );
+      }
     }
+    
+    // For everything else, render as a text pill
+    return (
+      <span 
+        className={`inline-flex items-center justify-center h-6 px-2 rounded-md ${bgClass}`}
+        title={title}
+      >
+        <span className={`text-xs font-medium ${textClass}`}>
+          {label}
+        </span>
+      </span>
+    );
   };
 
   // Filter visible features based on search and visibility settings

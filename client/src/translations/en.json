@@ -161,96 +161,179 @@
     "required": "Required"
   },
   "featureStatus": {
-    "yes": {
-      "title": "Feature fully supported"
-    },
-    "no": {
-      "title": "No"
-    },
-    "not_possible": {
-      "title": "Not possible"
-    },
-    "partial": {
-      "title": "Partial",
-      "label": "P"
-    },
-    "optional": {
-      "title": "Optional",
-      "label": "O"
-    },
-    "custom": {
-      "title": "Custom",
-      "description": "Feature has special implementation or limitations",
-      "patterns": {
-        "yesGitHub": {
-          "title": "Yes (GitHub)",
-          "description": "Feature is open source with code available on GitHub"
-        },
-        "noGitHub": {
-          "title": "No (GitHub)",
-          "description": "Feature is not available on GitHub"
-        },
-        "partialGitHub": {
-          "title": "Partial (GitHub)",
-          "description": "Feature is partially available on GitHub"
-        },
-        "yesWebsite": {
-          "title": "Yes (Website)",
-          "description": "Feature is available on the website"
-        },
-        "staticBackups": {
-          "title": "Static Backups",
-          "description": "Feature supports static backup files"
-        },
-        "notApplicable": {
-          "title": "Not Applicable",
-          "description": "This feature does not apply to this wallet"
-        },
-        "dynamicFees": {
-          "title": "Dynamic Fees",
-          "description": "Fees are adjusted dynamically based on network conditions"
-        }
+    "values": {
+      "yes": {
+        "label": "Yes",
+        "title": "Feature fully supported"
+      },
+      "no": {
+        "label": "No",
+        "title": "Feature not supported"
+      },
+      "not_possible": {
+        "label": "Not possible",
+        "title": "This feature is not possible with this wallet"
+      },
+      "partial": {
+        "label": "P",
+        "title": "Partial support"
+      },
+      "optional": {
+        "label": "O",
+        "title": "Optional feature"
+      },
+      "custom": {
+        "label": "Custom",
+        "title": "Custom implementation"
+      },
+      "send_only": {
+        "label": "Send",
+        "title": "Send only"
+      },
+      "receive_only": {
+        "label": "Receive",
+        "title": "Receive only"
+      },
+      "mandatory": {
+        "label": "Required",
+        "title": "Feature is mandatory"
+      },
+      "unknown": {
+        "label": "?",
+        "title": "Unknown status"
+      },
+      "custodial": {
+        "label": "Custodial",
+        "title": "Custodial wallet"
+      },
+      "ln_node": {
+        "label": "LN Node",
+        "title": "Lightning Network Node"
+      },
+      "liquid_swap": {
+        "label": "Liquid Swap",
+        "title": "Liquid Swap functionality"
+      },
+      "on_chain_swap": {
+        "label": "On-Chain Swap",
+        "title": "On-Chain Swap functionality"
+      },
+      "remote_node": {
+        "label": "Remote Node",
+        "title": "Uses a remote node"
+      },
+      "lnd": {
+        "label": "LND",
+        "title": "Uses LND implementation"
+      },
+      "ldk": {
+        "label": "LDK",
+        "title": "Uses Lightning Development Kit"
+      },
+      "core_lightning": {
+        "label": "Core Lightning",
+        "title": "Uses Core Lightning implementation"
+      },
+      "eclair": {
+        "label": "Eclair",
+        "title": "Uses Eclair implementation"
+      },
+      "automated": {
+        "label": "Automated",
+        "title": "Automated channel management"
+      },
+      "lsp_assisted": {
+        "label": "LSP Assisted",
+        "title": "Channel management assisted by Lightning Service Provider"
+      },
+      "automatic": {
+        "label": "Automatic",
+        "title": "Automatic channel management"
+      },
+      "manual": {
+        "label": "Manual",
+        "title": "Manual channel management"
+      },
+      "ios": {
+        "label": "iOS",
+        "title": "Available on iOS"
+      },
+      "android": {
+        "label": "Android",
+        "title": "Available on Android"
+      },
+      "desktop": {
+        "label": "Desktop",
+        "title": "Available on Desktop"
+      },
+      "web": {
+        "label": "Web",
+        "title": "Available on Web"
+      },
+      "yes_github": {
+        "label": "Yes (GitHub)",
+        "title": "Feature is open source with code available on GitHub"
+      },
+      "no_github": {
+        "label": "No (GitHub)",
+        "title": "Feature is not available on GitHub"
+      },
+      "partial_github": {
+        "label": "Partial (GitHub)",
+        "title": "Feature is partially available on GitHub"
+      },
+      "yes_website": {
+        "label": "Yes (Website)",
+        "title": "Feature is available on the website"
+      },
+      "static_backups": {
+        "label": "Static Backups",
+        "title": "Feature supports static backup files"
+      },
+      "not_applicable": {
+        "label": "Not Applicable",
+        "title": "This feature does not apply to this wallet"
+      },
+      "dynamic_fees": {
+        "label": "Dynamic Fees",
+        "title": "Fees are adjusted dynamically based on network conditions"
+      },
+      "seed_phrase_scb": {
+        "label": "Seed Phrase + SCB",
+        "title": "Backed up with seed phrase and static channel backups"
+      },
+      "p2tr_p2wpkh": {
+        "label": "P2TR, P2WPKH",
+        "title": "Supports P2TR and P2WPKH address types"
+      },
+      "yes_dynamic_lsp_fees": {
+        "label": "Yes, dynamic LSP fees",
+        "title": "Feature supported with dynamic Lightning Service Provider fees"
+      },
+      "detailed": {
+        "label": "Detailed",
+        "title": "Feature has detailed implementation"
       }
     },
-    "send_only": {
-      "title": "Send only",
-      "label": "Send"
+    "icons": {
+      "yes": true,
+      "no": true,
+      "partial": true,
+      "optional": true
     },
-    "receive_only": {
-      "title": "Receive only",
-      "label": "Receive"
-    },
-    "mandatory": {
-      "title": "Mandatory",
-      "label": "Required"
-    },
-    "unknown": {
-      "title": "Unknown"
-    },
-    "channelManagement": {
-      "automated": "Automated",
-      "lspAssisted": "LSP Assisted",
-      "automatic": "Automatic",
-      "manual": "Manual"
-    },
-    "platform": {
-      "ios": "iOS",
-      "android": "Android",
-      "desktop": "Desktop",
-      "web": "Web"
-    },
-    "implementation": {
-      "lnd": "LND",
-      "ldk": "LDK",
-      "core_lightning": "Core Lightning",
-      "eclair": "Eclair"
-    },
-    "walletType": {
-      "custodial": "Custodial",
-      "ln_node": "LN Node",
-      "liquid_swap": "Liquid Swap",
-      "on_chain_swap": "On-Chain Swap",
-      "remote_node": "Remote Node"
+    "styles": {
+      "yes": "bg-primary/20 text-primary",
+      "no": "bg-destructive/20 text-destructive",
+      "not_possible": "bg-destructive/20 text-destructive",
+      "partial": "bg-orange-500/20 text-orange-500",
+      "optional": "bg-orange-500/20 text-orange-500",
+      "custom": "bg-orange-100 text-orange-600",
+      "send_only": "bg-amber-100 text-amber-600",
+      "receive_only": "bg-amber-100 text-amber-600",
+      "mandatory": "bg-orange-100 text-orange-600",
+      "unknown": "bg-muted text-muted-foreground",
+      "implementation": "bg-blue-100 text-blue-600",
+      "walletType": "bg-purple-100 text-purple-600"
     }
   },
   "comingSoon": {
