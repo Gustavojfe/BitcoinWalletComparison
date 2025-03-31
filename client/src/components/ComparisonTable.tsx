@@ -91,16 +91,25 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
   const renderFeatureStatus = (value: string, customText?: string, featureName?: string) => {
     // Translate feature value using the translation function
     const translateValue = (val: string): string => {
+      if (!val) return '';
+      
+      // Normalize the value by replacing spaces with underscores and converting to lowercase
+      const normalizedVal = val.trim().toLowerCase().replace(/\s+/g, '_');
+      
       // First try with features prefix
-      let translated = t(`features.${val}`);
+      let translated = t(`features.${normalizedVal}`);
       
       // If we got back the key itself, try the common prefix
-      if (translated === `features.${val}`) {
-        translated = t(`common.${val}`);
+      if (translated === `features.${normalizedVal}`) {
+        translated = t(`common.${normalizedVal}`);
       }
       
-      // If still no translation found, return the original value
-      return translated === `common.${val}` ? val : translated;
+      // If still no translation found, return the original value with first letter capitalized
+      if (translated === `common.${normalizedVal}`) {
+        return val.charAt(0).toUpperCase() + val.slice(1);
+      }
+      
+      return translated;
     };
     
     // Handle Channel Management feature which might have custom values
