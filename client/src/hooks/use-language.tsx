@@ -88,17 +88,37 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
 
   // Wallet translation function
   const translateWallet = (wallet: Wallet) => {
+    // Map wallet names to the keys in our translation files
+    const getWalletKey = (name: string): string => {
+      // Convert to lowercase and replace spaces/dashes with underscores
+      const key = name.toLowerCase().replace(/[\s-]+/g, '_');
+      
+      // Special case mappings
+      const specialCases: Record<string, string> = {
+        'alby': 'alby_hub',
+        'blitz': 'blitz_wallet',
+        'blixt': 'blixt_wallet',
+        'rtl': 'ride_the_lightning',
+        'wallet_of_satoshi': 'wallet_of_satoshi',
+        'walletofsatoshi': 'wallet_of_satoshi',
+        'wos': 'wallet_of_satoshi'
+      };
+      
+      return specialCases[key] || key;
+    };
+    
+    const walletKey = getWalletKey(wallet.name);
+    
     // Use proper key lookup path for wallet translations
-    // First try direct name match in wallets file
-    let translatedName = getTranslation(language, `wallets.${wallet.name}.name`);
-    let translatedDescription = getTranslation(language, `wallets.${wallet.name}.description`);
+    let translatedName = getTranslation(language, `wallets.${walletKey}.name`);
+    let translatedDescription = getTranslation(language, `wallets.${walletKey}.description`);
     
     // If we get back the key itself (no match found), use the original value
-    if (translatedName === `wallets.${wallet.name}.name` || !translatedName) {
+    if (translatedName === `wallets.${walletKey}.name` || !translatedName) {
       translatedName = wallet.name;
     }
     
-    if (translatedDescription === `wallets.${wallet.name}.description` || !translatedDescription) {
+    if (translatedDescription === `wallets.${walletKey}.description` || !translatedDescription) {
       translatedDescription = wallet.description;
     }
     

@@ -1,7 +1,7 @@
 {
   "name": "Blink",
   "website": "https://www.blink.sv",
-  "description": "Custodial wallet for Bitcoin and Lightning",
+  "description": "A custodial Bitcoin wallet for everyday use. Simple, secure, and requires a phone number to sign up.",
   "type": "lightning",
   "logo": "blink",
   "order": 1,

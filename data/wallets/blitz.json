@@ -1,7 +1,7 @@
 {
   "name": "Blitz",
   "website": "https://blitz-wallet.com/",
-  "description": "Hybrid Liquid and Lightning wallet",
+  "description": "A self-custodial Bitcoin and Lightning wallet using Breez SDK. Starts with Liquid swaps (Boltz) and evolves into an embedded node with LSP-managed channels.",
   "type": "lightning",
   "logo": "blitz",
   "order": 10,

@@ -1,7 +1,7 @@
 {
   "name": "Sati",
   "website": "https://www.sati.pro/",
-  "description": "WhatsApp-based Lightning wallet",
+  "description": "A WhatsApp bot for fast, secure Bitcoin and stablecoin payments—no extra app needed, with super-easy onboarding.",
   "type": "lightning",
   "logo": "sati",
   "order": 6,

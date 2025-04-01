@@ -1,7 +1,7 @@
 {
   "name": "Wallet of Satoshi",
   "website": "https://www.walletofsatoshi.com",
-  "description": "Simple custodial Lightning wallet",
+  "description": "A zero-configuration custodial Lightning wallet for iOS and Android, prioritizing simplicity—world's most popular Lightning wallet.",
   "type": "lightning",
   "logo": "walletofsatoshi",
   "order": 2,
