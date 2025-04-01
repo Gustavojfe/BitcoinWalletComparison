@@ -120,11 +120,12 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
         
         return (
           <div className="flex items-center justify-center">
-            <WalletTooltip title="Limited Availability" description={title}>
-              <div className="py-1 px-2 rounded bg-orange-100 text-orange-600 text-sm text-center cursor-help">
-                {label}
-              </div>
-            </WalletTooltip>
+            <div 
+              className="py-1 px-2 rounded bg-orange-100 text-orange-600 text-sm text-center cursor-help"
+              title={title}
+            >
+              {label}
+            </div>
           </div>
         );
       }
@@ -137,11 +138,12 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
         
         return (
           <div className="flex items-center justify-center">
-            <WalletTooltip title="Limited Availability" description={title}>
-              <div className="py-1 px-2 rounded bg-orange-100 text-orange-600 text-sm text-center cursor-help">
-                {label}
-              </div>
-            </WalletTooltip>
+            <div 
+              className="py-1 px-2 rounded bg-orange-100 text-orange-600 text-sm text-center cursor-help"
+              title={title}
+            >
+              {label}
+            </div>
           </div>
         );
       }
