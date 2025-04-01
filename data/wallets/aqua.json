@@ -13,7 +13,7 @@
     "openSource": "yes",
     "availability": {
       "value": "custom",
-      "customText": "Unrestricted"
+      "customText": "Standard"
     },
     "custodialStatus": {
       "value": "custom",
@@ -63,6 +63,6 @@
     "testnetSupport": "no",
     "developerApis": "no"
   },
-  "availability": "Unrestricted",
+  "availability": "Standard",
   "category": "Liquid / On-Chain Wallet with Submarine and Reverse Swaps (Boltz)"
 }

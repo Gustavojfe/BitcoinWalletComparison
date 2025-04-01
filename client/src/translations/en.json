@@ -402,6 +402,22 @@
         "label": "Very Limited", 
         "title": "Very limited availability" 
       },
+      "standard": {
+        "label": "Standard",
+        "title": "Standard availability with no restrictions"
+      },
+      "limited": {
+        "label": "Limited",
+        "title": "Limited availability in some regions"
+      },
+      "limited_blink_phoenix_wos": {
+        "label": "Limited",
+        "title": "Restricted in the United States, and small / sanctioned countries."
+      },
+      "limited_bitkit": {
+        "label": "Limited",
+        "title": "The Blocktank Lightning Service Provider (LSP) is restricted in the United States and Canada. Bitkit is standardly available in the app store."
+      },
       "24_hours": { 
         "label": "24 hours", 
         "title": "24-hour duration" 

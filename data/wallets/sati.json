@@ -13,7 +13,7 @@
     "openSource": "no",
     "availability": {
       "value": "custom",
-      "customText": "Unrestricted"
+      "customText": "Standard"
     },
     "custodialStatus": {
       "value": "custom",
@@ -53,6 +53,6 @@
     "testnetSupport": "no",
     "developerApis": "no"
   },
-  "availability": "Unrestricted",
+  "availability": "Standard",
   "category": "Custodial"
 }

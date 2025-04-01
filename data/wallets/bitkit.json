@@ -13,7 +13,7 @@
     "openSource": "yes",
     "availability": {
       "value": "custom",
-      "customText": "US and Canada BlockTank LSP restricted"
+      "customText": "Limited (LSP)"
     },
     "custodialStatus": {
       "value": "custom",
@@ -98,6 +98,6 @@
     "torSupport": "no",
     "developerApis": "no"
   },
-  "availability": "US and Canada BlockTank LSP restricted",
+  "availability": "Limited (LSP)",
   "category": "L1/L2 (LN Node)"
 }

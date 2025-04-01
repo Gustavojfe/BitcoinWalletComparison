@@ -11,9 +11,7 @@
       "customText": "Desktop"
     },
     "openSource": "yes",
-    "availability": {
-      "value": "custom",
-      "customText": "Unrestricted"
+    "availability": "yes",
     },
     "custodialStatus": {
       "value": "custom",
@@ -103,6 +101,6 @@
       "customText": "RPC / CLI"
     }
   },
-  "availability": "Unrestricted",
+  "availability": "yes",
   "category": "L1/L2 (LN Node)"
 }

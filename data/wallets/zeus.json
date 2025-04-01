@@ -13,7 +13,7 @@
     "openSource": "yes",
     "availability": {
       "value": "custom",
-      "customText": "Unrestricted"
+      "customText": "Standard"
     },
     "custodialStatus": {
       "value": "custom",
@@ -115,6 +115,6 @@
     "testnetSupport": "yes",
     "developerApis": "no"
   },
-  "availability": "Unrestricted",
+  "availability": "Standard",
   "category": "L1/L2 (LN Node) or UI for multiple nodes"
 }
