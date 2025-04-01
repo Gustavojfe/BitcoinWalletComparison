@@ -119,14 +119,11 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
           "Restricted in the United States, and small / sanctioned countries.");
         
         return (
-          <div className="flex items-center justify-center">
-            <div 
-              className="py-1 px-2 rounded bg-orange-100 text-orange-600 text-sm text-center cursor-help"
-              title={title}
-            >
+          <WalletTooltip title={label} description={title}>
+            <div className="py-1 px-2 rounded bg-orange-100 text-orange-600 text-sm text-center">
               {label}
             </div>
-          </div>
+          </WalletTooltip>
         );
       }
       
@@ -137,14 +134,11 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
           "The Blocktank Lightning Service Provider (LSP) is restricted in the United States and Canada. Bitkit is standardly available in the app store.");
         
         return (
-          <div className="flex items-center justify-center">
-            <div 
-              className="py-1 px-2 rounded bg-orange-100 text-orange-600 text-sm text-center cursor-help"
-              title={title}
-            >
+          <WalletTooltip title={label} description={title}>
+            <div className="py-1 px-2 rounded bg-orange-100 text-orange-600 text-sm text-center">
               {label}
             </div>
-          </div>
+          </WalletTooltip>
         );
       }
     }
