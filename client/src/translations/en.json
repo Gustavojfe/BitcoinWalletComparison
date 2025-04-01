@@ -726,6 +726,26 @@
       "lsp_managed_if_not_remote": {
         "label": "LSP Managed (if not remote)",
         "title": "Managed by Lightning Service Provider if not remote"
+      },
+      "onchain_wallet": {
+        "label": "On-Chain Wallet",
+        "title": "On-Chain Wallet"
+      },
+      "onchain_wallet_with_ln_swaps": {
+        "label": "On-Chain Wallet with LN Swaps",
+        "title": "On-Chain Wallet with Lightning Network Swaps"
+      },
+      "liquid_onchain_wallet_with_ln_swaps_boltz": {
+        "label": "Liquid / On-Chain Wallet with LN Swaps (Boltz)",
+        "title": "Liquid / On-Chain Wallet with Lightning Network Swaps via Boltz"
+      },
+      "l1l2_ln_node": {
+        "label": "L1/L2 (LN Node)",
+        "title": "Layer 1/Layer 2 with Lightning Network Node"
+      },
+      "p2wpkh": {
+        "label": "P2WPKH",
+        "title": "P2WPKH Address"
       }
     },
     "icons": {

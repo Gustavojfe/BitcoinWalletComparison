@@ -750,6 +750,26 @@
       "lsp_managed_if_not_remote": {
         "label": "Gestionado por PSL (si no es remoto)",
         "title": "Gestionado por Proveedor de Servicios Lightning si no es remoto"
+      },
+      "onchain_wallet": {
+        "label": "Cartera On-Chain",
+        "title": "Cartera On-Chain"
+      },
+      "onchain_wallet_with_ln_swaps": {
+        "label": "Cartera On-Chain con Swaps LN",
+        "title": "Cartera On-Chain con intercambios de Lightning Network"
+      },
+      "liquid_onchain_wallet_with_ln_swaps_boltz": {
+        "label": "Cartera Liquid / On-Chain con Swaps LN (Boltz)",
+        "title": "Cartera Liquid / On-Chain con intercambios de Lightning Network via Boltz"
+      },
+      "l1l2_ln_node": {
+        "label": "L1/L2 (Nodo LN)",
+        "title": "Cartera de Capa 1/Capa 2 con Nodo de Lightning Network"
+      },
+      "p2wpkh": {
+        "label": "P2WPKH",
+        "title": "Dirección P2WPKH"
       }
     },
     "icons": {
