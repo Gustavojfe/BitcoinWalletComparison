@@ -90,9 +90,10 @@ const FeatureTooltip = ({
         <TooltipContent 
           side="top" 
           align="center"
-          className="max-w-[300px] text-sm bg-popover text-popover-foreground shadow-md rounded-md px-3 py-1.5 z-50"
+          sideOffset={5}
+          className="max-w-[350px] z-50"
         >
-          {tooltipText}
+          <p className="whitespace-normal break-words leading-relaxed">{tooltipText}</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>

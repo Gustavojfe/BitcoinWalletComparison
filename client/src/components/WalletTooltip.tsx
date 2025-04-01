@@ -34,11 +34,11 @@ const WalletTooltip = ({ title, description, children }: TooltipProps) => {
           side="top" 
           align="center"
           sideOffset={5}
-          className="max-w-[300px] p-3 z-50 bg-popover text-popover-foreground"
+          className="max-w-[350px] p-3 z-50 bg-popover text-popover-foreground"
         >
           <h3 className="font-medium text-sm mb-1">{title}</h3>
           {description && (
-            <p className="text-xs text-muted-foreground whitespace-normal break-words">{description}</p>
+            <p className="text-xs text-muted-foreground whitespace-normal break-words leading-relaxed">{description}</p>
           )}
         </TooltipContent>
       </Tooltip>
