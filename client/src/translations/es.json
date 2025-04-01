@@ -415,8 +415,8 @@
         "title": "Restringido en los Estados Unidos y en países pequeños o sancionados."
       },
       "limited_bitkit": {
-        "label": "Limitado",
-        "title": "El Proveedor de Servicios Lightning (LSP) Blocktank está restringido en los Estados Unidos y Canadá. Bitkit está disponible normalmente en la tienda de aplicaciones."
+        "label": "Limitado (PSL)",
+        "title": "El Proveedor de Servicios Lightning (PSL) Blocktank está restringido en los Estados Unidos y Canadá. Bitkit está disponible normalmente en la tienda de aplicaciones."
       },
       "24_hours": { 
         "label": "24 horas", 

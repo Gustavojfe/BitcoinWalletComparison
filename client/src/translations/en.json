@@ -415,7 +415,7 @@
         "title": "Restricted in the United States, and small / sanctioned countries."
       },
       "limited_bitkit": {
-        "label": "Limited",
+        "label": "Limited (LSP)",
         "title": "The Blocktank Lightning Service Provider (LSP) is restricted in the United States and Canada. Bitkit is standardly available in the app store."
       },
       "24_hours": { 
