@@ -17,7 +17,7 @@
     },
     "custodialStatus": {
       "value": "custom",
-      "customText": "On-Chain Wallet with Submarine and Reverse Swap"
+      "customText": "On-Chain Wallet with LN Swaps"
     },
     "transactionFees": {
       "value": "custom",
@@ -68,5 +68,5 @@
     "noKyc": "yes"
   },
   "availability": "Standard",
-  "category": "On-Chain Wallet with Submarine and Reverse Swap"
+  "category": "On-Chain Wallet with LN Swaps"
 }
