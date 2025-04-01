@@ -770,6 +770,58 @@
       "p2wpkh": {
         "label": "P2WPKH",
         "title": "Dirección P2WPKH"
+      },
+      "l1l2_ln_node_or_ui_for_multiple_nodes": {
+        "label": "L1/L2 (Nodo LN) o UI para múltiples nodos",
+        "title": "Capa 1/Capa 2 con Nodo Lightning Network o interfaz para múltiples nodos"
+      },
+      "kyc_over_1000_day": {
+        "label": "KYC por encima de 1000$/día",
+        "title": "Se requiere verificación de identidad para transacciones superiores a 1000$ por día"
+      },
+      "kyc_in_the_usa": {
+        "label": "KYC en EEUU",
+        "title": "Se requiere verificación de identidad en Estados Unidos"
+      },
+      "limited_lsp": {
+        "label": "Limitado (PSL)",
+        "title": "Limitado por el Proveedor de Servicios Lightning"
+      },
+      "yes_onchain_conversion": {
+        "label": "Sí, On-Chain + Conversión",
+        "title": "Sí, incluye On-Chain y funcionalidad de conversión"
+      },
+      "yes_1_onchain_fees": {
+        "label": "Sí, 1% Comisiones On-Chain",
+        "title": "Sí, con 1% de comisiones para transacciones On-Chain"
+      },
+      "seed_phrase_optional_scb": {
+        "label": "Frase Semilla + SCB opcional",
+        "title": "Respaldo mediante frase semilla con copia de seguridad de canal estática opcional"
+      },
+      "local_backup_or_lsp_managed_recoverable_channels": {
+        "label": "Respaldo Local o Gestionado por PSL (Canales Recuperables)",
+        "title": "Respaldo local o gestionado por Proveedor de Servicios Lightning con canales recuperables"
+      },
+      "yes_with_core_ln": {
+        "label": "Sí (con Core LN)",
+        "title": "Sí, con Core Lightning"
+      },
+      "yes_noncustodial_ln_addresses_zaplocker_using_hodl_invoices": {
+        "label": "Sí (Direcciones LN No-Custodiales) Zaplocker usando facturas HODL",
+        "title": "Sí, direcciones Lightning Network no-custodiales mediante Zaplocker utilizando facturas HODL"
+      },
+      "muun_provided": {
+        "label": "Proporcionado por Muun",
+        "title": "Funcionalidad proporcionada por Muun"
+      },
+      "lsp_or_user_3_possible_peers": {
+        "label": "PSL o Usuario (3 Pares Posibles)",
+        "title": "Proveedor de Servicios Lightning o Usuario (hasta 3 pares posibles)"
+      },
+      "user_managed": {
+        "label": "Gestionado por Usuario",
+        "title": "Gestionado por el usuario"
       }
     },
     "icons": {

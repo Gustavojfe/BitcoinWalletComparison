@@ -746,6 +746,58 @@
       "p2wpkh": {
         "label": "P2WPKH",
         "title": "P2WPKH Address"
+      },
+      "l1l2_ln_node_or_ui_for_multiple_nodes": {
+        "label": "L1/L2 (LN Node) or UI for multiple nodes",
+        "title": "Layer 1/Layer 2 with Lightning Network Node or UI for multiple nodes"
+      },
+      "kyc_over_1000_day": {
+        "label": "KYC over 1000$/day",
+        "title": "Know Your Customer verification required for transactions over 1000$ per day"
+      },
+      "kyc_in_the_usa": {
+        "label": "KYC in the USA",
+        "title": "Know Your Customer verification required in the United States"
+      },
+      "limited_lsp": {
+        "label": "Limited (LSP)",
+        "title": "Limited by Lightning Service Provider"
+      },
+      "yes_onchain_conversion": {
+        "label": "Yes, On-Chain + Conversion",
+        "title": "Yes, includes On-Chain and conversion functionality"
+      },
+      "yes_1_onchain_fees": {
+        "label": "Yes, 1% On-Chain Fees",
+        "title": "Yes, with 1% fees for On-Chain transactions"
+      },
+      "seed_phrase_optional_scb": {
+        "label": "Seed Phrase + optional SCB",
+        "title": "Backed up with seed phrase and optional Static Channel Backup"
+      },
+      "local_backup_or_lsp_managed_recoverable_channels": {
+        "label": "Local Backup or LSP Managed (Recoverable Channels)",
+        "title": "Local backup or Lightning Service Provider managed with recoverable channels"
+      },
+      "yes_with_core_ln": {
+        "label": "Yes (with Core LN)",
+        "title": "Yes, with Core Lightning"
+      },
+      "yes_noncustodial_ln_addresses_zaplocker_using_hodl_invoices": {
+        "label": "Yes (Non-Custodial LN Addresses) Zaplocker using HODL invoices",
+        "title": "Yes, non-custodial Lightning Network addresses via Zaplocker using HODL invoices"
+      },
+      "muun_provided": {
+        "label": "Muun-provided",
+        "title": "Functionality provided by Muun"
+      },
+      "lsp_or_user_3_possible_peers": {
+        "label": "LSP or User (3 Possible Peers)",
+        "title": "Lightning Service Provider or User (up to 3 possible peers)"
+      },
+      "user_managed": {
+        "label": "User-Managed",
+        "title": "Managed by the user"
       }
     },
     "icons": {
