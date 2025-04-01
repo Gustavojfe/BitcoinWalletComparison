@@ -408,13 +408,18 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
 
   // Filter visible features based on search and visibility settings
   const visibleFeatures = sortedFeatures.filter(feature => {
+    // When searching for a wallet name, show all features for that wallet
+    const isWalletSearchMatch = searchTerm.length > 0 && filteredWallets.some(wallet => 
+      wallet.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    
     // Check if feature matches search term
     const featureMatchesSearch = searchTerm.length === 0 || 
       feature.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
       feature.description.toLowerCase().includes(searchTerm.toLowerCase());
     
-    // Only include feature if it matches search and is not hidden
-    return featureMatchesSearch && !isFeatureHidden(feature.id);
+    // Only include feature if it's not hidden AND (it matches search term OR we're searching for a wallet)
+    return !isFeatureHidden(feature.id) && (featureMatchesSearch || isWalletSearchMatch);
   });
 
   return (

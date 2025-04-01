@@ -17,7 +17,7 @@
     },
     "custodialStatus": {
       "value": "custom",
-      "customText": "Liquid / On-Chain Wallet with Submarine and Reverse Swaps (Boltz)"
+      "customText": "Liquid / On-Chain Wallet with LN Swaps (Boltz)"
     },
     "kyc": "no",
     "transactionFees": {
@@ -64,5 +64,5 @@
     "developerApis": "no"
   },
   "availability": "Standard",
-  "category": "Liquid / On-Chain Wallet with Submarine and Reverse Swaps (Boltz)"
+  "category": "Liquid / On-Chain Wallet with Submarine and Reverse Swaps (Boltz)",
 }
