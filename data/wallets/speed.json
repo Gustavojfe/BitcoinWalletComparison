@@ -48,7 +48,7 @@
     },
     "sendOnChain": "yes",
     "taprootTransactions": "no",
-    "otherNetworks": "API",
+    "otherNetworks": "no",
     "nostrWalletConnect": "no",
     "blindRouting": "no",
     "torSupport": "no",

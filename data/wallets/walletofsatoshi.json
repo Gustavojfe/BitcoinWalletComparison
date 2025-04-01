@@ -53,7 +53,7 @@
       "value": "custom",
       "customText": "Send"
     },
-    "otherNetworks": "API",
+    "otherNetworks": "no",
     "nostrWalletConnect": "no",
     "blindRouting": "no",
     "torSupport": "no",

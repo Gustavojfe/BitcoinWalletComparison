@@ -191,10 +191,6 @@
   },
   "featureStatus": {
     "values": {
-      "API": {
-        "label": "API",
-        "title": "Usa una API para soporte de red"
-      },
       "does_not_apply": {
         "label": "N/A",
         "title": "Esta característica no aplica a esta cartera"

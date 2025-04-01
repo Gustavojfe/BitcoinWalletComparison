@@ -61,7 +61,7 @@
       "customText": "Neutrino (Own Node)"
     },
     "submarineSwaps": "yes",
-    "otherNetworks": "API",
+    "otherNetworks": "no",
     "implementation": {
       "value": "custom",
       "customText": "LND"

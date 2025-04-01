@@ -67,7 +67,7 @@
       "value": "custom",
       "customText": "Boltz Swap"
     },
-    "otherNetworks": "API",
+    "otherNetworks": "no",
     "implementation": {
       "value": "custom",
       "customText": "LND"

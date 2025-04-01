@@ -64,7 +64,7 @@
       "value": "custom",
       "customText": "Lightning Loop, Boltz"
     },
-    "otherNetworks": "API",
+    "otherNetworks": "no",
     "implementation": {
       "value": "custom",
       "customText": "LND, CLN, Eclair"

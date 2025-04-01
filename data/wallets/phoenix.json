@@ -67,7 +67,7 @@
       "value": "custom",
       "customText": "Phoenix-provided + Swap in Potentiam"
     },
-    "otherNetworks": "API",
+    "otherNetworks": "no",
     "implementation": {
       "value": "custom",
       "customText": "Eclair"

@@ -45,7 +45,7 @@
       "customText": "P2WPKH"
     },
     "sendOnChain": "no",
-    "otherNetworks": "API",
+    "otherNetworks": "no",
     "nostrWalletConnect": "no",
     "blindRouting": "no",
     "torSupport": "no",
