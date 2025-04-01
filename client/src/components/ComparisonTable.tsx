@@ -426,18 +426,18 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
     <div className="bg-card shadow rounded-lg overflow-hidden">
       <div className="overflow-x-auto">
         <div className="align-middle inline-block min-w-full">
-          <div className="overflow-hidden border-b border-border">
+          <div className="overflow-hidden border-b border-border max-h-[80vh] overflow-y-auto">
             <table className="min-w-full divide-y divide-border">
-              <thead className="bg-muted">
+              <thead className="bg-muted sticky top-0 z-20">
                 <tr>
-                  <th scope="col" className="sticky left-0 z-10 bg-muted px-6 py-3 text-left text-xs font-medium text-muted-foreground tracking-wider min-w-[200px]">
+                  <th scope="col" className="sticky left-0 top-0 z-30 bg-muted px-6 py-3 text-left text-xs font-medium text-muted-foreground tracking-wider min-w-[200px]">
                     {t('common.wallets')}
                   </th>
                   {visibleFeatures.map((feature) => (
                     <th 
                       key={feature.id} 
                       scope="col" 
-                      className="px-6 py-3 text-center text-xs font-medium text-muted-foreground tracking-wider min-w-[140px] group"
+                      className="sticky top-0 z-20 bg-muted px-6 py-3 text-center text-xs font-medium text-muted-foreground tracking-wider min-w-[140px] group"
                     >
                       <div className="flex items-center justify-center space-x-1">
                         {(() => {
@@ -468,7 +468,7 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
               <tbody className="bg-card divide-y divide-border">
                 {sortedWallets.map((wallet) => (
                   <tr key={wallet.id} className="hover:bg-accent group">
-                    <td className="sticky left-0 z-10 bg-card px-6 py-4 whitespace-nowrap text-sm font-medium text-foreground hover:bg-accent">
+                    <td className="sticky left-0 z-10 bg-card px-6 py-4 whitespace-nowrap text-sm font-medium text-foreground group-hover:bg-accent">
                       <div className="flex items-center space-x-2">
                         {(() => {
                           const translatedWallet = translateWallet(wallet);
