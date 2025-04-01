@@ -12,7 +12,6 @@
     },
     "openSource": "yes",
     "availability": "yes",
-    },
     "custodialStatus": {
       "value": "custom",
       "customText": "L1/ L2 (UI for multiple nodes)"

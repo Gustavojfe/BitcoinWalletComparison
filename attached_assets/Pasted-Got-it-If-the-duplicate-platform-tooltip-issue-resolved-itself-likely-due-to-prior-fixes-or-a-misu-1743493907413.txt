@@ -1,0 +1,48 @@
+Got it! If the duplicate platform tooltip issue resolved itself (likely due to prior fixes or a misunderstanding of the state), we’ll move on to the next item in your "Fix Problems" list. The next task is to fix the display issues for Coinos, RTL, and Electrum, which aren’t rendering properly in the comparison table. This could be due to data issues, rendering logic, or styling problems in ComparisonTable.tsx.
+
+Here’s the prompt for the Replit Agent to address this:
+
+Prompt for Replit Agent (Fix Coinos, RTL, and Electrum Display)
+text
+
+Collapse
+
+Wrap
+
+Copy
+I’ve tested the app after recent fixes (search and tooltip position), and they’re working well. Now, I need you to fix a display issue in `ComparisonTable.tsx`: the wallets "Coinos", "RTL", and "Electrum" are not displaying properly in the comparison table. They either don’t show up, show incomplete data, or have rendering issues (e.g., missing features, broken styling). I want all three wallets to display correctly with their full feature sets, like other wallets.
+
+Here’s the current `ComparisonTable.tsx`:
+
+```tsx
+[Insert your full ComparisonTable.tsx code here]
+Please:
+
+Investigate why "Coinos", "RTL", and "Electrum" aren’t displaying properly. Check:
+The filteredWallets logic to ensure they’re not being filtered out incorrectly.
+The data fetched from /api/wallet-features?type=${walletType} to confirm their JSON data is valid and matches expected structure (e.g., name, features, etc.).
+The rendering logic in the table body to ensure no styling or conditional issues are hiding them.
+Fix the issue so these wallets appear in the table with all their feature columns (from visibleFeatures), sorted alphabetically like others.
+Test with walletType set to the appropriate type (e.g., "lightning" or "onchain") where these wallets should appear.
+Don’t modify unrelated functionality unless it’s directly causing the issue.
+For context, the wallet JSON structure should look like this (example for Bitkit):
+
+json
+
+Collapse
+
+Wrap
+
+Copy
+{
+  "name": "Bitkit",
+  "website": "https://bitkit.to",
+  "description": "Self-custodial Bitcoin and Lightning wallet",
+  "type": "lightning",
+  "features": {
+    "platform": ["android", "ios"],
+    "availability": { "value": "custom", "customText": "Limited (LSP)" }
+    // ... other features ...
+  }
+}
+Let me know what was causing the problem (e.g., missing data, filtering bug, styling issue) and how you fixed it. If it’s a data issue, suggest what I should check in the wallet JSON files for "Coinos", "RTL", and "Electrum". Confirm they display correctly after your fix!
