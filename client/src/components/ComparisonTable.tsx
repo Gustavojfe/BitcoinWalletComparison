@@ -512,7 +512,7 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
                     <td key={`${wallet.id}-${feature.id}`} className="px-6 py-4 whitespace-nowrap text-sm text-center">
                       {walletFeature 
                         ? renderFeatureStatus(walletFeature.value, walletFeature.customText, feature.name, wallet) 
-                        : renderFeatureStatus('unknown')}
+                        : renderFeatureStatus('no')}
                     </td>
                   );
                 })}
