@@ -1,7 +1,7 @@
 {
   "name": "Electrum",
   "website": "https://electrum.org",
-  "description": "Feature-rich Bitcoin wallet with Lightning support",
+  "description": "A fast, secure Bitcoin wallet for desktop and Android, trusted since 2011 for a wide range of users.",
   "type": "lightning",
   "logo": "electrum",
   "order": 16,

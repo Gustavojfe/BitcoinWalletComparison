@@ -1,7 +1,7 @@
 {
   "name": "Zeus",
   "website": "https://zeusln.app",
-  "description": "Mobile client for Lightning node control",
+  "description": "A powerful, open-source, self-custodial Bitcoin wallet for managing remote nodes or its embedded node, feature-rich for advanced users.",
   "type": "lightning",
   "logo": "zeus",
   "order": 14,

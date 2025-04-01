@@ -1,104 +1,76 @@
 {
   "wallets": {
-    "Phoenix": {
-      "name": "Phoenix",
-      "description": "Una cartera Lightning autosoberana de ACINQ con gestión simplificada de canales."
-    },
-    "Wallet of Satoshi": {
-      "name": "Wallet of Satoshi",
-      "description": "Una cartera Lightning custodial enfocada en la simplicidad y facilidad de uso."
-    },
-    "Zeus": {
-      "name": "Zeus",
-      "description": "Una cartera Lightning móvil que puede conectarse a tu propio nodo."
-    },
-    "Muun": {
-      "name": "Muun",
-      "description": "Una cartera bitcoin no custodial con funcionalidad Lightning integrada."
-    },
-    "Breez": {
-      "name": "Breez",
-      "description": "Una cartera Lightning no custodial con reproductor de podcasts integrado y funciones de punto de venta."
-    },
-    "Blink": {
-      "name": "Blink",
-      "description": "Una cartera Lightning enfocada en la simplicidad y facilidad de uso."
-    },
     "Alby": {
       "name": "Alby",
-      "description": "Una extensión de navegador Lightning que te ayuda a hacer micropagos en toda la web."
+      "description": "Una billetera Lightning autocustodial que se conecta a Alby Extension para interacciones web, Alby Go para pagos en el mundo real y cientos de apps vía Nostr Wallet Connect (NWC)."
     },
-    "Cash App": {
-      "name": "Cash App",
-      "description": "Un servicio de pago móvil popular con funcionalidad de Bitcoin y Lightning Network integrada."
+    "AQUA": {
+      "name": "AQUA",
+      "description": "Una billetera Bitcoin global enfocada en inclusión financiera, diseñada para América Latina. Usa swaps de Boltz para pagos Lightning."
     },
     "Bitkit": {
       "name": "Bitkit",
-      "description": "Una cartera Bitcoin y Lightning no custodial diseñada para simplicidad con características avanzadas de seguridad."
+      "description": "Una billetera autocustodial simple y poderosa para pagos instantáneos en cualquier lugar. Gestiona tus propios canales o usa Blocktank LSP."
     },
-    "Electrum": {
-      "name": "Electrum",
-      "description": "Una cartera Bitcoin ligera con características avanzadas incluyendo soporte multi-firma e integración con carteras hardware."
-    },
-    "Blixt": {
-      "name": "Blixt",
-      "description": "Una cartera Lightning autosoberana que ejecuta un nodo Lightning Network en tu teléfono."
-    },
-    "Strike": {
-      "name": "Strike",
-      "description": "Una aplicación de pagos Bitcoin con integración Lightning Network enfocada en transacciones rápidas y de bajo costo y remesas globales."
-    },
-    "ZBD": {
-      "name": "ZBD",
-      "description": "Una cartera Lightning fácil de usar con pagos Bitcoin instantáneos, integraciones para juegos y herramientas para desarrolladores."
-    },
-    "River": {
-      "name": "River",
-      "description": "Una plataforma de servicios financieros Bitcoin que ofrece pagos Lightning Network, soluciones de custodia y herramientas de inversión."
-    },
-    "Aqua": {
-      "name": "Aqua",
-      "description": "Una cartera Bitcoin y Lightning fácil de usar con enfoque en la facilidad de uso y la auto-custodia segura."
-    },
-    "Sati": {
-      "name": "Sati",
-      "description": "Una cartera Lightning fácil de usar con características sociales y transacciones Bitcoin simplificadas."
-    },
-    "Speed": {
-      "name": "Speed",
-      "description": "Una cartera Lightning Network rápida y simple enfocada en proporcionar pagos Bitcoin rápidos."
-    },
-    "Coinos": {
-      "name": "Coinos",
-      "description": "Una plataforma de cartera web de código abierto que soporta transacciones Bitcoin, Lightning Network y Liquid."
-    },
-    "RTL": {
-      "name": "RTL",
-      "description": "Ride The Lightning, una interfaz web para gestionar nodos Lightning Network con amplias características."
-    },
-    "Primal": {
-      "name": "Primal",
-      "description": "Una plataforma de redes sociales integrada con Lightning con funcionalidad de cartera nativa."
-    },
-    "Lifpay": {
-      "name": "Lifpay",
-      "description": "Una cartera Lightning enfocada en pagos cotidianos con una interfaz fácil de usar."
-    },
-    "Lawallet": {
-      "name": "Lawallet",
-      "description": "Una cartera Lightning enfocada en Latinoamérica diseñada para necesidades regionales y pagos cotidianos."
-    },
-    "Green": {
-      "name": "Green",
-      "description": "La cartera Green de Blockstream con funcionalidad Lightning Network integrada para transacciones Bitcoin rápidas."
-    },
-    "Exodus": {
-      "name": "Exodus",
-      "description": "Una cartera multimoneda con capacidades Lightning integradas para transacciones Bitcoin."
+    "Blink": {
+      "name": "Blink",
+      "description": "Una billetera Bitcoin custodial para uso diario. Simple, segura y requiere un número de teléfono para registrarse."
     },
     "Blitz": {
       "name": "Blitz",
-      "description": "Una cartera Lightning de código abierto con soporte para características avanzadas y auto-custodia."
+      "description": "Una billetera Bitcoin y Lightning autocustodial con Breez SDK. Comienza con swaps de Liquid (Boltz) y evoluciona a un nodo integrado con canales gestionados por LSP."
+    },
+    "Blixt": {
+      "name": "Blixt",
+      "description": "Una billetera Lightning de código abierto y no custodial para Android e iOS, repleta de funciones para bitcoiners que exploran la red Lightning."
+    },
+    "Breez": {
+      "name": "Breez",
+      "description": "Una billetera Lightning no custodial con nodo integrado, POS, reproductor de podcasts y mercado—una experiencia Bitcoin de primer nivel."
+    },
+    "Coinos": {
+      "name": "Coinos",
+      "description": "Una billetera web gratuita y fácil de usar con página de pago, soporta Lightning (BOLT11/BOLT12), Liquid, Ecash y pagos on-chain. Disponible para autoalojamiento."
+    },
+    "Electrum": {
+      "name": "Electrum",
+      "description": "Una billetera Bitcoin rápida y segura para escritorio y Android, confiable desde 2011 para todo tipo de usuarios."
+    },
+    "Muun": {
+      "name": "Muun",
+      "description": "Una billetera autocustodial para Bitcoin y Lightning con swaps submarinos. Fácil de usar, aunque las tarifas on-chain pueden subir."
+    },
+    "Phoenix": {
+      "name": "Phoenix",
+      "description": "Una billetera nativa de Lightning con pagos fluidos—rápida, barata y gestionada por LSP para simplicidad."
+    },
+    "Primal": {
+      "name": "Primal",
+      "description": "Un cliente Nostr con billetera Bitcoin integrada, feeds fluidos y fácil inicio para principiantes en Nostr."
+    },
+    "RTL": {
+      "name": "RTL",
+      "description": "Una potente herramienta web autoalojada para gestionar nodos Lightning, ideal para usuarios avanzados y negocios."
+    },
+    "Sati": {
+      "name": "Sati",
+      "description": "Un bot de WhatsApp para pagos rápidos y seguros en Bitcoin y stablecoins—no requiere app extra, con registro súper fácil."
+    },
+    "Speed": {
+      "name": "Speed",
+      "description": "Una billetera custodial para pagos instantáneos, seguros y de bajo costo en Bitcoin y USDT, disponible como app móvil o extensión de navegador."
+    },
+    "Wallet of Satoshi": {
+      "name": "Wallet of Satoshi",
+      "description": "Una billetera Lightning custodial sin configuración para iOS y Android, enfocada en simplicidad—la más popular del mundo."
+    },
+    "ZBD": {
+      "name": "ZBD",
+      "description": "Una app móvil para ganar Bitcoin jugando, haciendo encuestas, votando y descubriendo apps—divertida y gratificante."
+    },
+    "Zeus": {
+      "name": "Zeus",
+      "description": "Una billetera Bitcoin autocustodial de código abierto, poderosa para gestionar nodos remotos o su nodo integrado, llena de funciones para usuarios avanzados."
     }
   }
 }

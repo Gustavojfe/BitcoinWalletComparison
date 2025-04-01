@@ -1,7 +1,7 @@
 {
   "name": "ZBD",
   "website": "https://zbd.gg",
-  "description": "Account-based Lightning wallet and platform",
+  "description": "A mobile app to earn Bitcoin through games, surveys, polls, and app discovery—fun and rewarding.",
   "type": "lightning",
   "logo": "zbd",
   "order": 5,

@@ -1,0 +1,99 @@
+I want to update the descriptions of all wallets in my app with specific English content and add corresponding Spanish translations, as provided below. Previously, you made up wallet descriptions instead of using the ones I gave—please avoid that mistake this time. Use ONLY the exact descriptions I provide here, without adding, modifying, or generating any new content beyond what’s listed. Your task is to update the wallet JSON files with the English descriptions and modify `en.json` and `es.json` with the exact English and Spanish versions I’ve given.
+
+Here’s the current `ComparisonTable.tsx` (for context, no changes needed unless necessary to integrate translations):
+
+```tsx
+[Insert your full ComparisonTable.tsx code here]
+Exact Wallet Descriptions to Use (Do Not Change These):
+
+English:
+
+"Alby Hub": "A self-custodial Lightning wallet that connects to Alby Extension for web interactions, Alby Go for real-world payments, and hundreds of apps via Nostr Wallet Connect (NWC)."
+"AQUA": "A global Bitcoin wallet focused on financial inclusion, designed for Latin America. Uses Boltz swaps for Lightning payments."
+"Bitkit": "A simple, powerful self-custodial wallet for instant payments anywhere. Manage your own channels or use Blocktank LSP."
+"Blink": "A custodial Bitcoin wallet for everyday use. Simple, secure, and requires a phone number to sign up."
+"Blitz Wallet": "A self-custodial Bitcoin and Lightning wallet using Breez SDK. Starts with Liquid swaps (Boltz) and evolves into an embedded node with LSP-managed channels."
+"Blixt Wallet": "An open-source, non-custodial Lightning wallet for Android and iOS, packed with features for Bitcoiners exploring the Lightning Network."
+"Breez": "A non-custodial Lightning wallet with an embedded node, POS, podcast player, and marketplace—delivering a top-tier Bitcoin experience."
+"Coinos": "A free, easy-to-use web wallet and payment page supporting Lightning (BOLT11/BOLT12), Liquid, Ecash, and on-chain payments. Self-hosting available."
+"Electrum": "A fast, secure Bitcoin wallet for desktop and Android, trusted since 2011 for a wide range of users."
+"Muun": "A self-custodial Bitcoin and Lightning wallet using submarine swaps. Easy to use, though on-chain fees can increase costs."
+"Phoenix": "A Lightning-native wallet with seamless payments—fast, cheap, and LSP-managed for simplicity."
+"Primal": "A Nostr client with a built-in Bitcoin wallet, offering smooth feeds and easy onboarding for Nostr beginners."
+"Ride The Lightning": "A powerful, self-hosted web tool for managing Lightning nodes, ideal for advanced and business users."
+"Sati": "A WhatsApp bot for fast, secure Bitcoin and stablecoin payments—no extra app needed, with super-easy onboarding."
+"Speed": "A custodial wallet for instant, secure, low-fee Bitcoin and USDT payments, available as a mobile app or browser extension."
+"Wallet of Satoshi": "A zero-configuration custodial Lightning wallet for iOS and Android, prioritizing simplicity—world’s most popular Lightning wallet."
+"ZBD": "A mobile app to earn Bitcoin through games, surveys, polls, and app discovery—fun and rewarding."
+"ZEUS": "A powerful, open-source, self-custodial Bitcoin wallet for managing remote nodes or its embedded node, feature-rich for advanced users."
+Spanish:
+
+"Alby Hub": "Una billetera Lightning autocustodial que se conecta a Alby Extension para interacciones web, Alby Go para pagos en el mundo real y cientos de apps vía Nostr Wallet Connect (NWC)."
+"AQUA": "Una billetera Bitcoin global enfocada en inclusión financiera, diseñada para América Latina. Usa swaps de Boltz para pagos Lightning."
+"Bitkit": "Una billetera autocustodial simple y poderosa para pagos instantáneos en cualquier lugar. Gestiona tus propios canales o usa Blocktank LSP."
+"Blink": "Una billetera Bitcoin custodial para uso diario. Simple, segura y requiere un número de teléfono para registrarse."
+"Blitz Wallet": "Una billetera Bitcoin y Lightning autocustodial con Breez SDK. Comienza con swaps de Liquid (Boltz) y evoluciona a un nodo integrado con canales gestionados por LSP."
+"Blixt Wallet": "Una billetera Lightning de código abierto y no custodial para Android e iOS, repleta de funciones para bitcoiners que exploran la red Lightning."
+"Breez": "Una billetera Lightning no custodial con nodo integrado, POS, reproductor de podcasts y mercado—una experiencia Bitcoin de primer nivel."
+"Coinos": "Una billetera web gratuita y fácil de usar con página de pago, soporta Lightning (BOLT11/BOLT12), Liquid, Ecash y pagos on-chain. Disponible para autoalojamiento."
+"Electrum": "Una billetera Bitcoin rápida y segura para escritorio y Android, confiable desde 2011 para todo tipo de usuarios."
+"Muun": "Una billetera autocustodial para Bitcoin y Lightning con swaps submarinos. Fácil de usar, aunque las tarifas on-chain pueden subir."
+"Phoenix": "Una billetera nativa de Lightning con pagos fluidos—rápida, barata y gestionada por LSP para simplicidad."
+"Primal": "Un cliente Nostr con billetera Bitcoin integrada, feeds fluidos y fácil inicio para principiantes en Nostr."
+"Ride The Lightning": "Una potente herramienta web autoalojada para gestionar nodos Lightning, ideal para usuarios avanzados y negocios."
+"Sati": "Un bot de WhatsApp para pagos rápidos y seguros en Bitcoin y stablecoins—no requiere app extra, con registro súper fácil."
+"Speed": "Una billetera custodial para pagos instantáneos, seguros y de bajo costo en Bitcoin y USDT, disponible como app móvil o extensión de navegador."
+"Wallet of Satoshi": "Una billetera Lightning custodial sin configuración para iOS y Android, enfocada en simplicidad—la más popular del mundo."
+"ZBD": "Una app móvil para ganar Bitcoin jugando, haciendo encuestas, votando y descubriendo apps—divertida y gratificante."
+"ZEUS": "Una billetera Bitcoin autocustodial de código abierto, poderosa para gestionar nodos remotos o su nodo integrado, llena de funciones para usuarios avanzados."
+Please:
+
+Update Wallet JSONs:
+Provide a script or instructions to update the description field in each wallet JSON file (e.g., src/data/wallets/<wallet>.json) with the exact English description from the list above. Match the wallet name precisely (e.g., "Alby Hub" to alby_hub.json, "Bitkit" to bitkit.json). Do not make up or alter any descriptions—use only what I’ve provided.
+Example:
+json
+
+Collapse
+
+Wrap
+
+Copy
+// Before (e.g., bitkit.json)
+"description": "Self-custodial Bitcoin and Lightning wallet",
+// After
+"description": "A simple, powerful self-custodial wallet for instant payments anywhere. Manage your own channels or use Blocktank LSP."
+Update Translation Files:
+Update en.json with the exact English descriptions under a wallets section, using the wallet names as keys (lowercase with underscores, e.g., "alby_hub", "wallet_of_satoshi"):
+json
+
+Collapse
+
+Wrap
+
+Copy
+"wallets": {
+  "alby_hub": { "description": "A self-custodial Lightning wallet that connects to Alby Extension for web interactions, Alby Go for real-world payments, and hundreds of apps via Nostr Wallet Connect (NWC)." },
+  "aqua": { "description": "A global Bitcoin wallet focused on financial inclusion, designed for Latin America. Uses Boltz swaps for Lightning payments." },
+  "bitkit": { "description": "A simple, powerful self-custodial wallet for instant payments anywhere. Manage your own channels or use Blocktank LSP." },
+  // ... all others exactly as listed ...
+}
+Update es.json with the exact Spanish descriptions under the same structure:
+json
+
+Collapse
+
+Wrap
+
+Copy
+"wallets": {
+  "alby_hub": { "description": "Una billetera Lightning autocustodial que se conecta a Alby Extension para interacciones web, Alby Go para pagos en el mundo real y cientos de apps vía Nostr Wallet Connect (NWC)." },
+  "aqua": { "description": "Una billetera Bitcoin global enfocada en inclusión financiera, diseñada para América Latina. Usa swaps de Boltz para pagos Lightning." },
+  "bitkit": { "description": "Una billetera autocustodial simple y poderosa para pagos instantáneos en cualquier lugar. Gestiona tus propios canales o usa Blocktank LSP." },
+  // ... all others exactly as listed ...
+}
+Verify Usage:
+Ensure ComparisonTable.tsx uses the translated descriptions via the translateWallet function (e.g., translateWallet(wallet).description). If it’s not set up this way, suggest how to adjust it to pull from en.json/es.json based on the current language (e.g., modify the translateWallet function in use-language.ts if needed).
+Test:
+Confirm that wallets like "Bitkit" and "Blink" show their exact new English descriptions in the table (and Spanish if language is switched), matching the text I provided.
+Don’t modify unrelated functionality unless necessary to integrate translations. Do not generate or alter any descriptions—use only the exact text I’ve given above.
+Let me know the script/instructions for updating the wallet JSONs, provide the full en.json and es.json updates with the exact descriptions I listed, and confirm the new descriptions display correctly in the table!

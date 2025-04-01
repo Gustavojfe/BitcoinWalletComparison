@@ -1,7 +1,7 @@
 {
   "name": "Muun",
   "website": "https://muun.com",
-  "description": "Self-custodial wallet with Lightning support",
+  "description": "A self-custodial Bitcoin and Lightning wallet using submarine swaps. Easy to use, though on-chain fees can increase costs.",
   "type": "lightning",
   "logo": "muun",
   "order": 8,

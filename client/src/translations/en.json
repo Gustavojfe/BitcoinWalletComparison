@@ -1,4 +1,24 @@
 {
+  "wallets": {
+    "alby_hub": { "description": "A self-custodial Lightning wallet that connects to Alby Extension for web interactions, Alby Go for real-world payments, and hundreds of apps via Nostr Wallet Connect (NWC)." },
+    "aqua": { "description": "A global Bitcoin wallet focused on financial inclusion, designed for Latin America. Uses Boltz swaps for Lightning payments." },
+    "bitkit": { "description": "A simple, powerful self-custodial wallet for instant payments anywhere. Manage your own channels or use Blocktank LSP." },
+    "blink": { "description": "A custodial Bitcoin wallet for everyday use. Simple, secure, and requires a phone number to sign up." },
+    "blitz": { "description": "A self-custodial Bitcoin and Lightning wallet using Breez SDK. Starts with Liquid swaps (Boltz) and evolves into an embedded node with LSP-managed channels." },
+    "blixt": { "description": "An open-source, non-custodial Lightning wallet for Android and iOS, packed with features for Bitcoiners exploring the Lightning Network." },
+    "breez": { "description": "A non-custodial Lightning wallet with an embedded node, POS, podcast player, and marketplace—delivering a top-tier Bitcoin experience." },
+    "coinos": { "description": "A free, easy-to-use web wallet and payment page supporting Lightning (BOLT11/BOLT12), Liquid, Ecash, and on-chain payments. Self-hosting available." },
+    "electrum": { "description": "A fast, secure Bitcoin wallet for desktop and Android, trusted since 2011 for a wide range of users." },
+    "muun": { "description": "A self-custodial Bitcoin and Lightning wallet using submarine swaps. Easy to use, though on-chain fees can increase costs." },
+    "phoenix": { "description": "A Lightning-native wallet with seamless payments—fast, cheap, and LSP-managed for simplicity." },
+    "primal": { "description": "A Nostr client with a built-in Bitcoin wallet, offering smooth feeds and easy onboarding for Nostr beginners." },
+    "rtl": { "description": "A powerful, self-hosted web tool for managing Lightning nodes, ideal for advanced and business users." },
+    "sati": { "description": "A WhatsApp bot for fast, secure Bitcoin and stablecoin payments—no extra app needed, with super-easy onboarding." },
+    "speed": { "description": "A custodial wallet for instant, secure, low-fee Bitcoin and USDT payments, available as a mobile app or browser extension." },
+    "wallet_of_satoshi": { "description": "A zero-configuration custodial Lightning wallet for iOS and Android, prioritizing simplicity—world's most popular Lightning wallet." },
+    "zbd": { "description": "A mobile app to earn Bitcoin through games, surveys, polls, and app discovery—fun and rewarding." },
+    "zeus": { "description": "A powerful, open-source, self-custodial Bitcoin wallet for managing remote nodes or its embedded node, feature-rich for advanced users." }
+  },
   "common": {
     "walletComparison": "Bitcoin Wallet Comparison",
     "about": "About",

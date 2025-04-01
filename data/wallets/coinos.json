@@ -1,7 +1,7 @@
 {
   "name": "Coinos",
   "website": "https://coinos.io",
-  "description": "Web-based Lightning and Bitcoin wallet",
+  "description": "A free, easy-to-use web wallet and payment page supporting Lightning (BOLT11/BOLT12), Liquid, Ecash, and on-chain payments. Self-hosting available.",
   "type": "lightning",
   "logo": "coinos",
   "order": 7,

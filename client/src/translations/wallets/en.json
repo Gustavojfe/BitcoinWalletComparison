@@ -1,104 +1,76 @@
 {
   "wallets": {
-    "Phoenix": {
-      "name": "Phoenix",
-      "description": "A self-custodial Lightning Network wallet by ACINQ with simplified channel management."
-    },
-    "Wallet of Satoshi": {
-      "name": "Wallet of Satoshi",
-      "description": "A custodial Lightning wallet focused on simplicity and ease of use."
-    },
-    "Zeus": {
-      "name": "Zeus",
-      "description": "A mobile Lightning wallet that can connect to your own node."
-    },
-    "Muun": {
-      "name": "Muun",
-      "description": "A non-custodial bitcoin wallet with integrated Lightning functionality."
-    },
-    "Breez": {
-      "name": "Breez",
-      "description": "A non-custodial Lightning wallet with integrated podcast player and point-of-sale features."
-    },
-    "Blink": {
-      "name": "Blink",
-      "description": "A Lightning wallet focused on simplicity and ease of use."
-    },
     "Alby": {
       "name": "Alby",
-      "description": "A Lightning browser extension that helps you make micropayments across the web."
+      "description": "A self-custodial Lightning wallet that connects to Alby Extension for web interactions, Alby Go for real-world payments, and hundreds of apps via Nostr Wallet Connect (NWC)."
     },
-    "Cash App": {
-      "name": "Cash App",
-      "description": "A popular mobile payment service with integrated Bitcoin and Lightning Network functionality."
+    "AQUA": {
+      "name": "AQUA",
+      "description": "A global Bitcoin wallet focused on financial inclusion, designed for Latin America. Uses Boltz swaps for Lightning payments."
     },
     "Bitkit": {
       "name": "Bitkit",
-      "description": "A non-custodial Bitcoin and Lightning wallet designed for simplicity with advanced security features."
+      "description": "A simple, powerful self-custodial wallet for instant payments anywhere. Manage your own channels or use Blocktank LSP."
     },
-    "Electrum": {
-      "name": "Electrum",
-      "description": "A lightweight Bitcoin wallet with advanced features including multi-signature support and hardware wallet integration."
-    },
-    "Blixt": {
-      "name": "Blixt",
-      "description": "A self-custodial Lightning wallet that runs a Lightning Network node on your phone."
-    },
-    "Strike": {
-      "name": "Strike",
-      "description": "A Bitcoin payments app with Lightning Network integration focused on fast, low-cost transactions and global remittances."
-    },
-    "ZBD": {
-      "name": "ZBD",
-      "description": "A user-friendly Lightning wallet with instant Bitcoin payments, gaming integrations, and developer tools."
-    },
-    "River": {
-      "name": "River",
-      "description": "A Bitcoin financial services platform offering Lightning Network payments, custody solutions, and investment tools."
-    },
-    "Aqua": {
-      "name": "Aqua",
-      "description": "A user-friendly Bitcoin and Lightning wallet with a focus on ease of use and secure self-custody."
-    },
-    "Sati": {
-      "name": "Sati",
-      "description": "A user-friendly Lightning wallet with social features and simplified Bitcoin transactions."
-    },
-    "Speed": {
-      "name": "Speed",
-      "description": "A fast, simple Lightning Network wallet focused on providing quick Bitcoin payments."
-    },
-    "Coinos": {
-      "name": "Coinos",
-      "description": "An open-source web wallet platform supporting Bitcoin, Lightning Network, and Liquid transactions."
-    },
-    "RTL": {
-      "name": "RTL",
-      "description": "Ride The Lightning, a web interface for managing Lightning Network nodes with extensive features."
-    },
-    "Primal": {
-      "name": "Primal",
-      "description": "A Lightning-integrated social media platform with native wallet functionality."
-    },
-    "Lifpay": {
-      "name": "Lifpay",
-      "description": "A Lightning wallet focused on everyday payments with an easy-to-use interface."
-    },
-    "Lawallet": {
-      "name": "Lawallet",
-      "description": "A Latin American-focused Lightning wallet designed for regional needs and everyday payments."
-    },
-    "Green": {
-      "name": "Green",
-      "description": "Blockstream's Green wallet with integrated Lightning Network functionality for fast Bitcoin transactions."
-    },
-    "Exodus": {
-      "name": "Exodus",
-      "description": "A multi-currency wallet with integrated Lightning capabilities for Bitcoin transactions."
+    "Blink": {
+      "name": "Blink",
+      "description": "A custodial Bitcoin wallet for everyday use. Simple, secure, and requires a phone number to sign up."
     },
     "Blitz": {
       "name": "Blitz",
-      "description": "An open-source Lightning Network wallet with support for advanced features and self-custody."
+      "description": "A self-custodial Bitcoin and Lightning wallet using Breez SDK. Starts with Liquid swaps (Boltz) and evolves into an embedded node with LSP-managed channels."
+    },
+    "Blixt": {
+      "name": "Blixt",
+      "description": "An open-source, non-custodial Lightning wallet for Android and iOS, packed with features for Bitcoiners exploring the Lightning Network."
+    },
+    "Breez": {
+      "name": "Breez",
+      "description": "A non-custodial Lightning wallet with an embedded node, POS, podcast player, and marketplace—delivering a top-tier Bitcoin experience."
+    },
+    "Coinos": {
+      "name": "Coinos",
+      "description": "A free, easy-to-use web wallet and payment page supporting Lightning (BOLT11/BOLT12), Liquid, Ecash, and on-chain payments. Self-hosting available."
+    },
+    "Electrum": {
+      "name": "Electrum",
+      "description": "A fast, secure Bitcoin wallet for desktop and Android, trusted since 2011 for a wide range of users."
+    },
+    "Muun": {
+      "name": "Muun",
+      "description": "A self-custodial Bitcoin and Lightning wallet using submarine swaps. Easy to use, though on-chain fees can increase costs."
+    },
+    "Phoenix": {
+      "name": "Phoenix",
+      "description": "A Lightning-native wallet with seamless payments—fast, cheap, and LSP-managed for simplicity."
+    },
+    "Primal": {
+      "name": "Primal",
+      "description": "A Nostr client with a built-in Bitcoin wallet, offering smooth feeds and easy onboarding for Nostr beginners."
+    },
+    "RTL": {
+      "name": "RTL",
+      "description": "A powerful, self-hosted web tool for managing Lightning nodes, ideal for advanced and business users."
+    },
+    "Sati": {
+      "name": "Sati",
+      "description": "A WhatsApp bot for fast, secure Bitcoin and stablecoin payments—no extra app needed, with super-easy onboarding."
+    },
+    "Speed": {
+      "name": "Speed",
+      "description": "A custodial wallet for instant, secure, low-fee Bitcoin and USDT payments, available as a mobile app or browser extension."
+    },
+    "Wallet of Satoshi": {
+      "name": "Wallet of Satoshi",
+      "description": "A zero-configuration custodial Lightning wallet for iOS and Android, prioritizing simplicity—world's most popular Lightning wallet."
+    },
+    "ZBD": {
+      "name": "ZBD",
+      "description": "A mobile app to earn Bitcoin through games, surveys, polls, and app discovery—fun and rewarding."
+    },
+    "Zeus": {
+      "name": "Zeus",
+      "description": "A powerful, open-source, self-custodial Bitcoin wallet for managing remote nodes or its embedded node, feature-rich for advanced users."
     }
   }
 }

@@ -1,7 +1,7 @@
 {
   "name": "Bitkit",
   "website": "https://bitkit.to",
-  "description": "Self-custodial Bitcoin and Lightning wallet",
+  "description": "A simple, powerful self-custodial wallet for instant payments anywhere. Manage your own channels or use Blocktank LSP.",
   "type": "lightning",
   "logo": "bitkit",
   "order": 11,
