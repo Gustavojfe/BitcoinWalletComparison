@@ -34,7 +34,7 @@ const WalletTooltip = ({ title, description, children }: TooltipProps) => {
           side="top" 
           align="center"
           sideOffset={5}
-          className="max-w-[350px] p-3 z-50 bg-popover text-popover-foreground"
+          className="max-w-[350px] p-3 z-[100] bg-popover text-popover-foreground"
         >
           <h3 className="font-medium text-sm mb-1">{title}</h3>
           {description && (

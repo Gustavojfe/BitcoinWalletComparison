@@ -439,8 +439,8 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
   };
 
   return (
-    <div className="bg-card shadow rounded-lg overflow-hidden">
-      <div className="overflow-auto max-h-[80vh]">
+    <div className="bg-card shadow rounded-lg overflow-visible">
+      <div className="overflow-auto max-h-[80vh] overflow-y-visible">
         <table className="min-w-full divide-y divide-border">
           <thead className="bg-muted sticky top-0 z-20">
             <tr>

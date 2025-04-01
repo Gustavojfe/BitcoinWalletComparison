@@ -91,7 +91,7 @@ const FeatureTooltip = ({
           side="top" 
           align="center"
           sideOffset={5}
-          className="max-w-[350px] z-50"
+          className="max-w-[350px] z-[100]"
         >
           <p className="whitespace-normal break-words leading-relaxed">{tooltipText}</p>
         </TooltipContent>
