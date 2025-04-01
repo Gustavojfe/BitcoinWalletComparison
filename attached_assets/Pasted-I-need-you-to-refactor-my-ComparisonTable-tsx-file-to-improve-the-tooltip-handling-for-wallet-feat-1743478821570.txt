@@ -1,0 +1,113 @@
+I need you to refactor my `ComparisonTable.tsx` file to improve the tooltip handling for wallet features. Currently, tooltips for the "availability" feature are hardcoded with conditional logic inside the `renderFeatureStatus` function, which is messy and specific to certain wallets (e.g., Blink, Phoenix, Bitkit). My intuition is that this logic shouldn’t live in this file and should instead be a reusable component that works uniformly across all features, pulling data from each wallet’s JSON file and translations from the `en.json` file using the `t` function.
+
+Here’s what I want you to do:
+
+1. **Create a new `FeatureTooltip` component**:
+   - Place it in a new file: `src/components/FeatureTooltip.tsx`.
+   - It should take props: `featureName` (string), `value` (string), `customText` (string, optional), `wallet` (Wallet type), and `children` (React.ReactNode).
+   - Use the `useLanguage` hook to access the `t` function for translations.
+   - Dynamically generate tooltips by:
+     - Normalizing the `value` or `customText` (e.g., "Limited (LSP)" → "limited_lsp") to create a translation key.
+     - Looking up translations in `en.json` under `featureStatus.values.{normalizedKey}` for generic cases, and optionally `{normalizedKey}_{walletName}` for wallet-specific overrides.
+     - Fallback to the raw `value` or `customText` if no translation exists.
+   - Wrap the `children` in a `<div>` with `cursor-help`, `title`, and `data-tooltip` attributes for the translated tooltip text.
+
+2. **Update `ComparisonTable.tsx`**:
+   - Import and use `FeatureTooltip` in the `renderFeatureStatus` function for all text-based and icon-based feature renderings (except special cases like `Platform` and `openSource`).
+   - Remove the hardcoded availability tooltip logic (e.g., conditions for Blink, Phoenix, Bitkit).
+   - Ensure the component is only applied when `wallet` and `featureName` are available.
+   - Keep the existing styling and icon logic but wrap the output in `FeatureTooltip`.
+
+3. **Context**:
+   - The wallet JSON structure includes a `features` object where values can be strings (e.g., `"yes"`) or objects (e.g., `{ "value": "custom", "customText": "Limited (LSP)" }`).
+   - The `en.json` file has a `featureStatus.values` section with keys like `"limited"`, `"yes"`, etc., each with `label` and `title` for display and tooltip text.
+   - Example wallet JSON and `en.json` structures are provided below for reference.
+
+4. **Goals**:
+   - Make tooltips reusable across all features, not just availability.
+   - Eliminate wallet-specific conditional logic in `ComparisonTable.tsx`.
+   - Rely on JSON data and translations for consistency and maintainability.
+
+Here’s my current `ComparisonTable.tsx` file:
+
+```tsx
+[Insert your full ComparisonTable.tsx code here]
+Here’s an example wallet JSON (e.g., bitkit.json):
+
+json
+
+Collapse
+
+Wrap
+
+Copy
+{
+  "name": "Bitkit",
+  "website": "https://bitkit.to",
+  "description": "Self-custodial Bitcoin and Lightning wallet",
+  "type": "lightning",
+  "logo": "bitkit",
+  "order": 11,
+  "features": {
+    "platform": ["android", "ios"],
+    "openSource": "yes",
+    "availability": { "value": "custom", "customText": "Limited (LSP)" },
+    "custodialStatus": { "value": "custom", "customText": "L1/L2 (LN Node)" },
+    "kyc": "no",
+    "transactionLimits": { "value": "custom", "customText": "999$ MAX with default LSP" }
+    // ... other features ...
+  }
+}
+Here’s the relevant part of en.json:
+
+json
+
+Collapse
+
+Wrap
+
+Copy
+{
+  "featureStatus": {
+    "values": {
+      "yes": { "label": "Yes", "title": "Feature fully supported" },
+      "no": { "label": "No", "title": "Feature not supported" },
+      "custom": { "label": "Custom", "title": "Custom implementation" },
+      "limited": { "label": "Limited", "title": "Limited availability in some regions" },
+      "limited_blink_phoenix_wos": {
+        "label": "Limited",
+        "title": "Restricted in the United States, and small / sanctioned countries."
+      },
+      "limited_bitkit": {
+        "label": "Limited (LSP)",
+        "title": "The Blocktank Lightning Service Provider (LSP) is restricted in the United States and Canada. Bitkit is standardly available in the app store."
+      },
+      "limited_lsp": {
+        "label": "Limited (LSP)",
+        "title": "Restricted availability due to Lightning Service Provider limitations"
+      }
+      // ... other values ...
+    },
+    "icons": { "yes": "true", "no": "true", "partial": "true", "optional": "true" },
+    "styles": { "yes": "bg-primary/20 text-primary", "no": "bg-destructive/20 text-destructive" /* ... */ }
+  }
+}
+Please implement this refactor, test it with the provided example data, and ensure it works seamlessly with the existing styling and functionality. Let me know if you need clarification!
+
+text
+
+Collapse
+
+Wrap
+
+Copy
+
+---
+
+### Instructions for Use
+1. Copy this prompt into Replit Agent’s input area.
+2. Replace `[Insert your full ComparisonTable.tsx code here]` with your actual `ComparisonTable.tsx` code (the one you shared earlier).
+3. Run the agent and review the changes it suggests.
+4. Test the refactored code with different wallets to ensure tooltips display correctly based on the JSON data and translations.
+
+This prompt gives the agent clear steps, context, and examples to work with, ensuring it aligns with your vision for a modular, data-driven solution. Let me know if you’d like to tweak it further!

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import WalletTooltip from './WalletTooltip';
+import FeatureTooltip from './FeatureTooltip';
 import { WalletType, WalletWithFeatures, Feature, Wallet } from '@/lib/types';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Button } from '@/components/ui/button';
@@ -110,45 +111,6 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
       return renderGitHubLink(wallet.name);
     }
     
-    // Special handling for availability feature with value="limited" for specific wallets
-    if (featureName === "availability" && value === "limited" && wallet) {
-      // Specific tooltip for Blink, Phoenix, and Wallet of Satoshi
-      if (["Blink", "Phoenix", "Wallet of Satoshi"].includes(wallet.name)) {
-        const label = t("featureStatus.values.limited_blink_phoenix_wos.label", undefined, "Limited");
-        const title = t("featureStatus.values.limited_blink_phoenix_wos.title", undefined, 
-          "Restricted in the United States, and small / sanctioned countries.");
-        
-        return (
-          <div className="flex items-center justify-center">
-            <div 
-              className="py-1 px-2 rounded bg-orange-100 text-orange-600 text-sm text-center cursor-help"
-              title={title}
-            >
-              {label}
-            </div>
-          </div>
-        );
-      }
-      
-      // Specific tooltip for Bitkit
-      if (wallet.name === "Bitkit") {
-        const label = t("featureStatus.values.limited_bitkit.label", undefined, "Limited");
-        const title = t("featureStatus.values.limited_bitkit.title", undefined, 
-          "The Blocktank Lightning Service Provider (LSP) is restricted in the United States and Canada. Bitkit is standardly available in the app store.");
-        
-        return (
-          <div className="flex items-center justify-center">
-            <div 
-              className="py-1 px-2 rounded bg-orange-100 text-orange-600 text-sm text-center cursor-help"
-              title={title}
-            >
-              {label}
-            </div>
-          </div>
-        );
-      }
-    }
-    
     // Normalize a string to create a valid translation key
     // e.g., "Yes (GitHub)" -> "yes_github" 
     const normalizeKey = (key: string): string => {
@@ -169,12 +131,8 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
     // Create a full translation key path
     const translationKey = `featureStatus.values.${normalizedKey}`;
     
-    // We've removed special handling for comma-separated values to provide a uniform approach
-    // All values are now processed through the same path
-    
     // Standard case: Get translated values with fallbacks
     const label = t(`${translationKey}.label`, undefined, displayValue);
-    const title = t(`${translationKey}.title`, undefined, displayValue);
     
     // Determine if this value uses an icon
     const useIconStr = t(`featureStatus.icons.${normalizedKey}`, undefined, "false");
@@ -219,50 +177,46 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
     if (useIcon) {
       if (value === 'yes') {
         return (
-          <span 
-            className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-primary/20"
-            title={title}
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-            </svg>
-          </span>
+          <FeatureTooltip featureName={featureName} value={value} customText={customText} wallet={wallet}>
+            <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-primary/20">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+              </svg>
+            </span>
+          </FeatureTooltip>
         );
       } else if (value === 'no' || value === 'not_possible') {
         return (
-          <span 
-            className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-destructive/20"
-            title={title}
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-destructive" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
-            </svg>
-          </span>
+          <FeatureTooltip featureName={featureName} value={value} customText={customText} wallet={wallet}>
+            <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-destructive/20">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-destructive" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </span>
+          </FeatureTooltip>
         );
       } else if (value === 'partial' || value === 'optional') {
         return (
-          <span 
-            className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-orange-500/20"
-            title={title}
-          >
-            <span className="text-xs font-medium text-orange-500">
-              {label}
+          <FeatureTooltip featureName={featureName} value={value} customText={customText} wallet={wallet}>
+            <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-orange-500/20">
+              <span className="text-xs font-medium text-orange-500">
+                {label}
+              </span>
             </span>
-          </span>
+          </FeatureTooltip>
         );
       }
     }
     
     // For all other values, render as a text pill
     return (
-      <span 
-        className={`inline-flex items-center justify-center h-6 px-2 rounded-md ${bgClass}`}
-        title={title}
-      >
-        <span className={`text-xs font-medium ${textClass}`}>
-          {label}
+      <FeatureTooltip featureName={featureName} value={value} customText={customText} wallet={wallet}>
+        <span className={`inline-flex items-center justify-center h-6 px-2 rounded-md ${bgClass}`}>
+          <span className={`text-xs font-medium ${textClass}`}>
+            {label}
+          </span>
         </span>
-      </span>
+      </FeatureTooltip>
     );
   };
   
@@ -279,21 +233,21 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
     
     // Get the translated label and title from the translation files
     const label = t('featureStatus.values.yes_github.label', undefined, 'Yes');
-    const title = t('featureStatus.values.yes_github.title', undefined, 'Open source code available on GitHub');
     
     return (
-      <a 
-        href={repoUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-primary/10 hover:bg-primary/20 transition-colors"
-        title={title}
-      >
-        <span className="flex items-center text-xs font-medium text-primary gap-1">
-          <Github className="h-3.5 w-3.5" />
-          {label}
-        </span>
-      </a>
+      <FeatureTooltip value="yes_github" featureName="openSource" wallet={{ id: 0, name: walletName, website: '', description: '', type: 'lightning', order: 0 }}>
+        <a 
+          href={repoUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-primary/10 hover:bg-primary/20 transition-colors"
+        >
+          <span className="flex items-center text-xs font-medium text-primary gap-1">
+            <Github className="h-3.5 w-3.5" />
+            {label}
+          </span>
+        </a>
+      </FeatureTooltip>
     );
   };
   
