@@ -15,7 +15,15 @@ interface FeatureTooltipProps {
  * 
  * Provides consistent tooltip handling for feature values across the application.
  * This component normalizes feature values and looks up translations in a consistent way.
- * It can handle wallet-specific tooltips by checking for wallet-specific translation keys.
+ * It dynamically constructs translation keys based on:
+ * 1. The normalized feature value
+ * 2. Wallet-specific overrides when a wallet is provided
+ * 
+ * Translation keys follow these formats:
+ * - Base key: featureStatus.values.{normalizedValue}
+ * - Wallet-specific key: featureStatus.values.{normalizedValue}_{normalized_wallet_name}
+ * 
+ * Wallet-specific keys take precedence over base keys.
  */
 const FeatureTooltip = ({ 
   featureName, 
@@ -39,34 +47,30 @@ const FeatureTooltip = ({
   // Determine which value to use for display and tooltips
   const displayValue = (value === 'custom' && customText) ? customText : value;
   
-  // Normalize to create a valid translation key
+  // Normalize to create a valid translation key for the feature value
   const normalizedKey = normalizeKey(displayValue);
   
-  // Try to find wallet-specific translation first (e.g., "limited_bitkit")
-  let tooltipText = '';
-  let tooltipLabel = '';
+  // Create base translation key path
+  const baseKey = `featureStatus.values.${normalizedKey}`;
   
-  if (wallet && featureName === 'availability') {
-    // Special cases for limited availability
-    if (value === 'limited') {
-      if (['Blink', 'Phoenix', 'Wallet of Satoshi'].includes(wallet.name)) {
-        // Try wallet-group specific translation
-        tooltipLabel = t(`featureStatus.values.limited_blink_phoenix_wos.label`, undefined, '');
-        tooltipText = t(`featureStatus.values.limited_blink_phoenix_wos.title`, undefined, '');
-      } else if (wallet.name === 'Bitkit') {
-        // Try wallet-specific translation
-        tooltipLabel = t(`featureStatus.values.limited_bitkit.label`, undefined, '');
-        tooltipText = t(`featureStatus.values.limited_bitkit.title`, undefined, '');
-      }
+  // If wallet is provided, create a wallet-specific key
+  let walletSpecificKey = '';
+  if (wallet) {
+    // Special case for Blink, Phoenix, and Wallet of Satoshi sharing the same tooltip
+    if (['Blink', 'Phoenix', 'Wallet of Satoshi'].includes(wallet.name) && normalizedKey === 'limited') {
+      walletSpecificKey = `featureStatus.values.limited_blink_phoenix_wos`;
+    } else {
+      // Normal case: create a wallet-specific key by appending normalized wallet name
+      const normalizedWalletName = normalizeKey(wallet.name);
+      walletSpecificKey = `featureStatus.values.${normalizedKey}_${normalizedWalletName}`;
     }
   }
   
-  // If no wallet-specific tooltip was found, try generic value translation
-  if (!tooltipText) {
-    const translationKey = `featureStatus.values.${normalizedKey}`;
-    tooltipText = t(`${translationKey}.title`, undefined, displayValue);
-    tooltipLabel = t(`${translationKey}.label`, undefined, displayValue);
-  }
+  // Try wallet-specific key first, then fall back to the base key, then to displayValue
+  // This prioritizes more specific translations
+  const tooltipText = walletSpecificKey
+    ? t(`${walletSpecificKey}.title`, undefined, t(`${baseKey}.title`, undefined, displayValue))
+    : t(`${baseKey}.title`, undefined, displayValue);
 
   return (
     <div
