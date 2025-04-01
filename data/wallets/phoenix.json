@@ -1,7 +1,7 @@
 {
   "name": "Phoenix",
   "website": "https://phoenix.acinq.co",
-  "description": "A Lightning-native wallet with seamless payments—fast, cheap, and LSP-managed for simplicity.",
+  "description": "Non-custodial Lightning wallet by ACINQ",
   "type": "lightning",
   "logo": "phoenix",
   "order": 12,

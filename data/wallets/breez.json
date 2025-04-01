@@ -1,7 +1,7 @@
 {
   "name": "Breez",
   "website": "https://breez.technology",
-  "description": "A non-custodial Lightning wallet with an embedded node, POS, podcast player, and marketplace—delivering a top-tier Bitcoin experience.",
+  "description": "Non-custodial Lightning wallet and payment platform",
   "type": "lightning",
   "logo": "breez",
   "order": 13,

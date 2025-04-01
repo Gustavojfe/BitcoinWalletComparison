@@ -1,7 +1,7 @@
 {
   "name": "Primal",
   "website": "https://primal.net/wallet",
-  "description": "A Nostr client with a built-in Bitcoin wallet, offering smooth feeds and easy onboarding for Nostr beginners.",
+  "description": "Nostr-integrated Lightning wallet",
   "type": "lightning",
   "logo": "primal",
   "order": 3,

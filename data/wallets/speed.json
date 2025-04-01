@@ -1,7 +1,7 @@
 {
   "name": "Speed",
   "website": "https://www.speed.app/",
-  "description": "A custodial wallet for instant, secure, low-fee Bitcoin and USDT payments, available as a mobile app or browser extension.",
+  "description": "Custodial wallet for Bitcoin and Lightning",
   "type": "lightning",
   "logo": "speed",
   "order": 4,

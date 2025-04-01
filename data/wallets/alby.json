@@ -1,7 +1,7 @@
 {
   "name": "Alby",
   "website": "https://getalby.com",
-  "description": "A self-custodial Lightning wallet that connects to Alby Extension for web interactions, Alby Go for real-world payments, and hundreds of apps via Nostr Wallet Connect (NWC).",
+  "description": "Browser extension wallet for Lightning payments",
   "type": "lightning",
   "logo": "alby",
   "order": 18,

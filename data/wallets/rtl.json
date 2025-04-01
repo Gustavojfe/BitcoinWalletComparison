@@ -1,7 +1,7 @@
 {
   "name": "RTL",
   "website": "https://github.com/Ride-The-Lightning/RTL",
-  "description": "A powerful, self-hosted web tool for managing Lightning nodes, ideal for advanced and business users.",
+  "description": "Ride The Lightning node management tool",
   "type": "lightning",
   "logo": "rtl",
   "order": 15,

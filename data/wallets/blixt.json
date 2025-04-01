@@ -1,7 +1,7 @@
 {
   "name": "Blixt",
   "website": "https://blixtwallet.github.io",
-  "description": "An open-source, non-custodial Lightning wallet for Android and iOS, packed with features for Bitcoiners exploring the Lightning Network.",
+  "description": "Non-custodial Lightning wallet",
   "type": "lightning",
   "logo": "blixt",
   "order": 17,
