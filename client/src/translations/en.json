@@ -798,6 +798,18 @@
       "user_managed": {
         "label": "User-Managed",
         "title": "Managed by the user"
+      },
+      "kyc_over_1000_day_blink": {
+        "label": "KYC over 1000$/day",
+        "title": "Know Your Customer verification required for transactions over 1000$ per day on Blink"
+      },
+      "muun_provided_muun": {
+        "label": "Muun-provided",
+        "title": "Swap functionality provided by Muun"
+      },
+      "user_managed_alby": {
+        "label": "User-Managed",
+        "title": "Channel and peer management controlled by the user in Alby"
       }
     },
     "icons": {
