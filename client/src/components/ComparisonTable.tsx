@@ -110,6 +110,45 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
       return renderGitHubLink(wallet.name);
     }
     
+    // Special handling for availability feature with value="limited" for specific wallets
+    if (featureName === "availability" && value === "limited" && wallet) {
+      // Specific tooltip for Blink, Phoenix, and Wallet of Satoshi
+      if (["Blink", "Phoenix", "Wallet of Satoshi"].includes(wallet.name)) {
+        const label = t("featureStatus.values.limited_blink_phoenix_wos.label", undefined, "Limited");
+        const title = t("featureStatus.values.limited_blink_phoenix_wos.title", undefined, 
+          "Restricted in the United States, and small / sanctioned countries.");
+        
+        return (
+          <div className="flex items-center justify-center">
+            <div 
+              className="py-1 px-2 rounded bg-orange-100 text-orange-600 text-sm text-center cursor-help"
+              title={title}
+            >
+              {label}
+            </div>
+          </div>
+        );
+      }
+      
+      // Specific tooltip for Bitkit
+      if (wallet.name === "Bitkit") {
+        const label = t("featureStatus.values.limited_bitkit.label", undefined, "Limited");
+        const title = t("featureStatus.values.limited_bitkit.title", undefined, 
+          "The Blocktank Lightning Service Provider (LSP) is restricted in the United States and Canada. Bitkit is standardly available in the app store.");
+        
+        return (
+          <div className="flex items-center justify-center">
+            <div 
+              className="py-1 px-2 rounded bg-orange-100 text-orange-600 text-sm text-center cursor-help"
+              title={title}
+            >
+              {label}
+            </div>
+          </div>
+        );
+      }
+    }
+    
     // Normalize a string to create a valid translation key
     // e.g., "Yes (GitHub)" -> "yes_github" 
     const normalizeKey = (key: string): string => {
