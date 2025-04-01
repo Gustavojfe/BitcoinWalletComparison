@@ -430,14 +430,14 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
             <table className="min-w-full divide-y divide-border">
               <thead className="bg-muted">
                 <tr>
-                  <th scope="col" className="sticky left-0 z-10 bg-muted px-6 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider min-w-[200px]">
+                  <th scope="col" className="sticky left-0 z-10 bg-muted px-6 py-3 text-left text-xs font-medium text-muted-foreground tracking-wider min-w-[200px]">
                     {t('common.wallets')}
                   </th>
                   {visibleFeatures.map((feature) => (
                     <th 
                       key={feature.id} 
                       scope="col" 
-                      className="px-6 py-3 text-center text-xs font-medium text-muted-foreground uppercase tracking-wider min-w-[140px] group"
+                      className="px-6 py-3 text-center text-xs font-medium text-muted-foreground tracking-wider min-w-[140px] group"
                     >
                       <div className="flex items-center justify-center space-x-1">
                         {(() => {
