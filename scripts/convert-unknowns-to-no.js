@@ -20,7 +20,8 @@ const FEATURES_TO_UPDATE = [
   'transactionLimits',
   'bitcoinAddressType',
   'taprootTransactions',
-  'submarineSwaps'
+  'submarineSwaps',
+  'peerBackupOptions'
 ];
 
 // Path to wallet files
@@ -53,6 +54,9 @@ function processWalletFiles() {
 // Process a single wallet file
 function processWalletFile(filePath) {
   try {
+    const walletName = path.basename(filePath, '.json');
+    console.log(`Processing wallet: ${walletName}...`);
+    
     // Read wallet JSON
     const walletData = JSON.parse(fs.readFileSync(filePath, 'utf8'));
     let changes = 0;
@@ -61,20 +65,60 @@ function processWalletFile(filePath) {
     if (walletData.features) {
       // Check each feature that we want to update
       FEATURES_TO_UPDATE.forEach(feature => {
+        // Check if feature exists and is a string equal to "unknown"
         if (
           feature in walletData.features && 
+          typeof walletData.features[feature] === 'string' &&
           walletData.features[feature] === 'unknown'
         ) {
+          console.log(`  - Converting ${feature} from "unknown" to "no" in ${walletName}`);
           // Convert "unknown" to "no"
           walletData.features[feature] = 'no';
           changes++;
+        }
+        // Check if feature is an object with a value property set to "unknown"
+        else if (
+          feature in walletData.features &&
+          typeof walletData.features[feature] === 'object' &&
+          walletData.features[feature] !== null &&
+          'value' in walletData.features[feature] &&
+          walletData.features[feature].value === 'unknown'
+        ) {
+          console.log(`  - Converting ${feature}.value from "unknown" to "no" in ${walletName}`);
+          // Convert "unknown" to "no" in the value property
+          walletData.features[feature].value = 'no';
+          changes++;
+        }
+      });
+      
+      // Additional step: search for any "unknown" values in all features and nested properties
+      // This is useful for debugging but doesn't modify anything
+      Object.entries(walletData.features).forEach(([key, value]) => {
+        // Check direct string values
+        if (typeof value === 'string' && value === 'unknown' && !FEATURES_TO_UPDATE.includes(key)) {
+          console.log(`  * Found additional "unknown" string value in ${walletName}.${key} (not converting)`);
+        }
+        // Check objects with value property
+        else if (
+          typeof value === 'object' && 
+          value !== null && 
+          'value' in value && 
+          value.value === 'unknown' &&
+          !FEATURES_TO_UPDATE.includes(key)
+        ) {
+          console.log(`  * Found additional "unknown" value in ${walletName}.${key}.value (not converting)`);
         }
       });
       
       // If changes were made, save the updated file
       if (changes > 0) {
         fs.writeFileSync(filePath, JSON.stringify(walletData, null, 2), 'utf8');
+        console.log(`  ✓ Updated ${walletName} with ${changes} changes`);
+      } else {
+        console.log(`  ✓ No changes needed for ${walletName}`);
       }
+    } else {
+      console.log(`  ! No features object found in ${walletName}`);
     }
     
     return changes;
