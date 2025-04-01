@@ -56,7 +56,7 @@
     "developerApis": "yes",
     "noKyc": {
       "value": "custom",
-      "customText": "Yes, In USA"
+      "customText": "KYC in the USA"
     }
   },
   "availability": "Standard",

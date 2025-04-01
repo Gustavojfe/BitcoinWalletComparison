@@ -580,12 +580,12 @@
         "title": "Usa Proveedor de Servicios Lightning Olympus personalizado"
       },
       "yes_over_999day": { 
-        "label": "Sí, Más de 999$/día", 
-        "title": "Sí, más de 999 dólares por día" 
+        "label": "KYC sobre 1000$/día", 
+        "title": "KYC requerido para transacciones superiores a 1000 dólares por día" 
       },
       "yes_in_usa": { 
-        "label": "Sí, En EE.UU.", 
-        "title": "Sí, en los EE.UU." 
+        "label": "KYC en EE.UU.", 
+        "title": "KYC requerido para usuarios en los EE.UU." 
       },
       "999_max_with_default_lsp": { 
         "label": "999$ MÁX con PSL predeterminado", 

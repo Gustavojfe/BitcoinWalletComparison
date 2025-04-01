@@ -556,12 +556,12 @@
         "title": "Uses custom Olympus Lightning Service Provider"
       },
       "yes_over_999day": { 
-        "label": "Yes, Over 999$/day", 
-        "title": "Yes, over 999 dollars per day" 
+        "label": "KYC over 1000$/day", 
+        "title": "KYC required for transactions over 1000 dollars per day" 
       },
       "yes_in_usa": { 
-        "label": "Yes, In USA", 
-        "title": "Yes, in the USA" 
+        "label": "KYC in the USA", 
+        "title": "KYC required for users in the USA" 
       },
       "999_max_with_default_lsp": { 
         "label": "999$ MAX with default LSP", 

@@ -58,7 +58,7 @@
     "developerApis": "no",
     "noKyc": {
       "value": "custom",
-      "customText": "Yes, Over 999$/day"
+      "customText": "KYC over 1000$/day"
     }
   },
   "availability": "Limited",
