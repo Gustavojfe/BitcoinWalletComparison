@@ -6,7 +6,7 @@
     },
     "AQUA": {
       "name": "AQUA",
-      "description": "A global Bitcoin wallet focused on financial inclusion, designed for Latin America. Uses Boltz swaps for Lightning payments."
+      "description": "Liquid / On-Chain Wallet with LN Swaps (Boltz)"
     },
     "Bitkit": {
       "name": "Bitkit",

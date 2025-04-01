@@ -1,7 +1,7 @@
 {
   "name": "Aqua",
   "website": "https://www.aquawallet.io",
-  "description": "A global Bitcoin wallet focused on financial inclusion, designed for Latin America. Uses Boltz swaps for Lightning payments.",
+  "description": "Liquid / On-Chain Wallet with LN Swaps (Boltz)",
   "type": "lightning",
   "logo": "aqua",
   "order": 9,
