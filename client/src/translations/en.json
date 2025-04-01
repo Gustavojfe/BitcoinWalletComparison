@@ -191,6 +191,10 @@
   },
   "featureStatus": {
     "values": {
+      "API": {
+        "label": "API",
+        "title": "Uses an API for node functionality"
+      },
       "does_not_apply": {
         "label": "N/A",
         "title": "This feature does not apply to this wallet"

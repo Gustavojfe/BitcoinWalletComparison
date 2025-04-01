@@ -1,0 +1,69 @@
+I want to update the `nodeType` feature in all wallet JSONs: change any value of `"no"` or `"does_not_apply"` to `"API"`. This should be reflected in the comparison table and tooltips, with updated translations in both English and Spanish in `en.json` and `es.json`.
+
+Please:
+1. **Suggest Data Changes**:
+   - Provide a script or instructions to update all wallet JSON files to:
+     - Replace `"no"` or `"does_not_apply"` with `"API"` for the `nodeType` feature.
+     - Leave other values (e.g., `"yes"`, `"custom"`, or objects like `{ "value": "custom", "customText": "..." }`) unchanged.
+   - Example transformation:
+     ```json
+     // Before
+     "features": {
+       "nodeType": "no",
+       "platform": ["android"]
+     }
+     // or
+     "features": {
+       "nodeType": "does_not_apply",
+       "platform": ["android"]
+     }
+     // After
+     "features": {
+       "nodeType": "API",
+       "platform": ["android"]
+     }
+Update Translations:
+Update en.json with an English translation for "API":
+json
+
+Collapse
+
+Wrap
+
+Copy
+"featureStatus": {
+  "values": {
+    "API": { "label": "API", "title": "Uses an API for node functionality" }
+  }
+}
+Update es.json with a Spanish translation for "API":
+json
+
+Collapse
+
+Wrap
+
+Copy
+"featureStatus": {
+  "values": {
+    "API": { "label": "API", "title": "Usa una API para funcionalidad de nodo" }
+  }
+}
+Ensure these translations apply to nodeType: "API" in the table via FeatureTooltip.
+Verify Rendering:
+Confirm ComparisonTable.tsx renders nodeType: "API" correctly (likely as a text pill unless an icon is suggested).
+Check that FeatureTooltip displays "Uses an API for node functionality" (English) or "Usa una API para funcionalidad de nodo" (Spanish) based on the language setting.
+Test:
+Verify that a wallet with nodeType previously set to "no" or "does_not_apply" now shows "API" with the correct tooltip in both English and Spanish modes.
+Don’t modify unrelated functionality unless necessary.
+Let me know the script/instructions for updating the wallet JSONs, confirm the en.json and es.json updates match the exact translations I provided, and verify that nodeType: "API" renders correctly with the right tooltips in both languages!
+
+text
+
+Collapse
+
+Wrap
+
+Copy
+
+---

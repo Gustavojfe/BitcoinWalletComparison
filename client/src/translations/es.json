@@ -191,6 +191,10 @@
   },
   "featureStatus": {
     "values": {
+      "API": {
+        "label": "API",
+        "title": "Usa una API para funcionalidad de nodo"
+      },
       "does_not_apply": {
         "label": "N/A",
         "title": "Esta característica no aplica a esta cartera"

@@ -70,7 +70,7 @@
     "developerApis": "yes",
     "noKyc": "yes",
     "peerBackupOptions": "does_not_apply",
-    "nodeType": "does_not_apply",
+    "nodeType": "API",
     "submarineSwaps": "does_not_apply",
     "lspIntegration": "does_not_apply",
     "channelManagement": "does_not_apply",
