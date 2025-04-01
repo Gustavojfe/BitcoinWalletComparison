@@ -1,6 +1,12 @@
 import React from 'react';
 import { Wallet } from '@/lib/types';
 import { useLanguage } from '@/hooks/use-language';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 interface FeatureTooltipProps {
   featureName?: string;
@@ -26,6 +32,8 @@ interface FeatureTooltipProps {
  * No wallet-specific or feature-specific conditional logic exists in this component,
  * making it fully reusable and scalable. Adding a new wallet with a specific tooltip
  * only requires updating the translation files, not the code.
+ * 
+ * Uses Radix UI Tooltip for consistent, accessible tooltips that appear above the element.
  */
 const FeatureTooltip = ({ 
   featureName, 
@@ -66,14 +74,28 @@ const FeatureTooltip = ({
     ? t(`${walletSpecificKey}.title`, undefined, t(`${baseKey}.title`, undefined, displayValue))
     : t(`${baseKey}.title`, undefined, displayValue);
 
+  // Use Radix UI Tooltip for better positioning, but keep native title for fallback
   return (
-    <div
-      className="inline-flex items-center justify-center cursor-help"
-      title={tooltipText}
-      data-tooltip={tooltipText}
-    >
-      {children}
-    </div>
+    <TooltipProvider>
+      <Tooltip delayDuration={300}>
+        <TooltipTrigger asChild>
+          <div
+            className="inline-flex items-center justify-center cursor-help"
+            title={tooltipText} // Keep native title for fallback
+            data-tooltip={tooltipText}
+          >
+            {children}
+          </div>
+        </TooltipTrigger>
+        <TooltipContent 
+          side="top" 
+          align="center"
+          className="max-w-[300px] text-sm bg-popover text-popover-foreground shadow-md rounded-md px-3 py-1.5 z-50"
+        >
+          {tooltipText}
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
   );
 };
 
