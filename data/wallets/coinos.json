@@ -38,7 +38,7 @@
     },
     "receiveOnChain": {
       "value": "custom",
-      "customText": "?"
+      "customText": "On-Chain Wallet"
     },
     "bitcoinAddressType": {
       "value": "custom",
