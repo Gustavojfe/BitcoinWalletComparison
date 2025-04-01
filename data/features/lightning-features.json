@@ -32,9 +32,9 @@
     "order": 4
   },
   {
-    "id": "kyc",
-    "name": "KYC",
-    "description": "Know Your Customer requirements for wallet usage.",
+    "id": "noKyc",
+    "name": "No KYC",
+    "description": "Whether the wallet can be used without Know Your Customer requirements.",
     "type": "lightning",
     "category": "basics",
     "order": 5

@@ -19,7 +19,6 @@
       "value": "custom",
       "customText": "L2 Wallet (LN Node)"
     },
-    "kyc": "no",
     "transactionFees": "yes",
     "backupOptions": {
       "value": "custom",
@@ -113,7 +112,8 @@
     "developerApis": {
       "value": "custom",
       "customText": "Phoenixd"
-    }
+    },
+    "noKyc": "yes"
   },
   "availability": "Limited",
   "category": "L2 Wallet (LN Node)"

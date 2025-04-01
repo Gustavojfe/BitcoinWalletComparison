@@ -19,7 +19,6 @@
       "value": "custom",
       "customText": "L1/L2 (LN Node) or UI for multiple nodes"
     },
-    "kyc": "no",
     "transactionFees": {
       "value": "custom",
       "customText": "Yes, dynamic LSP fees"
@@ -113,7 +112,8 @@
     },
     "torSupport": "yes",
     "testnetSupport": "yes",
-    "developerApis": "no"
+    "developerApis": "no",
+    "noKyc": "yes"
   },
   "availability": "Standard",
   "category": "L1/L2 (LN Node) or UI for multiple nodes"

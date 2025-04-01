@@ -19,7 +19,6 @@
       "value": "custom",
       "customText": "Liquid / On-Chain Wallet with LN Swaps (Boltz)"
     },
-    "kyc": "no",
     "transactionFees": {
       "value": "custom",
       "customText": "Yes for LN: 0.1% Send, 0.25% Receive"
@@ -61,7 +60,8 @@
     "blindRouting": "no",
     "torSupport": "no",
     "testnetSupport": "no",
-    "developerApis": "no"
+    "developerApis": "no",
+    "noKyc": "yes"
   },
   "availability": "Standard",
   "category": "Liquid / On-Chain Wallet with Submarine and Reverse Swaps (Boltz)"

@@ -143,6 +143,7 @@
     "ldk": "LDK",
     "core_lightning": "Core Lightning",
     "eclair": "Eclair",
+    "noKyc": "Sin KYC",
     "yes": "Sí",
     "no": "No",
     "partial": "Parcial",

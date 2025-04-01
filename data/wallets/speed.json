@@ -20,10 +20,6 @@
       "value": "custom",
       "customText": "Custodial"
     },
-    "kyc": {
-      "value": "custom",
-      "customText": "Yes, In USA"
-    },
     "transactionLimits": {
       "value": "custom",
       "customText": "5 BTC "
@@ -57,7 +53,11 @@
     "blindRouting": "no",
     "torSupport": "no",
     "testnetSupport": "no",
-    "developerApis": "yes"
+    "developerApis": "yes",
+    "noKyc": {
+      "value": "custom",
+      "customText": "Yes, In USA"
+    }
   },
   "availability": "Standard",
   "category": "Custodial"

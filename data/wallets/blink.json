@@ -19,10 +19,6 @@
       "value": "custom",
       "customText": "Custodial"
     },
-    "kyc": {
-      "value": "custom",
-      "customText": "Yes, Over 999$/day"
-    },
     "transactionLimits": {
       "value": "custom",
       "customText": "Detailed"
@@ -59,7 +55,11 @@
     "blindRouting": "no",
     "torSupport": "no",
     "testnetSupport": "no",
-    "developerApis": "no"
+    "developerApis": "no",
+    "noKyc": {
+      "value": "custom",
+      "customText": "Yes, Over 999$/day"
+    }
   },
   "availability": "Limited",
   "category": "Custodial"

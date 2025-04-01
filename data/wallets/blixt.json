@@ -19,7 +19,6 @@
       "value": "custom",
       "customText": "L1/L2 (LN Node)"
     },
-    "kyc": "no",
     "transactionFees": {
       "value": "custom",
       "customText": "Yes, dynamic LSP fees"
@@ -98,7 +97,8 @@
       "value": "custom",
       "customText": "Android only"
     },
-    "developerApis": "no"
+    "developerApis": "no",
+    "noKyc": "yes"
   },
   "availability": "Standard",
   "category": "L1/L2 (LN Node)"

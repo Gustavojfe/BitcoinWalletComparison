@@ -19,7 +19,6 @@
       "value": "custom",
       "customText": "L2 Wallet (LN Node)"
     },
-    "kyc": "no",
     "transactionFees": "yes",
     "backupOptions": {
       "value": "custom",
@@ -98,7 +97,8 @@
     "developerApis": {
       "value": "custom",
       "customText": "SDK"
-    }
+    },
+    "noKyc": "yes"
   },
   "availability": "Standard",
   "category": "L2 Wallet (LN Node)"

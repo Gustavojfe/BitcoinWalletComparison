@@ -1,0 +1,63 @@
+The next task is to invert the KYC values: rename the `kyc` feature to `noKyc` and flip all `"yes"` values to `"no"` and all `"no"` values to `"yes"` across all wallet data. This should be reflected in `ComparisonTable.tsx`, the wallet JSON files, and translations in `en.json`.
+
+Here’s the current `ComparisonTable.tsx`:
+
+```tsx
+[Insert your full ComparisonTable.tsx code here]
+Please:
+
+Update ComparisonTable.tsx:
+Replace any references to the kyc feature with noKyc in the rendering logic (e.g., check feature names in renderFeatureStatus or data processing).
+Ensure the flipped logic is understood: "yes" for noKyc means no KYC is required, "no" means KYC is required. Adjust any display or tooltip logic if needed to reflect this semantic change.
+Suggest Data Changes:
+Provide a script or instructions to update all wallet JSON files (e.g., in src/data/wallets/ or wherever they’re stored) to:
+Rename the kyc key to noKyc in the features object.
+Flip values: "yes" becomes "no", "no" becomes "yes", leaving other values (e.g., "custom") unchanged.
+Example transformation:
+json
+
+Collapse
+
+Wrap
+
+Copy
+// Before
+"features": {
+  "kyc": "yes",
+  "platform": ["android"]
+}
+// After
+"features": {
+  "noKyc": "no",
+  "platform": ["android"]
+}
+Update Translations:
+Suggest updates to en.json to reflect the noKyc feature. Replace kyc entries with noKyc and adjust tooltip meanings:
+featureStatus.values.yes → featureStatus.values.no (for "no KYC required").
+featureStatus.values.no → featureStatus.values.yes (for "KYC required").
+Example:
+json
+
+Collapse
+
+Wrap
+
+Copy
+// Before
+"featureStatus": {
+  "values": {
+    "yes": { "label": "Yes", "title": "KYC required" },
+    "no": { "label": "No", "title": "No KYC required" }
+  }
+}
+// After
+"featureStatus": {
+  "values": {
+    "no": { "label": "No", "title": "No KYC required" },
+    "yes": { "label": "Yes", "title": "KYC required" }
+  }
+}
+Test:
+Verify that a wallet with noKyc: "no" displays as "No" with a tooltip "No KYC required", and noKyc: "yes" displays as "Yes" with "KYC required".
+Don’t modify unrelated functionality (e.g., search, tooltips) unless necessary for this change.
+Let me know how you updated ComparisonTable.tsx, provide the script/instructions for flipping wallet JSON data, suggest the en.json updates, and confirm the display reflects the inverted logic correctly!

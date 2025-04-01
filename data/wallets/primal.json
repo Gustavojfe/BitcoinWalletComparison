@@ -19,7 +19,6 @@
       "value": "custom",
       "customText": "Custodial"
     },
-    "kyc": "no",
     "transactionLimits": {
       "value": "custom",
       "customText": "0.01 BTC"
@@ -62,7 +61,8 @@
     "developerApis": {
       "value": "custom",
       "customText": "Nostr Wallet Connect"
-    }
+    },
+    "noKyc": "yes"
   },
   "availability": "Standard",
   "category": "Custodial"

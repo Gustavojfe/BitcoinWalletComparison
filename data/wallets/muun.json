@@ -19,7 +19,6 @@
       "value": "custom",
       "customText": "On-Chain Wallet with Submarine and Reverse Swap"
     },
-    "kyc": "no",
     "transactionFees": {
       "value": "custom",
       "customText": "Yes, dynamic swap fee"
@@ -65,7 +64,8 @@
     "blindRouting": "no",
     "torSupport": "no",
     "testnetSupport": "no",
-    "developerApis": "no"
+    "developerApis": "no",
+    "noKyc": "yes"
   },
   "availability": "Standard",
   "category": "On-Chain Wallet with Submarine and Reverse Swap"

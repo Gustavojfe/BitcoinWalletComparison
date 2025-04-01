@@ -16,7 +16,6 @@
       "value": "custom",
       "customText": "L1/L2 (LN Node)"
     },
-    "kyc": "no",
     "transactionFees": "no",
     "backupOptions": {
       "value": "custom",
@@ -98,7 +97,8 @@
     "developerApis": {
       "value": "custom",
       "customText": "RPC / CLI"
-    }
+    },
+    "noKyc": "yes"
   },
   "availability": "yes",
   "category": "L1/L2 (LN Node)"

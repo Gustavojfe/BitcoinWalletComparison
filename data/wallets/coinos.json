@@ -16,7 +16,6 @@
       "value": "custom",
       "customText": "Custodial"
     },
-    "kyc": "no",
     "transactionFees": {
       "value": "custom",
       "customText": "Yes, dynamic provider fees"
@@ -68,7 +67,8 @@
       "value": "custom",
       "customText": "Self-Hosted"
     },
-    "developerApis": "yes"
+    "developerApis": "yes",
+    "noKyc": "yes"
   },
   "availability": "yes",
   "category": "Custodial"

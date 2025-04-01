@@ -19,7 +19,6 @@
       "value": "custom",
       "customText": "Custodial"
     },
-    "kyc": "no",
     "transactionLimits": {
       "value": "custom",
       "customText": "5 BTC"
@@ -59,7 +58,8 @@
     "blindRouting": "no",
     "torSupport": "no",
     "testnetSupport": "no",
-    "developerApis": "no"
+    "developerApis": "no",
+    "noKyc": "yes"
   },
   "availability": "Standard",
   "category": "Custodial"

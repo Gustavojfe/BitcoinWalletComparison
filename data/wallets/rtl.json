@@ -16,7 +16,6 @@
       "value": "custom",
       "customText": "L1/ L2 (UI for multiple nodes)"
     },
-    "kyc": "no",
     "transactionFees": "no",
     "backupOptions": {
       "value": "custom",
@@ -98,7 +97,8 @@
     "simpleTaprootChannels": "no",
     "torSupport": "yes",
     "testnetSupport": "yes",
-    "developerApis": "no"
+    "developerApis": "no",
+    "noKyc": "yes"
   },
   "availability": "yes",
   "category": "L1/ L2 (UI for multiple nodes)"

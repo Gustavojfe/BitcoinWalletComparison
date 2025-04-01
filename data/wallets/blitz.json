@@ -19,7 +19,6 @@
       "value": "custom",
       "customText": "Hybrid Liquid / L2 Wallet (Full Breez SDK)"
     },
-    "kyc": "no",
     "transactionFees": "yes",
     "backupOptions": {
       "value": "custom",
@@ -96,7 +95,8 @@
     "simpleTaprootChannels": "no",
     "torSupport": "no",
     "testnetSupport": "no",
-    "developerApis": "no"
+    "developerApis": "no",
+    "noKyc": "yes"
   },
   "availability": "Standard",
   "category": "Hybrid Liquid / L2 Wallet (Full Breez SDK)"
