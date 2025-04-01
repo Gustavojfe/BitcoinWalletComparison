@@ -16,16 +16,14 @@ interface FeatureTooltipProps {
  * Provides consistent tooltip handling for feature values across the application.
  * This component normalizes feature values and looks up translations in a consistent way.
  * It dynamically constructs translation keys based on:
- * 1. Base key: featureStatus.values.{normalizedValue}
- * 2. Wallet-specific key: featureStatus.values.{normalizedValue}_{normalized_wallet_name} (if wallet provided)
+ * 1. The normalized feature value
+ * 2. Wallet-specific overrides when a wallet is provided
  * 
- * Wallet-specific keys take precedence over base keys. For wallets sharing the same tooltip
- * (e.g., "Blink", "Phoenix", "Wallet of Satoshi"), identical translations should be defined
- * in en.json for each wallet-specific key (e.g., limited_blink, limited_phoenix, etc.).
+ * Translation keys follow these formats:
+ * - Base key: featureStatus.values.{normalizedValue}
+ * - Wallet-specific key: featureStatus.values.{normalizedValue}_{normalized_wallet_name}
  * 
- * No wallet-specific or feature-specific conditional logic exists in this component,
- * making it fully reusable and scalable. Adding a new wallet with a specific tooltip
- * only requires updating the translation files, not the code.
+ * Wallet-specific keys take precedence over base keys.
  */
 const FeatureTooltip = ({ 
   featureName, 
@@ -55,10 +53,18 @@ const FeatureTooltip = ({
   // Create base translation key path
   const baseKey = `featureStatus.values.${normalizedKey}`;
   
-  // If wallet is provided, create a wallet-specific key by appending normalized wallet name
-  const walletSpecificKey = wallet 
-    ? `featureStatus.values.${normalizedKey}_${normalizeKey(wallet.name)}`
-    : '';
+  // If wallet is provided, create a wallet-specific key
+  let walletSpecificKey = '';
+  if (wallet) {
+    // Special case for Blink, Phoenix, and Wallet of Satoshi sharing the same tooltip
+    if (['Blink', 'Phoenix', 'Wallet of Satoshi'].includes(wallet.name) && normalizedKey === 'limited') {
+      walletSpecificKey = `featureStatus.values.limited_blink_phoenix_wos`;
+    } else {
+      // Normal case: create a wallet-specific key by appending normalized wallet name
+      const normalizedWalletName = normalizeKey(wallet.name);
+      walletSpecificKey = `featureStatus.values.${normalizedKey}_${normalizedWalletName}`;
+    }
+  }
   
   // Try wallet-specific key first, then fall back to the base key, then to displayValue
   // This prioritizes more specific translations
