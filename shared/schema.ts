@@ -11,7 +11,7 @@ export const featureValues = [
   // Basic yes/no values
   "yes", "no", "partial", 
   // Custom values with text explanations
-  "custom", 
+  "custom", "API", 
   // Direction-specific capabilities
   "send_only", "receive_only", 
   // Option types

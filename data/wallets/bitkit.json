@@ -67,7 +67,7 @@
       "value": "custom",
       "customText": "Electrum Server (Own Node)"
     },
-    "otherNetworks": "no",
+    "otherNetworks": "API",
     "implementation": {
       "value": "custom",
       "customText": "LDK"

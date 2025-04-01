@@ -38,7 +38,7 @@
     "sendOnChain": "yes",
     "taprootTransactions": "no",
     "submarineSwaps": "yes",
-    "otherNetworks": "no",
+    "otherNetworks": "API",
     "lspIntegration": "yes",
     "channelManagement": {
       "value": "custom",

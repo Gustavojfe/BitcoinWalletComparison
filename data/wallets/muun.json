@@ -59,7 +59,7 @@
       "value": "custom",
       "customText": "Muun-provided"
     },
-    "otherNetworks": "no",
+    "otherNetworks": "API",
     "nostrWalletConnect": "no",
     "blindRouting": "no",
     "torSupport": "no",
