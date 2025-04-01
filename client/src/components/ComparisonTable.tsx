@@ -223,6 +223,16 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
             </span>
           </FeatureTooltip>
         );
+      } else if (value === 'does_not_apply') {
+        return (
+          <FeatureTooltip featureName={featureName} value={value} customText={customText} wallet={wallet}>
+            <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-gray-200/20">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M4 10a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1z" clipRule="evenodd" />
+              </svg>
+            </span>
+          </FeatureTooltip>
+        );
       }
     }
     

@@ -1,0 +1,68 @@
+I’m working on data changes for my app, and I want to introduce a new feature value `"does_not_apply"` with a unique icon for specific wallets. This value should be applied to the following features for these wallets only: `Blink`, `Wallet of Satoshi`, `Primal`, `Speed`, `ZBD`, `Sati`, `Coinos`, `Muun`, `Aqua`. The affected features are: `implementation`, `lspIntegration`, `channelManagement`, `zeroConfChannels`, `clientSideRouting`, `watchtowerIntegration`, `maxRoutingFee`, `purchaseInbound`, `splicingSupport`, `routingNode`, `scidAlias`, `simpleTaprootChannels`. This will replace their current values (e.g., `"yes"`, `"no"`, `"unknown"`, etc.) with `"does_not_apply"`.
+
+Here’s the current `ComparisonTable.tsx`:
+
+```tsx
+[Insert your full ComparisonTable.tsx code here]
+Please:
+
+Update ComparisonTable.tsx:
+In renderFeatureStatus, add a new case for "does_not_apply" with a unique icon (e.g., a dash or circle-slash) to distinguish it from "yes" (check), "no" (cross), and "partial"/"optional" (text). Suggested icon:
+tsx
+
+Collapse
+
+Wrap
+
+Copy
+<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+  <path fillRule="evenodd" d="M4 10a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1z" clipRule="evenodd" />
+</svg>
+Wrap it in FeatureTooltip like other cases, with a background (e.g., bg-gray-200/20) and ensure it’s recognized in the useIcon check (via featureStatus.icons.does_not_apply).
+Suggest Data Changes:
+Provide a script or instructions to update the wallet JSON files for only these wallets (Blink, Wallet of Satoshi, Primal, Speed, ZBD, Sati, Coinos, Muun, Aqua) to:
+Set the value to "does_not_apply" for implementation, lspIntegration, channelManagement, zeroConfChannels, clientSideRouting, watchtowerIntegration, maxRoutingFee, purchaseInbound, splicingSupport, routingNode, scidAlias, simpleTaprootChannels, regardless of their current values.
+Leave other features and wallets unchanged.
+Example transformation:
+json
+
+Collapse
+
+Wrap
+
+Copy
+// Before (e.g., Blink.json)
+"features": {
+  "implementation": "unknown",
+  "lspIntegration": "yes",
+  "channelManagement": "no",
+  "platform": ["android"]
+}
+// After
+"features": {
+  "implementation": "does_not_apply",
+  "lspIntegration": "does_not_apply",
+  "channelManagement": "does_not_apply",
+  "platform": ["android"]
+}
+Update Translations:
+Suggest adding to en.json:
+json
+
+Collapse
+
+Wrap
+
+Copy
+"featureStatus": {
+  "values": {
+    "does_not_apply": { "label": "N/A", "title": "This feature does not apply to this wallet" }
+  },
+  "icons": {
+    "does_not_apply": "true"
+  }
+}
+Test:
+Confirm that for a wallet like "Blink", these features display the new icon (e.g., a dash) with the tooltip "This feature does not apply to this wallet" in the table, while other wallets retain their original values.
+Don’t modify unrelated functionality unless necessary.
+Let me know how you updated ComparisonTable.tsx (including the icon code), provide the script/instructions for updating the specified wallet JSONs, suggest the en.json changes, and confirm the "does_not_apply" value renders correctly for these wallets!

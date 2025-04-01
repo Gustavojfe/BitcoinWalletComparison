@@ -15,7 +15,7 @@ export const featureValues = [
   // Direction-specific capabilities
   "send_only", "receive_only", 
   // Option types
-  "mandatory", "optional", "not_possible", 
+  "mandatory", "optional", "not_possible", "does_not_apply",
   // Platform values
   "ios", "android", "desktop", "web", "chrome_extension", "whatsapp",
   // Wallet architecture types

@@ -54,7 +54,7 @@
       "customText": "Liquid, Ecash"
     },
     "implementation": {
-      "value": "custom",
+      "value": "does_not_apply",
       "customText": "Core Lightning"
     },
     "nostrWalletConnect": "yes",
@@ -68,7 +68,22 @@
       "customText": "Self-Hosted"
     },
     "developerApis": "yes",
-    "noKyc": "yes"
+    "noKyc": "yes",
+    "peerBackupOptions": "does_not_apply",
+    "nodeType": "does_not_apply",
+    "submarineSwaps": "does_not_apply",
+    "lspIntegration": "does_not_apply",
+    "channelManagement": "does_not_apply",
+    "zeroConfChannels": "does_not_apply",
+    "clientSideRouting": "does_not_apply",
+    "watchtowerIntegration": "does_not_apply",
+    "mppSupport": "does_not_apply",
+    "maxRoutingFee": "does_not_apply",
+    "purchaseInbound": "does_not_apply",
+    "splicingSupport": "does_not_apply",
+    "routingNode": "does_not_apply",
+    "scidAlias": "does_not_apply",
+    "simpleTaprootChannels": "does_not_apply"
   },
   "availability": "yes",
   "category": "Custodial"
