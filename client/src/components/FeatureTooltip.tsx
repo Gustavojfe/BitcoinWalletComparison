@@ -14,6 +14,7 @@ interface FeatureTooltipProps {
   customText?: string;
   wallet?: Wallet;
   children: React.ReactNode;
+  title?: string; // Optional title to override the standard tooltip title
 }
 
 /**
@@ -40,7 +41,8 @@ const FeatureTooltip = ({
   value, 
   customText, 
   wallet, 
-  children 
+  children,
+  title: externalTitle 
 }: FeatureTooltipProps) => {
   const { t } = useLanguage();
   
@@ -53,6 +55,35 @@ const FeatureTooltip = ({
       .replace(/[^\w\s]/g, '')  // Remove non-alphanumeric characters
       .replace(/\s+/g, '_');    // Replace spaces with underscores
   };
+  
+  // If an external title is provided, use that instead of going through translations
+  if (externalTitle) {
+    // Set tooltipText to externalTitle and skip all the translation logic
+    const tooltipText = externalTitle;
+    return (
+      <TooltipProvider>
+        <Tooltip delayDuration={300}>
+          <TooltipTrigger asChild>
+            <div
+              className="inline-flex items-center justify-center cursor-help"
+              title={tooltipText} // Keep native title for fallback
+              data-tooltip={tooltipText}
+            >
+              {children}
+            </div>
+          </TooltipTrigger>
+          <TooltipContent 
+            side="top" 
+            align="center"
+            sideOffset={5}
+            className="max-w-[350px] z-[100]"
+          >
+            <p className="whitespace-normal break-words leading-relaxed">{tooltipText}</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+    );
+  }
   
   // Determine which value to use for display and tooltips
   const displayValue = (value === 'custom' && customText) ? customText : value;
