@@ -70,9 +70,18 @@ const FeatureTooltip = ({
   
   // Try wallet-specific key first, then fall back to the base key, then to displayValue
   // This prioritizes more specific translations
-  const tooltipText = walletSpecificKey
-    ? t(`${walletSpecificKey}.title`, undefined, t(`${baseKey}.title`, undefined, displayValue))
-    : t(`${baseKey}.title`, undefined, displayValue);
+  let tooltipText = '';
+  
+  if (walletSpecificKey) {
+    // If wallet is provided, first try a key that combines both the feature value and wallet name
+    tooltipText = t(`${walletSpecificKey}.title`, undefined, 
+      // Fall back to the base key if wallet-specific translation not found
+      t(`${baseKey}.title`, undefined, displayValue)
+    );
+  } else {
+    // If no wallet provided, just use the base key
+    tooltipText = t(`${baseKey}.title`, undefined, displayValue);
+  }
 
   // Use Radix UI Tooltip for better positioning, but keep native title for fallback
   return (

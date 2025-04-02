@@ -12,8 +12,7 @@
     ],
     "openSource": "yes",
     "availability": {
-      "value": "custom",
-      "customText": "Limited (no US / Canada for LSP)"
+      "value": "limited_no_us_canada_lsp_bitkit"
     },
     "custodialStatus": {
       "value": "custom",
@@ -98,6 +97,6 @@
     "developerApis": "no",
     "noKyc": "yes"
   },
-  "availability": "Limited (no US / Canada for LSP)",
+  "availability": "limited_no_us_canada_lsp_bitkit",
   "category": "L1/L2 (LN Node)"
 }

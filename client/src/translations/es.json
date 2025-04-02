@@ -483,6 +483,10 @@
         "label": "Limitada (sin EE.UU./Canadá para PSL)",
         "title": "Disponibilidad limitada - Proveedor de Servicios Lightning no disponible en EE.UU./Canadá"
       },
+      "limited_no_us_canada_lsp_bitkit": {
+        "label": "Limitada (sin EE.UU./Canadá para PSL)",
+        "title": "Disponibilidad limitada - Proveedor de Servicios Lightning no disponible en EE.UU./Canadá"
+      },
       "limited_blink_phoenix_wos": {
         "label": "Limitado",
         "title": "Restringido en los Estados Unidos y en países pequeños o sancionados."
