@@ -183,7 +183,7 @@ export function findFeatureIdByStringId(features: Feature[], stringId: string): 
     'platform': 'platform',
     'opensource': 'openSource',
     'availability': 'availability',
-    'category': 'category', // Changed from 'custodialStatus' to 'category'
+    'category': 'custodialStatus', // This maps 'category' to 'custodialStatus', which is what the UI looks for
     'kyc': 'kyc',
     'limits': 'transactionLimits',
     'extrafees': 'transactionFees',
