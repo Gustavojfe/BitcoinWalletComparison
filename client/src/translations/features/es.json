@@ -10,11 +10,11 @@
     },
     "Availability": {
       "name": "Disponibilidad",
-      "description": "Si la cartera está disponible en todo el mundo (estándar) o tiene restricciones geográficas (limitada)."
+      "description": "Restricciones geográficas de uso. Disponibilidad estándar en iOS/Android puede excluir países pequeños o sancionados, pero cubre la mayoría. Plataformas Desktop/Web son más difíciles de restringir."
     },
     "Category": {
       "name": "Categoría",
-      "description": "El tipo de arquitectura de la cartera (custodial, no custodial, etc.)."
+      "description": "Tipo de arquitectura de la billetera. Incluye custodial, no custodial en cadena, Liquid con swaps de Boltz a LN, L1/L2 (en cadena y nodo Lightning), o UI para nodos remotos."
     },
     "KYC": {
       "name": "KYC",
@@ -114,7 +114,7 @@
     },
     "Zero-Conf Channels": {
       "name": "Canales Sin Confirmación",
-      "description": "Soporte para canales sin confirmación. Permite canales instantáneos de Bitcoin a Lightning utilizando un LSP confiable. Facilita la participación inmediata en la Red Lightning sin esperar confirmaciones."
+      "description": "Soporte para canales de confirmación cero. Permite recibir Bitcoin en Lightning instantáneamente con asistencia de LSP."
     },
     "Client-Side Routing": {
       "name": "Enrutamiento del Lado del Cliente",

@@ -6,7 +6,7 @@
     },
     "Availability": {
       "name": "Availability",
-      "description": "Whether the wallet is available worldwide (standard) or has geographic restrictions (limited)."
+      "description": "Geographic restrictions on wallet usage. Standard iOS/Android availability may exclude small or sanctioned countries but covers most. Desktop/Web platforms are harder to restrict."
     },
     "User Interface (UI/UX)": {
       "name": "User Interface (UI/UX)",
@@ -22,7 +22,7 @@
     },
     "Category": {
       "name": "Category",
-      "description": "The type of wallet architecture (custodial, non-custodial, etc.)."
+      "description": "Type of wallet architecture. Options include custodial, non-custodial on-chain, Liquid with Boltz swaps to LN, L1/L2 (on-chain and Lightning node), or UI for remote server nodes."
     },
     "KYC": {
       "name": "KYC",
@@ -150,7 +150,7 @@
     },
     "Zero-Conf Channels": {
       "name": "Zero-Conf Channels",
-      "description": "Support for zero-confirmation channels. Enables instant Bitcoin-to-Lightning channels using trusted LSP. Facilitates immediate Lightning Network participation without waiting for confirmations."
+      "description": "Support for zero-confirmation channels. Enables instant Bitcoin receipt on Lightning with LSP assistance."
     },
     "Private vs. Public Channels": {
       "name": "Private/Public Channels",
