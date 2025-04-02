@@ -68,9 +68,9 @@
       "name": "Metadatos Personalizados",
       "description": "Capacidad para agregar información personalizada a las facturas Lightning."
     },
-    "Expiry Control": {
-      "name": "Control de Caducidad",
-      "description": "Capacidad para controlar cuándo caducan las facturas Lightning."
+    "Default Expiry": {
+      "name": "Caducidad Predeterminada",
+      "description": "Tiempo de caducidad predeterminado para facturas Lightning y capacidad para controlarlo."
     },
     "Receive On-Chain": {
       "name": "Recibir On-Chain",

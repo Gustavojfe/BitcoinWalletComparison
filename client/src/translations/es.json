@@ -719,9 +719,9 @@
         "label": "Sí, control total",
         "title": "Sí, con control total"
       },
-      "yes_7_default_30_or_60_days": {
-        "label": "Sí, 7 (predeterminado), 30 o 60 días",
-        "title": "Sí, 7 días por defecto, 30 o 60 días"
+      "custom_configurable": {
+        "label": "Personalizado (configurable)",
+        "title": "Tiempo de expiración personalizable por el usuario"
       },
       "via_swap_in_potentiam": {
         "label": "A través de Swap-in Potentiam",
@@ -735,9 +735,9 @@
         "label": "Sí, tarifas dinámicas del proveedor",
         "title": "Sí, con tarifas dinámicas del proveedor"
       },
-      "yes_full_1_hour_default": {
-        "label": "Sí, completo. 1 hora por defecto",
-        "title": "Sí, completo con duración predeterminada de 1 hora"
+      "1_hour_custom": {
+        "label": "1 hora (personalizable)",
+        "title": "Tiempo de expiración predeterminado de 1 hora, y se puede personalizar"
       },
       "10_minutes": {
         "label": "10 minutos",
@@ -831,9 +831,9 @@
         "label": "Respaldo Local",
         "title": "Respaldo local de datos de la cartera"
       },
-      "yes_1_week_default": {
-        "label": "Sí, 1 semana por defecto",
-        "title": "Sí, con duración predeterminada de 1 semana"
+      "1_week_default": {
+        "label": "1 semana (predeterminado)",
+        "title": "Tiempo de expiración predeterminado de 1 semana"
       },
       "liquidity_ads_cln": {
         "label": "Anuncios de Liquidez (CLN)",

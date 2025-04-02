@@ -137,8 +137,8 @@
   },
   {
     "id": "invoiceExpiryControl",
-    "name": "Expiry Control",
-    "description": "Ability to control when Lightning invoices expire.",
+    "name": "Default Expiry",
+    "description": "Default expiration time for Lightning invoices created by this wallet.",
     "type": "lightning",
     "category": "invoice_customization",
     "order": 18

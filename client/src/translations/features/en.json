@@ -76,9 +76,9 @@
       "name": "No-Amount Invoices",
       "description": "Can it generate invoices without a specified amount (open-ended)?"
     },
-    "Invoice Expiry Control": {
-      "name": "Invoice Expiry Control",
-      "description": "Can users customize invoice expiration times?"
+    "Default Expiry": {
+      "name": "Default Expiry",
+      "description": "Default expiration time for Lightning invoices and ability to control it."
     },
     "Custom Invoice Metadata": {
       "name": "Custom Invoice Metadata",

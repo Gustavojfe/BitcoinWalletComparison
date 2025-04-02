@@ -691,14 +691,11 @@
         "label": "Yes (Non-Custodial LN Addresses) Zaplocker using HODL invoices",
         "title": "Yes, non-custodial Lightning Network addresses using Zaplocker with HODL invoices"
       },
-      "yes_full_control": {
-        "label": "Yes, full control",
-        "title": "Yes, with full control"
+      "custom_configurable": {
+        "label": "Custom (configurable)",
+        "title": "Expiry time is user-configurable"
       },
-      "yes_7_default_30_or_60_days": {
-        "label": "Yes, 7 (default), 30 or 60 days",
-        "title": "Yes, 7 days by default, 30 or 60 days"
-      },
+
       "via_swap_in_potentiam": {
         "label": "Via Swap-in Potentiam",
         "title": "Via Swap-in Potentiam"
@@ -711,9 +708,9 @@
         "label": "Yes, dynamic provider fees",
         "title": "Yes, with dynamic provider fees"
       },
-      "yes_full_1_hour_default": {
-        "label": "Yes, full. 1 hour default",
-        "title": "Yes, full with 1 hour default duration"
+      "1_hour_custom": {
+        "label": "1 hour (custom)",
+        "title": "Default expiry time is 1 hour, and can be customized"
       },
       "10_minutes": {
         "label": "10 minutes",
@@ -807,9 +804,9 @@
         "label": "Local Backup",
         "title": "Local backup of wallet data"
       },
-      "yes_1_week_default": {
-        "label": "Yes, 1 week default",
-        "title": "Yes, with 1 week default duration"
+      "1_week_default": {
+        "label": "1 week (default)",
+        "title": "Default expiry time is 1 week"
       },
       "liquidity_ads_cln": {
         "label": "Liquidity Ads (CLN)",
