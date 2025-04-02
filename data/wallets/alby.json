@@ -7,7 +7,6 @@
   "order": 18,
   "category": "L1/L2 (LN Node)",
   "features": {
-    "category": "L1/L2 (LN Node)",
     "availability": "Standard",
     "platform": [
       "web",
@@ -17,7 +16,10 @@
       "desktop"
     ],
     "openSource": "yes",
-    "custodialStatus": "no",
+    "custodialStatus": {
+      "value": "custom",
+      "customText": "L1/L2 (LN Node)"
+    },
     "transactionFees": "no",
     "backupOptions": {
       "value": "custom",
