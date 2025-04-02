@@ -1,16 +1,21 @@
 import { useTheme } from '@/hooks/use-theme';
+import { useLanguage } from '@/hooks/use-language';
 
 const Footer = () => {
   const { theme } = useTheme();
+  const { t } = useLanguage();
   
   return (
     <footer className="bg-card mt-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col items-center mb-6">
           <div className="flex flex-col items-center gap-2 mb-2">
-            <span className="font-bold text-2xl text-primary">Swapido</span>
+            <div className="flex items-center">
+              <span className="text-sm text-muted-foreground mr-2">{t('footer.sponsoredBy')}</span>
+              <span className="font-bold text-2xl text-primary">Swapido</span>
+            </div>
             <p className="text-sm text-muted-foreground text-center max-w-2xl">
-              Empowering the Lightning Network ecosystem with comprehensive wallet information.
+              {t('footer.tagline')}
             </p>
           </div>
         </div>
@@ -30,7 +35,7 @@ const Footer = () => {
             </a>
           </div>
           <p className="mt-8 text-base text-muted-foreground md:mt-0 md:order-1">
-            &copy; {new Date().getFullYear()} Swapido | Bitcoin Wallet Comparison. All rights reserved.
+            {t('footer.copyright')}
           </p>
         </div>
       </div>

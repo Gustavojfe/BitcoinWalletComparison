@@ -171,10 +171,12 @@
     "wallet2": "Cartera 2"
   },
   "footer": {
-    "copyright": "© Comparación de Carteras Bitcoin. Todos los derechos reservados.",
+    "copyright": "© 2025 Swapido | Comparación de Carteras Bitcoin. Todos los derechos reservados.",
     "terms": "Términos de Servicio",
     "privacy": "Política de Privacidad",
-    "community": "Comunidad"
+    "community": "Comunidad",
+    "sponsoredBy": "patrocinado por",
+    "tagline": "Potenciando el ecosistema de la Red Lightning con información completa de carteras."
   },
   "help": {
     "description": "Esta página de comparación te permite comparar las características de diferentes carteras Bitcoin de {type}.",
