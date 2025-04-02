@@ -13,7 +13,7 @@
     "openSource": "yes",
     "availability": {
       "value": "custom",
-      "customText": "Limited (LSP)"
+      "customText": "Limited (no US / Canada for LSP)"
     },
     "custodialStatus": {
       "value": "custom",
@@ -98,6 +98,6 @@
     "developerApis": "no",
     "noKyc": "yes"
   },
-  "availability": "Limited (LSP)",
+  "availability": "Limited (no US / Canada for LSP)",
   "category": "L1/L2 (LN Node)"
 }

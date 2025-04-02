@@ -475,6 +475,14 @@
         "label": "Limited",
         "title": "Limited availability in some regions"
       },
+      "limited_no_usa": {
+        "label": "Limited (no USA)",
+        "title": "Limited availability - not available in the USA"
+      },
+      "limited_no_us_canada_lsp": {
+        "label": "Limited (no US/Canada for LSP)",
+        "title": "Limited availability - Lightning Service Provider not available in US/Canada"
+      },
       "limited_blink_phoenix_wos": {
         "label": "Limited",
         "title": "Restricted in the United States, and small / sanctioned countries."

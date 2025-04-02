@@ -13,7 +13,7 @@
     "openSource": "yes",
     "availability": {
       "value": "custom",
-      "customText": "Limited"
+      "customText": "Limited (no USA)"
     },
     "custodialStatus": {
       "value": "custom",
@@ -115,6 +115,6 @@
     },
     "noKyc": "yes"
   },
-  "availability": "Limited",
+  "availability": "Limited (no USA)",
   "category": "L2 Wallet (LN Node)"
 }

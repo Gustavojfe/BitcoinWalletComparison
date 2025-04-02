@@ -13,7 +13,7 @@
     "openSource": "yes",
     "availability": {
       "value": "custom",
-      "customText": "Limited"
+      "customText": "Limited (no USA)"
     },
     "custodialStatus": {
       "value": "custom",
@@ -80,6 +80,6 @@
     "scidAlias": "does_not_apply",
     "simpleTaprootChannels": "does_not_apply"
   },
-  "availability": "Limited",
+  "availability": "Limited (no USA)",
   "category": "Custodial"
 }
