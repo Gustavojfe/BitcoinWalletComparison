@@ -60,7 +60,7 @@
       "value": "custom",
       "customText": "Neutrino (Own Node)"
     },
-    "submarineSwaps": "yes",
+    "submarineSwaps": "no",
     "otherNetworks": "no",
     "implementation": {
       "value": "custom",

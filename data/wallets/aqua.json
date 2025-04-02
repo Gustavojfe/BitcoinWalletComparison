@@ -53,6 +53,10 @@
     },
     "sendOnChain": "yes",
     "taprootTransactions": "no",
+    "submarineSwaps": {
+      "value": "custom",
+      "customText": "Boltz Swap"
+    },
     "otherNetworks": {
       "value": "custom",
       "customText": "Liquid"
