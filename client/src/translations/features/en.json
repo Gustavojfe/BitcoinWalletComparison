@@ -170,7 +170,7 @@
     },
     "Client-Side Routing": {
       "name": "Client-Side Routing",
-      "description": "The wallet performs routing calculations locally to find the best path for payments, rather than relying on a centralized service. Provides greater privacy and control, but may require more device resources."
+      "description": "Payment routing method. Client-side routing is local; LSP delegation or Trampoline payments offload pathfinding to the server for faster setup but less privacy."
     },
     "Peer Backup Options": {
       "name": "Peer Backup Options",

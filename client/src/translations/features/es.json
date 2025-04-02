@@ -118,7 +118,7 @@
     },
     "Client-Side Routing": {
       "name": "Enrutamiento del Lado del Cliente",
-      "description": "La cartera realiza cálculos de enrutamiento localmente para encontrar la mejor ruta para los pagos, en lugar de depender de un servicio centralizado. Proporciona mayor privacidad y control, pero puede requerir más recursos del dispositivo."
+      "description": "Método de enrutamiento de pagos. Enrutamiento local es en cliente; delegación a LSP o pagos Trampoline pasan la búsqueda de rutas al servidor para inicio rápido pero menos privacidad."
     },
     "Watchtower Integration": {
       "name": "Integración de Watchtower",
