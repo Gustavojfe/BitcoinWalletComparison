@@ -106,7 +106,7 @@
     },
     "LSP Integration": {
       "name": "Integración LSP",
-      "description": "Integración del Proveedor de Servicios Lightning para la gestión de canales."
+      "description": "Integración con Proveedores de Servicios Lightning. Puede incluir gestión de canales, enrutamiento, canales sin confirmaciones, vigilancia (watchtower), o almacenamiento de Copias de Seguridad de Canales Estáticos (SCB), total o parcialmente."
     },
     "Channel / Peer Management": {
       "name": "Gestión de Canales / Pares",
@@ -114,19 +114,19 @@
     },
     "Zero-Conf Channels": {
       "name": "Canales Sin Confirmación",
-      "description": "Soporte para canales que se pueden utilizar antes de la confirmación on-chain."
+      "description": "Soporte para canales sin confirmación. Permite canales instantáneos de Bitcoin a Lightning utilizando un LSP confiable. Facilita la participación inmediata en la Red Lightning sin esperar confirmaciones."
     },
     "Client-Side Routing": {
       "name": "Enrutamiento del Lado del Cliente",
-      "description": "Si la cartera realiza cálculos de enrutamiento de pagos."
+      "description": "La cartera realiza cálculos de enrutamiento localmente para encontrar la mejor ruta para los pagos, en lugar de depender de un servicio centralizado. Proporciona mayor privacidad y control, pero puede requerir más recursos del dispositivo."
     },
     "Watchtower Integration": {
       "name": "Integración de Watchtower",
-      "description": "Soporte para servicios de watchtower para proteger contra infracciones de canal."
+      "description": "Soporte integrado para watchtowers personalizados. Previene fraudes en canales si la gestión de canales está habilitada; de lo contrario, el LSP se encarga de ello."
     },
     "MPP / AMP": {
       "name": "MPP / AMP",
-      "description": "Soporte para Pagos Multi-Ruta o Pagos Multi-Ruta Atómicos."
+      "description": "Los Pagos Multi-Ruta dividen las transacciones a través de múltiples canales para una mejor confiabilidad y privacidad. Permite enviar cantidades mayores que la capacidad de cualquier canal individual."
     },
     "Max Routing Fee": {
       "name": "Comisión Máxima de Enrutamiento",

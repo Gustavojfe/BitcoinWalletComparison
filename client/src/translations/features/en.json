@@ -38,7 +38,7 @@
     },
     "Node Type": {
       "name": "Node Type",
-      "description": "Does the wallet run a full Lightning node, a light client, or rely on a remote node?"
+      "description": "How the wallet connects to Bitcoin. 'API' means no custom node connection. Options like Electrum Server or Neutrino allow custom node connections via different interfaces."
     },
     "BOLT11 Support": {
       "name": "BOLT11 Support",
@@ -142,7 +142,7 @@
     },
     "Zero-Conf Channels": {
       "name": "Zero-Conf Channels",
-      "description": "Does it support zero-confirmation channels for instant usability?"
+      "description": "Support for zero-confirmation channels. Enables instant Bitcoin-to-Lightning channels using trusted LSP. Facilitates immediate Lightning Network participation without waiting for confirmations."
     },
     "Private vs. Public Channels": {
       "name": "Private/Public Channels",
@@ -150,7 +150,7 @@
     },
     "Lightning Service Provider (LSP) Integration": {
       "name": "Lightning Service Provider (LSP) Integration",
-      "description": "Does it rely on or integrate with LSPs for simplified node management?"
+      "description": "Lightning Service Provider integration. May include channel management, pathfinding, zero-conf channels, watchtower, or Static Channel Backups (SCB) storage, fully or partially."
     },
     "Hub Connectivity": {
       "name": "Hub Connectivity",
@@ -158,7 +158,11 @@
     },
     "Watchtower Integration": {
       "name": "Watchtower Integration",
-      "description": "Is there built-in support for watchtowers to prevent channel fraud?"
+      "description": "Built-in custom watchtower support. Prevents channel fraud if channel management is enabled; otherwise, LSP handles it."
+    },
+    "Client-Side Routing": {
+      "name": "Client-Side Routing",
+      "description": "The wallet performs routing calculations locally to find the best path for payments, rather than relying on a centralized service. Provides greater privacy and control, but may require more device resources."
     },
     "Peer Backup Options": {
       "name": "Peer Backup Options",
@@ -174,15 +178,15 @@
     },
     "MPP": {
       "name": "MPP",
-      "description": "Does it support Multi-Path Payments (e.g., AMP)?"
+      "description": "Multi-Path Payments split transactions across multiple channels for better reliability and privacy. Enables sending amounts larger than any single channel's capacity."
     },
     "JIT Routing": {
       "name": "JIT Routing",
-      "description": "Does it support Just-In-Time routing to dynamically adjust liquidity during payments?"
+      "description": "Just-in-Time routing dynamically rebalances channel liquidity during payments, enabling forwarding of otherwise impossible payments."
     },
     "Trampoline Payments": {
       "name": "Trampoline Payments",
-      "description": "Can it use trampoline nodes to simplify routing for lightweight clients?"
+      "description": "Simplifies routing for mobile or lightweight clients by delegating complex path-finding to trusted trampoline nodes, reducing computational load while maintaining privacy."
     },
     "Dynamic Fee Bumping": {
       "name": "Dynamic Fee Bumping",
