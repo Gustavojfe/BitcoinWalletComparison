@@ -21,7 +21,7 @@
     },
     "transactionFees": {
       "value": "custom",
-      "customText": "Yes, dynamic swap fee"
+      "customText": "dynamic_swap_fee"
     },
     "backupOptions": {
       "value": "custom",

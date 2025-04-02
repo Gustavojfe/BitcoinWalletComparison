@@ -235,50 +235,6 @@
         "label": "API/SDK",
         "title": "Offers APIs and SDKs for developer integration"
       },
-      "ln_01_send_025_receive": {
-        "label": "Custom Fees",
-        "title": "Lightning fees: 0.1% for sending, 0.25% for receiving"
-      },
-      "dynamic_provider_fees": {
-        "label": "Dynamic Fees",
-        "title": "Dynamic fees based on the provider's rates"
-      },
-      "dynamic_swap_fee": {
-        "label": "Dynamic Swap Fees",
-        "title": "Dynamic fees for on-chain to Lightning swaps"
-      },
-      "onchain_1_percent": {
-        "label": "1% On-Chain Fees",
-        "title": "1% fee for on-chain transactions"
-      },
-      "ln_006_min_003_dynamic": {
-        "label": "Dynamic LN Fees",
-        "title": "Lightning fees: 0.6% minimum, 0.3% dynamic based on network conditions"
-      },
-      "ln_no_fees_percent": {
-        "label": "No Percentage Fees",
-        "title": "No percentage-based fees for Lightning transactions"
-      },
-      "10000_sats_fee_send_onchain": {
-        "label": "10,000 sats Fee",
-        "title": "Fee of 10,000 sats for sending on-chain"
-      },
-      "dynamic_lsp_fees": {
-        "label": "Dynamic LSP Fees",
-        "title": "Dynamic fees from the Lightning Service Provider"
-      },
-      "dynamic_swap_fees": {
-        "label": "Dynamic Swap Fees",
-        "title": "Dynamic fees for swaps (fee varies with swap size and network conditions)"
-      },
-      "005_btc_balance": {
-        "label": "0.05 BTC Balance",
-        "title": "Maximum balance limit of 0.05 BTC"
-      },
-      "50000_usd_daily": {
-        "label": "$50,000 Daily",
-        "title": "Daily transaction limit of $50,000 USD"
-      },
       "does_not_apply": {
         "label": "N/A",
         "title": "This feature does not apply to this wallet"

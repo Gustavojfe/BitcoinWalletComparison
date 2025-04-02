@@ -21,7 +21,7 @@
     },
     "transactionFees": {
       "value": "custom",
-      "customText": "Yes for LN: 0.1% Send, 0.25% Receive"
+      "customText": "ln_01_send_025_receive"
     },
     "backupOptions": {
       "value": "custom",

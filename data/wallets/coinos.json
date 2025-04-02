@@ -18,7 +18,7 @@
     },
     "transactionFees": {
       "value": "custom",
-      "customText": "Yes, dynamic provider fees"
+      "customText": "dynamic_provider_fees"
     },
     "backupOptions": {
       "value": "custom",

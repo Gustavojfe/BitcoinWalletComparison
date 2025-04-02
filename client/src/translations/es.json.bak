@@ -235,50 +235,6 @@
         "label": "API/SDK",
         "title": "Ofrece APIs y SDKs para la integración de desarrolladores"
       },
-      "ln_01_send_025_receive": {
-        "label": "Tarifas Personalizadas",
-        "title": "Tarifas Lightning: 0,1% para enviar, 0,25% para recibir"
-      },
-      "dynamic_provider_fees": {
-        "label": "Tarifas Dinámicas",
-        "title": "Tarifas dinámicas basadas en las tasas del proveedor"
-      },
-      "dynamic_swap_fee": {
-        "label": "Tarifas de Intercambio Dinámicas",
-        "title": "Tarifas dinámicas para intercambios de on-chain a Lightning"
-      },
-      "onchain_1_percent": {
-        "label": "1% Tarifas On-Chain",
-        "title": "Tarifa del 1% para transacciones on-chain"
-      },
-      "ln_006_min_003_dynamic": {
-        "label": "Tarifas LN Dinámicas",
-        "title": "Tarifas Lightning: 0,6% mínimo, 0,3% dinámico según condiciones de la red"
-      },
-      "ln_no_fees_percent": {
-        "label": "Sin Tarifas Porcentuales",
-        "title": "Sin tarifas basadas en porcentaje para transacciones Lightning"
-      },
-      "10000_sats_fee_send_onchain": {
-        "label": "Tarifa de 10.000 sats",
-        "title": "Tarifa de 10.000 sats para enviar on-chain"
-      },
-      "dynamic_lsp_fees": {
-        "label": "Tarifas LSP Dinámicas",
-        "title": "Tarifas dinámicas del Proveedor de Servicios Lightning"
-      },
-      "dynamic_swap_fees": {
-        "label": "Tarifas de Intercambio Dinámicas",
-        "title": "Tarifas dinámicas para intercambios (la tarifa varía con el tamaño del intercambio y las condiciones de la red)"
-      },
-      "005_btc_balance": {
-        "label": "Saldo de 0,05 BTC",
-        "title": "Límite máximo de saldo de 0,05 BTC"
-      },
-      "50000_usd_daily": {
-        "label": "$50.000 Diarios",
-        "title": "Límite de transacción diario de $50.000 USD"
-      },
       "does_not_apply": {
         "label": "N/A",
         "title": "Esta característica no aplica a esta cartera"

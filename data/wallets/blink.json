@@ -21,11 +21,11 @@
     },
     "transactionLimits": {
       "value": "custom",
-      "customText": "Detailed"
+      "customText": "50000_usd_daily"
     },
     "transactionFees": {
       "value": "custom",
-      "customText": "Yes, On-Chain + Conversion"
+      "customText": "10000_sats_fee_send_onchain"
     },
     "backupOptions": {
       "value": "custom",

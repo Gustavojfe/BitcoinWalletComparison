@@ -21,7 +21,7 @@
     },
     "transactionLimits": {
       "value": "custom",
-      "customText": "Detailed"
+      "customText": "005_btc_balance"
     },
     "transactionFees": "no",
     "backupOptions": {

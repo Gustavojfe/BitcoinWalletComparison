@@ -21,7 +21,7 @@
     },
     "transactionFees": {
       "value": "custom",
-      "customText": "Yes, dynamic LSP fees"
+      "customText": "dynamic_lsp_fees"
     },
     "backupOptions": {
       "value": "custom",

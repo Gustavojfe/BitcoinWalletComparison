@@ -19,7 +19,10 @@
       "value": "custom",
       "customText": "L2 Wallet (LN Node)"
     },
-    "transactionFees": "yes",
+    "transactionFees": {
+      "value": "custom",
+      "customText": "ln_no_fees_percent"
+    },
     "backupOptions": {
       "value": "custom",
       "customText": "Seed Phrase + SCB"

@@ -19,7 +19,10 @@
       "value": "custom",
       "customText": "L2 Wallet (LN Node)"
     },
-    "transactionFees": "yes",
+    "transactionFees": {
+      "value": "custom",
+      "customText": "ln_006_min_003_dynamic"
+    },
     "backupOptions": {
       "value": "custom",
       "customText": "Seed Phrase"

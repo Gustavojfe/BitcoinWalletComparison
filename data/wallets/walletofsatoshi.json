@@ -25,7 +25,7 @@
     },
     "transactionFees": {
       "value": "custom",
-      "customText": "Yes, 1% On-Chain Fees"
+      "customText": "onchain_1_percent"
     },
     "backupOptions": {
       "value": "custom",

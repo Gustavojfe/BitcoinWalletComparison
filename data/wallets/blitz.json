@@ -19,7 +19,10 @@
       "value": "custom",
       "customText": "Hybrid Liquid / L2 Wallet (Full Breez SDK)"
     },
-    "transactionFees": "yes",
+    "transactionFees": {
+      "value": "custom",
+      "customText": "dynamic_swap_fees"
+    },
     "backupOptions": {
       "value": "custom",
       "customText": "Seed Phrase"
