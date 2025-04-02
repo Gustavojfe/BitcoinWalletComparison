@@ -3,7 +3,8 @@
  * Maps wallet IDs (name in lowercase) to their GitHub repository URLs.
  */
 export const githubRepos: Record<string, string> = {
-  'alby': 'https://github.com/getAlby',
+  'alby hub': 'https://github.com/getAlby',
+  'alby': 'https://github.com/getAlby', // Keep for backward compatibility
   'aqua': 'https://github.com/AquaWallet/aqua-wallet',
   'bitkit': 'https://github.com/synonymdev/bitkit',
   'blink': 'https://github.com/GaloyMoney/blink-mobile',

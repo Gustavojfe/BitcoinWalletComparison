@@ -5,9 +5,12 @@
   "type": "lightning",
   "logo": "alby",
   "order": 18,
-  "availability": "Standard",
-  "category": "L1/L2 (LN Node)",
   "features": {
+    "availability": "Standard",
+    "category": {
+      "value": "custom",
+      "customText": "L1/L2 (LN Node)"
+    },
     "platform": [
       "web",
       "chrome extension", 
