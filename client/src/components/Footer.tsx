@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="flex flex-col items-center mb-6">
           <div className="flex flex-col items-center gap-2 mb-2">
             <div className="flex items-center">
-              <span className="text-sm text-muted-foreground mr-2">{t('footer.sponsoredBy')}</span>
+              <span className="font-bold text-2xl text-muted-foreground mr-2">{t('footer.sponsoredBy')}</span>
               <span className="font-bold text-2xl text-primary">Swapido</span>
             </div>
             <p className="text-sm text-muted-foreground text-center max-w-2xl">
