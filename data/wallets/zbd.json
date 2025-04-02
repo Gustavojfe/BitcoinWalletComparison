@@ -44,7 +44,9 @@
       "customText": "10 minutes"
     },
     "receiveOnChain": "no",
+    "bitcoinAddressType": "does_not_apply",
     "sendOnChain": "no",
+    "taprootTransactions": "does_not_apply",
     "otherNetworks": "no",
     "nostrWalletConnect": "no",
     "blindRouting": "no",
