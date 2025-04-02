@@ -231,6 +231,10 @@
         "label": "API",
         "title": "Uses an API for node functionality"
       },
+      "APISDK": {
+        "label": "API/SDK",
+        "title": "Offers APIs and SDKs for developer integration"
+      },
       "does_not_apply": {
         "label": "N/A",
         "title": "This feature does not apply to this wallet"

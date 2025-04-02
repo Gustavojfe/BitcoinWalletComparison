@@ -231,6 +231,10 @@
         "label": "API",
         "title": "Usa una API para funcionalidad de nodo"
       },
+      "APISDK": {
+        "label": "API/SDK",
+        "title": "Ofrece APIs y SDKs para la integración de desarrolladores"
+      },
       "does_not_apply": {
         "label": "N/A",
         "title": "Esta característica no aplica a esta cartera"

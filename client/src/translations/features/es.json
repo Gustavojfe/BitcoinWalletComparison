@@ -10,11 +10,11 @@
     },
     "Availability": {
       "name": "Disponibilidad",
-      "description": "Restricciones geográficas en el uso de la cartera."
+      "description": "Si la cartera está disponible en todo el mundo (estándar) o tiene restricciones geográficas (limitada)."
     },
     "Category": {
       "name": "Categoría",
-      "description": "Tipo de arquitectura de la cartera (custodial, no custodial, etc.)."
+      "description": "El tipo de arquitectura de la cartera (custodial, no custodial, etc.)."
     },
     "KYC": {
       "name": "KYC",
@@ -90,7 +90,7 @@
     },
     "Bitcoin Network": {
       "name": "Red Bitcoin",
-      "description": "Cómo se conecta la cartera a la red Bitcoin."
+      "description": "Cómo se conecta la cartera a la red Bitcoin. 'API' significa que no hay conexión de nodo personalizada. Opciones como Servidor Electrum o Neutrino permiten conexiones de nodos personalizadas a través de diferentes interfaces."
     },
     "Swap": {
       "name": "Intercambio",
@@ -126,7 +126,7 @@
     },
     "MPP / AMP": {
       "name": "MPP / AMP",
-      "description": "Los Pagos Multi-Ruta dividen las transacciones a través de múltiples canales para una mejor confiabilidad y privacidad. Permite enviar cantidades mayores que la capacidad de cualquier canal individual."
+      "description": "Los Pagos Multi-Ruta dividen las transacciones a través de múltiples canales para una mejor confiabilidad y privacidad. Permite enviar cantidades mayores que la capacidad de cualquier canal individual, mejorando las tasas de éxito de los pagos y reduciendo los fallos debido a liquidez insuficiente en un solo canal."
     },
     "Max Routing Fee": {
       "name": "Comisión Máxima de Enrutamiento",
@@ -158,7 +158,7 @@
     },
     "Simple Taproot Channels": {
       "name": "Canales Taproot Simples",
-      "description": "Soporte para configuración simplificada de canales Taproot."
+      "description": "Soporte para configuración simplificada de canales Taproot que mejora la privacidad y reduce las tarifas on-chain. Estos canales utilizan Taproot para las transacciones de compromiso, haciendo que las aperturas y cierres de canales sean indistinguibles de las transacciones Taproot regulares."
     },
     "Tor": {
       "name": "Tor",

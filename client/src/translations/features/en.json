@@ -4,6 +4,10 @@
       "name": "Platform Support",
       "description": "Which operating systems are supported (iOS, Android, Windows, macOS, Linux)?"
     },
+    "Availability": {
+      "name": "Availability",
+      "description": "Whether the wallet is available worldwide (standard) or has geographic restrictions (limited)."
+    },
     "User Interface (UI/UX)": {
       "name": "User Interface (UI/UX)",
       "description": "Is it beginner-friendly, or geared toward advanced users (e.g., CLI vs. GUI)?"
@@ -15,6 +19,10 @@
     "Custodial vs. Non-Custodial": {
       "name": "Custodial",
       "description": "Does the wallet give users full control of private keys, or is it custodial?"
+    },
+    "Category": {
+      "name": "Category",
+      "description": "The type of wallet architecture (custodial, non-custodial, etc.)."
     },
     "KYC": {
       "name": "KYC",
@@ -178,7 +186,7 @@
     },
     "MPP": {
       "name": "MPP",
-      "description": "Multi-Path Payments split transactions across multiple channels for better reliability and privacy. Enables sending amounts larger than any single channel's capacity."
+      "description": "Multi-Path Payments split transactions across multiple channels for better reliability and privacy. Enables sending amounts larger than any single channel's capacity, improving payment success rates and reducing payment failures due to insufficient liquidity in a single channel."
     },
     "JIT Routing": {
       "name": "JIT Routing",
@@ -210,7 +218,7 @@
     },
     "Simple Taproot Channels": {
       "name": "Simple Taproot Channels",
-      "description": "Does it support Taproot-optimized Lightning channels?"
+      "description": "Support for simplified Taproot channel configuration which improves privacy and reduces on-chain fees. These channels use Taproot for commitment transactions, making channel opens and closes indistinguishable from regular Taproot transactions."
     },
     "Taproot Assets": {
       "name": "Taproot Assets",
