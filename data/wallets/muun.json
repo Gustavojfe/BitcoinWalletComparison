@@ -61,6 +61,7 @@
       "customText": "Muun-provided"
     },
     "otherNetworks": "no",
+    "implementation": "does_not_apply",
     "nostrWalletConnect": "no",
     "blindRouting": "no",
     "torSupport": "no",

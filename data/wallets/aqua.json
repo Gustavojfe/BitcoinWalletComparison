@@ -61,6 +61,7 @@
       "value": "custom",
       "customText": "Liquid"
     },
+    "implementation": "does_not_apply",
     "nostrWalletConnect": "no",
     "blindRouting": "no",
     "torSupport": "no",

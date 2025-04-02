@@ -1,23 +1,59 @@
 {
   "wallets": {
-    "alby_hub": { "description": "A self-custodial Lightning wallet that connects to Alby Extension for web interactions, Alby Go for real-world payments, and hundreds of apps via Nostr Wallet Connect (NWC)." },
-    "aqua": { "description": "A global Bitcoin wallet focused on financial inclusion, designed for Latin America. Uses Boltz swaps for Lightning payments." },
-    "bitkit": { "description": "A simple, powerful self-custodial wallet for instant payments anywhere. Manage your own channels or use Blocktank LSP." },
-    "blink": { "description": "A custodial Bitcoin wallet for everyday use. Simple, secure, and requires a phone number to sign up." },
-    "blitz": { "description": "A self-custodial Bitcoin and Lightning wallet using Breez SDK. Starts with Liquid swaps (Boltz) and evolves into an embedded node with LSP-managed channels." },
-    "blixt": { "description": "An open-source, non-custodial Lightning wallet for Android and iOS, packed with features for Bitcoiners exploring the Lightning Network." },
-    "breez": { "description": "A non-custodial Lightning wallet with an embedded node, POS, podcast player, and marketplace—delivering a top-tier Bitcoin experience." },
-    "coinos": { "description": "A free, easy-to-use web wallet and payment page supporting Lightning (BOLT11/BOLT12), Liquid, Ecash, and on-chain payments. Self-hosting available." },
-    "electrum": { "description": "A fast, secure Bitcoin wallet for desktop and Android, trusted since 2011 for a wide range of users." },
-    "muun": { "description": "A self-custodial Bitcoin and Lightning wallet using submarine swaps. Easy to use, though on-chain fees can increase costs." },
-    "phoenix": { "description": "A Lightning-native wallet with seamless payments—fast, cheap, and LSP-managed for simplicity." },
-    "primal": { "description": "A Nostr client with a built-in Bitcoin wallet, offering smooth feeds and easy onboarding for Nostr beginners." },
-    "rtl": { "description": "A powerful, self-hosted web tool for managing Lightning nodes, ideal for advanced and business users." },
-    "sati": { "description": "A WhatsApp bot for fast, secure Bitcoin and stablecoin payments—no extra app needed, with super-easy onboarding." },
-    "speed": { "description": "A custodial wallet for instant, secure, low-fee Bitcoin and USDT payments, available as a mobile app or browser extension." },
-    "wallet_of_satoshi": { "description": "A zero-configuration custodial Lightning wallet for iOS and Android, prioritizing simplicity—world's most popular Lightning wallet." },
-    "zbd": { "description": "A mobile app to earn Bitcoin through games, surveys, polls, and app discovery—fun and rewarding." },
-    "zeus": { "description": "A powerful, open-source, self-custodial Bitcoin wallet for managing remote nodes or its embedded node, feature-rich for advanced users." }
+    "alby_hub": {
+      "description": "A self-custodial Lightning wallet that connects to Alby Extension for web interactions, Alby Go for real-world payments, and hundreds of apps via Nostr Wallet Connect (NWC)."
+    },
+    "aqua": {
+      "description": "A global Bitcoin wallet focused on financial inclusion, designed for Latin America. Uses Boltz swaps for Lightning payments."
+    },
+    "bitkit": {
+      "description": "A simple, powerful self-custodial wallet for instant payments anywhere. Manage your own channels or use Blocktank LSP."
+    },
+    "blink": {
+      "description": "A custodial Bitcoin wallet for everyday use. Simple, secure, and requires a phone number to sign up."
+    },
+    "blitz": {
+      "description": "A self-custodial Bitcoin and Lightning wallet using Breez SDK. Starts with Liquid swaps (Boltz) and evolves into an embedded node with LSP-managed channels."
+    },
+    "blixt": {
+      "description": "An open-source, non-custodial Lightning wallet for Android and iOS, packed with features for Bitcoiners exploring the Lightning Network."
+    },
+    "breez": {
+      "description": "A non-custodial Lightning wallet with an embedded node, POS, podcast player, and marketplace—delivering a top-tier Bitcoin experience."
+    },
+    "coinos": {
+      "description": "A free, easy-to-use web wallet and payment page supporting Lightning (BOLT11/BOLT12), Liquid, Ecash, and on-chain payments. Self-hosting available."
+    },
+    "electrum": {
+      "description": "A fast, secure Bitcoin wallet for desktop and Android, trusted since 2011 for a wide range of users."
+    },
+    "muun": {
+      "description": "A self-custodial Bitcoin and Lightning wallet using submarine swaps. Easy to use, though on-chain fees can increase costs."
+    },
+    "phoenix": {
+      "description": "A Lightning-native wallet with seamless payments—fast, cheap, and LSP-managed for simplicity."
+    },
+    "primal": {
+      "description": "A Nostr client with a built-in Bitcoin wallet, offering smooth feeds and easy onboarding for Nostr beginners."
+    },
+    "rtl": {
+      "description": "A powerful, self-hosted web tool for managing Lightning nodes, ideal for advanced and business users."
+    },
+    "sati": {
+      "description": "A WhatsApp bot for fast, secure Bitcoin and stablecoin payments—no extra app needed, with super-easy onboarding."
+    },
+    "speed": {
+      "description": "A custodial wallet for instant, secure, low-fee Bitcoin and USDT payments, available as a mobile app or browser extension."
+    },
+    "wallet_of_satoshi": {
+      "description": "A zero-configuration custodial Lightning wallet for iOS and Android, prioritizing simplicity—world's most popular Lightning wallet."
+    },
+    "zbd": {
+      "description": "A mobile app to earn Bitcoin through games, surveys, polls, and app discovery—fun and rewarding."
+    },
+    "zeus": {
+      "description": "A powerful, open-source, self-custodial Bitcoin wallet for managing remote nodes or its embedded node, feature-rich for advanced users."
+    }
   },
   "common": {
     "walletComparison": "Bitcoin Wallet Comparison",
@@ -205,7 +241,7 @@
       },
       "yes_github": {
         "label": "Yes",
-        "title": "Open source code available on GitHub"
+        "title": "Yes, via GitHub"
       },
       "no": {
         "label": "No",
@@ -311,10 +347,6 @@
         "label": "Web",
         "title": "Available on Web"
       },
-      "yes_github": {
-        "label": "Yes",
-        "title": "Feature is open source with code available on GitHub"
-      },
       "no_github": {
         "label": "No (GitHub)",
         "title": "Feature is not available on GitHub"
@@ -341,7 +373,7 @@
       },
       "seed_phrase_scb": {
         "label": "Seed Phrase + SCB",
-        "title": "Backed up with seed phrase and static channel backups"
+        "title": "Recovery using Seed Phrase and Static Channel Backup"
       },
       "p2tr_p2wpkh": {
         "label": "P2TR, P2WPKH",
@@ -387,49 +419,49 @@
         "label": "LSP or User Managed",
         "title": "Managed by LSP or the user"
       },
-      "email_phone": { 
-        "label": "Email / Phone", 
-        "title": "Recovery via email or phone" 
+      "email_phone": {
+        "label": "Email / Phone",
+        "title": "Recovery via email or phone"
       },
-      "5_btc": { 
-        "label": "5 BTC", 
-        "title": "Limit of 5 BTC" 
+      "5_btc": {
+        "label": "5 BTC",
+        "title": "Limit of 5 BTC"
       },
-      "nostr_nsec_private_key": { 
-        "label": "Nostr nsec (private key)", 
-        "title": "Recovery via Nostr private key" 
+      "nostr_nsec_private_key": {
+        "label": "Nostr nsec (private key)",
+        "title": "Recovery via Nostr private key"
       },
-      "whatsapp_account": { 
-        "label": "Whatsapp Account", 
-        "title": "Recovery via Whatsapp account" 
+      "whatsapp_account": {
+        "label": "Whatsapp Account",
+        "title": "Recovery via Whatsapp account"
       },
-      "username_pw": { 
-        "label": "Username / PW", 
-        "title": "Recovery via username and password" 
+      "username_pw": {
+        "label": "Username / PW",
+        "title": "Recovery via username and password"
       },
       "email_pw_or_recovery_code_emergency_kit_cloud_upload_or_download": {
         "label": "Email / PW or Recovery Code + Emergency Kit",
         "title": "Recovery via email/password or recovery code with emergency kit"
       },
-      "seed_phrase": { 
-        "label": "Seed Phrase", 
-        "title": "Recovery via seed phrase" 
+      "seed_phrase": {
+        "label": "Seed Phrase",
+        "title": "Recovery via seed phrase"
       },
-      "automatic_cloud_upload": { 
-        "label": "Automatic Cloud Upload", 
-        "title": "Automatic cloud backup" 
+      "automatic_cloud_upload": {
+        "label": "Automatic Cloud Upload",
+        "title": "Automatic cloud backup"
       },
-      "send": { 
-        "label": "Send", 
-        "title": "Send capability" 
+      "send": {
+        "label": "Send",
+        "title": "Send capability"
       },
-      "restricted_in_usa_and_others": { 
-        "label": "Restricted in USA and others", 
-        "title": "Restricted in USA and other regions" 
+      "restricted_in_usa_and_others": {
+        "label": "Restricted in USA and others",
+        "title": "Restricted in USA and other regions"
       },
-      "very_limited": { 
-        "label": "Very Limited", 
-        "title": "Very limited availability" 
+      "very_limited": {
+        "label": "Very Limited",
+        "title": "Very limited availability"
       },
       "standard": {
         "label": "Standard",
@@ -447,133 +479,121 @@
         "label": "Limited (LSP)",
         "title": "The Blocktank Lightning Service Provider (LSP) is restricted in the United States and Canada. Bitkit is standardly available in the app store."
       },
-      "24_hours": { 
-        "label": "24 hours", 
-        "title": "24-hour duration" 
+      "24_hours": {
+        "label": "24 hours",
+        "title": "24-hour duration"
       },
-      "1_hour": { 
-        "label": "1 hour", 
-        "title": "1-hour duration" 
+      "1_hour": {
+        "label": "1 hour",
+        "title": "1-hour duration"
       },
-      "yes_github": {
-        "label": "Yes",
-        "title": "Yes, via GitHub"
+      "dynamic_ln": {
+        "label": "Dynamic (LN)",
+        "title": "Dynamic Lightning Network fees"
       },
-      "p2tr_p2wpkh": {
-        "label": "P2TR, P2WPKH",
-        "title": "Supports P2TR and P2WPKH address types"
+      "segwit_bech32": {
+        "label": "SegWit bech32",
+        "title": "SegWit bech32 address type"
       },
-      "seed_phrase_scb": {
-        "label": "Seed Phrase + SCB",
-        "title": "Recovery using Seed Phrase and Static Channel Backup"
+      "user_managed": {
+        "label": "User-Managed",
+        "title": "Managed by the user"
       },
-      "dynamic_ln": { 
-        "label": "Dynamic (LN)", 
-        "title": "Dynamic Lightning Network fees" 
+      "yes_for_ln_01_send_025_receive": {
+        "label": "Yes for LN: 0.1% Send, 0.25% Receive",
+        "title": "Yes for Lightning Network with 0.1% send fee and 0.25% receive fee"
       },
-      "segwit_bech32": { 
-        "label": "SegWit bech32", 
-        "title": "SegWit bech32 address type" 
+      "yes_on_chain_conversion": {
+        "label": "Yes, On-Chain + Conversion",
+        "title": "Yes, with on-chain and conversion fees"
       },
-      "user_managed": { 
-        "label": "User-Managed", 
-        "title": "Managed by the user" 
+      "yes_1_on_chain_fees": {
+        "label": "Yes, 1% On-Chain Fees",
+        "title": "Yes, with 1% on-chain fees"
       },
-      "yes_for_ln_01_send_025_receive": { 
-        "label": "Yes for LN: 0.1% Send, 0.25% Receive", 
-        "title": "Yes for Lightning Network with 0.1% send fee and 0.25% receive fee" 
+      "swap_to_liquid_boltz": {
+        "label": "Swap to Liquid (Boltz)",
+        "title": "Swap to Liquid using Boltz"
       },
-      "yes_on_chain_conversion": { 
-        "label": "Yes, On-Chain + Conversion", 
-        "title": "Yes, with on-chain and conversion fees" 
+      "swap_from_liquid_boltz": {
+        "label": "Swap from Liquid (Boltz)",
+        "title": "Swap from Liquid using Boltz"
       },
-      "yes_1_on_chain_fees": { 
-        "label": "Yes, 1% On-Chain Fees", 
-        "title": "Yes, with 1% on-chain fees" 
+      "electrum_server_own_node": {
+        "label": "Electrum Server (Own Node)",
+        "title": "Uses Electrum server on own node"
       },
-      "swap_to_liquid_boltz": { 
-        "label": "Swap to Liquid (Boltz)", 
-        "title": "Swap to Liquid using Boltz" 
+      "bitcoin_core_rpc_own_node": {
+        "label": "Bitcoin Core RPC (Own Node)",
+        "title": "Uses Bitcoin Core RPC on own node"
       },
-      "swap_from_liquid_boltz": { 
-        "label": "Swap from Liquid (Boltz)", 
-        "title": "Swap from Liquid using Boltz" 
+      "lightning_loop_boltz": {
+        "label": "Lightning Loop, Boltz",
+        "title": "Supports Lightning Loop and Boltz"
       },
-      "electrum_server_own_node": { 
-        "label": "Electrum Server (Own Node)", 
-        "title": "Uses Electrum server on own node" 
+      "lnd_cln_lndhub_nwc": {
+        "label": "LND (+ CLN, LNDHub, NWC)",
+        "title": "Supports LND, CLN, LNDHub, and NWC"
       },
-      "bitcoin_core_rpc_own_node": { 
-        "label": "Bitcoin Core RPC (Own Node)", 
-        "title": "Uses Bitcoin Core RPC on own node" 
+      "cln_greenlight": {
+        "label": "CLN (Greenlight)",
+        "title": "Uses CLN Greenlight implementation"
       },
-      "lightning_loop_boltz": { 
-        "label": "Lightning Loop, Boltz", 
-        "title": "Supports Lightning Loop and Boltz" 
+      "lsp_managed_500_000_sats_minimum": {
+        "label": "LSP Managed (500 000 sats minimum)",
+        "title": "Managed by LSP with a minimum of 500,000 sats"
       },
-      "lnd_cln_lndhub_nwc": { 
-        "label": "LND (+ CLN, LNDHub, NWC)", 
-        "title": "Supports LND, CLN, LNDHub, and NWC" 
+      "no_trampoline": {
+        "label": "No (Trampoline)",
+        "title": "Does not support Trampoline routing"
       },
-      "cln_greenlight": { 
-        "label": "CLN (Greenlight)", 
-        "title": "Uses CLN Greenlight implementation" 
+      "yes_rapid_gossip_sync": {
+        "label": "Yes (Rapid Gossip Sync)",
+        "title": "Yes, with Rapid Gossip Sync feature"
       },
-      "lsp_managed_500_000_sats_minimum": { 
-        "label": "LSP Managed (500 000 sats minimum)", 
-        "title": "Managed by LSP with a minimum of 500,000 sats" 
+      "yes_up_to_10m_sats": {
+        "label": "Yes (up to 10M sats)",
+        "title": "Yes, up to 10 million sats"
       },
-      "no_trampoline": { 
-        "label": "No (Trampoline)", 
-        "title": "Does not support Trampoline routing" 
+      "yes_automated": {
+        "label": "Yes, Automated",
+        "title": "Yes, with automated features"
       },
-      "yes_rapid_gossip_sync": { 
-        "label": "Yes (Rapid Gossip Sync)", 
-        "title": "Yes, with Rapid Gossip Sync feature" 
+      "phoenixd": {
+        "label": "Phoenixd",
+        "title": "Phoenixd implementation"
       },
-      "yes_up_to_10m_sats": { 
-        "label": "Yes (up to 10M sats)", 
-        "title": "Yes, up to 10 million sats" 
+      "android_only": {
+        "label": "Android only",
+        "title": "Available only on Android"
       },
-      "yes_automated": { 
-        "label": "Yes, Automated", 
-        "title": "Yes, with automated features" 
+      "self_hosted": {
+        "label": "Self-Hosted",
+        "title": "Self-hosted implementation"
       },
-      "phoenixd": { 
-        "label": "Phoenixd", 
-        "title": "Phoenixd implementation" 
+      "rpc_cli": {
+        "label": "RPC / CLI",
+        "title": "Supports RPC and CLI"
       },
-      "android_only": { 
-        "label": "Android only", 
-        "title": "Available only on Android" 
+      "yes_with_boltz_swap": {
+        "label": "Yes with Boltz Swap",
+        "title": "Yes, with Boltz Swap"
       },
-      "self_hosted": { 
-        "label": "Self-Hosted", 
-        "title": "Self-hosted implementation" 
+      "yes_with_reverse_swap": {
+        "label": "Yes with Reverse Swap",
+        "title": "Yes, with reverse swap"
       },
-      "rpc_cli": { 
-        "label": "RPC / CLI", 
-        "title": "Supports RPC and CLI" 
+      "p2tr_p2wsh_p2sh": {
+        "label": "P2TR, P2WSH, P2SH",
+        "title": "Supports P2TR, P2WSH, and P2SH address types"
       },
-      "yes_with_boltz_swap": { 
-        "label": "Yes with Boltz Swap", 
-        "title": "Yes, with Boltz Swap" 
+      "phoenix_provided_swap_in_potentiam": {
+        "label": "Phoenix-provided + Swap in Potentiam",
+        "title": "Provided by Phoenix with Swap in Potentiam"
       },
-      "yes_with_reverse_swap": { 
-        "label": "Yes with Reverse Swap", 
-        "title": "Yes, with reverse swap" 
-      },
-      "p2tr_p2wsh_p2sh": { 
-        "label": "P2TR, P2WSH, P2SH", 
-        "title": "Supports P2TR, P2WSH, and P2SH address types" 
-      },
-      "phoenix_provided_swap_in_potentiam": { 
-        "label": "Phoenix-provided + Swap in Potentiam", 
-        "title": "Provided by Phoenix with Swap in Potentiam" 
-      },
-      "p2tr_cln_lnd_p2wsh_eclair": { 
-        "label": "P2TR (CLN, LND), P2WSH (Eclair)", 
-        "title": "Supports P2TR for CLN and LND, P2WSH for Eclair" 
+      "p2tr_cln_lnd_p2wsh_eclair": {
+        "label": "P2TR (CLN, LND), P2WSH (Eclair)",
+        "title": "Supports P2TR for CLN and LND, P2WSH for Eclair"
       },
       "neutrino_own_node": {
         "label": "Neutrino (Own Node)",
@@ -583,77 +603,77 @@
         "label": "Olympus LSP (Custom)",
         "title": "Uses custom Olympus Lightning Service Provider"
       },
-      "yes_over_999day": { 
-        "label": "KYC over 1000$/day", 
-        "title": "KYC required for transactions over 1000 dollars per day" 
+      "yes_over_999day": {
+        "label": "KYC over 1000$/day",
+        "title": "KYC required for transactions over 1000 dollars per day"
       },
-      "yes_in_usa": { 
-        "label": "KYC in the USA", 
-        "title": "KYC required for users in the USA" 
+      "yes_in_usa": {
+        "label": "KYC in the USA",
+        "title": "KYC required for users in the USA"
       },
-      "999_max_with_default_lsp": { 
-        "label": "999$ MAX with default LSP", 
-        "title": "Maximum of 999 dollars with default Lightning Service Provider" 
+      "999_max_with_default_lsp": {
+        "label": "999$ MAX with default LSP",
+        "title": "Maximum of 999 dollars with default Lightning Service Provider"
       },
-      "yes_dynamic_swap_fee": { 
-        "label": "Yes, dynamic swap fee", 
-        "title": "Yes, with dynamic swap fee" 
+      "yes_dynamic_swap_fee": {
+        "label": "Yes, dynamic swap fee",
+        "title": "Yes, with dynamic swap fee"
       },
-      "yes_boltz_swap": { 
-        "label": "Yes (+ Boltz Swap)", 
-        "title": "Yes, with Boltz Swap" 
+      "yes_boltz_swap": {
+        "label": "Yes (+ Boltz Swap)",
+        "title": "Yes, with Boltz Swap"
       },
-      "boltz_reverse_swap": { 
-        "label": "Boltz (Reverse Swap)", 
-        "title": "Boltz with reverse swap" 
+      "boltz_reverse_swap": {
+        "label": "Boltz (Reverse Swap)",
+        "title": "Boltz with reverse swap"
       },
-      "yes_non_custodial_ln_addresses_zaplocker_using_hodl_invoices": { 
-        "label": "Yes (Non-Custodial LN Addresses) Zaplocker using HODL invoices", 
-        "title": "Yes, non-custodial Lightning Network addresses using Zaplocker with HODL invoices" 
+      "yes_non_custodial_ln_addresses_zaplocker_using_hodl_invoices": {
+        "label": "Yes (Non-Custodial LN Addresses) Zaplocker using HODL invoices",
+        "title": "Yes, non-custodial Lightning Network addresses using Zaplocker with HODL invoices"
       },
-      "yes_full_control": { 
-        "label": "Yes, full control", 
-        "title": "Yes, with full control" 
+      "yes_full_control": {
+        "label": "Yes, full control",
+        "title": "Yes, with full control"
       },
-      "yes_7_default_30_or_60_days": { 
-        "label": "Yes, 7 (default), 30 or 60 days", 
-        "title": "Yes, 7 days by default, 30 or 60 days" 
+      "yes_7_default_30_or_60_days": {
+        "label": "Yes, 7 (default), 30 or 60 days",
+        "title": "Yes, 7 days by default, 30 or 60 days"
       },
-      "via_swap_in_potentiam": { 
-        "label": "Via Swap-in Potentiam", 
-        "title": "Via Swap-in Potentiam" 
+      "via_swap_in_potentiam": {
+        "label": "Via Swap-in Potentiam",
+        "title": "Via Swap-in Potentiam"
       },
-      "opens_channel": { 
-        "label": "Opens Channel", 
-        "title": "Opens a channel" 
+      "opens_channel": {
+        "label": "Opens Channel",
+        "title": "Opens a channel"
       },
-      "yes_dynamic_provider_fees": { 
-        "label": "Yes, dynamic provider fees", 
-        "title": "Yes, with dynamic provider fees" 
+      "yes_dynamic_provider_fees": {
+        "label": "Yes, dynamic provider fees",
+        "title": "Yes, with dynamic provider fees"
       },
-      "yes_full_1_hour_default": { 
-        "label": "Yes, full. 1 hour default", 
-        "title": "Yes, full with 1 hour default duration" 
+      "yes_full_1_hour_default": {
+        "label": "Yes, full. 1 hour default",
+        "title": "Yes, full with 1 hour default duration"
       },
-      "10_minutes": { 
-        "label": "10 minutes", 
-        "title": "10-minute duration" 
+      "10_minutes": {
+        "label": "10 minutes",
+        "title": "10-minute duration"
       },
-      "15_minutes": { 
-        "label": "15 minutes", 
-        "title": "15-minute duration" 
+      "15_minutes": {
+        "label": "15 minutes",
+        "title": "15-minute duration"
       },
-      "2_hours": { 
-        "label": "2 hours", 
-        "title": "2-hour duration" 
+      "2_hours": {
+        "label": "2 hours",
+        "title": "2-hour duration"
       },
-      "48_hours": { 
-        "label": "48 hours", 
-        "title": "48-hour duration" 
+      "48_hours": {
+        "label": "48 hours",
+        "title": "48-hour duration"
       },
-      "chrome_extension": { 
-        "label": "Chrome Extension", 
-        "title": "Chrome Extension platform" 
+      "chrome_extension": {
+        "label": "Chrome Extension",
+        "title": "Chrome Extension platform"
       },
       "yes_with_remote_core_ln": {
         "label": "Yes (with remote Core LN)",
@@ -819,10 +839,6 @@
         "label": "LSP or User (3 Possible Peers)",
         "title": "Lightning Service Provider or User (up to 3 possible peers)"
       },
-      "user_managed": {
-        "label": "User-Managed",
-        "title": "Managed by the user"
-      },
       "kyc_over_1000_day_blink": {
         "label": "KYC over 1000$/day",
         "title": "Know Your Customer verification required for transactions over 1000$ per day on Blink"
@@ -834,6 +850,14 @@
       "user_managed_alby": {
         "label": "User-Managed",
         "title": "Channel and peer management controlled by the user in Alby"
+      },
+      "cln": {
+        "label": "CLN",
+        "title": "Uses Core Lightning (CLN) implementation"
+      },
+      "does_not_apply_implementation": {
+        "label": "N/A",
+        "title": "Implementation does not apply to this wallet"
       }
     },
     "icons": {

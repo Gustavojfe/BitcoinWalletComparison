@@ -39,6 +39,7 @@
     "taprootTransactions": "no",
     "submarineSwaps": "yes",
     "otherNetworks": "no",
+    "implementation": "LND",
     "lspIntegration": "yes",
     "channelManagement": {
       "value": "custom",

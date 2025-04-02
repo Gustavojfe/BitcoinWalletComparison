@@ -53,10 +53,7 @@
       "value": "custom",
       "customText": "Liquid, Ecash"
     },
-    "implementation": {
-      "value": "does_not_apply",
-      "customText": "Core Lightning"
-    },
+    "implementation": "CLN",
     "nostrWalletConnect": "yes",
     "blindRouting": {
       "value": "custom",

@@ -23,9 +23,9 @@ export const featureValues = [
   // Swap types
   "liquid_swap", "on_chain_swap", "boltz_swap", "muun_provided", "phoenix_provided",
   // Node connection types
-  "remote_node", "full_node", "light_client", "neutrino", "electrum", "bitcoin_core",
+  "remote_node", "full_node", "light_client", "neutrino", "electrum", "bitcoin_core", "api",
   // Implementation types
-  "lnd", "ldk", "core_lightning", "eclair", "electrum_impl", "greenlight",
+  "lnd", "ldk", "core_lightning", "cln", "eclair", "electrum_impl", "greenlight",
   // Taproot support levels
   "full", "send", "receive", 
   // Management approaches
