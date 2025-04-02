@@ -1,7 +1,7 @@
 {
   "wallets": {
-    "Alby": {
-      "name": "Alby",
+    "Alby Hub": {
+      "name": "Alby Hub",
       "description": "Una billetera Lightning autocustodial que se conecta a Alby Extension para interacciones web, Alby Go para pagos en el mundo real y cientos de apps vía Nostr Wallet Connect (NWC)."
     },
     "AQUA": {

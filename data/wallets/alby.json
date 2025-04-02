@@ -1,29 +1,31 @@
 {
-  "name": "Alby",
+  "name": "Alby Hub",
   "website": "https://getalby.com",
   "description": "A self-custodial Lightning wallet that connects to Alby Extension for web interactions, Alby Go for real-world payments, and hundreds of apps via Nostr Wallet Connect (NWC).",
   "type": "lightning",
   "logo": "alby",
   "order": 18,
+  "availability": "Standard",
+  "category": "L1/L2 (LN Node)",
   "features": {
     "platform": [
       "web",
-      "chrome extension",
+      "chrome extension", 
       "android",
       "ios",
       "desktop"
     ],
     "openSource": "yes",
     "custodialStatus": "no",
-    "transactionFees": {
-      "value": "custom",
-      "customText": "Dynamic (LN)"
-    },
+    "transactionFees": "no",
     "backupOptions": {
       "value": "custom",
-      "customText": "Seed Phrase"
+      "customText": "Seed Phrase + Alby Account"
     },
-    "peerBackupOptions": "yes",
+    "peerBackupOptions": {
+      "value": "custom",
+      "customText": "LSP managed or manual backups"
+    },
     "bolt11Support": "yes",
     "bolt12Support": "no",
     "bolt12HrnSupport": "no",
@@ -32,24 +34,36 @@
     "lnurlWithdraw": "yes",
     "noAmountInvoices": "no",
     "customInvoiceMetadata": "yes",
-    "invoiceExpiryControl": "yes",
-    "receiveOnChain": "yes",
+    "invoiceExpiryControl": {
+      "value": "custom",
+      "customText": "24 hours"
+    },
+    "receiveOnChain": {
+      "value": "custom",
+      "customText": "On-Chain Wallet"
+    },
     "bitcoinAddressType": {
       "value": "custom",
-      "customText": "SegWit bech32"
+      "customText": "P2WPKH"
     },
     "sendOnChain": "yes",
     "taprootTransactions": "no",
-    "submarineSwaps": "yes",
+    "submarineSwaps": {
+      "value": "custom",
+      "customText": "Boltz Swap"
+    },
     "otherNetworks": "no",
     "implementation": "LND",
-    "lspIntegration": "yes",
+    "lspIntegration": {
+      "value": "custom",
+      "customText": "many LSPs"
+    },
     "channelManagement": {
       "value": "custom",
       "customText": "User-Managed"
     },
-    "zeroConfChannels": "yes",
-    "clientSideRouting": "no",
+    "zeroConfChannels": "no",
+    "clientSideRouting": "yes",
     "watchtowerIntegration": "no",
     "mppSupport": "yes",
     "purchaseInbound": "yes",
@@ -57,11 +71,13 @@
     "routingNode": "no",
     "nostrWalletConnect": "yes",
     "simpleTaprootChannels": "no",
-    "torSupport": "yes",
+    "torSupport": "no",
     "testnetSupport": "yes",
-    "developerApis": "yes",
+    "developerApis": {
+      "value": "custom",
+      "customText": "NWC / API"
+    },
     "noKyc": "yes",
     "nodeType": "API"
-  },
-  "category": "No"
+  }
 }

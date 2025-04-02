@@ -965,6 +965,38 @@
       "does_not_apply_implementation": {
         "label": "N/A",
         "title": "Implementation does not apply to this wallet"
+      },
+      "seed_phrase_alby_account": {
+        "label": "Seed Phrase + Alby Account",
+        "title": "Recovery using Seed Phrase and Alby Account"
+      },
+      "lsp_managed_or_manual_backups": {
+        "label": "LSP managed or manual backups",
+        "title": "Channel backups are managed by Lightning Service Provider or can be manually backed up"
+      },
+      "many_lsps": {
+        "label": "Many LSPs",
+        "title": "Supports multiple Lightning Service Providers"
+      },
+      "nwc_api": {
+        "label": "NWC / API",
+        "title": "Supports Nostr Wallet Connect and API integration"
+      },
+      "boltz_swap": {
+        "label": "Boltz Swap",
+        "title": "Uses Boltz for submarine swaps"
+      },
+      "l1l2_ln_node": {
+        "label": "L1/L2 (LN Node)",
+        "title": "Supports both on-chain (L1) and Lightning Network (L2) with integrated node"
+      },
+      "on_chain_wallet": {
+        "label": "On-Chain Wallet",
+        "title": "Supports on-chain wallet functionality"
+      },
+      "24_hours": {
+        "label": "24 hours",
+        "title": "Default invoice expiry time is 24 hours"
       }
     },
     "icons": {

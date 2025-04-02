@@ -985,6 +985,38 @@
         "label": "N/A",
         "title": "La implementación no aplica a esta cartera"
       },
+      "seed_phrase_alby_account": {
+        "label": "Frase Semilla + Cuenta Alby",
+        "title": "Recuperación usando Frase Semilla y Cuenta Alby"
+      },
+      "lsp_managed_or_manual_backups": {
+        "label": "Gestionado por PSL o copias manuales",
+        "title": "Las copias de seguridad de canales son gestionadas por el Proveedor de Servicios Lightning o se pueden hacer manualmente"
+      },
+      "many_lsps": {
+        "label": "Múltiples PSLs",
+        "title": "Compatible con múltiples Proveedores de Servicios Lightning"
+      },
+      "nwc_api": {
+        "label": "NWC / API",
+        "title": "Compatible con Nostr Wallet Connect e integración API"
+      },
+      "boltz_swap": {
+        "label": "Intercambio Boltz",
+        "title": "Usa Boltz para intercambios submarinos"
+      },
+      "l1l2_ln_node": {
+        "label": "L1/L2 (Nodo LN)",
+        "title": "Compatible con transacciones en cadena (L1) y Lightning Network (L2) con nodo integrado"
+      },
+      "on_chain_wallet": {
+        "label": "Cartera En-Cadena",
+        "title": "Compatible con funcionalidad de cartera en cadena"
+      },
+      "24_hours": {
+        "label": "24 horas",
+        "title": "El tiempo de caducidad predeterminado de las facturas es de 24 horas"
+      },
       "7_30_or_60_days": {
         "label": "7, 30 o 60 días",
         "title": "Opciones para tiempo de caducidad de 7, 30 o 60 días"
