@@ -35,10 +35,7 @@
     "lnurlPay": "no",
     "lightningAddressSupport": "yes",
     "lnurlWithdraw": "no",
-    "noAmountInvoices": {
-      "value": "custom",
-      "customText": "send only"
-    },
+    "noAmountInvoices": "no",
     "customInvoiceMetadata": "yes",
     "invoiceExpiryControl": {
       "value": "custom",
