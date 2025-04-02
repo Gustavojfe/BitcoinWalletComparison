@@ -3,7 +3,10 @@ import { useLanguage } from '@/hooks/use-language';
 
 const Footer = () => {
   const { theme } = useTheme();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  
+  // Create the appropriate Swapido URL based on the current language
+  const swapipoUrl = language === 'es' ? 'https://swapido.com/es' : 'https://swapido.com/en';
   
   return (
     <footer className="bg-card mt-12">
@@ -11,8 +14,10 @@ const Footer = () => {
         <div className="flex flex-col items-center mb-6">
           <div className="flex flex-col items-center gap-2 mb-2">
             <div className="flex items-center">
-              <span className="font-bold text-2xl text-primary mr-2">{t('footer.sponsoredBy')}</span>
-              <span className="font-bold text-2xl text-primary">Swapido</span>
+              <a href={swapipoUrl} target="_blank" rel="noopener noreferrer" className="flex items-center hover:opacity-80 transition-opacity">
+                <span className="font-bold text-2xl text-primary mr-2">{t('footer.sponsoredBy')}</span>
+                <span className="font-bold text-2xl text-primary">Swapido</span>
+              </a>
             </div>
             <p className="text-sm text-muted-foreground text-center max-w-2xl">
               {t('footer.tagline')}
