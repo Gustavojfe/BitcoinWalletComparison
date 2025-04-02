@@ -178,7 +178,7 @@
   {
     "id": "nodeType",
     "name": "Bitcoin Network",
-    "description": "How the wallet connects to the Bitcoin network.",
+    "description": "How the wallet connects to Bitcoin. 'API' means no custom node connection. Options like Electrum Server or Neutrino allow custom node connections via different interfaces.",
     "type": "lightning",
     "category": "on_chain_and_other_layers",
     "order": 23
@@ -210,7 +210,7 @@
   {
     "id": "lspIntegration",
     "name": "LSP Integration",
-    "description": "Lightning Service Provider integration for channel management.",
+    "description": "Lightning Service Provider integration. May include channel management, pathfinding, zero-conf channels, watchtower, or Static Channel Backups (SCB) storage, fully or partially.",
     "type": "lightning",
     "category": "lightning_specific",
     "order": 27
@@ -226,7 +226,7 @@
   {
     "id": "zeroConfChannels",
     "name": "Zero-Conf Channels",
-    "description": "Support for channels that become usable before on-chain confirmation.",
+    "description": "Support for zero-confirmation channels. Enables instant Bitcoin receipt on Lightning with LSP assistance.",
     "type": "lightning",
     "category": "lightning_specific",
     "order": 29
@@ -234,7 +234,7 @@
   {
     "id": "clientSideRouting",
     "name": "Client-Side Routing",
-    "description": "Whether the wallet performs payment routing calculations.",
+    "description": "When enabled, the wallet performs its own pathfinding to route payments through the Lightning Network rather than relying on an LSP or third-party service.",
     "type": "lightning",
     "category": "lightning_specific",
     "order": 30
@@ -250,7 +250,7 @@
   {
     "id": "mppSupport",
     "name": "MPP / AMP",
-    "description": "Support for Multi-Path Payments or Atomic Multi-Path payments.",
+    "description": "Support for Multi-Path Payments (MPP) or Atomic Multi-Path (AMP) payments, which split larger payments into multiple smaller pieces to overcome individual channel capacity limits.",
     "type": "lightning",
     "category": "lightning_specific",
     "order": 32
@@ -314,7 +314,7 @@
   {
     "id": "simpleTaprootChannels",
     "name": "Simple Taproot Channels",
-    "description": "Support for simplified Taproot channel setup.",
+    "description": "Support for Taproot channels using simpler scripts, more privacy, and lower fees compared to traditional P2WSH channels.",
     "type": "lightning",
     "category": "lightning_specific",
     "order": 40
