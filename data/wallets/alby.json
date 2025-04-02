@@ -56,7 +56,8 @@
     "torSupport": "yes",
     "testnetSupport": "yes",
     "developerApis": "yes",
-    "noKyc": "yes"
+    "noKyc": "yes",
+    "nodeType": "API"
   },
   "category": "No"
 }

@@ -65,7 +65,8 @@
     "torSupport": "no",
     "testnetSupport": "no",
     "developerApis": "no",
-    "noKyc": "yes"
+    "noKyc": "yes",
+    "nodeType": "API"
   },
   "availability": "Standard",
   "category": "On-Chain Wallet with LN Swaps"
