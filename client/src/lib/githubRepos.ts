@@ -3,18 +3,18 @@
  * Maps wallet IDs (name in lowercase) to their GitHub repository URLs.
  */
 export const githubRepos: Record<string, string> = {
-  'alby': 'https://github.com/getAlby/lightning-browser-extension',
-  'aqua': 'https://github.com/atlantabitdevs/Aqua',
-  'bitkit': 'https://github.com/bitkit-dev/Bitkit',
-  'blink': 'https://github.com/stakwork/sphinx-relay',
-  'blitz': 'https://github.com/blitz-wallet',
+  'alby': 'https://github.com/getAlby',
+  'aqua': 'https://github.com/AquaWallet/aqua-wallet',
+  'bitkit': 'https://github.com/synonymdev/bitkit',
+  'blink': 'https://github.com/GaloyMoney/blink-mobile',
+  'blitz': 'https://github.com/BlitzWallet/BlitzWallet',
   'blixt': 'https://github.com/hsjoberg/blixt-wallet',
   'breez': 'https://github.com/breez/breezmobile',
   'coinos': 'https://github.com/coinos/coinos-ui',
   'electrum': 'https://github.com/spesmilo/electrum',
   'muun': 'https://github.com/muun/falcon',
   'phoenix': 'https://github.com/ACINQ/phoenix',
-  'primal': 'https://github.com/PrimalHQ/primal-app-mobile',
+  'primal': 'https://github.com/PrimalHQ/primal-android-app',
   'rtl': 'https://github.com/Ride-The-Lightning/RTL',
   'zeus': 'https://github.com/ZeusLN/zeus'
 };
