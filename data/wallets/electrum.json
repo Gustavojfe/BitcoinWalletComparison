@@ -96,7 +96,7 @@
     "testnetSupport": "yes",
     "developerApis": {
       "value": "custom",
-      "customText": "RPC / CLI"
+      "customText": "RPC-JSON"
     },
     "noKyc": "yes"
   },

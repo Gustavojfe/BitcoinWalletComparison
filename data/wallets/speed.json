@@ -53,7 +53,10 @@
     "blindRouting": "no",
     "torSupport": "no",
     "testnetSupport": "no",
-    "developerApis": "yes",
+    "developerApis": {
+      "value": "custom",
+      "customText": "API"
+    },
     "noKyc": {
       "value": "custom",
       "customText": "KYC in the USA"

@@ -52,7 +52,10 @@
     "blindRouting": "no",
     "torSupport": "no",
     "testnetSupport": "no",
-    "developerApis": "yes",
+    "developerApis": {
+      "value": "custom",
+      "customText": "API/SDK"
+    },
     "noKyc": "no",
     "peerBackupOptions": "does_not_apply",
     "nodeType": "API",

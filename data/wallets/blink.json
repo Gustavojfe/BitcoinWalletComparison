@@ -55,7 +55,10 @@
     "blindRouting": "no",
     "torSupport": "no",
     "testnetSupport": "no",
-    "developerApis": "no",
+    "developerApis": {
+      "value": "custom",
+      "customText": "API"
+    },
     "noKyc": {
       "value": "custom",
       "customText": "KYC over 1000$/day"

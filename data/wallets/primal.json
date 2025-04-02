@@ -59,10 +59,7 @@
     "blindRouting": "no",
     "torSupport": "no",
     "testnetSupport": "no",
-    "developerApis": {
-      "value": "custom",
-      "customText": "Nostr Wallet Connect"
-    },
+    "developerApis": "no",
     "noKyc": "yes",
     "peerBackupOptions": "does_not_apply",
     "nodeType": "API",
