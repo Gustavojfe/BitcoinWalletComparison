@@ -231,7 +231,7 @@
     "values": {
       "API": {
         "label": "API",
-        "title": "Uses an API for node functionality"
+        "title": "External API connection, no direct node access"
       },
       "APISDK": {
         "label": "API/SDK",
