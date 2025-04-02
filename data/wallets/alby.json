@@ -7,6 +7,7 @@
   "order": 18,
   "category": "L1/L2 (LN Node)",
   "features": {
+    "category": "L1/L2 (LN Node)",
     "availability": "Standard",
     "platform": [
       "web",
