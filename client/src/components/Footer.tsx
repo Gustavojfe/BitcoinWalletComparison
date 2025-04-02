@@ -2,23 +2,17 @@ import { useTheme } from '@/hooks/use-theme';
 
 const Footer = () => {
   const { theme } = useTheme();
-  const logoSrc = theme === 'dark' ? '/images/swapido-logo-light.png' : '/images/swapido-logo-dark.png';
   
   return (
     <footer className="bg-card mt-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col items-center mb-6">
-          <div className="flex items-center gap-2 mb-2">
-            <img 
-              src={logoSrc} 
-              alt="Swapido" 
-              className="h-10 w-auto" 
-            />
-            <span className="font-bold text-xl text-primary">Swapido</span>
+          <div className="flex flex-col items-center gap-2 mb-2">
+            <span className="font-bold text-2xl text-primary">Swapido</span>
+            <p className="text-sm text-muted-foreground text-center max-w-2xl">
+              Empowering the Lightning Network ecosystem with comprehensive wallet information.
+            </p>
           </div>
-          <p className="text-sm text-muted-foreground text-center max-w-2xl">
-            Empowering the Lightning Network ecosystem with comprehensive wallet information.
-          </p>
         </div>
         <div className="border-t border-border pt-8 md:flex md:items-center md:justify-between">
           <div className="flex space-x-6 md:order-2">
