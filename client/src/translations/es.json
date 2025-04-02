@@ -920,7 +920,8 @@
       "unknown": "bg-muted text-muted-foreground",
       "implementation": "bg-blue-100 text-blue-600",
       "walletType": "bg-purple-100 text-purple-600",
-      "does_not_apply": "bg-gray-200/20 text-gray-500"
+      "does_not_apply": "bg-gray-200/20 text-gray-500",
+      "limited_no_us_canada_lsp_bitkit": "bg-orange-100 text-orange-600"
     }
   },
   "comingSoon": {
