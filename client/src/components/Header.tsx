@@ -2,10 +2,13 @@ import { Link, useLocation } from 'wouter';
 import { useLanguage } from '@/hooks/use-language';
 import LanguageSwitcher from './LanguageSwitcher';
 import ThemeSwitcher from './ThemeSwitcher';
+import { useTheme } from '@/hooks/use-theme';
 
 const Header = () => {
   const [location] = useLocation();
   const { t } = useLanguage();
+  const { theme } = useTheme();
+  const logoSrc = theme === 'dark' ? '/images/swapido-logo-light.png' : '/images/swapido-logo-dark.png';
   
   return (
     <header className="bg-card shadow-sm sticky top-0 z-50">
@@ -13,7 +16,12 @@ const Header = () => {
         <div className="flex justify-between h-16">
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
-              <Link href="/" className="flex items-center">
+              <Link href="/" className="flex items-center gap-2">
+                <img 
+                  src={logoSrc} 
+                  alt="Swapido" 
+                  className="h-8 w-auto" 
+                />
                 <span className="font-bold text-xl text-primary">{t('header.title')}</span>
               </Link>
             </div>
