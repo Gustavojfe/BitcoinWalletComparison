@@ -41,7 +41,7 @@
     "customInvoiceMetadata": "yes",
     "invoiceExpiryControl": {
       "value": "custom",
-      "customText": "1 week (default)"
+      "customText": "1 week (custom)"
     },
     "receiveOnChain": {
       "value": "custom",

@@ -982,6 +982,18 @@
       "does_not_apply_implementation": {
         "label": "N/A",
         "title": "La implementación no aplica a esta cartera"
+      },
+      "7_30_or_60_days": {
+        "label": "7, 30 o 60 días",
+        "title": "Opciones para tiempo de caducidad de 7, 30 o 60 días"
+      },
+      "1_hour_custom": {
+        "label": "1 hora (personalizable)",
+        "title": "El tiempo de caducidad predeterminado es 1 hora, y puede ser personalizado"
+      },
+      "1_week_custom": {
+        "label": "1 semana (personalizable)",
+        "title": "El tiempo de caducidad predeterminado es 1 semana, y puede ser personalizado"
       }
     },
     "icons": {

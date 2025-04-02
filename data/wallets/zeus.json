@@ -50,7 +50,7 @@
     "customInvoiceMetadata": "yes",
     "invoiceExpiryControl": {
       "value": "custom",
-      "customText": "custom_configurable"
+      "customText": "1 hour (custom)"
     },
     "receiveOnChain": {
       "value": "custom",

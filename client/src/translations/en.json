@@ -695,6 +695,10 @@
         "label": "Custom (configurable)",
         "title": "Expiry time is user-configurable"
       },
+      "7_30_or_60_days": {
+        "label": "7, 30, or 60 days",
+        "title": "Options for 7, 30, or 60 days expiry time"
+      },
 
       "via_swap_in_potentiam": {
         "label": "Via Swap-in Potentiam",
@@ -711,6 +715,10 @@
       "1_hour_custom": {
         "label": "1 hour (custom)",
         "title": "Default expiry time is 1 hour, and can be customized"
+      },
+      "1_week_custom": {
+        "label": "1 week (custom)",
+        "title": "Default expiry time is 1 week, and can be customized"
       },
       "10_minutes": {
         "label": "10 minutes",
