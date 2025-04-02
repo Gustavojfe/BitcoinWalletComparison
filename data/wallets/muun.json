@@ -27,6 +27,7 @@
       "value": "custom",
       "customText": "Email / PW or Recovery Code + Emergency Kit (Cloud upload or download)"
     },
+    "peerBackupOptions": "does_not_apply",
     "bolt11Support": "yes",
     "bolt12Support": "no",
     "bolt12HrnSupport": "no",
