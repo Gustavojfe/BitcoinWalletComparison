@@ -64,7 +64,10 @@
       "value": "custom",
       "customText": "Self-Hosted"
     },
-    "developerApis": "yes",
+    "developerApis": {
+      "value": "custom",
+      "customText": "API"
+    },
     "noKyc": "yes",
     "peerBackupOptions": "does_not_apply",
     "nodeType": "API",
