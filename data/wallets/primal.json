@@ -8,7 +8,8 @@
   "features": {
     "platform": [
       "android",
-      "ios"
+      "ios",
+      "web"
     ],
     "openSource": "yes",
     "availability": {

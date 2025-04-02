@@ -6,10 +6,10 @@
   "logo": "electrum",
   "order": 16,
   "features": {
-    "platform": {
-      "value": "custom",
-      "customText": "Desktop"
-    },
+    "platform": [
+      "desktop",
+      "android"
+    ],
     "openSource": "yes",
     "availability": "yes",
     "custodialStatus": {

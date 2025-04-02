@@ -8,7 +8,10 @@
   "features": {
     "platform": [
       "web",
-      "browser extension"
+      "chrome extension",
+      "android",
+      "ios",
+      "desktop"
     ],
     "openSource": "yes",
     "custodialStatus": "no",
