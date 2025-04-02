@@ -10,7 +10,7 @@
     },
     "Availability": {
       "name": "Disponibilidad",
-      "description": "Restricciones geográficas de uso. Disponibilidad estándar en iOS/Android puede excluir países pequeños o sancionados, pero cubre la mayoría. Plataformas Desktop/Web son más difíciles de restringir. 'Limitado (sin EE.UU.)' significa que la cartera no está disponible para usuarios en los Estados Unidos. 'Muy Limitado' indica restricciones geográficas significativas."
+      "description": "Restricciones geográficas de uso. Disponibilidad estándar en iOS/Android puede excluir países pequeños o sancionados, pero cubre la mayoría. Plataformas Desktop/Web son más difíciles de restringir."
     },
     "Category": {
       "name": "Categoría",

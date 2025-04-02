@@ -476,11 +476,11 @@
         "title": "Disponibilidad limitada en algunas regiones"
       },
       "limited_no_usa": {
-        "label": "Limitado (sin EE.UU.)",
+        "label": "Limitada (sin EE.UU.)",
         "title": "Disponibilidad limitada - no disponible en los Estados Unidos"
       },
       "limited_no_us_canada_lsp": {
-        "label": "Limitado (sin EE.UU./Canadá para LSP)",
+        "label": "Limitada (sin EE.UU./Canadá para PSL)",
         "title": "Disponibilidad limitada - Proveedor de Servicios Lightning no disponible en EE.UU./Canadá"
       },
       "limited_blink_phoenix_wos": {

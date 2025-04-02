@@ -6,7 +6,7 @@
     },
     "Availability": {
       "name": "Availability",
-      "description": "Geographic restrictions on wallet usage. Standard iOS/Android availability may exclude small or sanctioned countries but covers most. Desktop/Web platforms are harder to restrict. 'Limited (no USA)' means the wallet is not available to users in the United States. 'Very Limited' indicates significant geographic restrictions."
+      "description": "Geographic restrictions on wallet usage. Standard iOS/Android availability may exclude small or sanctioned countries but covers most. Desktop/Web platforms are harder to restrict."
     },
     "User Interface (UI/UX)": {
       "name": "User Interface (UI/UX)",
