@@ -329,6 +329,10 @@
         "label": "?",
         "title": "Estado desconocido"
       },
+      "api": {
+        "label": "API",
+        "title": "Conexión API externa, sin acceso directo al nodo"
+      },
       "custodial": {
         "label": "Custodial",
         "title": "Cartera custodial"
@@ -1051,7 +1055,9 @@
       "implementation": "bg-blue-100 text-blue-600",
       "walletType": "bg-purple-100 text-purple-600",
       "does_not_apply": "bg-gray-200/20 text-gray-500",
-      "limited_no_us_canada_lsp_bitkit": "bg-orange-100 text-orange-600"
+      "limited_no_us_canada_lsp_bitkit": "bg-orange-100 text-orange-600",
+      "standard": "bg-green-100 text-green-600",
+      "limited": "bg-orange-100 text-orange-600"
     }
   },
   "comingSoon": {

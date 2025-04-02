@@ -7,13 +7,10 @@
   "order": 18,
   "features": {
     "availability": "Standard",
-    "category": {
-      "value": "custom",
-      "customText": "L1/L2 (LN Node)"
-    },
+    "category": "L1/L2 (LN Node)",
     "platform": [
       "web",
-      "chrome extension", 
+      "chrome extension",
       "android",
       "ios",
       "desktop"

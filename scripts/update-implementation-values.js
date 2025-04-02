@@ -14,60 +14,73 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-// Get the current directory name
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const WALLET_UPDATES = {
-  'alby.json': 'LND',
-  'aqua.json': 'does_not_apply',
-  'blink.json': 'LND',
-  'coinos.json': 'CLN',
-  'muun.json': 'does_not_apply'
+const WALLETS_DIR = path.join(__dirname, '../data/wallets');
+
+// Map of wallet filenames (without .json) to their new implementation values
+const IMPLEMENTATION_UPDATES = {
+  'alby': 'LND',
+  'aqua': 'does_not_apply',
+  'blink': 'LND',
+  'coinos': 'CLN',
+  'muun': 'does_not_apply',
+  // Add more wallets to update as needed
 };
 
 function processWalletFiles() {
-  const walletsDir = path.join(__dirname, '../data/wallets');
+  // Get all JSON files in the wallets directory
+  const walletFiles = fs.readdirSync(WALLETS_DIR)
+    .filter(file => file.endsWith('.json'));
+
+  console.log(`Found ${walletFiles.length} wallet JSON files.`);
   
-  // Get all wallet files
-  const walletFiles = Object.keys(WALLET_UPDATES).map(file => path.join(walletsDir, file));
+  let updatedCount = 0;
   
   // Process each wallet file
-  walletFiles.forEach(filePath => {
-    if (fs.existsSync(filePath)) {
-      processWalletFile(filePath);
-    } else {
-      console.log(`File not found: ${filePath}`);
+  for (const file of walletFiles) {
+    const walletName = path.basename(file, '.json');
+    
+    // Check if this wallet needs updating
+    if (walletName in IMPLEMENTATION_UPDATES) {
+      const filePath = path.join(WALLETS_DIR, file);
+      const updated = processWalletFile(filePath, walletName, IMPLEMENTATION_UPDATES[walletName]);
+      if (updated) {
+        updatedCount++;
+      }
     }
-  });
+  }
+  
+  console.log(`Updated implementation values in ${updatedCount} wallet files.`);
 }
 
-function processWalletFile(filePath) {
+function processWalletFile(filePath, walletName, newImplementationValue) {
   try {
-    // Read the wallet file
+    // Read and parse the wallet JSON file
     const walletData = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-    const filename = path.basename(filePath);
-    const newValue = WALLET_UPDATES[filename];
     
-    // Skip if this wallet is not in our update list
-    if (!newValue) return;
-    
-    // Ensure features object exists
-    if (!walletData.features) {
-      walletData.features = {};
+    // Skip if there's no implementation feature
+    if (!walletData.features || !('implementation' in walletData.features)) {
+      console.log(`Skipping ${walletName}: No implementation feature found.`);
+      return false;
     }
     
-    // Update the implementation value
-    walletData.features.implementation = newValue;
+    // Store current value for logging
+    const currentValue = JSON.stringify(walletData.features.implementation);
     
-    // Write the updated wallet data back to the file
-    fs.writeFileSync(filePath, JSON.stringify(walletData, null, 2), 'utf8');
-    console.log(`Updated implementation to "${newValue}" in ${filename}`);
+    // Update the implementation value
+    walletData.features.implementation = newImplementationValue;
+    
+    // Write the changes back to the file
+    fs.writeFileSync(filePath, JSON.stringify(walletData, null, 2));
+    console.log(`Updated ${walletName}: implementation changed from ${currentValue} to "${newImplementationValue}"`);
+    return true;
   } catch (error) {
-    console.error(`Error processing ${filePath}: ${error.message}`);
+    console.error(`Error processing ${walletName}:`, error);
+    return false;
   }
 }
 
-// Execute the script
+// Run the script
 processWalletFiles();
-console.log('Implementation values update completed.');

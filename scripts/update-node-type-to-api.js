@@ -13,74 +13,70 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// This function processes all wallet files
+const WALLETS_DIR = path.join(__dirname, '../data/wallets');
+
 function processWalletFiles() {
-  console.log('Updating nodeType feature in wallet files...');
+  // Get all JSON files in the wallets directory
+  const walletFiles = fs.readdirSync(WALLETS_DIR)
+    .filter(file => file.endsWith('.json'));
+
+  console.log(`Found ${walletFiles.length} wallet JSON files.`);
   
-  const walletsDir = path.join(__dirname, '..', 'data', 'wallets');
-  const files = fs.readdirSync(walletsDir);
+  let updatedCount = 0;
   
-  // Track statistics for reporting
-  let stats = {
-    total: 0,
-    updated: 0,
-    skipped: 0,
-    errors: 0
-  };
-  
-  files.forEach(file => {
-    if (file.endsWith('.json')) {
-      const filePath = path.join(walletsDir, file);
-      try {
-        stats.total++;
-        const updated = processWalletFile(filePath);
-        if (updated) {
-          stats.updated++;
-        } else {
-          stats.skipped++;
-        }
-      } catch (error) {
-        console.error(`Error processing file ${file}:`, error);
-        stats.errors++;
-      }
+  // Process each wallet file
+  walletFiles.forEach(file => {
+    const filePath = path.join(WALLETS_DIR, file);
+    const updated = processWalletFile(filePath);
+    if (updated) {
+      updatedCount++;
     }
   });
   
-  console.log(`\nSummary:`);
-  console.log(`Total wallet files processed: ${stats.total}`);
-  console.log(`Files updated: ${stats.updated}`);
-  console.log(`Files skipped (no changes needed): ${stats.skipped}`);
-  console.log(`Errors: ${stats.errors}`);
+  console.log(`Updated nodeType to "API" in ${updatedCount} wallet files.`);
 }
 
-// This function updates a single wallet file
 function processWalletFile(filePath) {
-  // Read the wallet file
-  const walletData = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-  const fileName = path.basename(filePath);
-  
-  // Check if the wallet has a nodeType feature
-  if (walletData.features && 'nodeType' in walletData.features) {
-    const currentValue = walletData.features.nodeType;
+  try {
+    // Read and parse the wallet JSON file
+    const walletData = JSON.parse(fs.readFileSync(filePath, 'utf8'));
     
-    // Check if the value needs to be updated
-    if (currentValue === 'no' || currentValue === 'does_not_apply') {
-      // Update the value to "API"
-      walletData.features.nodeType = 'API';
-      
-      // Write the updated data back to the file
-      fs.writeFileSync(filePath, JSON.stringify(walletData, null, 2), 'utf8');
-      console.log(`Updated ${fileName}: nodeType changed from "${currentValue}" to "API"`);
-      return true;
-    } else {
-      console.log(`Skipped ${fileName}: nodeType is "${currentValue}" (not "no" or "does_not_apply")`);
+    // Skip if there's no nodeType feature
+    if (!walletData.features || !('nodeType' in walletData.features)) {
       return false;
     }
-  } else {
-    console.log(`Skipped ${fileName}: no nodeType feature found`);
+    
+    let updated = false;
+    const currentValue = walletData.features.nodeType;
+    
+    // Check if nodeType is a simple "no" or "does_not_apply" string value
+    if (currentValue === "no" || currentValue === "does_not_apply") {
+      // Update to "API"
+      walletData.features.nodeType = "API";
+      updated = true;
+    }
+    // If nodeType is an object, check if its value property is "no" or "does_not_apply"
+    else if (typeof currentValue === 'object' && currentValue !== null && 
+             (currentValue.value === "no" || currentValue.value === "does_not_apply")) {
+      // Update to "API"
+      walletData.features.nodeType = "API";
+      console.log(`Updated ${path.basename(filePath)}: nodeType object with value "${currentValue.value}" changed to "API" string`);
+      updated = true;
+    }
+    
+    // If updated, write the changes back to the file
+    if (updated) {
+      fs.writeFileSync(filePath, JSON.stringify(walletData, null, 2));
+      console.log(`Updated ${path.basename(filePath)}: nodeType changed from "${currentValue}" to "API"`);
+      return true;
+    }
+    
+    return false;
+  } catch (error) {
+    console.error(`Error processing ${path.basename(filePath)}:`, error);
     return false;
   }
 }
 
-// Execute the update function
+// Run the script
 processWalletFiles();
