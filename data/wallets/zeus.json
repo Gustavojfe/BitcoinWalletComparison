@@ -113,7 +113,8 @@
     "torSupport": "yes",
     "testnetSupport": "yes",
     "developerApis": "no",
-    "noKyc": "yes"
+    "noKyc": "yes",
+    "transactionLimits": "no"
   },
   "availability": "Standard",
   "category": "L1/L2 (LN Node) or UI for multiple nodes"

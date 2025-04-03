@@ -101,7 +101,8 @@
       "value": "custom",
       "customText": "SDK"
     },
-    "noKyc": "yes"
+    "noKyc": "yes",
+    "transactionLimits": "no"
   },
   "availability": "Standard",
   "category": "L2 Wallet (LN Node)"

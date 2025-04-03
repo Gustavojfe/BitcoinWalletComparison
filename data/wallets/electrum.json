@@ -98,7 +98,8 @@
       "value": "custom",
       "customText": "RPC-JSON"
     },
-    "noKyc": "yes"
+    "noKyc": "yes",
+    "transactionLimits": "no"
   },
   "availability": "yes",
   "category": "L1/L2 (LN Node)"

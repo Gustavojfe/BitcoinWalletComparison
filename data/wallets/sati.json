@@ -65,7 +65,8 @@
     "splicingSupport": "does_not_apply",
     "routingNode": "does_not_apply",
     "scidAlias": "does_not_apply",
-    "simpleTaprootChannels": "does_not_apply"
+    "simpleTaprootChannels": "does_not_apply",
+    "transactionLimits": "no"
   },
   "availability": "Standard",
   "category": "Custodial"

@@ -81,6 +81,7 @@
       "customText": "NWC / API"
     },
     "noKyc": "yes",
-    "nodeType": "API"
+    "nodeType": "API",
+    "transactionLimits": "no"
   }
 }

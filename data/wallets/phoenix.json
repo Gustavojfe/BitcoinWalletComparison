@@ -116,7 +116,8 @@
       "value": "custom",
       "customText": "Phoenixd"
     },
-    "noKyc": "yes"
+    "noKyc": "yes",
+    "transactionLimits": "no"
   },
   "availability": "Limited (no USA)",
   "category": "L2 Wallet (LN Node)"
