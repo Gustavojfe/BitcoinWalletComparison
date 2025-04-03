@@ -83,7 +83,10 @@ const WalletComparisonResult = () => {
       return <PlatformIcons value={value} customText={customText} />;
     }
     
-    if (featureName && featureName.toLowerCase() === 'opensource' && value === 'yes' && wallet) {
+    if (featureName && 
+        (featureName.toLowerCase() === 'opensource' || 
+         featureName.toLowerCase() === 'open source') && 
+        value === 'yes' && wallet) {
       const githubLink = <GitHubLink walletName={wallet.name} wallet={wallet} />;
       return githubLink || renderFeatureStatus('yes');
     }
