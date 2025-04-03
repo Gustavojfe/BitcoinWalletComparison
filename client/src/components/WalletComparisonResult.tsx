@@ -215,7 +215,8 @@ const WalletComparisonResult = () => {
   // Render feature status based on value
   const renderFeatureStatus = (value: string, customText?: string, featureName?: string, wallet?: any) => {
     // Special cases for specific features
-    if (featureName === 'platform' && (value === 'custom' || value.includes(','))) {
+    if (featureName === 'platform') {
+      // Always use platform icons for the platform feature, regardless of format
       return renderPlatformIcons(value, customText);
     }
     
