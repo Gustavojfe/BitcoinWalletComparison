@@ -52,10 +52,7 @@
       "customText": "P2TR (CLN, LND), P2WSH (Eclair)"
     },
     "sendOnChain": "yes",
-    "taprootTransactions": {
-      "value": "custom",
-      "customText": "Full"
-    },
+    "taprootTransactions": "yes",
     "nodeType": {
       "value": "custom",
       "customText": "Bitcoin Core RPC (Own Node)"

@@ -58,10 +58,7 @@
       "value": "custom",
       "customText": "Swap from Liquid (Boltz)"
     },
-    "taprootTransactions": {
-      "value": "custom",
-      "customText": "Full"
-    },
+    "taprootTransactions": "yes",
     "submarineSwaps": {
       "value": "custom",
       "customText": "Boltz Swap"

@@ -58,10 +58,7 @@
       "value": "custom",
       "customText": "Yes with Reverse Swap"
     },
-    "taprootTransactions": {
-      "value": "custom",
-      "customText": "Full"
-    },
+    "taprootTransactions": "yes",
     "nodeType": {
       "value": "custom",
       "customText": "Electrum Server (Own Node)"

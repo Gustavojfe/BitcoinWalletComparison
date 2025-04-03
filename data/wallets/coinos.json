@@ -45,10 +45,7 @@
       "customText": "P2TR, P2WPKH, P2PKH"
     },
     "sendOnChain": "yes",
-    "taprootTransactions": {
-      "value": "custom",
-      "customText": "Full"
-    },
+    "taprootTransactions": "yes",
     "otherNetworks": {
       "value": "custom",
       "customText": "Liquid, Ecash"

@@ -52,10 +52,7 @@
       "customText": "P2TR, P2WSH, P2SH"
     },
     "sendOnChain": "yes",
-    "taprootTransactions": {
-      "value": "custom",
-      "customText": "Full"
-    },
+    "taprootTransactions": "yes",
     "submarineSwaps": {
       "value": "custom",
       "customText": "Muun-provided"

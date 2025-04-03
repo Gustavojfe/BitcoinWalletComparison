@@ -49,7 +49,7 @@
       "customText": "P2WPKH"
     },
     "sendOnChain": "yes",
-    "taprootTransactions": "does_not_apply",
+    "taprootTransactions": "no",
     "otherNetworks": "no",
     "nostrWalletConnect": "no",
     "blindRouting": "no",
