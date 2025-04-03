@@ -70,12 +70,22 @@ const WalletComparisonResult = () => {
   };
 
   // Render platform-specific icons
-  const renderPlatformIcons = (value: string, customText?: string): JSX.Element => {
-    // Determine which value to use
-    const platformValue = (value === 'custom' && customText) ? customText : value;
+  const renderPlatformIcons = (value: string | string[], customText?: string): JSX.Element => {
+    // Handle different formats of platform values
+    let platforms: string[] = [];
     
-    // Split platforms if there are multiple separated by commas
-    const platforms = platformValue.split(',').map(p => p.trim().toLowerCase());
+    // If value is an array, use it directly
+    if (Array.isArray(value)) {
+      platforms = value.map(p => p.toLowerCase());
+    } 
+    // If value is 'custom' with customText, use the customText
+    else if (value === 'custom' && customText) {
+      platforms = customText.split(',').map(p => p.trim().toLowerCase());
+    } 
+    // Otherwise just use the value as a string
+    else {
+      platforms = value.toString().split(',').map(p => p.trim().toLowerCase());
+    }
     
     return (
       <div className="flex flex-wrap gap-1 justify-center">
@@ -213,11 +223,22 @@ const WalletComparisonResult = () => {
   };
 
   // Render feature status based on value
-  const renderFeatureStatus = (value: string, customText?: string, featureName?: string, wallet?: any) => {
+  const renderFeatureStatus = (value: any, customText?: string, featureName?: string, wallet?: any) => {
     // Special cases for specific features
     if (featureName === 'platform') {
       // Always use platform icons for the platform feature, regardless of format
-      return renderPlatformIcons(value, customText);
+      // For array values (like in Blink where platform: ["android", "ios"])
+      if (Array.isArray(value)) {
+        return renderPlatformIcons(value);
+      }
+      // For object values (like in Coinos where platform: {value: "custom", customText: "Web"})
+      else if (typeof value === 'object' && value !== null) {
+        return renderPlatformIcons(value.value || "", value.customText);
+      }
+      // For string values
+      else {
+        return renderPlatformIcons(value, customText);
+      }
     }
     
     if (featureName === 'openSource' && value === 'yes' && wallet) {
