@@ -96,7 +96,8 @@
     "torSupport": "no",
     "developerApis": "no",
     "noKyc": "yes",
-    "submarineSwaps": "no"
+    "submarineSwaps": "no",
+    "mppSupport": "no"
   },
   "availability": "limited_no_us_canada_lsp_bitkit",
   "category": "L1/L2 (LN Node)"

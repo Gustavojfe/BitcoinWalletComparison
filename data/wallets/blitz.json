@@ -98,7 +98,8 @@
     "developerApis": "no",
     "noKyc": "yes",
     "nodeType": "API",
-    "transactionLimits": "no"
+    "transactionLimits": "no",
+    "mppSupport": "no"
   },
   "availability": "Standard",
   "category": "Hybrid Liquid / L2 Wallet (Full Breez SDK)"
