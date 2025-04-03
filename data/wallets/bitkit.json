@@ -97,7 +97,8 @@
     "developerApis": "no",
     "noKyc": "yes",
     "submarineSwaps": "no",
-    "mppSupport": "no"
+    "mppSupport": "no",
+    "testnetSupport": "no"
   },
   "availability": "limited_no_us_canada_lsp_bitkit",
   "category": "L1/L2 (LN Node)"
