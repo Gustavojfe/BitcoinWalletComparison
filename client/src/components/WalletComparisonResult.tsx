@@ -103,12 +103,12 @@ const WalletComparisonResult = () => {
   // Render feature status based on value
   const renderFeatureStatus = (value: any, customText?: string, featureName?: string, wallet?: any) => {
     // Special cases for specific features
-    if (featureName === 'platform') {
+    if (featureName && featureName.toLowerCase() === 'platform') {
       // Use our reusable PlatformIcons component for all platform display
       return <PlatformIcons value={value} customText={customText} />;
     }
     
-    if (featureName === 'openSource' && value === 'yes' && wallet) {
+    if (featureName && featureName.toLowerCase() === 'opensource' && value === 'yes' && wallet) {
       return renderGitHubLink(wallet.name);
     }
     
