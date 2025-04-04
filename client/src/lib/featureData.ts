@@ -89,7 +89,7 @@ export const getFeatureValueClasses = (value: FeatureValue): {
   }
   
   // Implementations (neutral blue)
-  if (['ldk', 'eclair'].includes(value)) {
+  if (['lnd', 'ldk', 'core_lightning', 'eclair'].includes(value)) {
     return { bgColor: 'bg-blue-100', textColor: 'text-blue-600' };
   }
   
@@ -99,7 +99,7 @@ export const getFeatureValueClasses = (value: FeatureValue): {
   }
   
   // Partial values (amber/yellow)
-  if (['partial', 'custom', 'receive_only', 'mandatory'].includes(value)) {
+  if (['partial', 'custom', 'send_only', 'receive_only', 'mandatory'].includes(value)) {
     return { bgColor: 'bg-amber-100', textColor: 'text-amber-700' };
   }
   
