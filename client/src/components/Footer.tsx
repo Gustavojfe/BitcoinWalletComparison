@@ -24,12 +24,10 @@ const Footer = () => {
                 <span className="font-bold text-2xl mr-2">
                   {t("footer.sponsoredBy")}
                 </span>
-                <img
-                  src="/images/swapido-logo-dark.png" 
-                  alt="Swapido Logo"
-                  className="h-6 w-auto mr-2" // h-6 matches text-2xl height (24px)
-                />
-                <span className="font-bold text-2xl text-primary">Swapido</span>
+                {/* Colorful text-based logo */}
+                <span className={`font-bold text-2xl text-primary`}>
+                  Swapido
+                </span>
               </a>
             </div>
             <p className="text-sm text-muted-foreground text-center max-w-2xl">
