@@ -78,33 +78,21 @@ export const getFeatureValueClasses = (value: FeatureValue): {
   bgColor: string; 
   textColor: string;
 } => {
-  // Positive values
-  if (['yes', 'ios', 'android', 'desktop', 'web', 'optional'].includes(value)) {
-    return { bgColor: 'bg-green-100', textColor: 'text-green-600' };
+  // Keep styling only for yes, no, and does_not_apply values
+  if (value === 'yes') {
+    return { bgColor: 'bg-primary/20', textColor: 'text-primary' };
   }
   
-  // Negative values
-  if (['no', 'not_possible'].includes(value)) {
-    return { bgColor: 'bg-red-100', textColor: 'text-red-600' };
+  if (value === 'no' || value === 'not_possible') {
+    return { bgColor: 'bg-destructive/20', textColor: 'text-destructive' };
   }
   
-  // Implementations (neutral blue)
-  if (['lnd', 'ldk', 'core_lightning', 'eclair'].includes(value)) {
-    return { bgColor: 'bg-blue-100', textColor: 'text-blue-600' };
+  if (value === 'does_not_apply') {
+    return { bgColor: 'bg-muted', textColor: 'text-muted-foreground' };
   }
   
-  // Wallet types (purple)
-  if (['custodial', 'ln_node', 'liquid_swap', 'on_chain_swap', 'remote_node'].includes(value)) {
-    return { bgColor: 'bg-purple-100', textColor: 'text-purple-600' };
-  }
-  
-  // Partial values (amber/yellow)
-  if (['partial', 'custom', 'send_only', 'receive_only', 'mandatory'].includes(value)) {
-    return { bgColor: 'bg-amber-100', textColor: 'text-amber-700' };
-  }
-  
-  // Default for any other value
-  return { bgColor: 'bg-gray-100', textColor: 'text-gray-700' };
+  // For all other values, return empty background with default text color
+  return { bgColor: '', textColor: 'text-foreground' };
 };
 
 /**

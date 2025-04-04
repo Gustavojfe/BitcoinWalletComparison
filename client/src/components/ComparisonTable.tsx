@@ -177,46 +177,44 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
     const bgClass = styleClass.split(' ')[0] || 'bg-muted';
     const textClass = styleClass.split(' ')[1] || 'text-muted-foreground';
     
-    // Render icon-based values (yes, no, partial, optional)
-    if (useIcon) {
-      if (value === 'yes') {
-        return (
-          <FeatureTooltip featureName={featureName} value={value} customText={customText} wallet={wallet}>
-            <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-primary/20">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-              </svg>
+    // Render icon-based values (yes, no, does_not_apply)
+    if (value === 'yes') {
+      return (
+        <FeatureTooltip featureName={featureName} value={value} customText={customText} wallet={wallet}>
+          <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-primary/20">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+            </svg>
+          </span>
+        </FeatureTooltip>
+      );
+    } else if (value === 'no' || value === 'not_possible') {
+      return (
+        <FeatureTooltip featureName={featureName} value={value} customText={customText} wallet={wallet}>
+          <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-destructive/20">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-destructive" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+            </svg>
+          </span>
+        </FeatureTooltip>
+      );
+    } else if (value === 'does_not_apply') {
+      return (
+        <FeatureTooltip featureName={featureName} value={value} customText={customText} wallet={wallet}>
+          <span className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-muted">
+            <span className="text-xs font-medium text-muted-foreground">
+              N/A
             </span>
-          </FeatureTooltip>
-        );
-      } else if (value === 'no' || value === 'not_possible') {
-        return (
-          <FeatureTooltip featureName={featureName} value={value} customText={customText} wallet={wallet}>
-            <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-destructive/20">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-destructive" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
-            </span>
-          </FeatureTooltip>
-        );
-      } else if (value === 'partial' || value === 'optional') {
-        return (
-          <FeatureTooltip featureName={featureName} value={value} customText={customText} wallet={wallet}>
-            <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-orange-500/20">
-              <span className="text-xs font-medium text-orange-500">
-                {label}
-              </span>
-            </span>
-          </FeatureTooltip>
-        );
-      }
+          </span>
+        </FeatureTooltip>
+      );
     }
     
-    // For all other values, render as a text pill
+    // For all other values, render as plain text without background color
     return (
       <FeatureTooltip featureName={featureName} value={value} customText={customText} wallet={wallet}>
-        <span className={`inline-flex items-center justify-center h-6 px-2 rounded-md ${bgClass}`}>
-          <span className={`text-xs font-medium ${textClass}`}>
+        <span className="inline-flex items-center justify-center">
+          <span className="text-xs font-medium text-foreground">
             {label}
           </span>
         </span>
