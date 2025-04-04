@@ -24,7 +24,27 @@ const Footer = () => {
                 <span className="font-bold text-2xl mr-2">
                   {t("footer.sponsoredBy")}
                 </span>
-                {/* Colorful text-based logo */}
+                {/* Inline SVG logo */}
+                <svg 
+                  width="32" 
+                  height="32" 
+                  viewBox="0 0 32 32" 
+                  className="mx-2" 
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect 
+                    width="32" 
+                    height="32" 
+                    rx="6" 
+                    fill={theme === "dark" ? "#333" : "#f0f0f0"} 
+                  />
+                  <path 
+                    d="M6 10L12 6L18 10L26 6V22L20 26L14 22L6 26V10Z" 
+                    fill={theme === "dark" ? "#FFD700" : "#FFB000"} 
+                    stroke={theme === "dark" ? "#FFD700" : "#FFB000"} 
+                    strokeWidth="1.5" 
+                  />
+                </svg>
                 <span className={`font-bold text-2xl text-primary`}>
                   Swapido
                 </span>
