@@ -82,6 +82,9 @@
     },
     "noKyc": "yes",
     "nodeType": "API",
-    "transactionLimits": "no"
+    "transactionLimits": "no",
+    "maxRoutingFee": "no",
+    "blindRouting": "no",
+    "scidAlias": "no"
   }
 }
