@@ -2,10 +2,13 @@ import { Link, useLocation } from 'wouter';
 import { useLanguage } from '@/hooks/use-language';
 import LanguageSwitcher from './LanguageSwitcher';
 import ThemeSwitcher from './ThemeSwitcher';
+import { useState } from 'react';
+import { Menu, X } from 'lucide-react';
 
 const Header = () => {
   const [location] = useLocation();
   const { t } = useLanguage();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   return (
     <header className="bg-card shadow-sm sticky top-0 z-50">
@@ -17,7 +20,8 @@ const Header = () => {
                 <span className="font-bold text-xl text-primary">{t('header.title')}</span>
               </Link>
             </div>
-            <nav className="ml-6 flex space-x-8" aria-label="Main Navigation">
+            {/* Desktop Navigation - Hidden on mobile */}
+            <nav className="ml-6 hidden md:flex space-x-8" aria-label="Main Navigation">
               <Link href="/" className={`${location === '/' ? 'border-primary text-foreground' : 'border-transparent text-muted-foreground hover:text-foreground hover:border-border'} border-b-2 inline-flex items-center px-1 pt-1 font-medium`}>
                 {t('common.compare')}
               </Link>
@@ -26,24 +30,66 @@ const Header = () => {
               </Link>
             </nav>
           </div>
-          <div className="flex items-center space-x-4">
-            <button 
-              type="button" 
-              className="app-button px-3 py-2 text-sm font-medium inline-flex items-center"
-              onClick={() => {
-                document.getElementById('help-section')?.scrollIntoView({ behavior: 'smooth' });
-              }}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
-              </svg>
-              {t('common.help')}
-            </button>
+          
+          {/* Desktop Controls - Hidden on mobile */}
+          <div className="hidden md:flex items-center space-x-4">
             <ThemeSwitcher />
             <LanguageSwitcher />
           </div>
+
+          {/* Mobile menu button */}
+          <div className="flex md:hidden items-center">
+            <button
+              type="button"
+              className="text-foreground p-2 rounded-md"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-menu"
+            >
+              <span className="sr-only">{mobileMenuOpen ? 'Close menu' : 'Open menu'}</span>
+              {mobileMenuOpen ? (
+                <X className="h-6 w-6" aria-hidden="true" />
+              ) : (
+                <Menu className="h-6 w-6" aria-hidden="true" />
+              )}
+            </button>
+          </div>
         </div>
       </div>
+
+      {/* Mobile menu, show/hide based on menu state */}
+      {mobileMenuOpen && (
+        <div className="md:hidden" id="mobile-menu">
+          <div className="px-2 pt-2 pb-3 space-y-1 border-t border-border">
+            <Link
+              href="/"
+              className={`${
+                location === '/' ? 'bg-primary/10 text-primary' : 'text-foreground hover:bg-accent'
+              } block px-3 py-2 rounded-md text-base font-medium`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {t('common.compare')}
+            </Link>
+            <Link
+              href="/about"
+              className={`${
+                location === '/about' ? 'bg-primary/10 text-primary' : 'text-foreground hover:bg-accent'
+              } block px-3 py-2 rounded-md text-base font-medium`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {t('common.about')}
+            </Link>
+            <div className="flex items-center justify-between px-3 py-2">
+              <span className="text-muted-foreground">{t('common.theme')}</span>
+              <ThemeSwitcher />
+            </div>
+            <div className="flex items-center justify-between px-3 py-2">
+              <span className="text-muted-foreground">{t('common.language')}</span>
+              <LanguageSwitcher />
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 };

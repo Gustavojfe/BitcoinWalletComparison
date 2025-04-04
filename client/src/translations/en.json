@@ -81,7 +81,9 @@
     "selectDifferentWallets": "Please select two different wallets to compare.",
     "return": "Return to Comparison Page",
     "selectWallet": "Select a wallet",
-    "toggleTheme": "Toggle theme"
+    "toggleTheme": "Toggle theme",
+    "theme": "Theme",
+    "language": "Language"
   },
   "theme": {
     "light": "Light",
