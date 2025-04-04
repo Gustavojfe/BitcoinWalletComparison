@@ -67,14 +67,16 @@ const PlatformIcons: React.FC<PlatformIconsProps> = ({ value, customText }) => {
           return (
             <FeatureTooltip key={index} title={platformName} value={platform}>
               <span className="inline-flex items-center justify-center h-6 w-6 rounded-full">
-                {/* Chrome logo */}
+                {/* Modern Chrome logo */}
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 100 100">
-                  <circle cx="50" cy="50" r="38" fill="#f1f1f1" />
-                  <circle cx="50" cy="50" r="30" fill="#4285f4" />
-                  <circle cx="50" cy="50" r="15" fill="#f1f1f1" />
-                  <path d="M85,50H50" stroke="#ea4335" strokeWidth="15" strokeLinecap="round" />
-                  <path d="M50,85L26,50" stroke="#34a853" strokeWidth="15" strokeLinecap="round" />
-                  <path d="M26,50L61,15" stroke="#fbbc05" strokeWidth="15" strokeLinecap="round" />
+                  <circle cx="50" cy="50" r="50" fill="#ffffff" />
+                  <circle cx="50" cy="50" r="20" fill="#4285F4" />
+                  <path d="M50,50 L50,15 A35,35 0 0,1 85,50 Z" fill="#EA4335" />
+                  <path d="M50,50 L85,50 A35,35 0 0,1 50,85 Z" fill="#34A853" />
+                  <path d="M50,50 L50,85 A35,35 0 0,1 15,50 Z" fill="#FBBC05" />
+                  <path d="M50,50 L15,50 A35,35 0 0,1 50,15 Z" fill="#EA4335" />
+                  <circle cx="50" cy="50" r="16" fill="white" />
+                  <circle cx="50" cy="50" r="14" fill="#4285F4" />
                 </svg>
               </span>
             </FeatureTooltip>
