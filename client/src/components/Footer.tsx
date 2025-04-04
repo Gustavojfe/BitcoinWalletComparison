@@ -1,9 +1,19 @@
 import { useTheme } from "@/hooks/use-theme";
 import { useLanguage } from "@/hooks/use-language";
+import { useState, useEffect } from "react";
 
 const Footer = () => {
   const { theme } = useTheme();
   const { t, language } = useLanguage();
+  const [logoSrc, setLogoSrc] = useState("");
+  
+  // Update logo source when theme changes
+  useEffect(() => {
+    const logoPath = theme === "dark" 
+      ? "/images/swapido-logo-light.png" 
+      : "/images/swapido-logo-dark.png";
+    setLogoSrc(logoPath);
+  }, [theme]);
 
   // Create the appropriate Swapido URL based on the current language
   const swapipoUrl =
@@ -24,30 +34,14 @@ const Footer = () => {
                 <span className="font-bold text-2xl mr-2">
                   {t("footer.sponsoredBy")}
                 </span>
-                {/* Inline SVG logo */}
-                <svg 
-                  width="32" 
-                  height="32" 
-                  viewBox="0 0 32 32" 
-                  className="mx-2" 
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect 
-                    width="32" 
-                    height="32" 
-                    rx="6" 
-                    fill={theme === "dark" ? "#333" : "#f0f0f0"} 
+                {/* Logo image */}
+                {logoSrc && (
+                  <img 
+                    src={logoSrc} 
+                    alt="Swapido Logo" 
+                    className="h-8 mx-2" 
                   />
-                  <path 
-                    d="M6 10L12 6L18 10L26 6V22L20 26L14 22L6 26V10Z" 
-                    fill={theme === "dark" ? "#FFD700" : "#FFB000"} 
-                    stroke={theme === "dark" ? "#FFD700" : "#FFB000"} 
-                    strokeWidth="1.5" 
-                  />
-                </svg>
-                <span className={`font-bold text-2xl text-primary`}>
-                  Swapido
-                </span>
+                )}
               </a>
             </div>
             <p className="text-sm text-muted-foreground text-center max-w-2xl">
