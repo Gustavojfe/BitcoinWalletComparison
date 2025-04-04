@@ -124,14 +124,20 @@ const WalletComparisonResult = () => {
         styleClass = rawValueStyle;
       }
       // 3. Special categories
-      else if (['lnd', 'ldk', 'core_lightning', 'eclair'].includes(value)) {
-        styleClass = t('featureStatus.styles.implementation', undefined, "");
-      } 
+      else if (['send_only', 'api', 'lnd', 'cln', 'core_lightning'].includes(value)) {
+        // No special style for these values
+        styleClass = "";
+      }
       else if (['custodial', 'ln_node', 'liquid_swap', 'on_chain_swap', 'remote_node'].includes(value)) {
         styleClass = t('featureStatus.styles.walletType', undefined, "");
       } 
       else if (value === 'custom' && customText) {
-        styleClass = t('featureStatus.styles.custom', undefined, "");
+        // Only apply custom styling when customText isn't in our unstyled list
+        if (!['api', 'send only', 'lnd', 'cln'].includes(customText.toLowerCase())) {
+          styleClass = t('featureStatus.styles.custom', undefined, "");
+        } else {
+          styleClass = "";
+        }
       } 
       // 4. Default style
       else {
@@ -140,8 +146,8 @@ const WalletComparisonResult = () => {
     }
     
     // Extract background and text colors from the style
-    const bgClass = styleClass.split(' ')[0] || 'bg-muted';
-    const textClass = styleClass.split(' ')[1] || 'text-muted-foreground';
+    const bgClass = styleClass ? (styleClass.split(' ')[0] || 'bg-muted') : '';
+    const textClass = styleClass ? (styleClass.split(' ')[1] || 'text-muted-foreground') : 'text-foreground';
     
     // Render icon-based values (yes, no, partial, optional)
     if (useIcon) {
@@ -188,14 +194,20 @@ const WalletComparisonResult = () => {
       }
     }
     
-    // For all other values, render as a text pill
+    // For all other values, render as a text pill or plain text
     return (
       <FeatureTooltip featureName={featureName} value={value} customText={customText} wallet={wallet}>
-        <span className={`inline-flex items-center justify-center h-6 px-2 rounded-md ${bgClass}`}>
+        {bgClass ? (
+          <span className={`inline-flex items-center justify-center h-6 px-2 rounded-md ${bgClass}`}>
+            <span className={`text-xs font-medium ${textClass}`}>
+              {label}
+            </span>
+          </span>
+        ) : (
           <span className={`text-xs font-medium ${textClass}`}>
             {label}
           </span>
-        </span>
+        )}
       </FeatureTooltip>
     );
   };

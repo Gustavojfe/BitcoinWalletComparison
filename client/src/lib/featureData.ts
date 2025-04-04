@@ -88,9 +88,9 @@ export const getFeatureValueClasses = (value: FeatureValue): {
     return { bgColor: 'bg-red-100', textColor: 'text-red-600' };
   }
   
-  // Implementations (neutral blue)
-  if (['lnd', 'ldk', 'core_lightning', 'eclair'].includes(value)) {
-    return { bgColor: 'bg-blue-100', textColor: 'text-blue-600' };
+  // Values we want displayed as regular text (no special styling)
+  if (['send_only', 'api', 'lnd', 'cln', 'core_lightning'].includes(value)) {
+    return { bgColor: '', textColor: 'text-foreground' };
   }
   
   // Wallet types (purple)
@@ -99,7 +99,7 @@ export const getFeatureValueClasses = (value: FeatureValue): {
   }
   
   // Partial values (amber/yellow)
-  if (['partial', 'custom', 'send_only', 'receive_only', 'mandatory'].includes(value)) {
+  if (['partial', 'custom', 'receive_only', 'mandatory'].includes(value)) {
     return { bgColor: 'bg-amber-100', textColor: 'text-amber-700' };
   }
   
