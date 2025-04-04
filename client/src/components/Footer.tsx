@@ -1,19 +1,9 @@
 import { useTheme } from "@/hooks/use-theme";
 import { useLanguage } from "@/hooks/use-language";
-import { useState, useEffect } from "react";
 
 const Footer = () => {
   const { theme } = useTheme();
   const { t, language } = useLanguage();
-  const [logoSrc, setLogoSrc] = useState("");
-  
-  // Update logo source when theme changes
-  useEffect(() => {
-    const logoPath = theme === "dark" 
-      ? "/images/swapido-logo-light.png" 
-      : "/images/swapido-logo-dark.png";
-    setLogoSrc(logoPath);
-  }, [theme]);
 
   // Create the appropriate Swapido URL based on the current language
   const swapipoUrl =
@@ -34,14 +24,10 @@ const Footer = () => {
                 <span className="font-bold text-2xl mr-2">
                   {t("footer.sponsoredBy")}
                 </span>
-                {/* Logo image */}
-                {logoSrc && (
-                  <img 
-                    src={logoSrc} 
-                    alt="Swapido Logo" 
-                    className="h-8 mx-2" 
-                  />
-                )}
+                {/* Colorful text-based logo */}
+                <span className={`font-bold text-2xl text-primary`}>
+                  Swapido
+                </span>
               </a>
             </div>
             <p className="text-sm text-muted-foreground text-center max-w-2xl">
