@@ -8,7 +8,7 @@
   "features": {
     "platform": {
       "value": "custom",
-      "customText": "Whatsapp"
+      "customText": "whatsapp"
     },
     "openSource": "no",
     "availability": {
@@ -22,7 +22,7 @@
     "transactionFees": "no",
     "backupOptions": {
       "value": "custom",
-      "customText": "Whatsapp Account"
+      "customText": "WhatsApp Account"
     },
     "bolt11Support": "yes",
     "bolt12Support": "no",
