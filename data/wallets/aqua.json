@@ -69,7 +69,19 @@
     "developerApis": "no",
     "noKyc": "yes",
     "nodeType": "API",
-    "transactionLimits": "no"
+    "transactionLimits": "no",
+    "lspIntegration": "does_not_apply",
+    "channelManagement": "does_not_apply",
+    "zeroConfChannels": "does_not_apply",
+    "clientSideRouting": "does_not_apply",
+    "watchtowerIntegration": "does_not_apply",
+    "mppSupport": "does_not_apply",
+    "maxRoutingFee": "does_not_apply",
+    "purchaseInbound": "does_not_apply",
+    "splicingSupport": "does_not_apply",
+    "routingNode": "does_not_apply",
+    "scidAlias": "does_not_apply",
+    "simpleTaprootChannels": "does_not_apply"
   },
   "availability": "Standard",
   "category": "Liquid / On-Chain Wallet with LN Swaps (Boltz)"
