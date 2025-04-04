@@ -25,7 +25,7 @@ const Footer = () => {
                   {t("footer.sponsoredBy")}
                 </span>
                 <img
-                  src="/public/images/swapido-logo-dark.png" // Replace with your logo's path
+                  src="/images/swapido-logo-dark.png" 
                   alt="Swapido Logo"
                   className="h-6 w-auto mr-2" // h-6 matches text-2xl height (24px)
                 />
