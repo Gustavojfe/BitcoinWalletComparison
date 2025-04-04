@@ -124,7 +124,7 @@ const WalletComparisonResult = () => {
         styleClass = rawValueStyle;
       }
       // 3. Special categories
-      else if (['send_only', 'api', 'lnd', 'cln', 'core_lightning'].includes(value)) {
+      else if (['send_only', 'send', 'api', 'lnd', 'cln', 'core_lightning'].includes(value)) {
         // No special style for these values
         styleClass = "";
       }
@@ -134,7 +134,7 @@ const WalletComparisonResult = () => {
       else if (value === 'custom' && customText) {
         // Check if customText is one of our unstyled values that should have no background
         const lowercaseCustomText = customText.toLowerCase();
-        const noStyleValues = ['api', 'send only', 'lnd', 'cln', 'core lightning'];
+        const noStyleValues = ['api', 'send only', 'send', 'lnd', 'cln', 'core lightning'];
         
         // Exact match for whole string
         if (noStyleValues.includes(lowercaseCustomText)) {
