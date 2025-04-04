@@ -97,7 +97,10 @@
     "testnetSupport": "no",
     "developerApis": "no",
     "noKyc": "yes",
-    "nodeType": "API",
+    "nodeType": {
+      "value": "custom",
+      "customText": "API"
+    },
     "transactionLimits": "no",
     "mppSupport": "no"
   },

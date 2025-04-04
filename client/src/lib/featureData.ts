@@ -89,7 +89,7 @@ export const getFeatureValueClasses = (value: FeatureValue): {
   }
   
   // Values we want displayed as regular text (no special styling)
-  if (['send_only', 'api', 'lnd', 'cln', 'core_lightning'].includes(value)) {
+  if (['send_only', 'api', 'lnd', 'cln', 'core_lightning'].includes(value.toLowerCase())) {
     return { bgColor: '', textColor: 'text-foreground' };
   }
   

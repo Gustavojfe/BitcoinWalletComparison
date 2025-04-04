@@ -132,11 +132,21 @@ const WalletComparisonResult = () => {
         styleClass = t('featureStatus.styles.walletType', undefined, "");
       } 
       else if (value === 'custom' && customText) {
-        // Only apply custom styling when customText isn't in our unstyled list
-        if (!['api', 'send only', 'lnd', 'cln'].includes(customText.toLowerCase())) {
-          styleClass = t('featureStatus.styles.custom', undefined, "");
-        } else {
+        // Check if customText is one of our unstyled values that should have no background
+        const lowercaseCustomText = customText.toLowerCase();
+        const noStyleValues = ['api', 'send only', 'lnd', 'cln', 'core lightning'];
+        
+        // Exact match for whole string
+        if (noStyleValues.includes(lowercaseCustomText)) {
           styleClass = "";
+        }
+        // Check if customText contains any of our unstyled values
+        else if (noStyleValues.some(val => lowercaseCustomText === val || lowercaseCustomText.startsWith(val + ' ') || lowercaseCustomText.includes(' ' + val))) {
+          styleClass = "";
+        }
+        // Otherwise use custom style
+        else {
+          styleClass = t('featureStatus.styles.custom', undefined, "");
         }
       } 
       // 4. Default style

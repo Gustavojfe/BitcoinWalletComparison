@@ -56,7 +56,10 @@
       "customText": "Boltz Swap"
     },
     "otherNetworks": "no",
-    "implementation": "LND",
+    "implementation": {
+      "value": "custom",
+      "customText": "LND"
+    },
     "lspIntegration": {
       "value": "custom",
       "customText": "many LSPs"
@@ -81,7 +84,10 @@
       "customText": "NWC / API"
     },
     "noKyc": "yes",
-    "nodeType": "API",
+    "nodeType": {
+      "value": "custom",
+      "customText": "API"
+    },
     "transactionLimits": "no",
     "maxRoutingFee": "no",
     "blindRouting": "no",

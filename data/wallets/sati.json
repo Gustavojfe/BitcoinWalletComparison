@@ -51,7 +51,10 @@
     "developerApis": "no",
     "noKyc": "yes",
     "peerBackupOptions": "does_not_apply",
-    "nodeType": "API",
+    "nodeType": {
+      "value": "custom",
+      "customText": "API"
+    },
     "submarineSwaps": "does_not_apply",
     "implementation": "does_not_apply",
     "lspIntegration": "does_not_apply",
