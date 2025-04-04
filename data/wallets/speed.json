@@ -62,10 +62,7 @@
       "customText": "KYC in the USA"
     },
     "peerBackupOptions": "does_not_apply",
-    "nodeType": {
-      "value": "custom",
-      "customText": "API"
-    },
+    "nodeType": "API",
     "submarineSwaps": "does_not_apply",
     "implementation": "does_not_apply",
     "lspIntegration": "does_not_apply",

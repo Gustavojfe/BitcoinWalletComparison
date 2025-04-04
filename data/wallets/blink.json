@@ -64,15 +64,9 @@
       "customText": "KYC over 1000$/day"
     },
     "peerBackupOptions": "does_not_apply",
-    "nodeType": {
-      "value": "custom",
-      "customText": "API"
-    },
+    "nodeType": "API",
     "submarineSwaps": "does_not_apply",
-    "implementation": {
-      "value": "custom",
-      "customText": "LND"
-    },
+    "implementation": "LND",
     "lspIntegration": "does_not_apply",
     "channelManagement": "does_not_apply",
     "zeroConfChannels": "does_not_apply",

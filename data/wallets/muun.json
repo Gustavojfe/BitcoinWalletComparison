@@ -65,10 +65,7 @@
     "testnetSupport": "no",
     "developerApis": "no",
     "noKyc": "yes",
-    "nodeType": {
-      "value": "custom",
-      "customText": "API"
-    },
+    "nodeType": "API",
     "transactionLimits": "no",
     "lspIntegration": "does_not_apply",
     "channelManagement": "does_not_apply",

@@ -50,10 +50,7 @@
       "value": "custom",
       "customText": "Liquid, Ecash"
     },
-    "implementation": {
-      "value": "custom",
-      "customText": "CLN"
-    },
+    "implementation": "CLN",
     "nostrWalletConnect": "yes",
     "blindRouting": {
       "value": "custom",
@@ -70,10 +67,7 @@
     },
     "noKyc": "yes",
     "peerBackupOptions": "does_not_apply",
-    "nodeType": {
-      "value": "custom",
-      "customText": "API"
-    },
+    "nodeType": "API",
     "submarineSwaps": "does_not_apply",
     "lspIntegration": "does_not_apply",
     "channelManagement": "does_not_apply",

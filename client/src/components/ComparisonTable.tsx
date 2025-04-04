@@ -158,30 +158,14 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
         styleClass = rawValueStyle;
       }
       // 3. Special categories
-      else if (['send_only', 'api', 'lnd', 'cln', 'core_lightning'].includes(value)) {
-        // No special style for these values
-        styleClass = "";
-      }
+      else if (['lnd', 'ldk', 'core_lightning', 'eclair'].includes(value)) {
+        styleClass = t('featureStatus.styles.implementation', undefined, "");
+      } 
       else if (['custodial', 'ln_node', 'liquid_swap', 'on_chain_swap', 'remote_node'].includes(value)) {
         styleClass = t('featureStatus.styles.walletType', undefined, "");
       } 
       else if (value === 'custom' && customText) {
-        // Check if customText is one of our unstyled values that should have no background
-        const lowercaseCustomText = customText.toLowerCase();
-        const noStyleValues = ['api', 'send only', 'lnd', 'cln', 'core lightning'];
-        
-        // Exact match for whole string
-        if (noStyleValues.includes(lowercaseCustomText)) {
-          styleClass = "";
-        }
-        // Check if customText contains any of our unstyled values
-        else if (noStyleValues.some(val => lowercaseCustomText === val || lowercaseCustomText.startsWith(val + ' ') || lowercaseCustomText.includes(' ' + val))) {
-          styleClass = "";
-        }
-        // Otherwise use custom style
-        else {
-          styleClass = t('featureStatus.styles.custom', undefined, "");
-        }
+        styleClass = t('featureStatus.styles.custom', undefined, "");
       } 
       // 4. Default style
       else {
@@ -190,8 +174,8 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
     }
     
     // Extract background and text colors from the style
-    const bgClass = styleClass ? (styleClass.split(' ')[0] || 'bg-muted') : '';
-    const textClass = styleClass ? (styleClass.split(' ')[1] || 'text-muted-foreground') : 'text-foreground';
+    const bgClass = styleClass.split(' ')[0] || 'bg-muted';
+    const textClass = styleClass.split(' ')[1] || 'text-muted-foreground';
     
     // Render icon-based values (yes, no, partial, optional)
     if (useIcon) {
@@ -228,20 +212,14 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
       }
     }
     
-    // For all other values, render as a text pill or plain text
+    // For all other values, render as a text pill
     return (
       <FeatureTooltip featureName={featureName} value={value} customText={customText} wallet={wallet}>
-        {bgClass ? (
-          <span className={`inline-flex items-center justify-center h-6 px-2 rounded-md ${bgClass}`}>
-            <span className={`text-xs font-medium ${textClass}`}>
-              {label}
-            </span>
-          </span>
-        ) : (
+        <span className={`inline-flex items-center justify-center h-6 px-2 rounded-md ${bgClass}`}>
           <span className={`text-xs font-medium ${textClass}`}>
             {label}
           </span>
-        )}
+        </span>
       </FeatureTooltip>
     );
   };
