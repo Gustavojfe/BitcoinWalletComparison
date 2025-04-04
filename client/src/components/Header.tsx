@@ -1,14 +1,18 @@
 import { Link, useLocation } from 'wouter';
 import { useLanguage } from '@/hooks/use-language';
+import { useTheme } from '@/hooks/use-theme';
 import LanguageSwitcher from './LanguageSwitcher';
 import ThemeSwitcher from './ThemeSwitcher';
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Moon, Sun, Monitor, Globe } from 'lucide-react';
 
 const Header = () => {
   const [location] = useLocation();
-  const { t } = useLanguage();
+  const { t, language, setLanguage, availableLanguages, languageNames } = useLanguage();
+  const { theme, setTheme } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showThemeOptions, setShowThemeOptions] = useState(false);
+  const [showLanguageOptions, setShowLanguageOptions] = useState(false);
   
   return (
     <header className="bg-card shadow-sm sticky top-0 z-50">
@@ -79,13 +83,102 @@ const Header = () => {
             >
               {t('common.about')}
             </Link>
-            <div className="flex items-center justify-between px-3 py-2">
-              <span className="text-muted-foreground">{t('common.theme')}</span>
-              <ThemeSwitcher />
+            {/* Theme Section */}
+            <div className="border-t border-border mt-2 pt-2">
+              <div 
+                className="flex items-center justify-between p-3 cursor-pointer hover:bg-accent rounded-md"
+                onClick={() => setShowThemeOptions(!showThemeOptions)}
+              >
+                <div className="flex items-center">
+                  {theme === 'dark' ? (
+                    <Moon className="h-5 w-5 mr-3" />
+                  ) : theme === 'light' ? (
+                    <Sun className="h-5 w-5 mr-3" />
+                  ) : (
+                    <Monitor className="h-5 w-5 mr-3" />
+                  )}
+                  <span className="font-medium">{t('common.theme')}</span>
+                </div>
+                <div>
+                  {showThemeOptions ? 
+                    <X className="h-4 w-4" /> : 
+                    <span className="text-sm text-muted-foreground">{t(`theme.${theme}`)}</span>
+                  }
+                </div>
+              </div>
+
+              {/* Theme Options */}
+              {showThemeOptions && (
+                <div className="mt-1 ml-4 space-y-1">
+                  <div 
+                    className={`flex items-center p-2 rounded-md cursor-pointer ${theme === 'light' ? 'bg-primary/10 text-primary' : 'hover:bg-accent'}`}
+                    onClick={() => {
+                      setTheme('light');
+                      setShowThemeOptions(false);
+                    }}
+                  >
+                    <Sun className="h-4 w-4 mr-2" />
+                    <span>{t('theme.light')}</span>
+                  </div>
+                  <div 
+                    className={`flex items-center p-2 rounded-md cursor-pointer ${theme === 'dark' ? 'bg-primary/10 text-primary' : 'hover:bg-accent'}`}
+                    onClick={() => {
+                      setTheme('dark');
+                      setShowThemeOptions(false);
+                    }}
+                  >
+                    <Moon className="h-4 w-4 mr-2" />
+                    <span>{t('theme.dark')}</span>
+                  </div>
+                  <div 
+                    className={`flex items-center p-2 rounded-md cursor-pointer ${theme === 'system' ? 'bg-primary/10 text-primary' : 'hover:bg-accent'}`}
+                    onClick={() => {
+                      setTheme('system');
+                      setShowThemeOptions(false);
+                    }}
+                  >
+                    <Monitor className="h-4 w-4 mr-2" />
+                    <span>{t('theme.system')}</span>
+                  </div>
+                </div>
+              )}
             </div>
-            <div className="flex items-center justify-between px-3 py-2">
-              <span className="text-muted-foreground">{t('common.language')}</span>
-              <LanguageSwitcher />
+
+            {/* Language Section */}
+            <div className="mt-2">
+              <div 
+                className="flex items-center justify-between p-3 cursor-pointer hover:bg-accent rounded-md"
+                onClick={() => setShowLanguageOptions(!showLanguageOptions)}
+              >
+                <div className="flex items-center">
+                  <Globe className="h-5 w-5 mr-3" />
+                  <span className="font-medium">{t('common.language')}</span>
+                </div>
+                <div>
+                  {showLanguageOptions ? 
+                    <X className="h-4 w-4" /> : 
+                    <span className="text-sm text-muted-foreground">{languageNames[language]}</span>
+                  }
+                </div>
+              </div>
+
+              {/* Language Options */}
+              {showLanguageOptions && (
+                <div className="mt-1 ml-4 space-y-1">
+                  {availableLanguages.map((lang) => (
+                    <div 
+                      key={lang}
+                      className={`flex items-center p-2 rounded-md cursor-pointer ${language === lang ? 'bg-primary/10 text-primary' : 'hover:bg-accent'}`}
+                      onClick={() => {
+                        setLanguage(lang);
+                        setShowLanguageOptions(false);
+                      }}
+                    >
+                      <span>{languageNames[lang]}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>
