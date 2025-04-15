@@ -181,8 +181,8 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
     if (value === 'yes') {
       return (
         <FeatureTooltip featureName={featureName} value={value} customText={customText} wallet={wallet}>
-          <span className="inline-flex items-center justify-center h-7 w-7 rounded-full bg-primary/30 border border-primary/50 shadow-sm">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
+          <span className="inline-flex items-center justify-center md:h-7 md:w-7 h-6 w-6 rounded-full bg-primary/30 border border-primary/50 shadow-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" className="md:h-5 md:w-5 h-4 w-4 text-primary" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
             </svg>
           </span>
@@ -191,8 +191,8 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
     } else if (value === 'no' || value === 'not_possible') {
       return (
         <FeatureTooltip featureName={featureName} value={value} customText={customText} wallet={wallet}>
-          <span className="inline-flex items-center justify-center h-7 w-7 rounded-full bg-destructive/20 border border-destructive/50 shadow-sm">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-destructive" viewBox="0 0 20 20" fill="currentColor">
+          <span className="inline-flex items-center justify-center md:h-7 md:w-7 h-6 w-6 rounded-full bg-destructive/20 border border-destructive/50 shadow-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" className="md:h-5 md:w-5 h-4 w-4 text-destructive" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
             </svg>
           </span>
@@ -201,8 +201,8 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
     } else if (value === 'does_not_apply') {
       return (
         <FeatureTooltip featureName={featureName} value={value} customText={customText} wallet={wallet}>
-          <span className="inline-flex items-center justify-center h-6 px-3 py-1 rounded-full bg-muted border border-border shadow-sm">
-            <span className="text-xs font-semibold text-foreground/70">
+          <span className="inline-flex items-center justify-center h-5 md:h-6 px-2 md:px-3 py-0.5 md:py-1 rounded-full bg-muted border border-border shadow-sm">
+            <span className="text-[10px] md:text-xs font-semibold text-foreground/70">
               N/A
             </span>
           </span>
@@ -213,8 +213,8 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
     // For all other values, render as plain text with a subtle background to improve visibility
     return (
       <FeatureTooltip featureName={featureName} value={value} customText={customText} wallet={wallet}>
-        <span className="inline-flex items-center justify-center px-2 py-1 rounded-md bg-muted/40 border border-border/50">
-          <span className="text-xs font-medium text-foreground">
+        <span className="inline-flex items-center justify-center px-1.5 md:px-2 py-0.5 md:py-1 rounded-md bg-muted/40 border border-border/50">
+          <span className="text-[10px] md:text-xs font-medium text-foreground truncate max-w-[70px] md:max-w-full">
             {label}
           </span>
         </span>
@@ -244,14 +244,14 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
         <table className="min-w-full divide-y divide-border">
           <thead className="bg-muted sticky top-0 z-20">
             <tr>
-              <th scope="col" className="sticky left-0 top-0 z-30 bg-muted px-6 py-3 text-left text-sm font-bold text-foreground tracking-wider min-w-[200px]">
+              <th scope="col" className="sticky left-0 top-0 z-30 bg-muted md:px-6 px-3 py-2 md:py-3 text-left text-xs md:text-sm font-bold text-foreground tracking-wider md:min-w-[200px] min-w-[120px]">
                 {t('common.wallets')}
               </th>
               {visibleFeatures.map((feature) => (
                 <th 
                   key={feature.id} 
                   scope="col" 
-                  className="sticky top-0 z-20 bg-muted px-6 py-3 text-center text-sm font-semibold text-foreground tracking-wider min-w-[140px] group"
+                  className="sticky top-0 z-20 bg-muted md:px-6 px-2 py-2 md:py-3 text-center text-xs md:text-sm font-semibold text-foreground tracking-wider md:min-w-[140px] min-w-[80px] group"
                 >
                       <div className="flex items-center justify-center space-x-1">
                         {(() => {
@@ -268,7 +268,7 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
                         <Button
                           variant="ghost"
                           size="icon"
-                          className="h-5 w-5 opacity-0 group-hover:opacity-100 transition-opacity ml-1"
+                          className="h-5 w-5 opacity-0 group-hover:opacity-100 transition-opacity ml-1 hidden md:inline-flex"
                           onClick={() => toggleFeatureVisibility(feature.id)}
                           title={`${t('common.hide')} ${translateFeature(feature).name}`}
                         >
@@ -282,8 +282,8 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
               <tbody className="bg-card divide-y divide-border">
                 {sortedWallets.map((wallet) => (
                   <tr key={wallet.id} className="hover:bg-accent group">
-                    <td className="sticky left-0 z-10 bg-card px-6 py-4 whitespace-nowrap text-sm group-hover:bg-accent">
-                      <div className="flex items-center space-x-2">
+                    <td className="sticky left-0 z-10 bg-card md:px-6 px-3 py-2 md:py-4 whitespace-nowrap text-xs md:text-sm group-hover:bg-accent">
+                      <div className="flex items-center md:space-x-2 space-x-1">
                         {(() => {
                           const translatedWallet = translateWallet(wallet);
                           return (
@@ -295,7 +295,7 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
                                 href={wallet.website} 
                                 target="_blank" 
                                 rel="noopener noreferrer" 
-                                className="text-primary hover:text-primary/80 font-semibold text-base transition-colors"
+                                className="text-primary hover:text-primary/80 font-semibold md:text-base text-sm transition-colors"
                               >
                                 {translatedWallet.name}
                               </a>
@@ -305,7 +305,7 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
                         <Button
                           variant="ghost"
                           size="icon"
-                          className="h-5 w-5 opacity-0 group-hover:opacity-100 transition-opacity"
+                          className="h-5 w-5 opacity-0 group-hover:opacity-100 transition-opacity hidden md:inline-flex"
                           onClick={() => toggleWalletVisibility(wallet.id)}
                           title={`${t('common.hide')} ${translateWallet(wallet).name}`}
                         >
@@ -319,7 +319,7 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
                       );
                       
                       return (
-                        <td key={`${wallet.id}-${feature.id}`} className="px-6 py-4 whitespace-nowrap text-sm text-center">
+                        <td key={`${wallet.id}-${feature.id}`} className="md:px-6 px-2 py-2 md:py-4 whitespace-nowrap text-xs md:text-sm text-center">
                           {walletFeature 
                             ? renderFeatureStatus(walletFeature.value, walletFeature.customText, feature.name, wallet) 
                             : renderFeatureStatus('unknown')}
