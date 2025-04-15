@@ -181,7 +181,7 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
     if (value === 'yes') {
       return (
         <FeatureTooltip featureName={featureName} value={value} customText={customText} wallet={wallet}>
-          <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-primary/20">
+          <span className="inline-flex items-center justify-center h-7 w-7 rounded-full bg-primary/30 border border-primary/50 shadow-sm">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
             </svg>
@@ -191,7 +191,7 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
     } else if (value === 'no' || value === 'not_possible') {
       return (
         <FeatureTooltip featureName={featureName} value={value} customText={customText} wallet={wallet}>
-          <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-destructive/20">
+          <span className="inline-flex items-center justify-center h-7 w-7 rounded-full bg-destructive/20 border border-destructive/50 shadow-sm">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-destructive" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
             </svg>
@@ -201,8 +201,8 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
     } else if (value === 'does_not_apply') {
       return (
         <FeatureTooltip featureName={featureName} value={value} customText={customText} wallet={wallet}>
-          <span className="inline-flex items-center justify-center h-6 px-2 rounded-md bg-muted">
-            <span className="text-xs font-medium text-muted-foreground">
+          <span className="inline-flex items-center justify-center h-6 px-3 py-1 rounded-full bg-muted border border-border shadow-sm">
+            <span className="text-xs font-semibold text-foreground/70">
               N/A
             </span>
           </span>
@@ -210,10 +210,10 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
       );
     }
     
-    // For all other values, render as plain text without background color
+    // For all other values, render as plain text with a subtle background to improve visibility
     return (
       <FeatureTooltip featureName={featureName} value={value} customText={customText} wallet={wallet}>
-        <span className="inline-flex items-center justify-center">
+        <span className="inline-flex items-center justify-center px-2 py-1 rounded-md bg-muted/40 border border-border/50">
           <span className="text-xs font-medium text-foreground">
             {label}
           </span>
@@ -282,7 +282,7 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
               <tbody className="bg-card divide-y divide-border">
                 {sortedWallets.map((wallet) => (
                   <tr key={wallet.id} className="hover:bg-accent group">
-                    <td className="sticky left-0 z-10 bg-card px-6 py-4 whitespace-nowrap text-sm font-medium text-foreground group-hover:bg-accent">
+                    <td className="sticky left-0 z-10 bg-card px-6 py-4 whitespace-nowrap text-sm group-hover:bg-accent">
                       <div className="flex items-center space-x-2">
                         {(() => {
                           const translatedWallet = translateWallet(wallet);
@@ -295,7 +295,7 @@ const ComparisonTable = ({ walletType, searchTerm }: ComparisonTableProps) => {
                                 href={wallet.website} 
                                 target="_blank" 
                                 rel="noopener noreferrer" 
-                                className="hover:text-primary"
+                                className="text-primary hover:text-primary/80 font-semibold text-base transition-colors"
                               >
                                 {translatedWallet.name}
                               </a>
