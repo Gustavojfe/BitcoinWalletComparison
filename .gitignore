@@ -9,3 +9,9 @@ vite.config.ts.*
 .env.local
 build/
 coverage/
+
+# Database files
+data/
+*.sqlite
+*.sqlite3
+*.db
