@@ -186,6 +186,19 @@
     "sponsoredBy": "Patrocinado por",
     "tagline": "Vende bitcoin y paga a cualquier cuenta bancaria o tarjeta de débito en México. Ahora disponible para clientes a nivel global. 🇲🇽 ⚡"
   },
+  "newsletter": {
+    "title": "Mantente Actualizado",
+    "description": "Suscríbete a nuestro boletín para recibir las últimas actualizaciones de carteras y noticias sobre Bitcoin.",
+    "placeholder": "Ingresa tu correo electrónico",
+    "subscribe": "Suscribirse",
+    "submitting": "Suscribiendo...",
+    "successTitle": "¡Gracias!",
+    "successMessage": "Te has suscrito exitosamente a nuestro boletín.",
+    "errorTitle": "Error",
+    "errorMessage": "No se pudo completar la suscripción. Por favor, intenta de nuevo más tarde.",
+    "invalidEmail": "Por favor, ingresa una dirección de correo electrónico válida.",
+    "privacyNotice": "Respetamos tu privacidad y nunca compartiremos tu información."
+  },
   "help": {
     "description": "Esta página de comparación te permite comparar las características de diferentes carteras Bitcoin de {type}.",
     "hoverTip": "Pasa el cursor sobre los nombres de las carteras o títulos de características para ver descripciones detalladas.",

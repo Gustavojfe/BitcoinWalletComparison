@@ -186,6 +186,19 @@
     "sponsoredBy": "Sponsored by",
     "tagline": "Sell bitcoin and pay any bank account or debit card in Mexico. Now available to customers globally."
   },
+  "newsletter": {
+    "title": "Stay Updated",
+    "description": "Subscribe to our newsletter for the latest wallet updates and Bitcoin news.",
+    "placeholder": "Enter your email",
+    "subscribe": "Subscribe",
+    "submitting": "Subscribing...",
+    "successTitle": "Thank You!",
+    "successMessage": "You've successfully subscribed to our newsletter.",
+    "errorTitle": "Error",
+    "errorMessage": "Failed to subscribe. Please try again later.",
+    "invalidEmail": "Please enter a valid email address.",
+    "privacyNotice": "We respect your privacy and will never share your information."
+  },
   "help": {
     "description": "This comparison page allows you to compare the features of different {type} Bitcoin wallets.",
     "hoverTip": "Hover over wallet names or feature titles to see detailed descriptions.",
