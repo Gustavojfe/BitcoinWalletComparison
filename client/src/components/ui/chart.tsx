@@ -74,27 +74,47 @@ const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {
     return null
   }
 
-  return (
-    <style
-      dangerouslySetInnerHTML={{
-        __html: Object.entries(THEMES)
-          .map(
-            ([theme, prefix]) => `
-${prefix} [data-chart=${id}] {
-${colorConfig
-  .map(([key, itemConfig]) => {
-    const color =
-      itemConfig.theme?.[theme as keyof typeof itemConfig.theme] ||
-      itemConfig.color
-    return color ? `  --color-${key}: ${color};` : null
+  // Generate CSS rules without using dangerouslySetInnerHTML
+  const cssRules: React.CSSProperties[] = []
+  
+  // For each theme (light/dark)
+  Object.entries(THEMES).forEach(([theme, prefix]) => {
+    // For each color config
+    colorConfig.forEach(([key, itemConfig]) => {
+      const color =
+        itemConfig.theme?.[theme as keyof typeof itemConfig.theme] ||
+        itemConfig.color
+      
+      if (color) {
+        const selector = `${prefix} [data-chart=${id}]`
+        const propName = `--color-${key}`
+        
+        // Add to our CSS rules
+        cssRules.push({
+          [selector]: {
+            [propName]: color
+          }
+        } as unknown as React.CSSProperties)
+      }
+    })
   })
-  .join("\n")}
-}
-`
-          )
-          .join("\n"),
-      }}
-    />
+  
+  // Apply CSS rules using React style elements
+  return (
+    <>
+      {cssRules.map((rule, index) => {
+        const selector = Object.keys(rule)[0]
+        const styles = rule[selector as keyof typeof rule] as Record<string, string>
+        
+        return (
+          <style key={index}>
+            {`${selector} { ${Object.entries(styles)
+              .map(([prop, value]) => `${prop}: ${value};`)
+              .join(' ')} }`}
+          </style>
+        )
+      })}
+    </>
   )
 }
 
