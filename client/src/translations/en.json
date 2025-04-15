@@ -91,7 +91,7 @@
     "system": "System"
   },
   "header": {
-    "title": "Bitcoin Wallet Comparison",
+    "title": "Sovereign Tools",
     "lightningTab": "Lightning",
     "onchainTab": "On-Chain",
     "hardwareTab": "Hardware",
@@ -173,7 +173,7 @@
     "wallet2": "Wallet 2"
   },
   "footer": {
-    "copyright": "© 2025 Swapido | Bitcoin Wallet Comparison. All rights reserved.",
+    "copyright": "© 2025 Swapido | Sovereign Tools. All rights reserved.",
     "terms": "Terms of Service",
     "privacy": "Privacy Policy",
     "community": "Community",
