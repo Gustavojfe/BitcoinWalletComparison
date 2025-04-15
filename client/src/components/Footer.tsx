@@ -60,7 +60,7 @@ const Footer = () => {
               </svg>
             </a>
             <a
-              href="https://github.com/Gustavojfe/BitcoinWalletComparison"
+              href="https://github.com/Gustavojfe/sovereigntools"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground"
