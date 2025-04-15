@@ -2,7 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { 
-  insertWalletSchema, insertFeatureSchema, insertWalletFeatureSchema, 
+  insertWalletSchema, insertFeatureSchema, insertWalletFeatureSchema, insertNewsletterSchema,
   type WalletType, walletTypes
 } from "@shared/schema";
 import { z } from "zod";

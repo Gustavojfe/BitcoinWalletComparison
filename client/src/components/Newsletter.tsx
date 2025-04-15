@@ -1,24 +1,22 @@
 import React, { useState } from 'react';
 import { useLanguage } from '@/hooks/use-language';
-import { useToast } from '@/hooks/use-toast';
 
 const Newsletter = () => {
   const { t } = useLanguage();
-  const { toast } = useToast();
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [subscriptionState, setSubscriptionState] = useState<'idle' | 'success' | 'error'>('idle');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
+    // Reset state
+    setSubscriptionState('idle');
+    
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      toast({
-        title: t('newsletter.errorTitle'),
-        description: t('newsletter.invalidEmail'),
-        variant: 'destructive',
-      });
+      setSubscriptionState('error');
       return;
     }
     
@@ -36,19 +34,16 @@ const Newsletter = () => {
       // if (!response.ok) throw new Error('Failed to subscribe');
       
       // Success case
-      toast({
-        title: t('newsletter.successTitle'),
-        description: t('newsletter.successMessage'),
-      });
+      setSubscriptionState('success');
       
-      // Clear the input
-      setEmail('');
+      // Wait 3 seconds before clearing the form
+      setTimeout(() => {
+        setEmail('');
+        setSubscriptionState('idle');
+      }, 3000);
+      
     } catch (error) {
-      toast({
-        title: t('newsletter.errorTitle'),
-        description: t('newsletter.errorMessage'),
-        variant: 'destructive',
-      });
+      setSubscriptionState('error');
     } finally {
       setIsLoading(false);
     }
@@ -73,11 +68,21 @@ const Newsletter = () => {
             />
             <button
               type="submit"
-              disabled={isLoading}
-              className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 whitespace-nowrap"
+              disabled={isLoading || subscriptionState === 'success'}
+              className={`inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 whitespace-nowrap ${
+                subscriptionState === 'error' 
+                  ? 'bg-destructive text-destructive-foreground hover:bg-destructive/90' 
+                  : subscriptionState === 'success' 
+                    ? 'bg-green-600 text-white hover:bg-green-700' 
+                    : 'bg-primary text-primary-foreground hover:bg-primary/90'
+              }`}
             >
               {isLoading ? (
                 <span className="animate-pulse">{t('newsletter.submitting')}</span>
+              ) : subscriptionState === 'success' ? (
+                t('newsletter.successTitle')
+              ) : subscriptionState === 'error' ? (
+                t('newsletter.invalidEmail')
               ) : (
                 t('newsletter.subscribe')
               )}
