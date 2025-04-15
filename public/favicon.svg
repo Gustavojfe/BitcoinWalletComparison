@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- Hammer -->
+  <g transform="translate(15, 15) scale(0.7)">
+    <path d="M30 60L10 80L20 90L40 70L30 60Z" fill="#5D4037"/>
+    <path d="M70 20L20 70L30 80L80 30L70 20Z" fill="#5D4037"/>
+    <path d="M80 30L90 20L80 10L70 20L80 30Z" fill="#3E2723"/>
+    <rect x="16" y="16" width="40" height="20" rx="5" ry="5" transform="rotate(45, 36, 26)" fill="#8D6E63"/>
+  </g>
+  
+  <!-- Wrench -->
+  <g transform="translate(35, 35) scale(0.7) rotate(15)">
+    <path d="M20 10C15 10 10 15 10 20C10 22.5 11 25 13 27L40 54C43 57 48 57 51 54C54 51 54 46 51 43L24 16C22 14 19.5 13 17 13C16 13 15 13.3 14 13.6C15.5 11.5 18 10 21 10C26 10 30 14 30 19L40 30C40 20 33 10 23 10C22 10 21 10 20 10Z" fill="#039BE5"/>
+    <path d="M13 27L40 54C43 57 48 57 51 54C54 51 54 46 51 43L40 32L24 16C22 14 19.5 13 17 13C15 13 13 14 11.5 15.5L20 24C20 24 13 27 13 27Z" fill="#0277BD"/>
+  </g>
+</svg>
