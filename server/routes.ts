@@ -1,6 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
+import { sqliteNewsletterStorage } from "./storage-sqlite";
 import { 
   insertWalletSchema, insertFeatureSchema, insertWalletFeatureSchema, insertNewsletterSchema,
   type WalletType, walletTypes
@@ -197,7 +198,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       });
       
       const { email } = schema.parse(req.body);
-      const result = await storage.subscribeToNewsletter(email);
+      const result = await sqliteNewsletterStorage.subscribeToNewsletter(email);
       res.status(201).json({ success: true, email: result.email });
     } catch (error) {
       if (error instanceof z.ZodError) {
@@ -216,7 +217,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   app.get("/api/newsletter", async (req, res) => {
     try {
-      const subscribers = await storage.getAllNewsletterSubscribers();
+      const subscribers = await sqliteNewsletterStorage.getAllNewsletterSubscribers();
       res.json(subscribers);
     } catch (error) {
       res.status(500).json({ message: "Failed to get newsletter subscribers" });
