@@ -30,7 +30,7 @@ const Footer = () => {
                 </span>
               </a>
             </div>
-            <p className="text-sm text-muted-foreground text-center max-w-2xl">
+            <p className="text-base md:text-lg text-foreground text-center max-w-3xl mx-auto p-3 border border-primary/20 rounded-md bg-primary/5 shadow-sm">
               {t("footer.tagline")}
             </p>
           </div>
