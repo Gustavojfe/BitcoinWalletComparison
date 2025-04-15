@@ -7,6 +7,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ComparisonPage from "@/pages/ComparisonPage";
 import AboutPage from "@/pages/AboutPage";
+import NewsletterAdmin from "@/pages/NewsletterAdmin";
 import WalletComparisonResult from "@/components/WalletComparisonResult";
 import { VisibilityProvider } from "@/hooks/use-visibility-context";
 import { LanguageProvider } from "@/hooks/use-language";
@@ -18,6 +19,7 @@ function Router() {
       <Route path="/" component={ComparisonPage} />
       <Route path="/about" component={AboutPage} />
       <Route path="/compare/:wallet1/:wallet2" component={WalletComparisonResult} />
+      <Route path="/admin/newsletter" component={NewsletterAdmin} />
       <Route component={NotFound} />
     </Switch>
   );
