@@ -23,15 +23,18 @@ const Newsletter = () => {
     setIsLoading(true);
     
     try {
-      // For now, we'll just show a success message
-      // In a real implementation, you would send this to a server
-      // const response = await fetch('/api/newsletter', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify({ email }),
-      // });
+      // Send the email to our API endpoint
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
       
-      // if (!response.ok) throw new Error('Failed to subscribe');
+      const data = await response.json();
+      
+      if (!response.ok || !data.success) {
+        throw new Error(data.message || 'Failed to subscribe');
+      }
       
       // Success case
       setSubscriptionState('success');
@@ -43,6 +46,7 @@ const Newsletter = () => {
       }, 3000);
       
     } catch (error) {
+      console.error('Newsletter subscription error:', error);
       setSubscriptionState('error');
     } finally {
       setIsLoading(false);

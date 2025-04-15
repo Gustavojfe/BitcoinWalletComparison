@@ -188,6 +188,41 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Newsletter endpoints
+  app.post("/api/newsletter", async (req, res) => {
+    try {
+      // Validate email format
+      const schema = z.object({
+        email: z.string().email()
+      });
+      
+      const { email } = schema.parse(req.body);
+      const result = await storage.subscribeToNewsletter(email);
+      res.status(201).json({ success: true, email: result.email });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        return res.status(400).json({ 
+          success: false, 
+          message: "Invalid email address", 
+          errors: error.errors 
+        });
+      }
+      res.status(500).json({ 
+        success: false, 
+        message: "Failed to subscribe to newsletter" 
+      });
+    }
+  });
+
+  app.get("/api/newsletter", async (req, res) => {
+    try {
+      const subscribers = await storage.getAllNewsletterSubscribers();
+      res.json(subscribers);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to get newsletter subscribers" });
+    }
+  });
+
   // Create HTTP server
   const httpServer = createServer(app);
   return httpServer;

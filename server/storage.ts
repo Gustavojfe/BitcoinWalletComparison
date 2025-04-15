@@ -1,4 +1,4 @@
-import { Feature, FeatureValue, InsertFeature, InsertUser, InsertWallet, InsertWalletFeature, User, Wallet, WalletFeature, WalletType, WalletWithFeatures } from '../shared/schema';
+import { Feature, FeatureValue, InsertFeature, InsertNewsletter, InsertUser, InsertWallet, InsertWalletFeature, Newsletter, User, Wallet, WalletFeature, WalletType, WalletWithFeatures } from '../shared/schema';
 
 export interface IStorage {
   // User operations
@@ -26,6 +26,11 @@ export interface IStorage {
   setWalletFeature(walletFeature: InsertWalletFeature): Promise<WalletFeature>;
   updateWalletFeature(id: number, walletFeature: Partial<InsertWalletFeature>): Promise<WalletFeature | undefined>;
   deleteWalletFeature(id: number): Promise<boolean>;
+  
+  // Newsletter operations
+  subscribeToNewsletter(email: string): Promise<Newsletter>;
+  getNewsletterSubscriberByEmail(email: string): Promise<Newsletter | undefined>;
+  getAllNewsletterSubscribers(): Promise<Newsletter[]>;
 }
 
 export class MemStorage implements IStorage {
@@ -33,22 +38,26 @@ export class MemStorage implements IStorage {
   private wallets: Map<number, Wallet>;
   private features: Map<number, Feature>;
   private walletFeatures: Map<number, WalletFeature>;
+  private newsletters: Map<number, Newsletter>;
 
   private userId: number;
   private walletId: number;
   private featureId: number;
   private walletFeatureId: number;
+  private newsletterId: number;
 
   constructor() {
     this.users = new Map<number, User>();
     this.wallets = new Map<number, Wallet>();
     this.features = new Map<number, Feature>();
     this.walletFeatures = new Map<number, WalletFeature>();
+    this.newsletters = new Map<number, Newsletter>();
 
     this.userId = 1;
     this.walletId = 1;
     this.featureId = 1;
     this.walletFeatureId = 1;
+    this.newsletterId = 1;
 
     // Initialize data
     this.initializeSampleData();
@@ -475,6 +484,40 @@ export class MemStorage implements IStorage {
         notes: feature.notes || null
       });
     }
+  }
+  // Newsletter operations
+  async subscribeToNewsletter(email: string): Promise<Newsletter> {
+    // Check if email already exists
+    const existing = await this.getNewsletterSubscriberByEmail(email);
+    if (existing) {
+      return existing;
+    }
+    
+    // Create new newsletter subscription
+    const id = this.newsletterId++;
+    const now = new Date();
+    
+    const newsletter: Newsletter = {
+      id,
+      email,
+      subscribedAt: now
+    };
+    
+    this.newsletters.set(id, newsletter);
+    return newsletter;
+  }
+  
+  async getNewsletterSubscriberByEmail(email: string): Promise<Newsletter | undefined> {
+    for (const newsletter of this.newsletters.values()) {
+      if (newsletter.email.toLowerCase() === email.toLowerCase()) {
+        return newsletter;
+      }
+    }
+    return undefined;
+  }
+  
+  async getAllNewsletterSubscribers(): Promise<Newsletter[]> {
+    return Array.from(this.newsletters.values());
   }
 }
 
