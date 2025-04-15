@@ -4,6 +4,7 @@ import TabSection from '@/components/TabSection';
 import ControlPanel from '@/components/ControlPanel';
 import ComparisonTable from '@/components/ComparisonTable';
 import ComparisonWizard from '@/components/ComparisonWizard';
+import Newsletter from '@/components/Newsletter';
 import { useLanguage } from '@/hooks/use-language';
 
 const ComparisonPage = () => {
@@ -65,6 +66,9 @@ const ComparisonPage = () => {
             </ul>
           </div>
         </div>
+        
+        {/* Newsletter Section */}
+        <Newsletter />
       </div>
     </div>
   );

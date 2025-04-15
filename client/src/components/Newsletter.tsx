@@ -55,37 +55,39 @@ const Newsletter = () => {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto bg-card shadow-md rounded-lg p-6 my-8">
-      <h3 className="text-xl font-bold mb-3">{t('newsletter.title')}</h3>
-      <p className="text-muted-foreground mb-4">{t('newsletter.description')}</p>
-      
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div className="flex flex-col sm:flex-row gap-2">
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder={t('newsletter.placeholder')}
-            className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-            disabled={isLoading}
-            required
-          />
-          <button
-            type="submit"
-            disabled={isLoading}
-            className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
-          >
-            {isLoading ? (
-              <span className="animate-pulse">{t('newsletter.submitting')}</span>
-            ) : (
-              t('newsletter.subscribe')
-            )}
-          </button>
-        </div>
-        <p className="text-xs text-muted-foreground">
-          {t('newsletter.privacyNotice')}
-        </p>
-      </form>
+    <div className="w-full bg-card shadow-md rounded-lg p-6 my-8">
+      <div className="max-w-3xl mx-auto">
+        <h3 className="text-xl font-bold mb-3">{t('newsletter.title')}</h3>
+        <p className="text-muted-foreground mb-4">{t('newsletter.description')}</p>
+        
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="flex flex-col sm:flex-row gap-2">
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder={t('newsletter.placeholder')}
+              className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              disabled={isLoading}
+              required
+            />
+            <button
+              type="submit"
+              disabled={isLoading}
+              className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 whitespace-nowrap"
+            >
+              {isLoading ? (
+                <span className="animate-pulse">{t('newsletter.submitting')}</span>
+              ) : (
+                t('newsletter.subscribe')
+              )}
+            </button>
+          </div>
+          <p className="text-xs text-muted-foreground">
+            {t('newsletter.privacyNotice')}
+          </p>
+        </form>
+      </div>
     </div>
   );
 };
