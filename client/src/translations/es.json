@@ -147,7 +147,7 @@
     "method2": "Investigación de fuentes: Revisión de documentación oficial, repositorios de GitHub, notas de lanzamiento y comunicaciones con desarrolladores.",
     "method3": "Perspectivas de la comunidad: Interacción con canales de Telegram, retroalimentación de usuarios y la comunidad de desarrolladores de Bitcoin.",
     "method4": "Herramientas especializadas: Uso de recursos como <a href='https://lightningdecoder.com/' target='_blank' rel='noopener noreferrer'>lightningdecoder.com</a> para detalles de facturas y estándares de <a href='https://bolt12.org/' target='_blank' rel='noopener noreferrer'>bolt12.org</a>, <a href='https://whentaproot.org/' target='_blank' rel='noopener noreferrer'>whentaproot.org</a> y <a href='https://github.com/lnurl/luds#services' target='_blank' rel='noopener noreferrer'>especificaciones LUD de LNURL</a>.",
-    "methodNote": "Aunque las herramientas de IA (ChatGPT, Grok 3, o1, Replit Agent) ayudan, verificamos manualmente los datos para garantizar un 95% de precisión—aunque agradecemos comentarios sobre cualquier error a través de gustavo@swapido.com o nuestro <a href='https://github.com/swapido/sovereigntools' target='_blank' rel='noopener noreferrer'>repositorio de Github</a>.",
+    "methodNote": "Aunque las herramientas de IA (ChatGPT, Grok 3, o1, Replit Agent) ayudan, verificamos manualmente los datos para garantizar un 95% de precisión—aunque agradecemos comentarios sobre cualquier error a través de gustavo@swapido.com o nuestro <a href='https://github.com/gustavojfe/sovereigntools' target='_blank' rel='noopener noreferrer'>repositorio de Github</a>.",
     "evaluations": "Nuestras evaluaciones son imparciales, no respaldos. La \"mejor\" billetera depende de tus prioridades—simplicidad para principiantes, control de claves para usuarios técnicos o compatibilidad móvil para quienes están en movimiento.",
     "whyItMatters": "Por qué es importante",
     "why1": "La red Lightning de Bitcoin ofrece transacciones rápidas y de bajo costo ideales para el uso diario, pero elegir la billetera adecuada puede ser abrumador.",
@@ -162,7 +162,7 @@
     "contribute": "Contribuye",
     "contributeIntro": "Somos un proyecto impulsado por la comunidad. Ayúdanos a mejorar:",
     "contrib1": "Reportando errores o sugiriendo características a través de gustavo@swapido.com o <a href='https://x.com/gustavojfe' target='_blank' rel='noopener noreferrer'>@gustavojfe en X</a>.",
-    "contrib2": "Enviando issues o PRs en nuestro <a href='https://github.com/swapido/sovereigntools' target='_blank' rel='noopener noreferrer'>Github</a>.",
+    "contrib2": "Enviando issues o PRs en nuestro <a href='https://github.com/gustavojfe/sovereigntools' target='_blank' rel='noopener noreferrer'>Github</a>.",
     "contrib3": "Proponiendo nuevas billeteras para su inclusión.",
     "closing": "¿Tienes preguntas, comentarios o quieres colaborar?",
     "final": "¡Únete a nosotros para construir herramientas que fortalezcan el ecosistema de Bitcoin!"
