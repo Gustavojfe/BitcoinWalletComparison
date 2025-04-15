@@ -1,12 +1,18 @@
 
-# Wallet Compare
+# SovereignTools.com
 
 A comprehensive Bitcoin and Lightning Network wallet comparison tool built with React, Express, and TypeScript.
 
+
 ## About
 
-Wallet Compare helps Bitcoin users make informed choices about the wallets they use. It provides up-to-date information about various Bitcoin wallets, with a focus on Lightning Network compatibility and features.
+SovereignTools.com is a comprehensive Bitcoin wallet comparison platform created by Gustavo Flores and sponsored by Swapido.
 
+Launched to simplify Bitcoin and Lightning Network adoption, our mission is to provide accurate, up-to-date, and unbiased information to help users—novices and experts alike—choose the right wallet for their needs.
+
+In our first release, we evaluate 18 popular Lightning Network wallets across 43 features, from platform availability and invoice compatibility, to advanced payment routing and privacy features.
+
+[Read more here.](https://sovereigntools.com/about)
 ## Features
 
 - Full-stack TypeScript setup
