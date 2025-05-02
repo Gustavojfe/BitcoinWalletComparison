@@ -287,7 +287,7 @@ function importCSV() {
         "Speed": "https://speed.money",
         "Wallet of Satoshi": "https://www.walletofsatoshi.com",
         "ZBD": "https://zbd.gg",
-        "Zeus": "https://zeusln.app"
+        "Zeus": "https://zeusln.com/"
       };
       
       return websiteMap[name] || `https://example.com/${toCamelCase(name).toLowerCase()}`;
