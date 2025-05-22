@@ -37,7 +37,7 @@
     "lnurlPay": "yes",
     "lightningAddressSupport": {
       "value": "custom",
-      "customText": "Send Only"
+      "customText": "Yes (Non-Custodial LN Addresses) on Android with Persistent Mode enabled"
     },
     "lnurlWithdraw": "yes",
     "noAmountInvoices": "yes",
@@ -55,7 +55,7 @@
       "customText": "P2TR"
     },
     "sendOnChain": "yes",
-    "taprootTransactions": "no",
+    "taprootTransactions": "yes",
     "nodeType": {
       "value": "custom",
       "customText": "Neutrino (Own Node)"
@@ -79,7 +79,7 @@
       "customText": "Yes (LSP or other peers)"
     },
     "clientSideRouting": "yes",
-    "watchtowerIntegration": "yes",
+    "watchtowerIntegration": "no",
     "mppSupport": "yes",
     "maxRoutingFee": "yes",
     "purchaseInbound": "yes",
